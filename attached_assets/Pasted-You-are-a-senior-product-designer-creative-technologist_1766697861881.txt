@@ -1,0 +1,108 @@
+You are a senior product designer + creative technologist building a studio-grade extension of an existing brand site.
+
+Project: Undone Standards
+Context:
+- This site lives under undonedesign.studio
+- It must feel like a first-party system, not a product microsite
+- Reference the visual and narrative quality of the Undone homepage:
+  - restrained typography
+  - confident sentence case
+  - clear hierarchy
+  - dark mode with subtle depth
+  - motion used as storytelling, not decoration
+  - Apple / Stripe / Linear level polish
+
+GOAL
+Transform the existing Standards pages into a studio-quality product system that:
+- visually and narratively aligns with the Undone homepage
+- uses strong information architecture
+- removes “prototype / manifesto” energy
+- replaces floating blobs with grounded system components
+- feels designed, not themed
+
+DO NOT:
+- use all-lowercase body copy
+- use pastel gradients, purple washes, or heavy glow effects
+- use generic cards, soft glass blobs, or “dribbble UI”
+- introduce new fonts or colors outside the Undone visual language
+- add marketing hype or Etsy-style language
+
+DESIGN PRINCIPLES
+- Sentence case headlines
+- Fewer components, stronger hierarchy
+- Content-first layout
+- Structure over decoration
+- Motion only where it reinforces meaning
+- Everything should feel inevitable
+
+TYPOGRAPHY
+- System sans (SF Pro / Inter fallback)
+- Clear weight contrast
+- Large, confident headlines
+- Muted but readable body text
+- Small uppercase ONLY for section labels
+
+LAYOUT SYSTEM
+Rebuild layout using:
+- a strict vertical rhythm
+- max-width content columns
+- generous breathing room
+- clear section separation using spacing + dividers, not boxes
+
+Replace current “card stacks” with:
+- framed content sections
+- structured lists
+- comparison blocks
+- restrained panels that feel architectural
+
+MOTION / INTERACTION
+Add subtle motion:
+- hero text fades/slides in on load
+- section transitions on scroll (opacity + translate only)
+- hover states that reveal hierarchy, not effects
+- no parallax gimmicks
+- no infinite glows
+
+INFO ARCHITECTURE (CRITICAL)
+Standards index page should flow like:
+1. Hero statement (what this system is)
+2. Product list (each with: name, use case, status, CTA)
+3. Why this exists (3 concise principles)
+4. What’s intentionally excluded
+5. Footer with quiet links back to studio
+
+Product pages should flow like:
+1. Clear product headline + subhead
+2. Primary CTA + secondary “preview” action
+3. What’s included (tight checklist)
+4. How it reduces friction / follow-up / interpretation
+5. Preview section (structured, not decorative)
+6. FAQ (short, professional)
+7. Footer
+
+COPY RULES
+- Confident, neutral, professional
+- No filler
+- No “coming soon” — use “In Build” or “Available”
+- Avoid explaining design decisions unless they build trust
+- Every sentence should earn its place
+
+TECH REQUIREMENTS
+- Pure HTML / CSS / JS
+- No frameworks
+- Modular CSS
+- Clean class naming
+- Comment sections explaining intent, not mechanics
+- Ensure mobile experience matches desktop quality
+
+OUTPUT
+Refactor the existing codebase to:
+- visually match the Undone homepage
+- improve hierarchy and clarity
+- upgrade interaction quality
+- feel studio-designed and production-ready
+
+If a choice must be made between flashy and restrained, always choose restrained.
+If something feels optional, remove it.
+
+Build something Undone would actually ship.

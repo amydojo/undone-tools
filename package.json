@@ -1,0 +1,15 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "## upload to replit (instant) 1) create a new HTML/CSS/JS repl 2) upload the entire folder contents (keep structure) 3) run → open `/` or `/standards/`",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.2.5"
+  }
+}
