@@ -4,190 +4,112 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Undone — Standards</title>
-  <meta name="description" content="Brand systems that think, perform, and compound." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @font-face {
-      font-family: 'SF Pro Display';
-      src: local('SF Pro Display'), local('.SFNSDisplay-Regular'), local('Helvetica Neue'), local('Helvetica'), local('Arial');
-    }
-    
-    :root {
-      --bg: #000000;
-      --fg: #ffffff;
-      --fg-muted: rgba(255, 255, 255, 0.6);
-      --accent: #a78bfa;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--fg);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
-    }
-
-    .std-shell {
-      min-height: 100vh;
-      background: 
-        radial-gradient(circle at 50% -20%, rgba(167, 139, 250, 0.15) 0%, transparent 50%),
-        #000000;
-    }
-
-    h1, h2 {
-      letter-spacing: -0.04em;
-      font-weight: 600;
-    }
-
-    .text-huge {
-      font-size: clamp(64px, 12vw, 120px);
-      line-height: 0.9;
-    }
-
-    .text-large {
-      font-size: clamp(32px, 6vw, 80px);
-      line-height: 1.1;
-    }
-
-    .text-body {
-      font-size: clamp(18px, 2.5vw, 28px);
-      line-height: 1.4;
-    }
-
-    .section-spacing {
-      padding-top: clamp(80px, 15vh, 160px);
-      padding-bottom: clamp(80px, 15vh, 160px);
-    }
-  </style>
+  <meta name="description" content="Operational tools. Designed to hold up." />
+  <link rel="stylesheet" href="./assets/styles.css" />
 </head>
-<body class="std-shell">
-  <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-    <header class="py-12 flex justify-between items-center fixed top-0 left-0 right-0 z-50 px-6 md:px-12 mix-blend-difference">
-      <a href="/" class="flex items-center gap-2 no-underline group">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 100 100" style="transform: rotate(-90deg); filter: drop-shadow(rgba(167, 139, 250, 0.3) 0px 0px 8px);">
-          <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(167, 139, 250, 0.15)" stroke-width="1.5" stroke-dasharray="220 264" stroke-linecap="round"></circle>
-          <circle cx="50" cy="50" r="42" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="80 264" stroke-linecap="round"></circle>
-        </svg>
-        <span class="font-bold tracking-widest uppercase text-[12px] text-white opacity-40 group-hover:opacity-100 transition-opacity">Undone</span>
-      </a>
-      <nav class="flex gap-10">
-        <a href="https://undonedesign.studio" target="_blank" class="text-[12px] uppercase tracking-widest text-white/40 hover:text-white transition-colors no-underline">Work</a>
-        <a href="./standards/" class="text-[12px] uppercase tracking-widest text-white transition-colors no-underline">Standards</a>
-      </nav>
-    </header>
+<body class="std-body">
+  <div class="std-shell">
+    <div class="std-container">
+      <header class="std-header">
+        <a href="/" class="std-brand">
+          <div class="std-orb"></div>
+          <span class="std-brand-name">Undone</span>
+        </a>
+        <nav class="std-nav">
+          <a href="https://undonedesign.studio" target="_blank">Studio</a>
+          <a href="./standards/" class="active">Standards</a>
+        </nav>
+      </header>
 
-    <main>
-      <!-- SECTION 1 — Hero -->
-      <section class="min-h-screen flex flex-col justify-center">
-        <h1 class="text-huge mb-8">Designed to last.</h1>
-        <p class="text-body text-white/40 max-w-[30ch]">Brand systems that think, perform, and compound.</p>
-        <div class="mt-20 flex flex-col items-center md:items-start animate-bounce">
-           <span class="text-[10px] uppercase tracking-[0.4em] text-white/20">Scroll to explore</span>
-        </div>
-      </section>
+      <main>
+        <!-- SECTION 1 — Hero -->
+        <section class="std-section std-reveal" style="text-align: center; padding: 140px 0 100px; min-height: 80vh; display: flex; flex-direction: column; justify-content: center;">
+          <h1 class="std-hero-statement" style="margin-bottom: 40px;">Most clinical tools fail because they’re designed to be explained.</h1>
+          <div class="std-thin-rule"></div>
+          <p class="std-substatement">These aren’t.</p>
+        </section>
 
-      <!-- SECTION 2 — The Violation -->
-      <section class="section-spacing max-w-[900px]">
-        <h2 class="text-large mb-12">Systems you can<br/><span class="text-white/20">see. Measure. And scale.</span></h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <p class="text-body text-white/60">
-            We don't chase trends or retrofit templates. We architect complete brand ecosystems—from positioning to performance marketing—that become self-reinforcing engines of growth.
+        <!-- SECTION 2 — The Violation -->
+        <section class="std-section std-reveal" style="max-width: 40ch;">
+          <p class="std-copy">
+            Clinics don’t need more templates.<br>
+            They need fewer decisions.<br><br>
+            Every extra word increases risk.<br>
+            Every unclear instruction creates follow-up.<br><br>
+            Most systems ignore this.
           </p>
-        </div>
-      </section>
+        </section>
 
-      <!-- SECTION 3 — The Standard -->
-      <section class="section-spacing border-t border-white/5">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+        <!-- SECTION 3 — The Standard -->
+        <section class="std-section std-reveal" style="max-width: 50ch;">
+          <p class="std-copy">
+            This is not a library. It’s a standard.<br><br>
+            Built for compliance, not conversion.<br>
+            Structured by time, not preference.<br>
+            Written to reduce interpretation.<br>
+            Designed to survive real clinic use.
+          </p>
+        </section>
+
+        <!-- SECTION 4 — Product Index Label -->
+        <section class="std-section std-reveal" style="padding-bottom: 24px;">
+          <span class="std-label">STANDARDS</span>
+        </section>
+
+        <!-- SECTION 5 — Product Index -->
+        <section class="std-section std-reveal">
+          <div style="display: grid; gap: 1px; background: var(--std-border); border: 1px solid var(--std-border); border-radius: 12px; overflow: hidden;">
+            <a href="./standards/injectables-aftercare.html" class="std-card" style="background: #05050a; border: 0; border-radius: 0; display: flex; justify-content: space-between; align-items: center; padding: 32px;">
+              <div>
+                <h3 class="std-h2" style="margin-bottom: 4px;">Injectables Aftercare Guide</h3>
+                <p class="std-muted">Botox + filler patient instructions, structured by timeline.</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <span class="std-pill">Available</span>
+                <span style="color: var(--std-text-tertiary);">→</span>
+              </div>
+            </a>
+            <a href="./standards/laser-aftercare.html" class="std-card" style="background: #05050a; border: 0; border-radius: 0; display: flex; justify-content: space-between; align-items: center; padding: 32px; opacity: 0.5;">
+              <div>
+                <h3 class="std-h2" style="margin-bottom: 4px;">Laser Hair Removal Guide</h3>
+                <p class="std-muted">Clear do's and don'ts, written to reduce follow-up.</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 24px;">
+                <span class="std-pill">In Build</span>
+                <span style="color: var(--std-text-tertiary);">→</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- SECTION 6 — Manifesto -->
+        <section class="std-section std-reveal std-grid-2">
           <div>
-            <span class="text-[11px] uppercase tracking-[0.3em] text-[#a78bfa] mb-8 block">Operating Principle 01</span>
-            <h2 class="text-large mb-8">Outcomes over optics.</h2>
-            <p class="text-body text-white/60">Performance that proves itself. We design for revenue and retention, not awards. Every decision serves measurable business impact.</p>
+            <p class="std-copy" style="color: #fff; font-weight: 500; margin-bottom: 24px;">UNDONE is for clinics that:</p>
+            <ul class="std-bullet-list">
+              <li>Don’t want to explain themselves twice</li>
+              <li>Value clarity over friendliness</li>
+              <li>Understand that restraint builds trust</li>
+            </ul>
           </div>
-          <div class="flex flex-col justify-end">
-            <p class="text-[18px] text-white/40 italic">“Strategy precedes aesthetics. Data informs iteration. The result: brands that perform as beautifully as they look.”</p>
+          <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; text-align: right;">
+            <p class="std-copy">It’s not for everyone.<br>That’s intentional.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- SECTION 4 — Product Index -->
-      <section class="section-spacing border-t border-white/5">
-        <div class="mb-16">
-          <span class="text-[11px] uppercase tracking-[0.3em] text-[#a78bfa] mb-4 block">Standards</span>
-          <h2 class="text-large">Clinical Infrastructure</h2>
-        </div>
-        
-        <div class="space-y-px bg-white/5 border-y border-white/5">
-          <a href="./standards/injectables-aftercare.html" class="group flex flex-col md:flex-row md:items-center justify-between py-12 px-2 hover:bg-white/[0.02] transition-colors no-underline">
-            <div class="max-w-[600px]">
-              <h3 class="text-3xl font-semibold text-white mb-2">Injectables Aftercare Guide</h3>
-              <p class="text-lg text-white/40">Botox + filler patient instructions, structured by timeline. Built for compliance, not conversion.</p>
-            </div>
-            <div class="mt-8 md:mt-0 flex items-center gap-12">
-              <span class="text-[11px] uppercase tracking-widest text-white/20">Available</span>
-              <span class="text-3xl text-white/10 group-hover:text-[#a78bfa] group-hover:translate-x-2 transition-all">→</span>
-            </div>
-          </a>
-          <a href="./standards/laser-aftercare.html" class="group flex flex-col md:flex-row md:items-center justify-between py-12 px-2 hover:bg-white/[0.02] transition-colors no-underline">
-            <div class="max-w-[600px] opacity-40">
-              <h3 class="text-3xl font-semibold text-white mb-2">Laser Hair Removal Guide</h3>
-              <p class="text-lg text-white/40">Clear do's and don'ts, written to reduce follow-up. Designed to survive real clinic use.</p>
-            </div>
-            <div class="mt-8 md:mt-0 flex items-center gap-12">
-              <span class="text-[11px] uppercase tracking-widest text-white/20">In Build</span>
-              <span class="text-3xl text-white/10 transition-all">→</span>
-            </div>
-          </a>
-        </div>
-      </section>
+        <!-- SECTION 7 — Closer -->
+        <section class="std-section std-reveal std-closer" style="border-top: 0; margin-top: 0; padding-top: 40px;">
+          <p class="std-closer-quote" style="font-style: normal; color: var(--std-text-tertiary);">
+            “Operational tools for clinics that already know what good looks like.”
+          </p>
+        </section>
+      </main>
 
-      <!-- SECTION 5 — Performance -->
-      <section class="section-spacing border-t border-white/5">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div>
-            <span class="text-huge block mb-2">7.0×</span>
-            <span class="text-[11px] uppercase tracking-widest text-white/40">Average ROAS</span>
-          </div>
-          <div>
-            <span class="text-huge block mb-2">90%</span>
-            <span class="text-[11px] uppercase tracking-widest text-white/40">LTV Growth</span>
-          </div>
-          <div>
-            <span class="text-huge block mb-2">45%</span>
-            <span class="text-[11px] uppercase tracking-widest text-white/40">CPL Reduction</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 6 — Founder Quote -->
-      <section class="section-spacing text-center border-t border-white/5">
-        <p class="text-large text-white/80 max-w-[20ch] mx-auto mb-12">
-          “We believe great brands aren’t built. They’re <span class="text-[#a78bfa]">engineered.</span>”
-        </p>
-        <span class="text-[11px] uppercase tracking-widest text-white/20">— Founder, UNDONE</span>
-      </section>
-
-      <!-- SECTION 7 — Final CTA -->
-      <section class="section-spacing border-t border-white/5">
-        <div class="max-w-[600px]">
-          <h2 class="text-large mb-8">Let's Build.</h2>
-          <p class="text-body text-white/40 mb-12">Available for new projects. Start with a conversation about your vision, market position, and growth goals.</p>
-          <a href="https://undonedesign.studio" class="inline-block border-b border-[#a78bfa] pb-2 text-white hover:text-[#a78bfa] transition-colors no-underline">Get started →</a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="py-20 border-t border-white/5 flex flex-col md:flex-row justify-between gap-8 items-start md:items-center">
-      <div class="flex items-center gap-4">
-        <span class="text-[11px] uppercase tracking-widest text-white/20">© 2025 Undone Standards</span>
-        <span class="text-[11px] uppercase tracking-widest text-white/20">•</span>
-        <span class="text-[11px] uppercase tracking-widest text-white/20">For any vision, a strategic system.</span>
-      </div>
-      <nav class="flex gap-8">
-        <a href="https://undonedesign.studio" class="text-[11px] uppercase tracking-widest text-white/40 hover:text-white transition-colors no-underline">Studio</a>
-        <a href="https://undonebydesign.etsy.com" target="_blank" class="text-[11px] uppercase tracking-widest text-white/40 hover:text-white transition-colors no-underline">Shop</a>
-      </nav>
-    </footer>
+      <footer class="std-page-footer">
+        <span>© 2025 Undone Standards</span>
+        <a href="https://undonedesign.studio" target="_blank">Studio</a>
+      </footer>
+    </div>
   </div>
 
   <script src="./assets/app.js"></script>
