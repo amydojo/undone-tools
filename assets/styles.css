@@ -137,56 +137,44 @@
   box-sizing: border-box;
 }
 
-.hero-reveal-text {
-  font-size: clamp(40px, 10vw, 110px);
-  font-weight: 500;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  color: #fff;
-  margin-bottom: 24px;
+.hero-diagnostic-stack {
   display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 0.2em;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
 }
 
-.hero-word {
-  opacity: 0.6;
-  filter: blur(4px);
-  letter-spacing: 0.01em;
-  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
-              filter 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
-              letter-spacing 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-word.revealed {
-  opacity: 1;
-  filter: blur(0);
-  letter-spacing: -0.04em;
-}
-
-.hero-dot {
+.hero-line {
   opacity: 0;
-  color: var(--std-accent);
-  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-dot.revealed {
-  opacity: 1;
+.hero-line-1 {
+  font-size: clamp(40px, 10vw, 110px);
+  font-weight: 600;
+  color: #fff;
+  transform: translateY(8px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.studio-micro {
+.hero-line-2 {
+  font-size: clamp(18px, 3vw, 28px);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.hero-line-3 {
   font-size: clamp(16px, 2.5vw, 22px);
-  color: rgba(255, 255, 255, 0.65) !important;
-  max-width: 40ch;
-  margin: 0 auto;
-  letter-spacing: -0.01em;
-  opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.02em;
 }
 
-.studio-micro.revealed {
+.hero-line.revealed {
   opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-line-3.revealed {
+  letter-spacing: normal;
 }
 
 /* Scroll Indicator */
@@ -209,14 +197,20 @@
   60% { transform: translateY(-5px); }
 }
 
-/* Page Load Animation */
-.studio-hero-content {
-  animation: studio-scale-in 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+/* Spatial Storytelling: The Gap */
+.studio-gap-visual {
+  margin-top: 128px;
 }
 
-@keyframes studio-scale-in {
-  from { opacity: 0; transform: scale(0.99); }
-  to { opacity: 1; transform: scale(1); }
+.studio-gap-spacer {
+  height: 128px;
+}
+
+.studio-hairline {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  width: 100%;
+  margin-bottom: 24px;
 }
 
 /* Reveal Animation (Apple-caliber) */
@@ -862,6 +856,31 @@
 
 .std-accordion-item[aria-expanded="true"] .std-accordion-content {
   max-height: 1000px;
+}
+
+.hero-word {
+  opacity: 0.6;
+  filter: blur(4px);
+  letter-spacing: 0.01em;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
+              letter-spacing 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-word.revealed {
+  opacity: 1;
+  filter: blur(0);
+  letter-spacing: -0.04em;
+}
+
+.hero-dot {
+  opacity: 0;
+  color: var(--std-accent);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-dot.revealed {
+  opacity: 1;
 }
 
 .std-accordion-inner {

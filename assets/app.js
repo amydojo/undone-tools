@@ -66,43 +66,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Hero Reveal Animation (Arrival, not rotation)
-  const heroReveal = () => {
-    const word1 = document.querySelector('.hero-word-1');
-    const word2 = document.querySelector('.hero-word-2');
-    const dot = document.querySelector('.hero-dot');
-    const micro = document.querySelector('.studio-micro');
+  // Hero Diagnostic Reveal
+  const heroDiagnosticReveal = () => {
+    const line1 = document.querySelector('.hero-line-1');
+    const line2 = document.querySelector('.hero-line-2');
+    const line3 = document.querySelector('.hero-line-3');
     
-    if (!word1 || !word2 || !dot || !micro) return;
+    if (!line1 || !line2 || !line3) return;
 
-    // reset initial state
-    word1.style.opacity = '0.6';
-    word2.style.opacity = '0.6';
-    dot.style.opacity = '0';
-    micro.style.opacity = '0';
-
-    // Beat 1: Emergence
+    // Line 1: Fade in + subtle upward drift
     setTimeout(() => {
-      word1.classList.add('revealed');
+      line1.classList.add('revealed');
     }, 200);
 
-    // Beat 2: Clarification
+    // Line 2: Opacity only after 500ms pause
     setTimeout(() => {
-      word2.classList.add('revealed');
-    }, 800);
+      // Pause background motion when diagnostic appears
+      if (window.pauseStudioParticles) window.pauseStudioParticles();
+      line2.classList.add('revealed');
+    }, 1200); // 200 (start) + 500 (duration) + 500 (pause)
 
-    // Beat 3: Conviction
+    // Line 3: Opacity + micro letter-spacing tighten after 300ms pause
     setTimeout(() => {
-      dot.classList.add('revealed');
-    }, 1400);
-
-    // Release: Subline
-    setTimeout(() => {
-      micro.classList.add('revealed');
-    }, 2000);
+      // Resume background motion
+      if (window.resumeStudioParticles) window.resumeStudioParticles();
+      line3.classList.add('revealed');
+    }, 2000); // 1200 + 500 (approx dur) + 300 (pause)
   };
 
-  heroReveal();
+  heroDiagnosticReveal();
 
   // Studio Hero Canvas (Atmospheric, not content)
   initStudioHeroCanvas();
@@ -119,6 +111,10 @@ function initStudioHeroCanvas() {
   let animationId = null;
   let isVisible = true;
   let particles = [];
+  let isFrozen = false;
+
+  window.pauseStudioParticles = () => { isFrozen = true; };
+  window.resumeStudioParticles = () => { isFrozen = false; };
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -155,8 +151,10 @@ function initStudioHeroCanvas() {
 
     // Atmospheric drift
     particles.forEach(p => {
-      p.y -= p.speed;
-      if (p.y < -10) p.y = height + 10;
+      if (!isFrozen) {
+        p.y -= p.speed;
+        if (p.y < -10) p.y = height + 10;
+      }
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(123, 108, 255, ${p.opacity})`;
