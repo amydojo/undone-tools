@@ -1,294 +1,93 @@
 :root {
-  /* Undone Standards - Studio Grade Tokens */
-  --bg-primary: #05050a;
-  --bg-secondary: #090a16;
-  --bg-elevated: rgba(255, 255, 255, 0.03);
+  /* Undone Standards - Safe System Additions */
+  --std-spacing-base: 8px;
+  --std-gap-sm: calc(var(--std-spacing-base) * 2);
+  --std-gap-md: calc(var(--std-spacing-base) * 4);
+  --std-gap-lg: calc(var(--std-spacing-base) * 8);
+  --std-gap-xl: calc(var(--std-spacing-base) * 12);
   
-  --text-primary: rgba(255, 255, 255, 0.94);
-  --text-secondary: rgba(255, 255, 255, 0.60);
-  --text-tertiary: rgba(255, 255, 255, 0.40);
+  --std-text-primary: rgba(255, 255, 255, 0.94);
+  --std-text-secondary: rgba(255, 255, 255, 0.60);
+  --std-text-tertiary: rgba(255, 255, 255, 0.40);
   
-  --accent: #7b6cff;
-  --accent-muted: rgba(123, 108, 255, 0.2);
+  --std-accent: #7b6cff;
+  --std-border: rgba(255, 255, 255, 0.08);
+  --std-bg-card: rgba(255, 255, 255, 0.02);
   
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.12);
+  --std-font-sans: "Inter", "SF Pro Display", -apple-system, sans-serif;
+  --std-font-mono: "SF Mono", "JetBrains Mono", monospace;
   
-  --font-sans: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "SF Mono", "JetBrains Mono", ui-monospace, monospace;
-  
-  --container-width: 1040px;
-  --section-gap: clamp(80px, 12vh, 160px);
-  --content-gap: 24px;
-  
-  --transition-base: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --std-transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: var(--font-sans);
+/* Base Styles for Standards */
+.std-body {
+  background: #05050a;
+  color: var(--std-text-primary);
+  font-family: var(--std-font-sans);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
 }
 
-body {
-  min-height: 100vh;
-  background: 
-    radial-gradient(circle at 15% 15%, rgba(123, 108, 255, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 85% 85%, rgba(123, 108, 255, 0.03) 0%, transparent 50%),
-    var(--bg-primary);
-}
-
-/* Layout System */
-.container {
-  max-width: var(--container-width);
+.std-container {
+  max-width: 1040px;
   margin: 0 auto;
   padding: 0 40px;
 }
 
-section {
-  padding: var(--section-gap) 0;
-}
-
-.divider {
-  height: 1px;
-  background: var(--border-subtle);
-  width: 100%;
-}
-
 /* Typography */
-h1, h2, h3 {
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-}
+.std-h1 { font-size: clamp(40px, 8vw, 72px); line-height: 1.1; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 24px; }
+.std-h2 { font-size: clamp(24px, 4vw, 32px); line-height: 1.2; font-weight: 600; margin-bottom: 16px; }
+.std-p { color: var(--std-text-secondary); font-size: 17px; max-width: 60ch; margin-bottom: 16px; }
 
-h1 { font-size: clamp(40px, 8vw, 72px); line-height: 1.1; margin-bottom: 24px; }
-h2 { font-size: clamp(24px, 4vw, 32px); line-height: 1.2; margin-bottom: 16px; }
-
-p {
-  color: var(--text-secondary);
-  font-size: 17px;
-  max-width: 60ch;
-}
-
-.eyebrow {
-  font-family: var(--font-mono);
+.std-eyebrow {
+  font-family: var(--std-font-mono);
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
+  letter-spacing: 0.15em;
+  color: var(--std-accent);
   margin-bottom: 16px;
   display: block;
 }
 
-/* Header */
-header {
-  padding: 40px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-
-.orb {
-  width: 10px;
-  height: 10px;
-  background: var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 0 12px var(--accent);
-}
-
-.brand-name {
-  font-weight: 700;
-  letter-spacing: 0.05em;
+.std-label-tracked {
   text-transform: uppercase;
-  font-size: 14px;
-  color: var(--text-primary);
-}
-
-header nav {
-  display: flex;
-  gap: 32px;
-}
-
-header nav a {
-  font-size: 14px;
-  color: var(--text-tertiary);
-  text-decoration: none;
-  transition: var(--transition-base);
-}
-
-header nav a:hover, header nav a.active {
-  color: var(--text-primary);
-}
-
-/* Product Cards (Hub) */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 24px;
-}
-
-.product-card {
-  padding: 40px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  text-decoration: none;
-  transition: var(--transition-base);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 240px;
-}
-
-.product-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-4px);
-  background: var(--bg-elevated);
-}
-
-.product-card .title {
-  font-size: 24px;
+  letter-spacing: 0.2em;
+  font-size: 10px;
   font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
+  color: var(--std-text-tertiary);
 }
 
-.product-card .desc {
-  font-size: 15px;
-  color: var(--text-secondary);
-}
+/* Layout Components */
+.std-section { padding: var(--std-gap-xl) 0; }
+.std-divider { height: 1px; background: var(--std-border); width: 100%; margin: var(--std-gap-md) 0; }
 
-.product-card .status-pill {
+.std-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--std-gap-lg); }
+@media (max-width: 768px) { .std-grid-2 { grid-template-columns: 1fr; } }
+
+/* Cards & Modules */
+.std-card {
+  padding: 40px;
+  background: var(--std-bg-card);
+  border: 1px solid var(--std-border);
+  border-radius: 12px;
+  transition: var(--std-transition);
+}
+.std-card:hover { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.04); }
+
+.std-status-pill {
   display: inline-flex;
   padding: 4px 12px;
   border-radius: 99px;
-  font-family: var(--font-mono);
+  font-family: var(--std-font-mono);
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
   background: rgba(255,255,255,0.05);
-  color: var(--text-tertiary);
-  margin-top: auto;
+  color: var(--std-text-tertiary);
 }
-
-/* Product Page IA */
-.product-hero {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.product-module {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-strong);
-  border-radius: 16px;
-  padding: 40px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.4);
-}
-
-.module-list {
-  list-style: none;
-  margin-bottom: 32px;
-}
-
-.module-list li {
-  font-size: 15px;
-  color: var(--text-secondary);
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border-subtle);
-  display: flex;
-  justify-content: space-between;
-}
-
-.module-list li:last-child { border: 0; }
-
-.module-footer {
-  margin-top: 32px;
-  text-align: center;
-}
-
-.helper-text {
-  font-size: 12px;
-  color: var(--text-tertiary);
-  margin-top: 16px;
-  display: block;
-}
-
-/* Accordion */
-.accordion {
-  border-top: 1px solid var(--border-subtle);
-}
-
-.accordion-item {
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.accordion-header {
-  width: 100%;
-  padding: 24px 0;
-  background: transparent;
-  border: 0;
-  color: var(--text-primary);
-  font-size: 18px;
-  font-weight: 500;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  text-align: left;
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  color: var(--text-secondary);
-  font-size: 16px;
-}
-
-.accordion-item.active .accordion-content {
-  max-height: 500px;
-  padding-bottom: 24px;
-}
-
-/* Preview Section */
-.preview-frame {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-strong);
-  border-radius: 16px;
-  padding: 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-.preview-skeleton {
-  display: grid;
-  gap: 20px;
-  opacity: 0.4;
-}
-
-.skeleton-bar { height: 12px; background: var(--text-tertiary); border-radius: 2px; }
 
 /* Buttons */
-.btn {
+.std-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -297,46 +96,26 @@ header nav a:hover, header nav a.active {
   font-weight: 500;
   font-size: 15px;
   text-decoration: none;
-  transition: var(--transition-base);
   cursor: pointer;
   border: 0;
-  width: 100%;
+  transition: var(--std-transition);
 }
+.std-btn-primary { background: #fff; color: #000; }
+.std-btn-primary:hover { transform: translateY(-2px); }
+.std-btn-secondary { background: transparent; border: 1px solid var(--std-border); color: #fff; }
+.std-btn-secondary:hover { background: rgba(255,255,255,0.05); }
 
-.btn-primary {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+/* Accordion */
+.std-accordion-item { border-bottom: 1px solid var(--std-border); }
+.std-accordion-header {
+  width: 100%; padding: 24px 0; background: transparent; border: 0;
+  color: #fff; font-size: 18px; display: flex; justify-content: space-between;
+  cursor: pointer; text-align: left;
 }
+.std-accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; color: var(--std-text-secondary); }
+.std-accordion-item[aria-expanded="true"] .std-accordion-content { max-height: 500px; padding-bottom: 24px; }
 
-.btn-primary:hover {
-  background: #ffffff;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: transparent;
-  border: 1px solid var(--border-strong);
-  color: var(--text-primary);
-  margin-top: 12px;
-}
-
-.btn-secondary:hover {
-  background: var(--bg-elevated);
-}
-
-/* Motion */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (max-width: 900px) {
-  .product-hero { grid-template-columns: 1fr; gap: 40px; }
-  .product-grid { grid-template-columns: 1fr; }
-}
+/* Reveal Animations */
+.std-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.std-reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .std-reveal { transition: none; opacity: 1; transform: none; } }

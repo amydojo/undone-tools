@@ -7,139 +7,146 @@
   <meta name="checkout-url" content="https://undonebydesign.etsy.com">
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
-<body>
-  <div class="container">
-    <header>
-      <a href="/" class="brand">
-        <div class="orb"></div>
-        <span class="brand-name">Undone</span>
+<body class="std-body">
+  <div class="std-container">
+    <header style="padding: 40px 0; display: flex; justify-content: space-between; align-items: center;">
+      <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+        <div style="width: 10px; height: 10px; background: #7b6cff; border-radius: 50%; box-shadow: 0 0 12px #7b6cff;"></div>
+        <span style="font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; font-size: 14px; color: #fff;">Undone</span>
       </a>
-      <nav>
-        <a href="/standards/">Back To Standards</a>
+      <nav style="display: flex; gap: 32px;">
+        <a href="/" style="font-size: 14px; color: rgba(255,255,255,0.4); text-decoration: none;">Studio</a>
+        <a href="/standards/" style="font-size: 14px; color: #fff; text-decoration: none;">Standards</a>
       </nav>
     </header>
 
     <main>
-      <section class="product-hero">
+      <section class="std-section std-reveal std-grid-2" style="align-items: center;">
         <div>
-          <span class="eyebrow">SYSTEM STANDARD</span>
-          <h1>Laser Aftercare. Built To Be Followed.</h1>
-          <p>Clear protocol for laser hair removal and skin treatments. Zero friction instructions.</p>
+          <span class="std-eyebrow">SYSTEM STANDARD</span>
+          <h1 class="std-h1">Laser Aftercare. Built For Compliance.</h1>
+          <p class="std-p">Clear protocol for laser hair removal and skin treatments. Zero friction instructions.</p>
         </div>
-        <div class="product-module">
-          <ul class="module-list">
-            <li><span>Clinical PDF Guide</span> <span>Included</span></li>
-            <li><span>Canva Source File</span> <span>Included</span></li>
-            <li><span>Print-Ready Setup</span> <span>Included</span></li>
-            <li><span>Implementation Guide</span> <span>Included</span></li>
+        <div class="std-card">
+          <ul style="list-style: none; margin-bottom: 32px;">
+            <li class="std-p" style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--std-border); padding: 8px 0;"><span>Clinical PDF Guide</span> <span>Included</span></li>
+            <li class="std-p" style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--std-border); padding: 8px 0;"><span>Canva Source File</span> <span>Included</span></li>
+            <li class="std-p" style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--std-border); padding: 8px 0;"><span>Print-Ready Setup</span> <span>Included</span></li>
+            <li class="std-p" style="display: flex; justify-content: space-between; padding: 8px 0;"><span>Implementation Guide</span> <span>Included</span></li>
           </ul>
-          <div class="module-footer">
-            <button class="btn btn-primary" data-buy>Access The Guide</button>
-            <button class="btn btn-secondary" data-preview>Preview Layout</button>
-            <span class="helper-text">External checkout opens Etsy. Press G to Open Checkout.</span>
+          <div style="text-align: center;">
+            <button class="std-btn std-btn-primary" style="width: 100%;" data-buy>Access The Guide</button>
+            <a href="#preview" class="std-btn std-btn-secondary" style="width: 100%; margin-top: 12px;">Preview Layout</a>
+            <span class="std-checkout-helper" style="display: block; font-size: 12px; color: var(--std-text-tertiary); margin-top: 16px;">External checkout opens Etsy. Press G to Open Checkout.</span>
           </div>
         </div>
       </section>
 
-      <div class="divider"></div>
+      <div class="std-divider"></div>
 
-      <section>
-        <span class="eyebrow">CLINICAL PROTOCOL</span>
-        <div class="accordion">
-          <div class="accordion-item active">
-            <button class="accordion-header">Day 0–1 <span>+</span></button>
-            <div class="accordion-content">
-              <p>Management of "sunburn" sensation. Application of cooling gels and avoidance of friction or hot water. Protective clothing protocols.</p>
+      <section class="std-section std-reveal">
+        <span class="std-eyebrow">CORE TOOL</span>
+        <h2 class="std-h2">Clinical Protocol</h2>
+        <div class="std-accordion-group" style="margin-top: 40px;">
+          <div class="std-accordion-item" aria-expanded="true">
+            <button class="std-accordion-header">Day 0–1 <span>+</span></button>
+            <div class="std-accordion-content">
+              <ul style="list-style: none; padding: 0;">
+                <li class="std-p">→ Keep treated area cool and clean</li>
+                <li class="std-p">→ Avoid hot showers or exercise</li>
+                <li class="std-p">→ Use recommended soothing gels only</li>
+              </ul>
             </div>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-header">Days 2–7 <span>+</span></button>
-            <div class="accordion-content">
-              <p>Skin shedding and exfoliation rules. Strict SPF requirements and avoidance of specific active ingredients (Retinoids, AHAs).</p>
+          <div class="std-accordion-item">
+            <button class="std-accordion-header">Days 2–7 <span>+</span></button>
+            <div class="std-accordion-content">
+              <ul style="list-style: none; padding: 0;">
+                <li class="std-p">→ Strict sun protection (SPF 30+)</li>
+                <li class="std-p">→ Do not scrub or exfoliate area</li>
+                <li class="std-p">→ Avoid active topicals (Retinol, AHA)</li>
+              </ul>
             </div>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-header">What’s Normal <span>+</span></button>
-            <div class="accordion-content">
-              <p>Expected erythema (redness), perifollicular edema (swelling around follicles), and temporary skin sensitivity.</p>
+          <div class="std-accordion-item">
+            <button class="std-accordion-header">What’s Normal <span>+</span></button>
+            <div class="std-accordion-content">
+              <ul style="list-style: none; padding: 0;">
+                <li class="std-p">→ Redness and mild swelling (erythema)</li>
+                <li class="std-p">→ Follicular edema (small bumps)</li>
+                <li class="std-p">→ Sensation similar to a mild sunburn</li>
+              </ul>
             </div>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-header">Red Flags / Call The Clinic <span>+</span></button>
-            <div class="accordion-content">
-              <p>Critical symptoms: blistering, crusting, or persistent intense pain. Instructions for reporting potential burns or pigment changes.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="info-grid">
-        <div class="info-block">
-          <span class="eyebrow">DESIGN</span>
-          <h3>Designed For Scanning</h3>
-          <p>Visual hierarchy designed for post-treatment patients to find answers fast.</p>
-        </div>
-        <div class="info-block">
-          <span class="eyebrow">TONE</span>
-          <h3>Neutral Language</h3>
-          <p>Objective instructions that reinforce your clinical authority.</p>
-        </div>
-        <div class="info-block">
-          <span class="eyebrow">STRUCTURE</span>
-          <h3>Compliance Windows</h3>
-          <p>Critical safety milestones mapped to the first 7 days of healing.</p>
-        </div>
-      </section>
-
-      <section id="preview">
-        <span class="eyebrow">PREVIEW</span>
-        <div class="preview-frame">
-          <div class="preview-skeleton">
-            <div class="skeleton-bar" style="width: 45%; height: 24px;"></div>
-            <div class="skeleton-bar" style="width: 80%;"></div>
-            <div class="skeleton-bar" style="width: 70%;"></div>
-            <div style="display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 20px;">
-              <div style="height: 60px; border: 1px solid var(--border-subtle); border-radius: 8px;"></div>
-              <div style="height: 60px; border: 1px solid var(--border-subtle); border-radius: 8px;"></div>
-              <div style="height: 60px; border: 1px solid var(--border-subtle); border-radius: 8px;"></div>
+          <div class="std-accordion-item">
+            <button class="std-accordion-header">Red Flags / Call The Clinic <span>+</span></button>
+            <div class="std-accordion-content">
+              <ul style="list-style: none; padding: 0;">
+                <li class="std-p">→ Blistering or skin crusting</li>
+                <li class="std-p">→ Persistent intense pain</li>
+                <li class="std-p">→ Severe pigment changes</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <span class="eyebrow">FAQ</span>
-        <div class="accordion">
-          <div class="accordion-item">
-            <button class="accordion-header">How do I edit in Canva? <span>+</span></button>
-            <div class="accordion-content">
-              <p>Your download includes a link to the Canva template. Customize for your specific laser hardware in minutes.</p>
-            </div>
+      <section class="std-section std-reveal std-grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+        <div>
+          <h3 class="std-h2" style="font-size: 20px;">Designed For Scanning</h3>
+          <p class="std-p">Visual hierarchy designed for post-treatment patients to find answers fast.</p>
+        </div>
+        <div>
+          <h3 class="std-h2" style="font-size: 20px;">Neutral Language</h3>
+          <p class="std-p">Objective instructions that reinforce your clinical authority.</p>
+        </div>
+        <div>
+          <h3 class="std-h2" style="font-size: 20px;">Compliance Windows</h3>
+          <p class="std-p">Critical safety milestones mapped to the first 7 days of healing.</p>
+        </div>
+      </section>
+
+      <section id="preview" class="std-section std-reveal">
+        <span class="std-eyebrow">PREMIUM PREVIEW</span>
+        <div style="background: #090a16; border: 1px solid var(--std-border); border-radius: 16px; padding: 80px; text-align: center;">
+          <div style="max-width: 400px; margin: 0 auto; background: #fff; color: #000; padding: 40px; text-align: left; box-shadow: 0 40px 80px rgba(0,0,0,0.4);">
+            <div style="font-size: 10px; font-weight: 800; text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 8px; margin-bottom: 20px;">Laser Standard</div>
+            <div style="font-size: 24px; font-weight: 700; line-height: 1.1; margin-bottom: 24px;">Aftercare Protocol</div>
+            <div style="height: 1px; background: #eee; margin-bottom: 20px;"></div>
+            <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">Restrictions</div>
+            <div style="width: 100%; height: 8px; background: #f0f0f0; margin-bottom: 4px;"></div>
+            <div style="width: 90%; height: 8px; background: #f0f0f0; margin-bottom: 20px;"></div>
+            <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;">SPF Rule</div>
+            <div style="width: 100%; height: 8px; background: #f0f0f0; margin-bottom: 4px;"></div>
+            <div style="width: 70%; height: 8px; background: #f0f0f0;"></div>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-header">Can I print this? <span>+</span></button>
-            <div class="accordion-content">
-              <p>Yes. Optimized for both digital distribution via SMS/Email and physical print handouts.</p>
-            </div>
+        </div>
+      </section>
+
+      <section class="std-section std-reveal">
+        <span class="std-eyebrow">FAQ</span>
+        <div class="std-accordion-group">
+          <div class="std-accordion-item">
+            <button class="std-accordion-header">How do I edit in Canva? <span>+</span></button>
+            <div class="std-accordion-content"><p class="std-p">Download includes a Canva template link. Customize for your hardware in minutes.</p></div>
           </div>
-          <div class="accordion-item">
-            <button class="accordion-header">Is this suitable for all clinics? <span>+</span></button>
-            <div class="accordion-content">
-              <p>Covers standard laser hair removal and IPL protocols. Fully editable if your specific technology requires unique advice.</p>
-            </div>
+          <div class="std-accordion-item">
+            <button class="std-accordion-header">Can I print this? <span>+</span></button>
+            <div class="std-accordion-content"><p class="std-p">Optimized for digital distribution or physical handouts.</p></div>
+          </div>
+          <div class="std-accordion-item">
+            <button class="std-accordion-header">Is this suitable for all clinics? <span>+</span></button>
+            <div class="std-accordion-content"><p class="std-p">Covers standard hair removal and IPL protocols. Fully editable for specific technology needs.</p></div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer style="padding: 100px 0 60px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
-      <span class="text-tertiary" style="font-size: 13px;">Press G to Open Checkout</span>
-      <nav>
-        <a href="https://undonedesign.studio" style="color: var(--text-tertiary); font-size: 13px; text-decoration: none;">Undone Studio</a>
-      </nav>
+    <footer style="padding: 100px 0 60px; border-top: 1px solid var(--std-border); display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 12px; color: var(--std-text-tertiary);">Press G to Open Checkout</span>
+      <nav><a href="/" style="color: var(--std-text-tertiary); font-size: 12px; text-decoration: none;">Undone Studio</a></nav>
     </footer>
   </div>
-
   <script defer src="/assets/app.js"></script>
 </body>
 </html>

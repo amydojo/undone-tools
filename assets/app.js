@@ -1,74 +1,82 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Intersection Observer for scroll animations
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
+  // Reveal animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.fade-in, section, .product-card').forEach(el => {
-    el.classList.add('fade-in');
-    observer.observe(el);
-  });
+  document.querySelectorAll('.std-reveal').forEach(el => observer.observe(el));
 
   // Accordions
-  document.querySelectorAll('.accordion-header').forEach(header => {
+  document.querySelectorAll('.std-accordion-header').forEach(header => {
     header.addEventListener('click', () => {
-      const item = header.parentElement;
-      const isActive = item.classList.contains('active');
+      const item = header.closest('.std-accordion-item');
+      const isExpanded = item.getAttribute('aria-expanded') === 'true';
       
-      // Close all other items
-      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
+      // Close others in same group
+      const group = item.closest('.std-accordion-group');
+      if (group) {
+        group.querySelectorAll('.std-accordion-item').forEach(i => i.setAttribute('aria-expanded', 'false'));
+      }
+
+      item.setAttribute('aria-expanded', !isExpanded);
+    });
+
+    header.addEventListener('keydown', (e) => {
+      const group = header.closest('.std-accordion-group');
+      if (!group) return;
+      const headers = Array.from(group.querySelectorAll('.std-accordion-header'));
+      const index = headers.indexOf(header);
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        headers[(index + 1) % headers.length].focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        headers[(index - 1 + headers.length) % headers.length].focus();
       }
     });
   });
 
-  // Hotkeys
-  document.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 'g') {
-      const checkoutUrl = document.querySelector('meta[name="checkout-url"]')?.content;
-      if (checkoutUrl) {
-        window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
-      }
+  // Checkout handling
+  const checkoutUrl = document.querySelector('meta[name="checkout-url"]')?.content;
+  const cta = document.querySelector('[data-buy]');
+  const helper = document.querySelector('.std-checkout-helper');
+
+  if (!checkoutUrl || checkoutUrl.includes('PASTE')) {
+    if (cta) {
+      cta.setAttribute('aria-disabled', 'true');
+      cta.style.opacity = '0.5';
+      cta.style.cursor = 'not-allowed';
     }
-  });
+    if (helper) helper.style.display = 'none';
+    console.warn("[undone] missing checkout-url meta");
+  } else {
+    const openCheckout = () => window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+    if (cta) cta.addEventListener('click', openCheckout);
 
-  // Buy buttons
-  document.querySelectorAll('[data-buy]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const checkoutUrl = document.querySelector('meta[name="checkout-url"]')?.content;
-      if (checkoutUrl) {
-        window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
+    document.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 'g') {
+        const active = document.activeElement;
+        const isEditable = active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable;
+        if (!isEditable) openCheckout();
       }
     });
-  });
+  }
 
-  // Smooth scroll for preview
-  document.querySelectorAll('[data-preview]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const target = document.querySelector('#preview');
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        e.preventDefault();
+        const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+        target.scrollIntoView({ behavior });
       }
     });
-  });
-
-  // Active nav state
-  const currentPath = window.location.pathname;
-  document.querySelectorAll('header nav a').forEach(a => {
-    if (a.getAttribute('href') === currentPath || (currentPath.includes('/standards/') && a.textContent === 'Standards')) {
-      a.classList.add('active');
-    }
   });
 });
