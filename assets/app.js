@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Rotating Headlines
+  // Rotating Headlines (Restrained)
   const cyclerItems = document.querySelectorAll('.cycler-item');
   if (cyclerItems.length) {
     let currentIndex = 0;
@@ -93,8 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
       
       setTimeout(() => {
         current.classList.remove('exit');
-      }, 800);
-    }, 4000);
+      }, 1000); // Wait for exit animation
+    }, 5000); // 5s interval for calm pacing
   }
 
   // Studio Hero Canvas
