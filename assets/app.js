@@ -160,6 +160,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Studio Hero Canvas (Quiet ambient noise/particles)
   initStudioHeroCanvas();
+
+  // Rotating Headlines
+  const cyclerItems = document.querySelectorAll('.cycler-item');
+  if (cyclerItems.length) {
+    let currentIndex = 0;
+    setInterval(() => {
+      const current = cyclerItems[currentIndex];
+      current.classList.remove('active');
+      current.classList.add('exit');
+      
+      currentIndex = (currentIndex + 1) % cyclerItems.length;
+      
+      const next = cyclerItems[currentIndex];
+      next.classList.remove('exit');
+      next.classList.add('active');
+      
+      // Cleanup exit class after transition
+      setTimeout(() => {
+        current.classList.remove('exit');
+      }, 600);
+    }, 3000);
+  }
+
+  // Hero Parallax
+  const hero = document.getElementById('hero');
+  const canvas = document.getElementById('studioHeroCanvas');
+  if (hero && canvas && !prefersReducedMotion) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      if (scrolled < window.innerHeight) {
+        canvas.style.transform = `translateY(${scrolled * 0.5}px)`;
+      }
+    });
+  }
 });
 
 function initStudioHeroCanvas() {

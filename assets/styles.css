@@ -758,6 +758,52 @@ header nav a:hover, header nav a.active { color: #fff; }
   text-decoration: none;
 }
 
+.studio-brand-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.studio-headline-cycler {
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.cycler-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  font-size: 11px;
+  color: #8B8D98;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  font-weight: 400;
+}
+
+@media (min-width: 1024px) {
+  .studio-headline-cycler { height: 32px; }
+  .cycler-item { font-size: 32px; letter-spacing: -0.01em; }
+}
+
+@media (max-width: 1023px) {
+  .cycler-item { font-size: 20px; }
+}
+
+.cycler-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cycler-item.exit {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
 .studio-orb {
   width: 8px;
   height: 8px;
@@ -962,6 +1008,44 @@ header nav a:hover, header nav a.active { color: #fff; }
   color: rgba(255, 255, 255, 0.4);
   max-width: 28ch;
   margin: 0 auto;
+}
+
+/* Scroll Indicator */
+.studio-scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: var(--std-font-mono);
+}
+
+.studio-scroll-chevron {
+  animation: studio-bounce 2s infinite;
+}
+
+@keyframes studio-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
+  60% { transform: translateY(-3px); }
+}
+
+/* Page Load Animation */
+.studio-hero-scale {
+  animation: studio-scale-in 1.2s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+
+@keyframes studio-scale-in {
+  from { opacity: 0; transform: scale(0.95) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 /* Reveal Animation - Slow, calm entry */
