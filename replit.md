@@ -1,17 +1,20 @@
-# Undone Standards
+# Undone
 
 ## Overview
 
-Undone Standards is a static marketing and product site for clinic-ready operational tools (aftercare guides for medical aesthetics). The site serves as an extension of the main Undone Design Studio brand, presenting downloadable/purchasable patient instruction guides with a premium, minimalist dark-mode aesthetic.
+Undone is a dual-system static site with:
+1. **Studio homepage** (`/`) — Gotham-inspired procedural hero showcasing operational clarity philosophy
+2. **Standards library** (`/standards/`) — Clinic-ready operational documents with future-proof taxonomy
 
 The project is a simple static HTML/CSS/JS site with no backend, database, or build system. It's designed for instant deployment on Replit or any static hosting platform.
 
 ## Recent Changes (December 2025)
 
-- **Studio-grade upgrade**: Revamped standards section to match Apple/Stripe visual quality
-- **CSS namespacing**: All standards pages use `.std-*` prefixed classes to avoid conflicts with homepage
-- **8-section landing page**: Anti-hero opening, identity reframe, process credibility, restraint section, visual proof with callouts, for/not-for manifesto, product cards, closer
-- **Product page structure**: Hero, product module, 4-item protocol accordion, 3 why-this-holds-up blocks, premium preview, 3-item FAQ
+- **Studio homepage redesign**: New Gotham-like procedural canvas hero with globe arc, orbital dot field, atmosphere rim glow, and lat/long grid lines
+- **Dual namespace architecture**: `.studio-*` for homepage, `.std-*` for standards — complete isolation prevents CSS leakage
+- **Canvas animation features**: IntersectionObserver pause when offscreen, prefers-reduced-motion support, mouse parallax (desktop only)
+- **7-section studio layout**: Hero, positioning, marketing, materials, filter, standards bridge, closer
+- **Standards library model**: 3 categories (Patient Communication, Patient Education, Clinic Operations)
 - **Server switch**: Changed from `serve` to `http-server` with `-c-1` flag to disable caching
 
 ## User Preferences
@@ -35,9 +38,9 @@ Preferred communication style: Simple, everyday language.
 - Atmospheric radial gradients on `.std-shell` wrapper
 
 **CSS Architecture:**
-- Homepage uses non-namespaced classes (`.container`, `.hero`, `.fade-in`, etc.)
+- Homepage uses `.studio-*` namespaced classes (`.studio-shell`, `.studio-hero`, `.studio-reveal`, etc.)
 - Standards pages use `.std-*` namespaced classes (`.std-shell`, `.std-reveal`, `.std-card`, etc.)
-- Both systems coexist in `/assets/styles.css` with clear section divider
+- Both systems coexist in `/assets/styles.css` with clear section dividers — complete namespace isolation
 
 **File Structure:**
 ```
@@ -50,7 +53,9 @@ Preferred communication style: Simple, everyday language.
 
 **JavaScript Patterns:**
 - IntersectionObserver for scroll-triggered reveal animations
-- Two animation systems: `.fade-in` for homepage, `.std-reveal` for standards
+- Two animation systems: `.studio-reveal` for homepage, `.std-reveal` for standards
+- Canvas-based procedural hero animation with IntersectionObserver pause when offscreen
+- Mouse parallax on desktop (pointer: fine media query)
 - Keyboard shortcuts (press 'G' to trigger checkout on product pages)
 - Accessible accordions with aria-expanded and keyboard navigation
 - Smooth scroll respecting prefers-reduced-motion
@@ -59,19 +64,25 @@ Preferred communication style: Simple, everyday language.
 ### Content Architecture
 
 **Page Types:**
-1. Homepage (`/index.html`) - Original design, uses `.container` class
-2. Standards landing (`/standards/index.html`) - Positioning page with 8 sections
+1. Homepage (`/index.html`) - Studio design with procedural canvas hero, uses `.studio-*` classes
+2. Standards landing (`/standards/index.html`) - Library model with 3 categories
 3. Product detail pages (`/standards/injectables-aftercare.html`, `/standards/laser-aftercare.html`)
+
+**Studio Homepage Sections:**
+1. Hero (procedural canvas with globe, orbital dots)
+2. Positioning (operational clarity)
+3. Marketing (infrastructure approach)
+4. Materials (work scope)
+5. Filter (for/not-for)
+6. Standards bridge (CTA to /standards/)
+7. Closer
 
 **Standards Landing Page Sections:**
 1. Anti-hero opening (disarm)
-2. Identity reframe (two-column)
-3. Process credibility (quiet flex)
-4. Restraint as the product
-5. Visual proof (editorialized with callouts)
-6. For/not-for manifesto filter
-7. Product entry cards (conversion)
-8. Closer with footer nav
+2. What this is (taxonomy intro)
+3. Product library (3 categories: Patient Communication, Patient Education, Clinic Operations)
+4. Evolution note (coming soon items)
+5. Closer with footer nav
 
 **Product Page Sections:**
 1. Hero with SYSTEM STANDARD eyebrow
