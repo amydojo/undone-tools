@@ -1,0 +1,330 @@
+you are a senior front-end engineer + design systems specialist.
+
+MISSION
+upgrade my “undone tools” site to studio-grade quality by revamping the standards landing + product pages.
+this is NOT a generic landing page. it is positioning and filtering disguised as a landing page.
+
+you will NOT consider the task complete unless all three files below have substantial visible changes and match the homepage quality:
+- /standards/index.html
+- /standards/injectables-aftercare.html
+- /standards/laser-aftercare.html
+
+────────────────────────────────
+NON-NEGOTIABLE EXECUTION RULES
+────────────────────────────────
+1) edit these files directly (no new routes, no new frameworks):
+   - /assets/styles.css
+   - /assets/app.js
+   - /standards/index.html
+   - /standards/injectables-aftercare.html
+   - /standards/laser-aftercare.html
+
+2) do NOT spend time changing /index.html except for shared nav link behavior if needed.
+
+3) do NOT depend on /attached_assets/.
+   do not move, reference, or require anything from that folder.
+
+4) do NOT change filenames or URLs.
+   these pages must remain exactly:
+   - /standards/
+   - /standards/injectables-aftercare.html
+   - /standards/laser-aftercare.html
+
+────────────────────────────────
+CRITICAL RELIABILITY REQUIREMENT
+────────────────────────────────
+ALL standards pages MUST use root-absolute asset paths:
+<link rel="stylesheet" href="/assets/styles.css">
+<script defer src="/assets/app.js"></script>
+
+failure to do this is an automatic fail.
+
+────────────────────────────────
+TONE + TYPOGRAPHY RULES
+────────────────────────────────
+- NO all-lowercase on standards/product pages.
+- Headings in Title Case.
+- Section labels in tracked UPPERCASE (letter-spacing).
+- Body copy in normal sentence case.
+- Voice: minimal, confident, clinical-systems.
+- No hype. No emojis. No pricing justification language.
+
+────────────────────────────────
+DISCOVERY FIRST (REQUIRED GATE)
+────────────────────────────────
+before writing any code, you MUST open and read these files and print a short “current state” summary:
+
+- /standards/index.html → 3 bullets
+- /standards/injectables-aftercare.html → 3 bullets
+- /standards/laser-aftercare.html → 3 bullets
+
+do not skip this. execution without discovery is a failure.
+
+────────────────────────────────
+CONCEPT SPINE (POSITIONING)
+────────────────────────────────
+the standards section is built around one idea:
+
+“this is not a template. it’s a standard.”
+
+the page should feel like:
+“this person is allergic to bullshit.”
+
+it must filter the wrong buyer out and make the right buyer feel seen.
+
+────────────────────────────────
+/standards/index.html — THE LANDING PAGE
+────────────────────────────────
+this page replaces generic “browse products” energy with a positioning sequence.
+
+BUILD THESE SECTIONS IN THIS EXACT ORDER:
+
+1) ANTI-HERO OPENING (DISARM)
+- no headline
+- no CTA
+- one centered, large, quiet sentence:
+  “Most aftercare handouts are written to protect clinics — not help patients.”
+- thin divider line
+- smaller line below:
+  “These were designed to actually be followed.”
+
+2) IDENTITY REFRAME (TWO-COLUMN)
+left:
+  “If you care how your clinic is perceived, you already know when something feels off.”
+right (sparse bullets):
+  - Cluttered instructions
+  - Overexplaining to cover liability
+  - Designs that look “Etsy-made”
+end with:
+  “This isn’t about aesthetics. It’s about trust.”
+
+3) QUIET FLEX (PROCESS CREDIBILITY)
+intro:
+  “These guides were built the same way clinical systems are built:”
+bullets:
+  - Reduce interpretation
+  - Remove emotional language
+  - Structure information by compliance windows
+  - Design for scanning, not reading
+
+4) RESTRAINT AS THE PRODUCT
+headline:
+  “What’s Intentionally Missing”
+bullets:
+  - No trend typography
+  - No pastel gradients
+  - No marketing language
+  - No filler copy to “sound friendly”
+closer:
+  “Patients don’t need reassurance. They need clarity.”
+
+5) VISUAL PROOF (EDITORIALIZED)
+- one premium faux preview frame (intentional typography + rules)
+- NOT a gray wireframe
+- annotate with three small callouts:
+  - “Timelines separated to prevent cross-day mistakes”
+  - “Language written to avoid panic responses”
+  - “Spacing designed for mobile screenshots”
+
+6) FOR / NOT FOR (MANIFESTO FILTER)
+two columns:
+
+THIS IS FOR CLINICS THAT:
+  - Want fewer follow-up questions
+  - Don’t want their brand tone softened
+  - Understand that less language = more compliance
+
+THIS IS NOT FOR CLINICS THAT:
+  - Want everything branded loud
+  - Rely on emojis or friendliness to build trust
+  - Need hand-holding templates
+
+7) PRODUCT ENTRY (CONVERSION — LATE)
+headline:
+  “Choose A Standard”
+
+two premium product cards linking to INTERNAL pages:
+
+Injectables Aftercare Guide
+- descriptor: “Botox + filler instructions, structured by timeline.”
+- status pill: “Available”
+- primary button: “Access The Guide”
+- secondary text link: “Preview Layout →”
+  link to /standards/injectables-aftercare.html#preview
+
+Laser Hair Removal Guide
+- descriptor: “Clear do’s and don’ts designed to reduce follow-up.”
+- status pill: “In Build” (unless live)
+- primary button: “View Standard”
+- secondary text link: “Preview Layout →”
+  link to /standards/laser-aftercare.html#preview
+
+8) CLOSER (REPLACES TESTIMONIALS)
+single line:
+  “This is what you give patients when you don’t want to explain yourself twice.”
+thin divider
+tiny footer nav:
+  - Studio → /
+  - Standards → /standards/ (active)
+
+TOP NAV
+- minimal nav matching homepage vibe
+- Studio
+- Standards (active on standards pages)
+
+────────────────────────────────
+PRODUCT PAGES (BOTH MUST MATCH IA)
+────────────────────────────────
+/standards/injectables-aftercare.html
+/standards/laser-aftercare.html
+
+STRUCTURE EXACTLY:
+
+(A) HERO + PRODUCT MODULE
+- eyebrow (tracked uppercase): SYSTEM STANDARD
+- title:
+  Injectables: “Injectables Aftercare. Built To Be Followed.”
+  Laser: “Laser Aftercare. Built For Compliance.”
+- one-sentence subhead (clinical, restrained)
+
+product module card:
+- Includes (4 bullets)
+- Format: “PDF + Canva”
+- Delivery: “External checkout opens Etsy.”
+- primary CTA: “Access The Guide”
+- secondary CTA: “Preview Layout”
+- helper line: “Press G to Open Checkout”
+
+(B) PROTOCOL / TIMELINE (CORE TOOL)
+accordion rows:
+- Day 0–1
+- Days 2–7
+- What’s Normal
+- Red Flags / Call The Clinic
+scan-friendly bullets only. no marketing language.
+
+(C) WHY THIS HOLDS UP
+three compact blocks:
+- Designed For Scanning
+- Neutral Language
+- Compliance Windows
+
+(D) PREMIUM PREVIEW
+- faux preview frame
+- id="preview"
+- preview button scrolls here
+
+(E) FAQ ACCORDION
+- How do I edit in Canva?
+- Can I print this?
+- Is this suitable for all clinics?
+
+────────────────────────────────
+CHECKOUT URL HANDLING (REQUIRED)
+────────────────────────────────
+each product page MUST include in <head>:
+<meta name="checkout-url" content="PASTE_ETSY_URL_HERE">
+
+for now:
+- injectables → https://undonebydesign.etsy.com
+- laser → https://undonebydesign.etsy.com
+
+────────────────────────────────
+/assets/styles.css — SAFE SYSTEM ADDITIONS
+────────────────────────────────
+- spacing scale (8px rhythm) via CSS variables
+- typography scale (hero, h2, body, label)
+- buttons: primary / secondary with focus-visible
+- one premium card style (hairline border + soft wash)
+- status pill component
+- dividers (hairline)
+- section padding consistent with homepage
+- mobile-first, no cramped stacks
+
+IMPORTANT:
+- namespace all standards styles (e.g. .std-*)
+- do NOT break homepage styling
+
+────────────────────────────────
+/assets/app.js — INTERACTION (LIGHTWEIGHT)
+────────────────────────────────
+1) reveal animations
+- opacity + small translate
+- use IntersectionObserver
+- respect prefers-reduced-motion (instant reveal)
+
+2) accessible accordions
+- aria-expanded
+- role="region"
+- keyboard: Enter/Space toggle
+- ArrowUp/ArrowDown moves between headers WITHIN same accordion group only
+
+3) smooth scroll
+- “Preview Layout” scrolls to #preview
+- disable smooth if prefers-reduced-motion
+
+4) checkout wiring
+- read meta[name="checkout-url"]
+- if missing or placeholder:
+  - disable primary CTA (aria-disabled)
+  - hide helper line
+  - console.warn("[undone] missing checkout-url meta")
+- if present:
+  - CTA opens checkout in new tab (noopener,noreferrer)
+  - “g” key opens checkout
+  - ignore keypress if typing in input/textarea/contenteditable
+
+────────────────────────────────
+AFTER CODING — REQUIRED CHECKLIST OUTPUT
+────────────────────────────────
+print this with ✅ / ❌:
+
+/standards/index.html
+- anti-hero opening
+- identity reframe
+- quiet flex
+- restraint section
+- visual proof
+- for/not-for
+- product entry cards
+- closer
+- nav active state
+
+/standards/injectables-aftercare.html
+- hero
+- product module
+- protocol accordion
+- why-this-holds-up
+- preview
+- faq
+- checkout wiring
+- “g” shortcut
+
+/standards/laser-aftercare.html
+- hero
+- product module
+- protocol accordion
+- why-this-holds-up
+- preview
+- faq
+- checkout wiring
+- “g” shortcut
+
+────────────────────────────────
+FINAL VALIDATION (NON-NEGOTIABLE)
+────────────────────────────────
+confirm:
+- homepage unchanged pixel-for-pixel
+- no console errors
+- no dependency on /attached_assets/
+- root-absolute assets load on nested pages
+- mobile layout feels premium
+- dark atmospheric background preserved
+- subtle purple accent used sparingly
+
+END STATE
+the standards section should feel like:
+
+“oh — this person thinks like a system designer, not a seller.”
+
+execute now.

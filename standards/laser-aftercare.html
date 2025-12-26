@@ -10,35 +10,37 @@
 <body class="std-body">
   <div class="std-shell">
     <div class="std-container">
-      <header style="padding: 40px 0; display: flex; justify-content: space-between; align-items: center;">
-        <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
-          <div style="width: 10px; height: 10px; background: #7b6cff; border-radius: 50%; box-shadow: 0 0 12px #7b6cff;"></div>
-          <span style="font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; font-size: 14px; color: #fff;">Undone</span>
+      <header class="std-header">
+        <a href="/" class="std-brand">
+          <div class="std-orb"></div>
+          <span class="std-brand-name">Undone</span>
         </a>
-        <nav style="display: flex; gap: 32px;">
-          <a href="/" style="font-size: 14px; color: rgba(255,255,255,0.4);">Studio</a>
-          <a href="/standards/" style="font-size: 14px; color: #fff;">Standards</a>
+        <nav class="std-nav">
+          <a href="/">Studio</a>
+          <a href="/standards/" class="active">Standards</a>
         </nav>
       </header>
 
       <main>
-        <section class="std-section std-reveal std-grid-2" style="align-items: center;">
+        <section class="std-section std-reveal std-grid-2" style="align-items: center; padding-top: 80px;">
           <div>
             <span class="std-eyebrow">SYSTEM STANDARD</span>
             <h1 class="std-h1">Laser Aftercare. Built For Compliance.</h1>
             <p class="std-p">Clear protocol for laser hair removal and skin treatments. Zero friction instructions.</p>
           </div>
-          <div class="std-card">
-            <ul style="list-style: none; margin-bottom: 32px;">
-              <li class="std-p" style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--std-border); padding: 12px 0;"><span>Clinical PDF Guide</span> <span style="color: #fff;">Included</span></li>
-              <li class="std-p" style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--std-border); padding: 12px 0;"><span>Canva Source File</span> <span style="color: #fff;">Included</span></li>
-              <li class="std-p" style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--std-border); padding: 12px 0;"><span>Print-Ready Setup</span> <span style="color: #fff;">Included</span></li>
-              <li class="std-p" style="display: flex; justify-content: space-between; padding: 12px 0;"><span>Implementation Guide</span> <span style="color: #fff;">Included</span></li>
+          <div class="std-card std-product-module">
+            <ul class="std-module-list">
+              <li><span>Clinical PDF Guide</span><span>Included</span></li>
+              <li><span>Canva Source File</span><span>Included</span></li>
+              <li><span>Print-Ready Setup</span><span>Included</span></li>
+              <li><span>Implementation Guide</span><span>Included</span></li>
             </ul>
-            <div style="text-align: center;">
+            <p class="std-module-format">Format: PDF + Canva</p>
+            <p class="std-module-delivery">Delivery: External checkout opens Etsy.</p>
+            <div class="std-module-actions">
               <button class="std-btn std-btn-primary" style="width: 100%;" data-buy>Access The Guide</button>
               <a href="#preview" class="std-btn std-btn-secondary" style="width: 100%; margin-top: 12px;">Preview Layout</a>
-              <span class="std-checkout-helper" style="display: block; font-size: 12px; color: var(--std-text-tertiary); margin-top: 20px;">External checkout opens Etsy. Press G to Open Checkout.</span>
+              <span class="std-checkout-helper">Press G to Open Checkout</span>
             </div>
           </div>
         </section>
@@ -48,61 +50,110 @@
         <section class="std-section std-reveal">
           <span class="std-eyebrow">CORE TOOL</span>
           <h2 class="std-h2">Clinical Protocol</h2>
-          <div class="std-accordion-group" style="margin-top: 48px;">
-            <div class="std-accordion-item" aria-expanded="true">
-              <button class="std-accordion-header">Day 0–1 <span>+</span></button>
-              <div class="std-accordion-content">
-                <ul style="list-style: none; padding: 0; display: grid; gap: 12px;">
-                  <li class="std-p">→ Keep treated area cool and clean</li>
-                  <li class="std-p">→ Avoid hot showers or exercise</li>
-                  <li class="std-p">→ Use recommended soothing gels only</li>
+          <div class="std-accordion-group" role="tablist">
+            <div class="std-accordion-item" aria-expanded="true" role="region">
+              <button class="std-accordion-header" aria-controls="panel-day01">Day 0–1 <span class="std-accordion-icon">+</span></button>
+              <div class="std-accordion-content" id="panel-day01">
+                <ul class="std-protocol-list">
+                  <li>Keep treated area cool and clean</li>
+                  <li>Avoid hot showers or exercise for 24 hours</li>
+                  <li>Use recommended soothing gels only</li>
+                  <li>Wear loose, breathable clothing over treated area</li>
                 </ul>
               </div>
             </div>
-            <div class="std-accordion-item">
-              <button class="std-accordion-header">Days 2–7 <span>+</span></button>
-              <div class="std-accordion-content">
-                <ul style="list-style: none; padding: 0; display: grid; gap: 12px;">
-                  <li class="std-p">→ Strict sun protection (SPF 30+)</li>
-                  <li class="std-p">→ Do not scrub or exfoliate area</li>
+            <div class="std-accordion-item" role="region">
+              <button class="std-accordion-header" aria-controls="panel-day27">Days 2–7 <span class="std-accordion-icon">+</span></button>
+              <div class="std-accordion-content" id="panel-day27">
+                <ul class="std-protocol-list">
+                  <li>Strict sun protection (SPF 30+ minimum)</li>
+                  <li>Do not scrub or exfoliate treated area</li>
+                  <li>Avoid active topicals (Retinol, AHA, BHA)</li>
+                  <li>Let hair shed naturally; do not pluck</li>
                 </ul>
               </div>
+            </div>
+            <div class="std-accordion-item" role="region">
+              <button class="std-accordion-header" aria-controls="panel-normal">What's Normal <span class="std-accordion-icon">+</span></button>
+              <div class="std-accordion-content" id="panel-normal">
+                <ul class="std-protocol-list">
+                  <li>Redness and mild swelling (erythema)</li>
+                  <li>Follicular edema (small bumps around follicles)</li>
+                  <li>Sensation similar to a mild sunburn</li>
+                  <li>Hair shedding 1–3 weeks post-treatment</li>
+                </ul>
+              </div>
+            </div>
+            <div class="std-accordion-item" role="region">
+              <button class="std-accordion-header" aria-controls="panel-redflags">Red Flags / Call The Clinic <span class="std-accordion-icon">+</span></button>
+              <div class="std-accordion-content" id="panel-redflags">
+                <ul class="std-protocol-list">
+                  <li>Blistering or skin crusting</li>
+                  <li>Persistent intense pain beyond 48 hours</li>
+                  <li>Severe pigment changes (darkening or lightening)</li>
+                  <li>Signs of infection (pus, spreading redness)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="std-section std-reveal">
+          <div class="std-why-grid">
+            <div class="std-why-block">
+              <h3 class="std-h2" style="font-size: 18px;">Designed For Scanning</h3>
+              <p class="std-p">Visual hierarchy designed for post-treatment patients to find answers fast.</p>
+            </div>
+            <div class="std-why-block">
+              <h3 class="std-h2" style="font-size: 18px;">Neutral Language</h3>
+              <p class="std-p">Objective instructions that reinforce your clinical authority.</p>
+            </div>
+            <div class="std-why-block">
+              <h3 class="std-h2" style="font-size: 18px;">Compliance Windows</h3>
+              <p class="std-p">Critical safety milestones mapped to the first 7 days of healing.</p>
             </div>
           </div>
         </section>
 
         <section id="preview" class="std-section std-reveal">
           <span class="std-eyebrow">PREMIUM PREVIEW</span>
-          <div class="std-preview-frame">
-            <div style="max-width: 360px; margin: 0 auto; background: #fff; color: #000; padding: 48px; text-align: left; box-shadow: 0 40px 100px rgba(0,0,0,0.5);">
-              <div style="font-size: 10px; font-weight: 800; text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 8px; margin-bottom: 24px; letter-spacing: 0.1em;">Standard 02</div>
-              <div style="font-size: 26px; font-weight: 700; line-height: 1.1; margin-bottom: 32px;">Laser<br>Aftercare</div>
-              <div style="height: 1px; background: #eee; margin-bottom: 24px;"></div>
-              <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px; color: #666;">SPF Rule</div>
-              <div style="width: 100%; height: 7px; background: #f0f0f0; margin-bottom: 6px;"></div>
-              <div style="width: 70%; height: 7px; background: #f0f0f0;"></div>
+          <div class="std-preview-frame" style="text-align: center;">
+            <div class="std-preview-artifact">
+              <div class="std-artifact-header">Standard 02</div>
+              <div class="std-artifact-title">Laser<br>Aftercare</div>
+              <div class="std-artifact-rule"></div>
+              <div class="std-artifact-section">SPF Rule</div>
+              <div class="std-artifact-bar" style="width: 100%;"></div>
+              <div class="std-artifact-bar" style="width: 70%;"></div>
+              <div class="std-artifact-section" style="margin-top: 20px;">Restrictions</div>
+              <div class="std-artifact-bar" style="width: 100%;"></div>
+              <div class="std-artifact-bar" style="width: 85%;"></div>
             </div>
           </div>
         </section>
 
         <section class="std-section std-reveal">
           <span class="std-eyebrow">FAQ</span>
-          <div class="std-accordion-group">
-            <div class="std-accordion-item">
-              <button class="std-accordion-header">How do I edit in Canva? <span>+</span></button>
-              <div class="std-accordion-content"><p class="std-p">Download includes a template link. Customize for your hardware in minutes.</p></div>
+          <div class="std-accordion-group" role="tablist">
+            <div class="std-accordion-item" role="region">
+              <button class="std-accordion-header">How do I edit in Canva? <span class="std-accordion-icon">+</span></button>
+              <div class="std-accordion-content"><p class="std-p">Download includes a Canva template link. Customize for your hardware in minutes.</p></div>
             </div>
-            <div class="std-accordion-item">
-              <button class="std-accordion-header">Can I print this? <span>+</span></button>
-              <div class="std-accordion-content"><p class="std-p">Optimized for digital distribution or physical handouts.</p></div>
+            <div class="std-accordion-item" role="region">
+              <button class="std-accordion-header">Can I print this? <span class="std-accordion-icon">+</span></button>
+              <div class="std-accordion-content"><p class="std-p">Optimized for digital distribution via SMS/email or professional print handouts.</p></div>
+            </div>
+            <div class="std-accordion-item" role="region">
+              <button class="std-accordion-header">Is this suitable for all clinics? <span class="std-accordion-icon">+</span></button>
+              <div class="std-accordion-content"><p class="std-p">Covers standard laser hair removal and IPL protocols. Fully editable for specific technology needs.</p></div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer style="padding: 100px 0 60px; border-top: 1px solid var(--std-border); display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 12px; color: var(--std-text-tertiary);">Press G to Open Checkout</span>
-        <nav><a href="/" style="color: var(--std-text-tertiary); font-size: 12px;">Undone Studio</a></nav>
+      <footer class="std-page-footer">
+        <span>Press G to Open Checkout</span>
+        <nav><a href="/">Undone Studio</a></nav>
       </footer>
     </div>
   </div>
