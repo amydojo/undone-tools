@@ -1,0 +1,122 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "-apple-system",
+      "count": 66
+    },
+    {
+      "family": "SF Pro Display",
+      "count": 66
+    },
+    {
+      "family": "sans-serif",
+      "count": 66
+    },
+    {
+      "family": "BlinkMacSystemFont",
+      "count": 58
+    },
+    {
+      "family": "SF Pro Text",
+      "count": 58
+    },
+    {
+      "family": "Helvetica Neue",
+      "count": 58
+    },
+    {
+      "family": "Helvetica",
+      "count": 58
+    },
+    {
+      "family": "Arial",
+      "count": 58
+    }
+  ],
+  "colors": {
+    "primary": "#FF6B35",
+    "accent": "#433864",
+    "background": "#000000",
+    "textPrimary": "#000000",
+    "link": "#433864"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "-apple-system",
+      "heading": "-apple-system"
+    },
+    "fontStacks": {
+      "body": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans-serif"
+      ],
+      "heading": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "SF Pro Display",
+        "SF Pro Text",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "120px",
+      "h2": "80px",
+      "body": "28px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 8,
+    "borderRadius": "0px"
+  },
+  "components": {},
+  "images": {
+    "logo": "File saved at: attached_assets/logo.svg",
+    "favicon": null,
+    "ogImage": null
+  },
+  "__framework_hints": [],
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Logo rejected: Red flags detected (small square icon). Strong indicators: in header, header location, visible, top-left position, highest logo on page, reasonable size, small square icon (likely UI icon, heavy penalty), SVG format. Score: 78 (clear winner by 78 points)",
+    "confidence": 0.9,
+    "rejected": true
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "secondary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "LLM failed"
+    },
+    "confidence": 0
+  },
+  "confidence": {
+    "buttons": 0,
+    "colors": 0,
+    "overall": 0
+  }
+}
