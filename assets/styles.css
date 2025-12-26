@@ -54,6 +54,7 @@
   justify-content: space-between;
   align-items: center;
   pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
 }
 
 .studio-header > * {
@@ -62,7 +63,7 @@
 
 @media (max-width: 1023px) {
   .studio-header {
-    padding: 32px 24px;
+    padding: 24px;
   }
 }
 
@@ -79,11 +80,12 @@
   background: #fff;
   border-radius: 50%;
   opacity: 0.9;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
 .studio-brand-name {
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-size: 11px;
   color: #fff;
