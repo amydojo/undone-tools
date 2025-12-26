@@ -6,7 +6,8 @@
   --std-font-sans: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --std-bg: #05050a;
   --std-accent: #7b6cff;
-  --std-border: rgba(255, 255, 255, 0.08);
+  --std-border: rgba(255, 255, 255, 0.1);
+  --std-panel-bg: rgba(255, 255, 255, 0.04);
   --std-text-main: rgba(255, 255, 255, 0.9);
   --std-text-muted: rgba(255, 255, 255, 0.5);
   --std-text-tertiary: rgba(255, 255, 255, 0.3);
@@ -508,49 +509,95 @@
   border-radius: 50%;
 }
 
-/* Cards */
-.std-card {
-  padding: 48px;
-  background: rgba(255, 255, 255, 0.02);
+/* Standards Index (Rebuilt) */
+.std-index-container {
   border: 1px solid var(--std-border);
   border-radius: 12px;
+  background: var(--std-panel-bg);
+  overflow: hidden;
 }
 
+.std-index-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  border-bottom: 1px solid var(--std-border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.std-index-row:last-child {
+  border-bottom: none;
+}
+
+.std-index-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+  transform: translateY(-1px);
+}
+
+.std-index-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.std-index-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.std-index-desc {
+  font-size: 14px;
+  color: var(--std-text-muted);
+}
+
+.std-index-arrow {
+  color: var(--std-text-tertiary);
+  transition: transform 0.3s ease;
+}
+
+.std-index-row:hover .std-index-arrow {
+  transform: translateX(4px);
+  color: #fff;
+}
+
+/* Status Pills */
+.std-pill {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.std-pill.active {
+  background: rgba(123, 108, 255, 0.1);
+  color: var(--std-accent);
+}
+
+.std-pill.building {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--std-text-muted);
+}
+
+.std-pill.queued {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--std-text-tertiary);
+}
+
+/* Restraint Card */
 .std-restraint-card {
   padding: 64px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--std-panel-bg);
   border: 1px solid var(--std-border);
   border-radius: 16px;
 }
 
 @media (max-width: 600px) { .std-restraint-card { padding: 40px 24px; } }
-
-.std-library-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-@media (max-width: 900px) { .std-library-grid { grid-template-columns: 1fr; } }
-
-.std-library-card {
-  padding: 32px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--std-border);
-  border-radius: 8px;
-  transition: border-color 0.4s ease;
-}
-
-.std-library-card:hover { border-color: var(--std-accent); }
-
-.std-library-title {
-  font-size: 18px;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 12px;
-}
-
-.std-muted { color: var(--std-text-muted); font-size: 14px; }
 
 /* Visual Proof Frame */
 .std-preview-frame {
@@ -589,15 +636,11 @@
 }
 
 /* Product Cards */
-.std-pill {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 10px;
-  background: rgba(123, 108, 255, 0.1);
-  color: var(--std-accent);
-  border-radius: 100px;
-  font-weight: 600;
+.std-card {
+  padding: 48px;
+  background: var(--std-panel-bg);
+  border: 1px solid var(--std-border);
+  border-radius: 12px;
 }
 
 .std-product-header {
