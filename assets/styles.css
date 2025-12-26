@@ -4,7 +4,6 @@
 
 :root {
   --std-font-sans: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --std-font-serif: "Georgia", "Times New Roman", serif;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -42,7 +41,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000;
   padding: 40px;
   display: flex;
   justify-content: space-between;
@@ -110,11 +109,21 @@
   overflow: hidden;
   text-align: center;
   background: #000;
+  z-index: 1;
+}
+
+#studioHeroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
 .studio-hero-content {
   position: relative;
-  z-index: 20;
+  z-index: 100;
   width: 100%;
   max-width: 1200px;
   padding: 0 40px;
@@ -138,29 +147,35 @@
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1;
-  color: #fff;
-  opacity: 1; /* Forced visibility to debug */
-  transform: translateY(0); /* Reset transform to debug */
-  white-space: normal;
+  color: #fff !important;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
   width: 100%;
   left: 0;
   right: 0;
-  display: none; /* Controlled by JS, but first item will be active */
+  visibility: hidden;
 }
 
 .cycler-item.active {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+.cycler-item.exit {
+  opacity: 0 !important;
+  transform: translateY(-20px) !important;
+  visibility: visible !important;
 }
 
 .studio-micro {
   font-size: clamp(16px, 2.5vw, 22px);
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5) !important;
   max-width: 40ch;
   margin: 0 auto;
   letter-spacing: -0.01em;
-  opacity: 1;
 }
 
 /* Scroll Indicator */
@@ -169,7 +184,7 @@
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 5;
+  z-index: 10;
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -183,7 +198,7 @@
   60% { transform: translateY(-5px); }
 }
 
-/* Reveal Animation - Slow, calm entry */
+/* Reveal Animation */
 .studio-reveal {
   opacity: 0;
   transform: translateY(12px);
@@ -195,11 +210,7 @@
   transform: translateY(0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .studio-reveal { opacity: 1; transform: none; transition: none; }
-}
-
-/* Studio Sections - Low density, high spacing */
+/* Studio Sections */
 .studio-section {
   padding: 240px 0;
 }
@@ -230,7 +241,7 @@
   margin: 0 auto;
 }
 
-/* Materials - Simplified grid */
+/* Materials */
 .studio-materials-grid {
   list-style: none;
   padding: 0;
@@ -255,7 +266,7 @@
   font-style: italic;
 }
 
-/* Filter - Calm, no theatrical elements */
+/* Filter */
 .studio-filter-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
