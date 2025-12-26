@@ -138,22 +138,25 @@
 }
 
 .hero-reveal-text {
-  font-size: clamp(40px, 10vw, 110px);
+  font-size: clamp(32px, 9vw, 110px);
   font-weight: 500;
   letter-spacing: -0.04em;
-  line-height: 1;
+  line-height: 1.1;
   color: #fff;
   margin-bottom: 24px;
   display: flex;
   justify-content: center;
   align-items: baseline;
-  gap: 0.2em;
+  flex-wrap: wrap;
+  gap: 0.15em 0.25em;
 }
 
 .hero-word {
   opacity: 0.6;
   filter: blur(4px);
   letter-spacing: 0.01em;
+  display: inline-block;
+  white-space: nowrap;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
               filter 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
               letter-spacing 1.2s cubic-bezier(0.4, 0, 0.2, 1);
