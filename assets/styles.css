@@ -639,3 +639,72 @@ header nav a:hover, header nav a.active { color: #fff; }
 .std-page-footer span { font-size: 11px; color: var(--std-text-tertiary); font-family: var(--std-font-mono); }
 .std-page-footer a { font-size: 12px; color: var(--std-text-tertiary); }
 .std-page-footer a:hover { color: #fff; }
+
+/* Standards Library Hub - Typography */
+.std-label {
+  font-family: var(--std-font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--std-accent);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.std-copy {
+  color: var(--std-text-secondary);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.std-muted {
+  font-size: 14px;
+  color: var(--std-text-tertiary);
+  margin: 0;
+}
+
+/* Library Model Grid */
+.std-library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.std-library-card {
+  padding: 32px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+  border: 1px solid var(--std-border);
+  border-radius: 12px;
+}
+
+.std-library-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+/* Status Pill (alias) */
+.std-pill {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-family: var(--std-font-mono);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(255,255,255,0.04);
+  color: var(--std-text-tertiary);
+  border: 1px solid var(--std-border);
+  white-space: nowrap;
+}
+
+/* Evolution Note */
+.std-evolution-note {
+  font-size: 11px;
+  color: var(--std-text-tertiary);
+  font-family: var(--std-font-mono);
+  letter-spacing: 0.05em;
+  margin-top: 24px;
+}

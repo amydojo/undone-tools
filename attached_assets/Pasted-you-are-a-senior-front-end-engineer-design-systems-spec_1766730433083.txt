@@ -1,0 +1,169 @@
+you are a senior front-end engineer + design systems specialist.
+
+mission
+redesign ONLY the standards hub landing page to feel like a system library (not a template SaaS page) and to future-proof the catalog for ANY clinical assets (aftercare, supplements, emails, brochures, intake scripts, patient education, etc.).
+
+the page must sell the SYSTEM and position the products as “standards” (a growing library of decisions), not isolated templates.
+
+scope (strict)
+- edit these files directly (no new routes, no frameworks):
+  - /assets/styles.css
+  - /assets/app.js
+  - /standards/index.html
+- do NOT change /index.html (homepage) at all.
+- do NOT change product pages in this pass.
+- do NOT depend on /attached_assets/
+- do NOT change filenames/urls. keep:
+  - /standards/
+
+critical reliability
+- standards page MUST use root-absolute asset paths:
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script defer src="/assets/app.js"></script>
+
+tone + typography rules (non-negotiable)
+- no all-lowercase.
+- headings in Title Case
+- section labels in tracked UPPERCASE (letter-spacing)
+- body copy in sentence case
+- voice: minimal, confident, clinical-systems. no hype, no emojis, no pricing justification.
+
+discovery first (completion gate)
+before coding:
+1) open/read /standards/index.html
+2) print 5 bullets: what exists now, what’s broken/mid, what is staying, what must change, and the new structure you’ll implement.
+
+design goal (vibe)
+- “system library” energy: calm, controlled, inevitable
+- less “landing page,” more “operational documentation”
+- high whitespace, strong hierarchy, restrained accents
+- avoid “product grid hero” vibe
+- every element should feel functional, not decorative
+
+concept spine
+“this is not a template. it’s a standard.”
+BUT do not put that exact line as the first headline. earn it through sequencing.
+
+page structure (build exactly in this order)
+A) TOP NAV (minimal)
+- left: UNDONE (wordmark)
+- right: Studio (/) and Standards (active)
+- keep premium spacing, no big hero nav
+
+B) OPENING STATEMENT (anti-hero, no CTA)
+centered, large, quiet:
+“Most aftercare handouts are written to protect clinics — not help patients.”
+thin divider line
+smaller line below:
+“These were designed to actually be followed.”
+
+C) WHAT THIS IS (define the SYSTEM, not the files)
+two-column block:
+left (short paragraph, 2–3 lines max):
+“Undone Standards are operational documents built to reduce interpretation, increase compliance, and protect trust.”
+right (3 bullets max):
+- Structured by decision windows
+- Designed for scanning
+- Neutral language by default
+
+D) LIBRARY MODEL (future-proof taxonomy)
+this is the key: show the framework that scales beyond aftercare.
+create a “Standards Library” section with 3 categories (cards or rows):
+1) Patient Communication
+   examples (small, muted): Aftercare, Follow-ups, Reminders
+2) Patient Education
+   examples: Supplement Protocols, Treatment Explainers, FAQ Sheets
+3) Clinic Operations
+   examples: Intake Scripts, Consent Flows, Staff References
+keep these as “examples,” not clickable (yet). do NOT create new pages.
+
+E) QUALITY FILTER (restraint as authority)
+headline:
+“What’s Intentionally Missing”
+bullets:
+- No trend typography
+- No pastel gradients
+- No marketing language
+- No filler copy to “sound friendly”
+closer line:
+“Patients don’t need reassurance. They need clarity.”
+
+F) VISUAL PROOF (editorialized preview frame)
+make a premium “preview frame” (faux layout) that looks intentional (not wireframe).
+include 3 short callouts:
+- “Timelines separated to prevent cross-day mistakes”
+- “Language written to avoid panic responses”
+- “Spacing designed for mobile screenshots”
+
+G) WHO IT’S FOR / NOT FOR (manifesto filter)
+two columns:
+THIS IS FOR CLINICS THAT:
+- Want fewer follow-up questions
+- Don’t want their brand tone softened
+- Understand that less language = more compliance
+THIS IS NOT FOR CLINICS THAT:
+- Want everything branded loud
+- Rely on emojis or friendliness to build trust
+- Need hand-holding templates
+
+H) THE CURRENT RELEASES (product entry, late)
+headline:
+“Current Standards”
+show exactly 2 premium product cards linking to existing pages:
+- Injectables Aftercare Guide -> /standards/injectables-aftercare.html
+  descriptor: “Botox + filler instructions, structured by timeline.”
+  status pill: “Available”
+  primary button: “View Standard”
+  secondary text link: “Preview Layout →” (goes to product page and auto-scrolls to #preview)
+- Laser Hair Removal Guide -> /standards/laser-aftercare.html
+  descriptor: “Clear do’s and don’ts designed to reduce follow-up.”
+  status pill: “In Build”
+  primary button: “View Standard”
+  secondary text link: “Preview Layout →”
+
+I) CLOSER (replaces testimonials)
+single line centered:
+“This is what you give patients when you don’t want to explain yourself twice.”
+thin divider
+small footer nav:
+- Studio -> /
+- Standards -> /standards/ (active)
+add one future-proof line (tiny, muted) somewhere near footer:
+“Standards are released as the system evolves.”
+
+interaction requirements
+- “Preview Layout →” links must append #preview to the destination (e.g., /standards/injectables-aftercare.html#preview)
+- implement subtle reveal animations via IntersectionObserver (only for .std-reveal)
+- respect prefers-reduced-motion (no transforms, instant visibility)
+
+css requirements (/assets/styles.css)
+implement a namespaced standards system that won’t break the homepage:
+- create CSS variables for spacing (8px rhythm) and typography scale
+- .std-wrap container max-width, padding, and vertical rhythm
+- .std-label (tracked uppercase)
+- .std-h1, .std-h2, .std-body, .std-muted
+- premium card component (.std-card) with hairline border + soft gradient wash
+- status pill component (.std-pill)
+- divider component (.std-divider)
+- buttons (.std-btn primary/secondary) with hover/active/focus-visible
+- responsive: mobile-first, no cramped stacks, no horizontal scroll
+
+js requirements (/assets/app.js)
+- add reveal observer for .std-reveal
+- smooth scroll for hash navigation only when reduced motion is off
+- do not introduce console errors
+
+quality bar (non-negotiable)
+- the page must feel like a calm, high-authority system library, not a product landing page.
+- fewer words, stronger hierarchy.
+- if any element feels decorative, remove it.
+- keep the dark atmospheric background and use the purple accent sparingly.
+
+final validation checklist (print at end)
+1) list files changed
+2) confirm /standards/ loads with correct styles and no console errors
+3) confirm product links work and “Preview Layout” jumps to #preview on product pages
+4) confirm reduced-motion behavior is respected
+5) confirm no changes were made to /index.html
+
+execute now.
