@@ -1,0 +1,135 @@
+You are redesigning the UNDONE homepage.
+
+Objective:
+Rebuild the homepage so it feels like a standards system, not a SaaS website.
+The tone should match the product pages: restrained, clinical, authoritative, and intentionally filtering.
+
+Do NOT rewrite or paraphrase copy.
+All homepage copy must be preserved word-for-word exactly as provided.
+
+Design Constraints:
+- Keep the existing background, glow, gradients, and color tokens already used on the site
+- No SaaS card layouts
+- No feature grids
+- No iconography
+- No “brand values” sections
+- No conversion language
+- No CTAs disguised as buttons except where explicitly included
+- Typography and spacing should mirror the product pages, not the previous homepage
+
+Navigation:
+Top nav only:
+- UNDONE (logo / home)
+- Studio
+- Standards
+
+---
+
+HOMEPAGE STRUCTURE (EXACT ORDER)
+
+SECTION 1 — Cold Open (Hero)
+- Full viewport height
+- Centered vertically and horizontally
+- Large, quiet typography
+- No CTA
+- Copy (exact, line breaks preserved):
+
+“Most clinical tools fail because they’re designed to be explained.
+
+These aren’t.”
+
+Add generous negative space before and after.
+This section should feel confrontational through restraint.
+
+---
+
+SECTION 2 — The Violation
+- Narrow max-width column
+- Left-aligned
+- Comfortable line height
+- Copy (exact):
+
+“Clinics don’t need more templates.
+They need fewer decisions.
+
+Every extra word increases risk.
+Every unclear instruction creates follow-up.
+
+Most systems ignore this.”
+
+No visual embellishments. Let the copy breathe.
+
+---
+
+SECTION 3 — The Standard
+- Slightly wider column than Section 2
+- Treated as a declarative block, not a feature list
+- Copy (exact):
+
+“This is not a library. It’s a standard.
+
+Built for compliance, not conversion.
+Structured by time, not preference.
+Written to reduce interpretation.
+Designed to survive real clinic use.”
+
+Spacing between lines should feel intentional and measured.
+
+---
+
+SECTION 4 — Product Index Label
+- Small uppercase label only
+- Copy:
+
+“Standards”
+
+This should visually cue a transition from philosophy → artifacts.
+
+---
+
+SECTION 5 — Product Index (IMPLEMENT CODE BELOW)
+Insert the provided Product Index HTML/Tailwind section exactly as written.
+Do not convert to cards.
+Do not add shadows, badges, or marketing UI.
+Treat this as an internal registry, not a storefront.
+
+---
+
+SECTION 6 — Manifesto (Homepage Cut)
+- Two-column on desktop, stacked on mobile
+- Copy (exact):
+
+“UNDONE is for clinics that:
+• Don’t want to explain themselves twice
+• Value clarity over friendliness
+• Understand that restraint builds trust
+
+It’s not for everyone.
+That’s intentional.”
+
+Bullets should feel editorial, not decorative.
+
+---
+
+SECTION 7 — Closer
+- Quiet, single paragraph
+- No CTA emphasis
+- Copy (exact):
+
+“Operational tools for clinics that already know what good looks like.”
+
+End the page without forcing action.
+
+---
+
+Technical Notes:
+- Mobile-first
+- Tailwind only
+- Preserve existing font stack
+- Preserve existing background wrapper so glow/gradients feel native
+- Spacing should favor emptiness over density
+- The page should feel confident enough to end early
+
+Output:
+Replace the existing homepage entirely.
+Return clean, readable HTML with Tailwind classes.
