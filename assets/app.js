@@ -40,36 +40,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Accessible Accordions
   document.querySelectorAll('.std-accordion-header').forEach(header => {
-    // Click handler
     header.addEventListener('click', () => {
       const item = header.closest('.std-accordion-item');
       const isExpanded = item.getAttribute('aria-expanded') === 'true';
-      
-      // Close others in same group
       const group = item.closest('.std-accordion-group');
       if (group) {
         group.querySelectorAll('.std-accordion-item').forEach(i => {
           i.setAttribute('aria-expanded', 'false');
         });
       }
-
       item.setAttribute('aria-expanded', String(!isExpanded));
     });
 
-    // Keyboard navigation (Enter/Space toggle, Arrow keys navigate)
     header.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         header.click();
         return;
       }
-
       const group = header.closest('.std-accordion-group');
       if (!group) return;
-
       const headers = Array.from(group.querySelectorAll('.std-accordion-header'));
       const index = headers.indexOf(header);
-
       if (e.key === 'ArrowDown') {
         e.preventDefault();
         headers[(index + 1) % headers.length].focus();
@@ -85,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
-      
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
@@ -102,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const helperText = document.querySelector('.std-checkout-helper');
 
   if (!checkoutUrl || checkoutUrl.includes('PASTE') || checkoutUrl.trim() === '') {
-    // Disable checkout if URL is missing or placeholder
     if (buyButton) {
       buyButton.setAttribute('aria-disabled', 'true');
       buyButton.style.opacity = '0.5';
@@ -114,16 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     console.warn('[undone] missing checkout-url meta');
   } else {
-    // Wire up checkout
     const openCheckout = () => {
       window.open(checkoutUrl, '_blank', 'noopener,noreferrer');
     };
-
     if (buyButton) {
       buyButton.addEventListener('click', openCheckout);
     }
-
-    // "G" key shortcut (ignore when typing)
     document.addEventListener('keydown', (e) => {
       if (e.key.toLowerCase() === 'g') {
         const active = document.activeElement;
@@ -131,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
           active.tagName === 'INPUT' || 
           active.tagName === 'TEXTAREA' || 
           active.isContentEditable;
-        
         if (!isEditable) {
           openCheckout();
         }
@@ -153,18 +138,17 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
       studioRevealElements.forEach(el => studioObserver.observe(el));
     }
   }
-
-  // Studio Hero Canvas (Quiet ambient noise/particles)
-  initStudioHeroCanvas();
 
   // Rotating Headlines
   const cyclerItems = document.querySelectorAll('.cycler-item');
   if (cyclerItems.length) {
     let currentIndex = 0;
+    // Initial state: ensure first item is active
+    cyclerItems[0].classList.add('active');
+    
     setInterval(() => {
       const current = cyclerItems[currentIndex];
       current.classList.remove('active');
@@ -176,17 +160,18 @@ document.addEventListener('DOMContentLoaded', () => {
       next.classList.remove('exit');
       next.classList.add('active');
       
-      // Cleanup exit class after transition
       setTimeout(() => {
         current.classList.remove('exit');
-      }, 600);
-    }, 3000);
+      }, 800);
+    }, 4000);
   }
 
+  // Studio Hero Canvas (Quiet ambient noise/particles)
+  initStudioHeroCanvas();
+
   // Hero Parallax
-  const hero = document.getElementById('hero');
   const canvas = document.getElementById('studioHeroCanvas');
-  if (hero && canvas && !prefersReducedMotion) {
+  if (canvas && !prefersReducedMotion) {
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
       if (scrolled < window.innerHeight) {

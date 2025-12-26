@@ -118,8 +118,6 @@
   width: 100%;
   max-width: 1200px;
   padding: 0 40px;
-  opacity: 1 !important;
-  visibility: visible !important;
   box-sizing: border-box;
 }
 
@@ -141,23 +139,19 @@
   letter-spacing: -0.04em;
   line-height: 1;
   color: #fff;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: normal; /* Allow wrap on mobile if needed, though clamp helps */
+  opacity: 1; /* Forced visibility to debug */
+  transform: translateY(0); /* Reset transform to debug */
+  white-space: normal;
   width: 100%;
   left: 0;
   right: 0;
+  display: none; /* Controlled by JS, but first item will be active */
 }
 
 .cycler-item.active {
+  display: block;
   opacity: 1;
-  transform: translateY(0) !important;
-}
-
-.cycler-item.exit {
-  opacity: 0;
-  transform: translateY(-30px) !important;
+  transform: translateY(0);
 }
 
 .studio-micro {
@@ -187,16 +181,6 @@
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-10px); }
   60% { transform: translateY(-5px); }
-}
-
-/* Page Load Animation */
-.studio-hero-content {
-  animation: studio-scale-in 1.2s cubic-bezier(0.2, 0, 0.2, 1) forwards;
-}
-
-@keyframes studio-scale-in {
-  from { opacity: 0; transform: scale(0.98) translateY(10px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 /* Reveal Animation - Slow, calm entry */
