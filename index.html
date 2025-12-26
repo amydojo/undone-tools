@@ -5,74 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Undone — Standards</title>
   <meta name="description" content="Operational tools. Designed to hold up." />
-  <link rel="stylesheet" href="./assets/styles.css" />
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
-<body>
-  <div class="container">
-    <header>
-      <a href="/" class="brand">
-        <div class="orb"></div>
-        <span class="brand-name">Undone</span>
-      </a>
-      <nav>
-        <a href="https://undonedesign.studio" target="_blank">Studio</a>
-        <a href="./standards/" class="active">Standards</a>
-      </nav>
-    </header>
+<body class="std-body">
+  <div class="std-shell">
+    <div class="std-container">
+      <header style="padding: 40px 0; display: flex; justify-content: space-between; align-items: center;">
+        <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+          <div style="width: 10px; height: 10px; background: #7b6cff; border-radius: 50%; box-shadow: 0 0 12px #7b6cff;"></div>
+          <span style="font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; font-size: 14px; color: #fff;">Undone</span>
+        </a>
+        <nav style="display: flex; gap: 32px;">
+          <a href="/" style="font-size: 14px; color: rgba(255,255,255,0.4);">Studio</a>
+          <a href="/standards/" style="font-size: 14px; color: #fff;">Standards</a>
+        </nav>
+      </header>
 
-    <main id="content">
-      <section class="hero fade-in">
-        <span class="label">System standards</span>
-        <h1>Operational tools.<br>Designed to hold up.</h1>
-        <p>Clinic-ready systems built with the same rigor as our client work. Clean patient instructions. Neutral design. Instant deployment.</p>
-      </section>
+      <main>
+        <section class="std-section std-reveal" style="padding-top: 100px;">
+          <span class="std-eyebrow">System standards</span>
+          <h1 class="std-h1">Operational tools.<br>Designed to hold up.</h1>
+          <p class="std-p">Clinic-ready systems built with the same rigor as our client work. Clean patient instructions. Neutral design. Instant deployment.</p>
+        </section>
 
-      <div class="divider"></div>
+        <div class="std-divider"></div>
 
-      <section>
-        <div class="product-grid">
-          <a href="./standards/injectables-aftercare.html" class="product-row">
-            <span class="product-name">Injectables aftercare guide</span>
-            <span class="product-meta">Botox + filler patient instructions, structured by timeline.</span>
-            <span class="status-tag">Available</span>
-            <span class="arrow">→</span>
-          </a>
-          <a href="./standards/laser-aftercare.html" class="product-row" style="opacity: 0.5;">
-            <span class="product-name">Laser hair removal guide</span>
-            <span class="product-meta">Clear do’s and don’ts, written to reduce follow-up.</span>
-            <span class="status-tag">In build</span>
-            <span class="arrow">→</span>
-          </a>
-        </div>
-      </section>
+        <section class="std-section std-reveal">
+          <div style="display: grid; gap: 1px; background: var(--std-border); border: 1px solid var(--std-border); border-radius: 12px; overflow: hidden;">
+            <a href="/standards/injectables-aftercare.html" class="std-card" style="border: 0; border-radius: 0; display: flex; justify-content: space-between; align-items: center; text-decoration: none;">
+              <div>
+                <h3 class="std-h2" style="font-size: 18px; margin: 0;">Injectables aftercare guide</h3>
+                <p class="std-p" style="font-size: 14px; margin-top: 4px; margin-bottom: 0;">Botox + filler patient instructions, structured by timeline.</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <span class="std-status-pill">Available</span>
+                <span style="color: var(--std-text-tertiary);">→</span>
+              </div>
+            </a>
+            <a href="/standards/laser-aftercare.html" class="std-card" style="border: 0; border-radius: 0; display: flex; justify-content: space-between; align-items: center; text-decoration: none; opacity: 0.5;">
+              <div>
+                <h3 class="std-h2" style="font-size: 18px; margin: 0;">Laser hair removal guide</h3>
+                <p class="std-p" style="font-size: 14px; margin-top: 4px; margin-bottom: 0;">Clear do’s and don’ts, written to reduce follow-up.</p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <span class="std-status-pill">In build</span>
+                <span style="color: var(--std-text-tertiary);">→</span>
+              </div>
+            </a>
+          </div>
+        </section>
 
-      <section class="info-grid">
-        <div class="info-block">
-          <span class="label">01</span>
-          <h3>Purpose built</h3>
-          <p>These aren't marketing templates. They are clinical tools designed to reduce friction and improve patient outcomes.</p>
-        </div>
-        <div class="info-block">
-          <span class="label">02</span>
-          <h3>Neutral by design</h3>
-          <p>Restrained aesthetics ensure these tools feel like an extension of your existing practice, not a third-party add-on.</p>
-        </div>
-        <div class="info-block">
-          <span class="label">03</span>
-          <h3>Inevitability</h3>
-          <p>Every element is stripped back until only what is necessary remains. Structure over decoration, always.</p>
-        </div>
-      </section>
-    </main>
+        <section class="std-section std-reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 64px;">
+          <div class="info-block">
+            <span class="std-eyebrow" style="color: var(--std-text-tertiary);">01</span>
+            <h3 class="std-h2" style="font-size: 20px;">Purpose built</h3>
+            <p class="std-p" style="font-size: 15px;">These aren't marketing templates. They are clinical tools designed to reduce friction and improve patient outcomes.</p>
+          </div>
+          <div class="info-block">
+            <span class="std-eyebrow" style="color: var(--std-text-tertiary);">02</span>
+            <h3 class="std-h2" style="font-size: 20px;">Neutral by design</h3>
+            <p class="std-p" style="font-size: 15px;">Restrained aesthetics ensure these tools feel like an extension of your existing practice, not a third-party add-on.</p>
+          </div>
+          <div class="info-block">
+            <span class="std-eyebrow" style="color: var(--std-text-tertiary);">03</span>
+            <h3 class="std-h2" style="font-size: 20px;">Inevitability</h3>
+            <p class="std-p" style="font-size: 15px;">Every element is stripped back until only what is necessary remains. Structure over decoration, always.</p>
+          </div>
+        </section>
+      </main>
 
-    <footer style="padding: 64px 0; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between;">
-      <span class="faint">© 2025 Undone Standards</span>
-      <nav>
-        <a href="https://undonedesign.studio" class="faint">Back to Studio</a>
-      </nav>
-    </footer>
+      <footer style="padding: 64px 0; border-top: 1px solid var(--std-border); display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 12px; color: var(--std-text-tertiary);">© 2025 Undone Standards</span>
+        <nav>
+          <a href="https://undonedesign.studio" style="color: var(--std-text-tertiary); font-size: 12px; text-decoration: none;">Back to Studio</a>
+        </nav>
+      </footer>
+    </div>
   </div>
-
-  <script src="./assets/app.js"></script>
+  <script src="/assets/app.js"></script>
 </body>
 </html>
