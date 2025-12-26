@@ -1,4 +1,13 @@
 /* ═══════════════════════════════════════════════════════════════════════════
+   DESIGN TOKENS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --std-font-sans: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --std-font-serif: "Georgia", "Times New Roman", serif;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    STUDIO HOMEPAGE (CINEMATIC APPLE-INSPIRED)
    ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -9,6 +18,7 @@
   font-family: var(--std-font-sans);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
+  margin: 0;
 }
 
 .studio-shell {
@@ -21,6 +31,7 @@
   margin: 0 auto;
   padding: 0 40px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 600px) { .studio-container { padding: 0 24px; } }
@@ -109,6 +120,7 @@
   padding: 0 40px;
   opacity: 1 !important;
   visibility: visible !important;
+  box-sizing: border-box;
 }
 
 .studio-headline-cycler {
@@ -118,20 +130,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .cycler-item {
   position: absolute;
   margin: 0 auto;
-  font-size: clamp(44px, 10vw, 110px);
-  font-weight: 600;
-  letter-spacing: -0.045em;
+  font-size: clamp(40px, 10vw, 110px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
   line-height: 1;
   color: #fff;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
+  white-space: normal; /* Allow wrap on mobile if needed, though clamp helps */
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 .cycler-item.active {
@@ -208,17 +224,17 @@
 
 .studio-h2 {
   font-size: clamp(24px, 4vw, 32px);
-  line-height: 1.2;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.03em;
   color: #fff;
   margin-bottom: 56px;
-  max-width: 20ch;
+  max-width: 22ch;
 }
 
 .studio-prose p {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 32px;
 }
@@ -318,4 +334,5 @@
   letter-spacing: 0.1em;
   color: rgba(255, 255, 255, 0.2);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
+  box-sizing: border-box;
 }
