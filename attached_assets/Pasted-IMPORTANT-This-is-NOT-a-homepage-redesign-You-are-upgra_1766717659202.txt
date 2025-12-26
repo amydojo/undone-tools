@@ -1,0 +1,224 @@
+IMPORTANT:
+This is NOT a homepage redesign.
+
+You are upgrading the PRODUCT PAGES under /standards/ to studio-grade quality.
+You will NOT consider the task complete unless ALL THREE files below show substantial, visible upgrades comparable to the homepage quality:
+
+• /standards/index.html
+• /standards/injectables-aftercare.html
+• /standards/laser-aftercare.html
+
+Do not spend time changing /index.html (homepage) except for shared nav links if needed.
+
+━━━━━━━━━━━━━━━━━━━━━━
+PROJECT CONTEXT (REAL FILE TREE)
+━━━━━━━━━━━━━━━━━━━━━━
+
+Global assets (shared):
+• /assets/styles.css
+• /assets/app.js
+
+Pages:
+• /index.html (homepage — reference quality only)
+• /standards/index.html (standards hub)
+• /standards/injectables-aftercare.html (product page)
+• /standards/laser-aftercare.html (product page)
+
+Ignore completely:
+• /attached_assets/ (do not move, import, or depend on it)
+
+Do NOT remove or rename any existing routes or filenames.
+
+━━━━━━━━━━━━━━━━━━━━━━
+PRIMARY GOAL
+━━━━━━━━━━━━━━━━━━━━━━
+
+Make all /standards pages feel as high-quality as the homepage:
+• premium
+• apple-caliber
+• dark, atmospheric background
+• subtle purple accents
+• clean typography
+• restrained, intentional motion
+• confident whitespace
+• studio-grade information architecture
+
+These must feel like **clinical tools built by a studio**, not Etsy listings or marketing pages.
+
+━━━━━━━━━━━━━━━━━━━━━━
+NON-NEGOTIABLE EXECUTION RULES
+━━━━━━━━━━━━━━━━━━━━━━
+
+1. You may ONLY edit these files:
+• /assets/styles.css
+• /assets/app.js
+• /standards/index.html
+• /standards/injectables-aftercare.html
+• /standards/laser-aftercare.html
+
+No new frameworks. No new routes. No new folders.
+
+2. BEFORE writing code:
+Open and read each of the 3 /standards/*.html files and summarize what is currently on each page in exactly 3 bullets per page.
+(This is required to prove you reviewed them.)
+
+3. AFTER coding:
+Provide a before/after checklist for EACH standards page confirming:
+• hero updated ✅
+• product module built ✅
+• protocol accordion built ✅
+• why-this-holds-up blocks ✅
+• preview section ✅
+• faq accordion ✅
+
+━━━━━━━━━━━━━━━━━━━━━━
+TYPOGRAPHY + TONE RULES
+━━━━━━━━━━━━━━━━━━━━━━
+
+• DO NOT use all-lowercase typography on product pages.
+• Headings: Title Case
+• Section labels / eyebrows: Tracked UPPERCASE
+• Body copy: Normal sentence case
+• Tone: minimal, confident, non-Etsy, non-marketing
+
+━━━━━━━━━━━━━━━━━━━━━━
+CRITICAL TECH PATHS
+━━━━━━━━━━━━━━━━━━━━━━
+
+All standards pages MUST load assets using root-absolute paths:
+
+<link rel="stylesheet" href="/assets/styles.css">
+<script defer src="/assets/app.js"></script>
+
+No relative paths.
+
+━━━━━━━━━━━━━━━━━━━━━━
+PRODUCT PAGE INFORMATION ARCHITECTURE (MANDATORY)
+━━━━━━━━━━━━━━━━━━━━━━
+
+Both product pages (/injectables-aftercare.html and /laser-aftercare.html) MUST follow this exact structure:
+
+(A) HERO + PRODUCT MODULE
+• Eyebrow (tracked uppercase): “SYSTEM STANDARD”
+• Product title (large, studio-grade)
+  Example: “Injectables Aftercare. Built To Be Followed.”
+• Subhead: ONE sentence max, not fluffy
+
+Product Module (right side desktop / below on mobile):
+• Includes (4 bullets)
+• Format: PDF + Canva
+• Delivery note: “External checkout opens Etsy.”
+• Primary CTA: “Access The Guide”
+• Secondary CTA: “Preview Layout”
+• Helper text: “Press G to Open Checkout”
+
+(B) PROTOCOL / TIMELINE SECTION (CORE)
+Timeline-first clinical layout using accordion rows:
+• Day 0–1
+• Days 2–7
+• What’s Normal
+• Red Flags / Call The Clinic
+
+This must feel like a **clinical tool**, not marketing copy.
+
+(C) WHY THIS HOLDS UP
+Exactly 3 compact blocks:
+• Designed For Scanning
+• Neutral Language
+• Compliance Windows
+
+Short bullets only.
+
+(D) PREMIUM PREVIEW SECTION
+• One high-quality preview frame component
+• NOT a gray wireframe
+• Stylized layout skeleton with real typography
+• “Preview Layout” button scrolls here
+
+(E) FAQ
+Accordion with exactly 3 items:
+• How do I edit in Canva?
+• Can I print this?
+• Is this suitable for all clinics?
+
+━━━━━━━━━━━━━━━━━━━━━━
+STANDARDS HUB PAGE (/standards/index.html)
+━━━━━━━━━━━━━━━━━━━━━━
+
+Upgrade to homepage-level quality.
+
+Requirements:
+• Short intro explaining what “System Standards” are (2 lines max)
+• Two premium product cards:
+  – Title
+  – One-line descriptor
+  – Status pill:
+    • Injectables: “Available”
+    • Laser: “In Build” (unless already live)
+  – Arrow affordance
+• Small nav link back to homepage (“Studio”)
+
+━━━━━━━━━━━━━━━━━━━━━━
+COMPONENT SYSTEM (SHARED)
+━━━━━━━━━━━━━━━━━━━━━━
+
+In /assets/styles.css:
+• Spacing scale (8px rhythm or similar)
+• Typography scale (hero, h2, body, label)
+• Buttons: primary + secondary with micro-interactions
+• One premium card style (do not overuse)
+• Hairline dividers with subtle opacity
+• Section padding consistent with homepage
+• Mobile-first responsive rules (no cramped stacks)
+
+In /assets/app.js:
+• IntersectionObserver reveal animations
+  – Respect prefers-reduced-motion
+• Accessible accordions
+  – aria-expanded
+  – keyboard support
+• Smooth scroll for “Preview Layout”
+• Keyboard shortcut:
+  – Press “g” opens checkout URL
+• Active nav state on standards pages
+
+━━━━━━━━━━━━━━━━━━━━━━
+CHECKOUT URL HANDLING (REQUIRED)
+━━━━━━━━━━━━━━━━━━━━━━
+
+Each PRODUCT PAGE must include this meta tag:
+
+<meta name="checkout-url" content="PASTE_ETSY_URL_HERE">
+
+/assets/app.js must:
+• Read this meta tag
+• Open checkout in new tab when:
+  – “Access The Guide” is clicked
+  – “g” key is pressed
+
+━━━━━━━━━━━━━━━━━━━━━━
+DELIVERABLES (PRINT AT END)
+━━━━━━━━━━━━━━━━━━━━━━
+
+1. List of files changed
+2. Confirm these URLs render correctly in preview:
+   • /standards/
+   • /standards/injectables-aftercare.html
+   • /standards/laser-aftercare.html
+3. Confirm all standards pages load:
+   • /assets/styles.css
+   • /assets/app.js
+
+━━━━━━━━━━━━━━━━━━━━━━
+QUALITY BAR
+━━━━━━━━━━━━━━━━━━━━━━
+
+This must feel like a studio product page:
+• fewer sections
+• stronger hierarchy
+• confident whitespace
+• subtle motion
+• no filler
+• no generic template look
+
+Execute now.
