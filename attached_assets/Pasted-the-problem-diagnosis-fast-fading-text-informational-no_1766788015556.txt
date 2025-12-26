@@ -1,0 +1,123 @@
+the problem (diagnosis, fast)
+	•	fading text = informational, not emotional
+	•	multiple headlines = indecision instead of authority
+	•	same subline repeating = cognitive noise
+	•	motion exists, but it’s decorative, not meaningful
+
+you’re saying “systems that don’t require explanation” while… explaining. the hero should demonstrate clarity, not describe it.
+
+⸻
+
+the shift: from “cycler” → “reveal”
+
+stop rotating ideas.
+reveal one truth at a time.
+
+think: apple product launch pacing, not marketing site animation.
+
+⸻
+
+hero concept: “arrival, not rotation”
+
+structure (one idea, three beats)
+
+instead of cycling phrases, you arrive at the final line.
+
+beat 1 — emergence
+	•	text appears incomplete, slightly obscured
+	•	low contrast, subtle blur, or masked
+	•	feels like it’s coming into focus
+
+example (barely visible at first):
+
+operational
+
+beat 2 — clarification
+	•	second word resolves with precision
+	•	spacing tightens
+	•	opacity locks in
+
+operational clarity
+
+beat 3 — conviction
+	•	period appears last (important)
+	•	micro-scale snap or weight change
+	•	everything stops moving
+
+operational clarity.
+
+then… stillness.
+no more animation. no cycling. confidence lives in silence.
+
+⸻
+
+motion principles (this is key)
+
+nothing should loop.
+looping implies uncertainty.
+
+use:
+	•	one-time entrance
+	•	easing: cubic-bezier(0.4, 0.0, 0.2, 1)
+	•	duration: 800–1200ms total, broken into micro-events
+	•	delay between beats: 120–180ms (felt, not seen)
+
+⸻
+
+typography behavior (felt, not flashy)
+	•	letter-spacing subtly animates from +1% → normal
+	•	font-weight shifts slightly (e.g. 450 → 500)
+	•	no vertical slide — slides feel like content blocks
+	•	opacity from 0.6 → 1.0 (never 0 → 1)
+
+this mimics focus, not motion.
+
+⸻
+
+background: supportive, not starry
+
+the starfield is fine if it behaves like atmosphere, not content.
+
+rules:
+	•	ultra-slow drift (minutes, not seconds)
+	•	no parallax tied to scroll
+	•	grain > sparkle
+	•	opacity capped low so text dominates
+
+the hero text should feel like it’s cut into space, not floating on it.
+
+⸻
+
+subline treatment (if you keep one)
+
+don’t explain. underline the feeling.
+
+bad:
+
+systems that don’t require explanation
+
+better:
+
+nothing extra.
+
+or:
+
+no second guessing.
+
+or:
+
+it just works.
+
+rendered at:
+	•	60–65% opacity
+	•	appears after headline settles
+	•	never animates itself — just fades in gently
+
+⸻
+
+what to remove (important)
+	•	rotating slogans
+	•	repeating subcopy under every headline
+	•	“strategy meets craft / built for impact” in hero
+
+those belong later, once trust is established.

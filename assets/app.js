@@ -66,38 +66,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Rotating Headlines (Restrained)
-  const cyclerItems = document.querySelectorAll('.cycler-item');
-  if (cyclerItems.length) {
-    let currentIndex = 0;
+  // Hero Reveal Animation (Arrival, not rotation)
+  const heroReveal = () => {
+    const word1 = document.querySelector('.hero-word-1');
+    const word2 = document.querySelector('.hero-word-2');
+    const dot = document.querySelector('.hero-dot');
+    const micro = document.querySelector('.studio-micro');
     
-    const showItem = (index) => {
-      cyclerItems.forEach((item, i) => {
-        item.classList.toggle('active', i === index);
-        item.classList.remove('exit');
-      });
-    };
-    
-    showItem(0);
-    
-    setInterval(() => {
-      const current = cyclerItems[currentIndex];
-      current.classList.remove('active');
-      current.classList.add('exit');
-      
-      currentIndex = (currentIndex + 1) % cyclerItems.length;
-      
-      const next = cyclerItems[currentIndex];
-      next.classList.remove('exit');
-      next.classList.add('active');
-      
-      setTimeout(() => {
-        current.classList.remove('exit');
-      }, 1000); // Wait for exit animation
-    }, 5000); // 5s interval for calm pacing
-  }
+    if (!word1 || !word2 || !dot || !micro) return;
 
-  // Studio Hero Canvas
+    // reset initial state
+    word1.style.opacity = '0.6';
+    word2.style.opacity = '0.6';
+    dot.style.opacity = '0';
+    micro.style.opacity = '0';
+
+    // Beat 1: Emergence
+    setTimeout(() => {
+      word1.classList.add('revealed');
+    }, 200);
+
+    // Beat 2: Clarification
+    setTimeout(() => {
+      word2.classList.add('revealed');
+    }, 800);
+
+    // Beat 3: Conviction
+    setTimeout(() => {
+      dot.classList.add('revealed');
+    }, 1400);
+
+    // Release: Subline
+    setTimeout(() => {
+      micro.classList.add('revealed');
+    }, 2000);
+  };
+
+  heroReveal();
+
+  // Studio Hero Canvas (Atmospheric, not content)
   initStudioHeroCanvas();
 });
 
@@ -125,24 +132,28 @@ function initStudioHeroCanvas() {
 
   function generateParticles() {
     particles = [];
-    const count = 40;
+    const count = 30;
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: 0.5 + Math.random() * 1,
-        speed: 0.1 + Math.random() * 0.2,
-        opacity: 0.1 + Math.random() * 0.3
+        size: 0.3 + Math.random() * 0.7,
+        speed: 0.02 + Math.random() * 0.05,
+        opacity: 0.05 + Math.random() * 0.15
       });
     }
   }
 
   function draw() {
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.015)';
-    for (let i = 0; i < 1000; i++) {
+    
+    // Fine grain
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.01)';
+    for (let i = 0; i < 500; i++) {
       ctx.fillRect(Math.random() * width, Math.random() * height, 1, 1);
     }
+
+    // Atmospheric drift
     particles.forEach(p => {
       p.y -= p.speed;
       if (p.y < -10) p.y = height + 10;
