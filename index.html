@@ -3,113 +3,146 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Undone — Standards</title>
-  <meta name="description" content="Operational tools. Designed to hold up." />
+  <title>Undone — Studio</title>
+  <meta name="description" content="Undone designs clinic systems that don't require explanation." />
   <link rel="stylesheet" href="./assets/styles.css" />
 </head>
-<body class="std-body">
-  <div class="std-shell">
-    <div class="std-container">
-      <header class="std-header">
-        <a href="/" class="std-brand">
-          <div class="std-orb"></div>
-          <span class="std-brand-name">Undone</span>
-        </a>
-        <nav class="std-nav">
-          <a href="https://undonedesign.studio" target="_blank">Studio</a>
-          <a href="./standards/" class="active">Standards</a>
-        </nav>
-      </header>
+<body class="studio-body">
+  <div class="studio-shell">
+    <header class="studio-header">
+      <a href="/" class="studio-brand">
+        <div class="studio-orb"></div>
+        <span class="studio-brand-name">Undone</span>
+      </a>
+      <nav class="studio-nav">
+        <a href="/" class="active">Studio</a>
+        <a href="/standards/">Standards</a>
+      </nav>
+    </header>
 
-      <main>
-        <!-- SECTION 1 — Hero -->
-        <section class="std-section std-reveal" style="text-align: center; padding: 140px 0 100px; min-height: 80vh; display: flex; flex-direction: column; justify-content: center;">
-          <h1 class="std-hero-statement" style="margin-bottom: 40px;">Most clinical tools fail because they’re designed to be explained.</h1>
-          <div class="std-thin-rule"></div>
-          <p class="std-substatement">These aren’t.</p>
-        </section>
-
-        <!-- SECTION 2 — The Violation -->
-        <section class="std-section std-reveal" style="max-width: 40ch;">
-          <p class="std-copy">
-            Clinics don’t need more templates.<br>
-            They need fewer decisions.<br><br>
-            Every extra word increases risk.<br>
-            Every unclear instruction creates follow-up.<br><br>
-            Most systems ignore this.
-          </p>
-        </section>
-
-        <!-- SECTION 3 — The Standard -->
-        <section class="std-section std-reveal" style="max-width: 50ch;">
-          <p class="std-copy">
-            This is not a library. It’s a standard.<br><br>
-            Built for compliance, not conversion.<br>
-            Structured by time, not preference.<br>
-            Written to reduce interpretation.<br>
-            Designed to survive real clinic use.
-          </p>
-        </section>
-
-        <!-- SECTION 4 — Product Index Label -->
-        <section class="std-section std-reveal" style="padding-bottom: 24px;">
-          <span class="std-label">STANDARDS</span>
-        </section>
-
-        <!-- SECTION 5 — Product Index -->
-        <section class="std-section std-reveal">
-          <div style="display: grid; gap: 1px; background: var(--std-border); border: 1px solid var(--std-border); border-radius: 12px; overflow: hidden;">
-            <a href="./standards/injectables-aftercare.html" class="std-card" style="background: #05050a; border: 0; border-radius: 0; display: flex; justify-content: space-between; align-items: center; padding: 32px;">
-              <div>
-                <h3 class="std-h2" style="margin-bottom: 4px;">Injectables Aftercare Guide</h3>
-                <p class="std-muted">Botox + filler patient instructions, structured by timeline.</p>
-              </div>
-              <div style="display: flex; align-items: center; gap: 24px;">
-                <span class="std-pill">Available</span>
-                <span style="color: var(--std-text-tertiary);">→</span>
-              </div>
-            </a>
-            <a href="./standards/laser-aftercare.html" class="std-card" style="background: #05050a; border: 0; border-radius: 0; display: flex; justify-content: space-between; align-items: center; padding: 32px; opacity: 0.5;">
-              <div>
-                <h3 class="std-h2" style="margin-bottom: 4px;">Laser Hair Removal Guide</h3>
-                <p class="std-muted">Clear do's and don'ts, written to reduce follow-up.</p>
-              </div>
-              <div style="display: flex; align-items: center; gap: 24px;">
-                <span class="std-pill">In Build</span>
-                <span style="color: var(--std-text-tertiary);">→</span>
-              </div>
-            </a>
+    <main>
+      <!-- SECTION 1 — Hero -->
+      <section id="hero" class="studio-hero">
+        <canvas id="studioHeroCanvas"></canvas>
+        <div class="studio-hero-overlay"></div>
+        <div class="studio-hero-content studio-reveal">
+          <span class="studio-eyebrow">STUDIO</span>
+          <h1 class="studio-h1">Most clinic systems don't fail loudly. They fail in small moments of interpretation.</h1>
+          <div class="studio-hero-body">
+            <p>Language softens.<br>
+Instructions drift.<br>
+Marketing says one thing. Operations say another.</p>
+            <p>That's where trust erodes.</p>
           </div>
-        </section>
+          <p class="studio-micro">Undone designs clinic systems that don't require explanation.</p>
+        </div>
+      </section>
 
-        <!-- SECTION 6 — Manifesto -->
-        <section class="std-section std-reveal std-grid-2">
-          <div>
-            <p class="std-copy" style="color: #fff; font-weight: 500; margin-bottom: 24px;">UNDONE is for clinics that:</p>
-            <ul class="std-bullet-list">
-              <li>Don’t want to explain themselves twice</li>
-              <li>Value clarity over friendliness</li>
-              <li>Understand that restraint builds trust</li>
-            </ul>
+      <!-- SECTION 2 — Positioning -->
+      <section id="positioning" class="studio-section studio-reveal">
+        <div class="studio-container">
+          <h2 class="studio-h2">Operational clarity for clinical environments.</h2>
+          <div class="studio-prose">
+            <p>Undone is a design studio focused on operational clarity in clinical environments.</p>
+            <p>Not branding.<br>
+Not campaigns.<br>
+Not "growth."</p>
+            <p>We work on the materials clinics rely on every day —<br>
+the ones patients actually read, screenshot, misunderstand, or follow incorrectly.</p>
           </div>
-          <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; text-align: right;">
-            <p class="std-copy">It’s not for everyone.<br>That’s intentional.</p>
+        </div>
+      </section>
+
+      <div class="studio-divider"></div>
+
+      <!-- SECTION 3 — Marketing -->
+      <section id="marketing" class="studio-section studio-reveal">
+        <div class="studio-container">
+          <h2 class="studio-h2">Marketing, treated as infrastructure.</h2>
+          <div class="studio-prose">
+            <p>Most clinics don't have a marketing problem.<br>
+They have a systems problem that shows up as marketing.</p>
+            <p>Emails that reassure instead of instruct.<br>
+Ads that attract attention but create follow-up.<br>
+Menus that oversell and under-explain.<br>
+Handouts that sound friendly and fail operationally.</p>
+            <p>We design marketing materials as infrastructure —<br>
+structured to reduce confusion, decision fatigue, and risk.</p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- SECTION 7 — Closer -->
-        <section class="std-section std-reveal std-closer" style="border-top: 0; margin-top: 0; padding-top: 40px;">
-          <p class="std-closer-quote" style="font-style: normal; color: var(--std-text-tertiary);">
-            “Operational tools for clinics that already know what good looks like.”
-          </p>
-        </section>
-      </main>
+      <div class="studio-divider"></div>
 
-      <footer class="std-page-footer">
-        <span>© 2025 Undone Standards</span>
-        <a href="https://undonedesign.studio" target="_blank">Studio</a>
-      </footer>
-    </div>
+      <!-- SECTION 4 — Materials -->
+      <section id="materials" class="studio-section studio-reveal">
+        <div class="studio-container">
+          <h2 class="studio-h2">The work lives in materials.</h2>
+          <ul class="studio-materials-grid">
+            <li>Patient communication</li>
+            <li>Clinic marketing interfaces</li>
+            <li>Menus and service explanations</li>
+            <li>Emails, ads, landing pages</li>
+            <li>Handouts, instructions, follow-ups</li>
+            <li>Internal references patients never see — but feel</li>
+          </ul>
+          <p class="studio-closing-line">If language, layout, or timing affects trust, it's in scope.</p>
+        </div>
+      </section>
+
+      <div class="studio-divider"></div>
+
+      <!-- SECTION 5 — Filter -->
+      <section id="filter" class="studio-section studio-reveal">
+        <div class="studio-container">
+          <h2 class="studio-h2">A quality filter.</h2>
+          <div class="studio-filter-grid">
+            <div class="studio-filter-left">
+              <span class="studio-filter-label">Undone is for clinics that:</span>
+              <ul class="studio-filter-list">
+                <li>→ Don't want to explain themselves twice</li>
+                <li>→ Value clarity over friendliness</li>
+                <li>→ Understand that restraint builds trust</li>
+              </ul>
+            </div>
+            <div class="studio-filter-right">
+              <p>It's not for teams that need louder branding, trend typography, or emotional filler to feel credible.</p>
+              <p>That's intentional.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="studio-divider"></div>
+
+      <!-- SECTION 6 — Standards Bridge -->
+      <section id="standards" class="studio-section studio-reveal">
+        <div class="studio-container">
+          <span class="studio-eyebrow">STANDARDS</span>
+          <h2 class="studio-h2">Some of this work is formalized.</h2>
+          <div class="studio-prose">
+            <p>Undone Standards are clinic-ready operational documents —<br>
+built to reduce interpretation, increase compliance, and survive real use.</p>
+            <p>They're not templates.<br>
+They're not customizable.<br>
+They're designed to hold up.</p>
+          </div>
+          <a href="/standards/" class="studio-cta">View Standards →</a>
+        </div>
+      </section>
+
+      <!-- SECTION 7 — Closer -->
+      <section id="closer" class="studio-closer studio-reveal">
+        <div class="studio-container">
+          <p class="studio-closer-line">This is what you build when you don't want your systems to rely on tone.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="studio-footer">
+      <span>Undone · Studio · Standards</span>
+      <span>© 2025</span>
+    </footer>
   </div>
 
   <script src="./assets/app.js"></script>

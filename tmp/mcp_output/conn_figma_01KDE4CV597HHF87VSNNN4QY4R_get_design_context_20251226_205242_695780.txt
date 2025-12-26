@@ -1,0 +1,1510 @@
+<mcp_external_output>
+
+### Content Block 1 (Text)
+const imgGothamHeroMp4 = "https://www.figma.com/api/mcp/asset/97cda488-79a1-41f0-b3a6-c8f631e6883d";
+const imgGothamFullBleed01Mp5 = "https://www.figma.com/api/mcp/asset/4a726782-757b-4080-9dee-7226b6307c75";
+const imgGothamFullBleed02Mp5 = "https://www.figma.com/api/mcp/asset/7bab131d-a95a-4a34-b11d-b5eaa6a865ff";
+const imgGothamFullBleed03Mp5 = "https://www.figma.com/api/mcp/asset/cbd82f07-696c-4a04-b362-cffce4ecc2f6";
+const imgGothamFullBleed04Mp5 = "https://www.figma.com/api/mcp/asset/01313402-8e9a-4b43-8dbb-80738c70172f";
+const imgLaptopWithGothamSoftwareDisplayed = "https://www.figma.com/api/mcp/asset/5d7ad627-daf1-4716-be05-aa56054939ac";
+const imgGothamCard01Mp4 = "https://www.figma.com/api/mcp/asset/eed4eedb-ef10-424b-98be-670756d3a8dc";
+const imgGothamCard02Mp4 = "https://www.figma.com/api/mcp/asset/9dd915b2-b8a4-42cf-bd77-384e7d3ea2f5";
+const imgGothamCard03Mp4 = "https://www.figma.com/api/mcp/asset/b3475846-208a-4c2e-91b3-dcedfd63c432";
+const img = "https://www.figma.com/api/mcp/asset/bb900dcb-abf4-4982-9df4-4118c0dfda34";
+const img1 = "https://www.figma.com/api/mcp/asset/a363f640-1a7e-497f-a110-141e003bf64f";
+const img2 = "https://www.figma.com/api/mcp/asset/39b9e847-5cb3-486c-a900-73521363012d";
+const img3 = "https://www.figma.com/api/mcp/asset/b96804c9-7343-41a5-83a7-bf47fa16e5e5";
+const img4 = "https://www.figma.com/api/mcp/asset/2cc60f62-960b-42a4-b4a9-7a926377ed63";
+const imgEntering = "https://www.figma.com/api/mcp/asset/db378621-5d17-42bc-9645-725b91819b8e";
+const imgVector = "https://www.figma.com/api/mcp/asset/f22a7179-5ce1-4f39-ab3e-23d7fa326ab7";
+const imgVector1 = "https://www.figma.com/api/mcp/asset/1fbbc8b9-25c8-4b23-9782-53fbd85a7364";
+const imgVector2 = "https://www.figma.com/api/mcp/asset/21d81eb1-6c71-48aa-afe4-86a0dbb394f4";
+const imgVector3 = "https://www.figma.com/api/mcp/asset/2b43bef3-2a34-4ebd-a1d5-2a4250737910";
+const imgVector4 = "https://www.figma.com/api/mcp/asset/6bc5a880-1d6a-4e8e-93aa-948c104f54aa";
+const imgVector5 = "https://www.figma.com/api/mcp/asset/f445bbb5-4084-4e63-a513-2f6b2beaaddc";
+const imgVector6 = "https://www.figma.com/api/mcp/asset/0390e43c-f061-462a-a531-c4a2bf342faa";
+const imgVector7 = "https://www.figma.com/api/mcp/asset/81aaeb91-fb3f-43e6-abc1-b64ed953f6c4";
+const imgVector8 = "https://www.figma.com/api/mcp/asset/60700194-896e-4fd5-8183-97fbea1f6bde";
+const imgVector9 = "https://www.figma.com/api/mcp/asset/b5a1e800-8d4a-4bc4-8725-fbc0d8013e48";
+const imgGothamFullBleed01Mp4 = "https://www.figma.com/api/mcp/asset/9cfc2d60-4e45-4366-a549-752c5928b850";
+const imgGothamFullBleed02Mp4 = "https://www.figma.com/api/mcp/asset/2ae96dd3-4e1f-496e-85de-f12075f2c721";
+const imgGothamFullBleed03Mp4 = "https://www.figma.com/api/mcp/asset/e5a28645-aba4-462f-aa05-2e2e283eed93";
+const imgGothamFullBleed04Mp4 = "https://www.figma.com/api/mcp/asset/68667cd7-a996-424f-b367-4573ae19286a";
+const img5 = "https://www.figma.com/api/mcp/asset/6a9aec7e-8314-46ec-89f0-74baf1496e37";
+type ComponentProps = {
+  className?: string;
+  variant?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8";
+};
+
+function Component({ className, variant = "1" }: ComponentProps) {
+  const is1 = variant === "1";
+  const is3 = variant === "3";
+  const is4 = variant === "4";
+  const is7 = variant === "7";
+  const is8 = variant === "8";
+  return (
+    <div id={is1 ? "node-1_9913" : is3 ? "node-1_9930" : is4 ? "node-1_9935" : is7 ? "node-1_9950" : is8 ? "node-1_9953" : ""} className={className}>
+      <div id={is1 ? "node-1_9887" : is3 ? "node-1_9929" : is4 ? "node-1_9934" : is7 ? "node-1_9948" : is8 ? "node-1_9952" : ""} className={`absolute opacity-[var(--opacity\/100,1)] ${is1 ? "inset-[0_49.28%_88.06%_50.72%]" : is3 ? "inset-[0_0.17%]" : is4 ? "inset-0" : is7 ? "inset-[5.5%_4.68%_23.14%_23.96%]" : is8 ? "inset-[0.15%_0.15%_0.16%_0.1%]" : ""}`} data-name="Vector">
+        <div className={`absolute ${is1 ? "inset-[0_-0.67px]" : ["3", "4", "8"].includes(variant) ? "inset-0" : is7 ? "inset-[-4.38%]" : ""}`} style={(is1 ? { "--stroke-0": "rgba(216, 216, 216, 1)" } : is3 ? { "--fill-0": "rgba(229, 229, 229, 1)" } : is4 ? { "--fill-0": "rgba(89, 89, 89, 1)" } : is7 ? { "--stroke-0": "rgba(255, 255, 255, 1)" } : is8 ? { "--fill-0": "rgba(255, 255, 255, 1)" } : undefined) as React.CSSProperties}>
+          <img className="block max-w-none size-full" alt="" src={is1 ? img : is3 ? img1 : is4 ? img2 : is7 ? img3 : is8 ? img4 : ""} />
+        </div>
+      </div>
+      {is1 && (
+        <div data-node-id="1:9891" className={`absolute contents font-[family-name:var(--font-family\\/font-1,"Inter:Regular",sans-serif)] font-[var(--font-weight\\/400,400)] inset-[0_44.55%_88.39%_51.81%] leading-[normal] not-italic text-[color:var(--color\\/grey\\/85,#d8d8d8)] text-[length:var(--font-size\\/13_33,13.333px)]`} data-name="Group">
+          <p data-node-id="1:9888" className="absolute inset-[0_45.04%_96.13%_51.81%] opacity-[var(--opacity\\/100,1)]">
+            YOU ARE
+          </p>
+          <p data-node-id="1:9889" className="absolute inset-[3.87%_46.39%_92.26%_51.81%] opacity-[var(--opacity\\/100,1)]">
+            NOW
+          </p>
+          <p data-node-id="1:9890" className="absolute inset-[7.74%_44.55%_88.39%_51.81%] opacity-[var(--opacity\\/100,1)]">
+            ENTERING
+          </p>
+        </div>
+      )}
+      {["1", "7"].includes(variant) && (
+        <div id={is1 ? "node-1_9892" : is7 ? "node-1_9949" : ""} className={`absolute opacity-[var(--opacity\/100,1)] ${is1 ? "inset-[0_38.41%_88.06%_61.59%]" : is7 ? "inset-[65.78%_62.18%_3.29%_6.88%]" : ""}`} data-name="Vector">
+          <div className={`absolute ${is1 ? "inset-[0_-0.67px]" : is7 ? "inset-[-7.14%]" : ""}`} style={(is1 ? { "--stroke-0": "rgba(216, 216, 216, 1)" } : is7 ? { "--stroke-0": "rgba(255, 255, 255, 1)" } : undefined) as React.CSSProperties}>
+            <img className="block max-w-none size-full" alt="" src={is1 ? img : is7 ? imgEntering : ""} />
+          </div>
+        </div>
+      )}
+      {is1 && (
+        <>
+          <div data-node-id="1:9896" className={`absolute contents font-[family-name:var(--font-family\\/font-1,"Inter:Regular",sans-serif)] font-[var(--font-weight\\/400,400)] inset-[0_32.86%_88.39%_62.68%] leading-[normal] not-italic text-[color:var(--color\\/grey\\/85,#d8d8d8)] text-[length:var(--font-size\\/13_33,13.333px)]`} data-name="Group">
+            <p data-node-id="1:9893" className="absolute inset-[0_32.86%_96.13%_62.68%] opacity-[var(--opacity\\/100,1)]">
+              TIME: 3 MNS
+            </p>
+            <p data-node-id="1:9894" className="absolute inset-[3.87%_34.49%_92.26%_62.68%] opacity-[var(--opacity\\/100,1)]">
+              SCROLL
+            </p>
+            <p data-node-id="1:9895" className="absolute inset-[7.74%_32.92%_88.39%_62.68%] opacity-[var(--opacity\\/100,1)]">
+              TO EXPLORE
+            </p>
+          </div>
+          <div data-node-id="1:9897" className="absolute inset-[0_22.83%_88.06%_77.17%] opacity-[var(--opacity\\/100,1)]" data-name="Vector">
+            <div className="absolute inset-[0_-0.67px]" style={{ "--stroke-0": "rgba(216, 216, 216, 1)" } as React.CSSProperties}>
+              <img className="block max-w-none size-full" alt="" src={img} />
+            </div>
+          </div>
+          <div data-node-id="1:9901" className={`absolute contents font-[family-name:var(--font-family\\/font-1,"Inter:Regular",sans-serif)] font-[var(--font-weight\\/400,400)] inset-[0_14.08%_88.39%_78.26%] leading-[normal] not-italic text-[color:var(--color\\/grey\\/85,#d8d8d8)] text-[length:var(--font-size\\/13_33,13.333px)]`} data-name="Group">
+            <p data-node-id="1:9898" className="absolute inset-[0_15.98%_96.13%_78.26%] opacity-[var(--opacity\\/100,1)]">
+              THE OPERATING
+            </p>
+            <p data-node-id="1:9899" className="absolute inset-[3.87%_14.08%_92.26%_78.26%] opacity-[var(--opacity\\/100,1)]">
+              SYSTEM FOR GLOBAL
+            </p>
+            <p data-node-id="1:9900" className="absolute inset-[7.74%_15.22%_88.39%_78.26%] opacity-[var(--opacity\\/100,1)]">
+              DECISION MAKING
+            </p>
+          </div>
+          <div data-node-id="1:9902" className="absolute inset-[0_12.68%_88.06%_87.32%] opacity-[var(--opacity\\/100,1)]" data-name="Vector">
+            <div className="absolute inset-[0_-0.67px]" style={{ "--stroke-0": "rgba(216, 216, 216, 1)" } as React.CSSProperties}>
+              <img className="block max-w-none size-full" alt="" src={img} />
+            </div>
+          </div>
+          <div data-node-id="1:9906" className={`absolute contents font-[family-name:var(--font-family\\/font-1,"Inter:Regular",sans-serif)] font-[var(--font-weight\\/400,400)] inset-[0_4.26%_88.39%_88.41%] leading-[normal] not-italic text-[color:var(--color\\/grey\\/85,#d8d8d8)] text-[length:var(--font-size\\/13_33,13.333px)]`} data-name="Group">
+            <p data-node-id="1:9903" className="absolute inset-[0_4.69%_96.13%_88.41%] opacity-[var(--opacity\\/100,1)]">
+              COPYRIGHT ©2024
+            </p>
+            <p data-node-id="1:9904" className="absolute inset-[3.87%_8.06%_92.26%_88.41%] opacity-[var(--opacity\\/100,1)]">
+              PALANTIR
+            </p>
+            <p data-node-id="1:9905" className="absolute inset-[7.74%_4.26%_88.39%_88.41%] opacity-[var(--opacity\\/100,1)]">
+              TECHNOLOGIES INC.
+            </p>
+          </div>
+          <div data-node-id="1:9907" className="absolute inset-[0_79.81%_0_0] opacity-[var(--opacity\\/100,1)]" data-name="Vector">
+            <div className="absolute inset-0" style={{ "--fill-0": "rgba(216, 216, 216, 1)" } as React.CSSProperties}>
+              <img className="block max-w-none size-full" alt="" src={imgVector} />
+            </div>
+          </div>
+          <div data-node-id="1:9908" className="absolute inset-[27.54%_63.38%_0_21.56%] opacity-[var(--opacity\\/100,1)]" data-name="Vector">
+            <div className="absolute inset-0" style={{ "--fill-0": "rgba(216, 216, 216, 1)" } as React.CSSProperties}>
+              <img className="block max-w-none size-full" alt="" src={imgVector1} />
+            </div>
+          </div>
+          <div data-node-id="1:9909" className="absolute inset-[5.75%_55.31%_1.34%_35.95%] opacity-[var(--opacity\\/100,1)]" data-name="Vector">
+            <div className="absolute inset-0" style={{ "--fill-0": "rgba(216, 216, 216, 1)" } as React.CSSProperties}>
+              <img className="block max-w-none size-full" alt="" src={imgVector2} />
+            </div>
+          </div>
+          <div data-node-id="1:9910" className="absolute inset-[0.67%_40.36%_1.34%_46.12%] opacity-[var(--opacity\\/100,1)]" data-name="Vector">
+            <div className="absolute inset-0" style={{ "--fill-0": "rgba(216, 216, 216, 1)" } as React.CSSProperties}>
+              <img className="block max-w-none size-full" alt="" src={imgVector3} />
+            </div>
+          </div>
+          <div data-node-id="1:9911" className="absolute inset-[27.54%_23.74%_0_60.94%] opacity-[var(--opacity\\/100,1)]" data-name="Vector">
+            <div className="absolute inset-0" style={{ "--fill-0": "rgba(216, 216, 216, 1)" } as React.CSSProperties}>
+              <img className="block max-w-none size-full" alt="" src={imgVector4} />
+            </div>
+          </div>
+          <div data-node-id="1:9912" className="absolute inset-[27.54%_0_1.34%_77.14%] opacity-[var(--opacity\\/100,1)]" data-name="Vector">
+            <div className="absolute inset-0" style={{ "--fill-0": "rgba(216, 216, 216, 1)" } as React.CSSProperties}>
+              <img className="block max-w-none size-full" alt="" src={imgVector5} />
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+type Component2Props = {
+  className?: string;
+  variant?: "1" | "2" | "3" | "4";
+};
+
+function Component2({ className, variant = "1" }: Component2Props) {
+  const is1 = variant === "1";
+  const is2 = variant === "2";
+  const is3 = variant === "3";
+  const is4 = variant === "4";
+  return (
+    <div id={is1 ? "node-1_10105" : is2 ? "node-1_10110" : is3 ? "node-1_10113" : is4 ? "node-1_10116" : ""} className={className}>
+      <img className="block max-w-none size-full" alt="" src={is1 ? imgVector6 : is2 ? imgVector7 : is3 ? imgVector8 : is4 ? imgVector9 : ""} />
+    </div>
+  );
+}
+type Component1Props = {
+  className?: string;
+  text?: string;
+  variant?: "1";
+  hover?: boolean;
+};
+
+function Component1({ className, text = "Get Started", variant = "1", hover = false }: Component1Props) {
+  return (
+    <div data-node-id="1:10094" className={className}>
+      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] tracking-[var(--letter-spacing\/-0_54,-0.54px)] uppercase whitespace-nowrap" data-node-id="1:10095">
+        <p className="leading-[var(--font-size\/18,18px)]">{text}</p>
+      </div>
+    </div>
+  );
+}
+
+export default function Component1920WLight() {
+  return (
+    <div className="bg-[var(--color\/white\/solid,white)] content-stretch flex flex-col items-start relative size-full" data-name="1920w light" data-node-id="1:11317">
+      <div className="absolute bg-[var(--color\/grey\/91,#e8e8e8)] h-[70px] left-[220px] opacity-[var(--opacity\/75_8,0.758)] rounded-[10px] shadow-[0px_2px_10px_0px_rgba(0,0,0,0.04)] top-[16px] w-[1480px]" data-name="Background+Shadow" data-node-id="1:12032" />
+      <div className="absolute h-[111.09px] left-[-3.27px] opacity-[var(--opacity\/3_02,0.03)] top-[600px] w-[24px]" data-name="Container" data-node-id="1:12036">
+        <div className="absolute content-stretch flex flex-col items-center left-0 opacity-[var(--line-height\/25,0.25)] pl-[1.94px] pr-0 py-0 top-0 w-[24px]" data-name="Component 5" data-node-id="1:12038">
+          <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic opacity-0 relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/20,20px)] text-center whitespace-nowrap" data-node-id="I1:12038;1:10194">
+            <p className="leading-[var(--line-height\/27_78,27.78px)]">[A]</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center left-0 opacity-[var(--line-height\/25,0.25)] pl-[2.84px] pr-0 py-0 top-[27.77px] w-[24px]" data-name="Component 5" data-node-id="1:12041">
+          <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic opacity-0 relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/20,20px)] text-center whitespace-nowrap" data-node-id="I1:12041;1:10194">
+            <p className="leading-[var(--line-height\/27_78,27.78px)]">[B]</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center left-0 opacity-[var(--line-height\/25,0.25)] pl-[2.2px] pr-0 py-0 top-[55.55px] w-[24px]" data-name="Component 5" data-node-id="1:12044">
+          <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic opacity-0 relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/20,20px)] text-center whitespace-nowrap" data-node-id="I1:12044;1:10194">
+            <p className="leading-[var(--line-height\/27_78,27.78px)]">[C]</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center left-[-0.73px] opacity-[var(--line-height\/25,0.25)] pl-[3.59px] pr-0 py-0 top-[83.32px] w-[24px]" data-name="Component 5" data-node-id="1:12047">
+          <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic opacity-0 relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/20,20px)] text-center whitespace-nowrap" data-node-id="I1:12047;1:10194">
+            <p className="leading-[var(--line-height\/27_78,27.78px)]">[D]</p>
+          </div>
+        </div>
+      </div>
+      <div className="absolute bg-[#1e2124] border-b-[var(--stroke-weight\/1,1px)] border-l-[var(--stroke-weight\/1,1px)] border-r-[var(--stroke-weight\/1,1px)] border-solid border-t-0 border-white content-stretch flex flex-col items-start left-0 opacity-0 pb-px pt-0 px-px top-[-23.85px]" data-name="Component 6" data-node-id="1:12050">
+        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] whitespace-nowrap" data-node-id="I1:12050;1:10557">
+          <p className="leading-[var(--line-height\/22_86,22.86px)]">Skip to Content</p>
+        </div>
+      </div>
+      <div className="bg-[var(--color\/grey\/13,#1e2124)] h-[16410.52px] relative shrink-0 w-full" data-name="Background" data-node-id="1:11318">
+        <div className="absolute content-stretch flex flex-col items-start left-0 right-0 top-0" data-name="Container" data-node-id="1:11319">
+          <div className="absolute content-stretch flex flex-col items-start left-0 top-0" data-name="Container" data-node-id="1:11320">
+            <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0" data-name="Gotham-Hero.mp4" data-node-id="1:11321">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <img alt="" className="absolute h-full left-[-5.56%] max-w-none top-0 w-[111.11%]" src={imgGothamHeroMp4} />
+              </div>
+              <div className="content-stretch flex flex-col items-center justify-end relative shrink-0" data-name="Container" data-node-id="1:11322">
+                <div className="flex-[1_0_0] min-h-px min-w-px shrink-0 w-full" data-name="Rectangle" data-node-id="1:11323" />
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--color\/black\/-60\%,rgba(0,0,0,0.6))] content-stretch flex flex-col items-end min-h-[1200px] pb-[40px] pt-[746.67px] px-[40px] relative shrink-0 w-full" data-name="Header" data-node-id="1:11324">
+            <Component className="h-[413.328px] relative shrink-0 w-full" />
+          </div>
+        </div>
+        <div className="absolute bg-[var(--color\/grey\/13,#1e2124)] content-stretch flex flex-col items-center left-0 pb-[200px] pt-0 px-0 right-0 top-[1200px]" data-name="Background" data-node-id="1:11355">
+          <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11357">
+            <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Section" data-node-id="1:11358">
+              <div className="content-stretch flex flex-col gap-[var(--item-spacing\/211_2,211.2px)] items-center min-h-[900px] relative shrink-0 w-full" data-name="Header" data-node-id="1:11359">
+                <div className="content-stretch flex gap-[var(--item-spacing\/749_5,0px)] items-start justify-between opacity-[var(--opacity\/46_55,0.465)] px-[60px] py-[40px] relative shrink-0 w-full" data-name="Container" data-node-id="1:11362">
+                  <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container" data-node-id="1:11365">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] tracking-[var(--letter-spacing\/-0_54,-0.54px)] uppercase whitespace-nowrap" data-node-id="1:11366">
+                      <p className="leading-[var(--font-size\/18,18px)]">Software</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container" data-node-id="1:11367">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] tracking-[var(--letter-spacing\/-0_54,-0.54px)] uppercase whitespace-nowrap" data-node-id="1:11368">
+                      <p className="leading-[var(--font-size\/18,18px)]">{`{ Gotham }`}</p>
+                    </div>
+                  </div>
+                  <Component1 className="content-stretch flex flex-col items-start relative self-stretch shrink-0" />
+                </div>
+                <div className="content-stretch flex flex-col items-start max-w-[1728px] pb-[7.98px] pt-[31.42px] px-[60px] relative shrink-0 w-[1115.41px]" data-name="Container" data-node-id="1:11371">
+                  <div className="content-stretch flex flex-col items-center opacity-[var(--opacity\/46_55,0.465)] relative shrink-0 w-full" data-name="Heading 2" data-node-id="1:11373">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/124_8,124.8px)] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/120,120px)] text-center tracking-[var(--letter-spacing\/-4_8,-4.8px)] w-full whitespace-pre-wrap" data-node-id="1:11374">
+                      <p className="mb-0">Your software is the</p>
+                      <p>weapons system</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col items-start pb-[40px] pt-0 px-0 relative shrink-0 w-full" data-name="Margin" data-node-id="1:11379">
+                  <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11380">
+                    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11381">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/67,#aaa)] text-[length:var(--font-size\/18,18px)] text-center w-full" data-node-id="1:11382">
+                        <p className="leading-[var(--line-height\/25,25px)] whitespace-pre-wrap">Operating System for</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] text-center whitespace-nowrap" data-node-id="1:11383">
+                      <p className="leading-[var(--line-height\/25,25px)]">Global Decision-Making</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[1080px] relative shrink-0 w-full" data-name="Video:mask-group" data-node-id="1:11384">
+                <div className="absolute aspect-[1920/1080] content-stretch flex flex-col items-start left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0%_0px] mask-size-[100%_1080px] right-0 top-0" data-name="Gotham-Full-Bleed-01.mp4" data-node-id="1:11387" style={{ maskImage: `url('${imgGothamFullBleed01Mp4}')` }}>
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgGothamFullBleed01Mp5} />
+                  </div>
+                  <div className="content-stretch flex flex-col items-center justify-end relative shrink-0 w-full" data-name="Container" data-node-id="1:11388">
+                    <div className="flex-[1_0_0] min-h-px min-w-px shrink-0 w-full" data-name="Rectangle" data-node-id="1:11389" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Section" data-node-id="1:11390">
+              <div className="content-stretch flex flex-col gap-[var(--item-spacing\/211_2,211.2px)] items-center min-h-[900px] relative shrink-0 w-full" data-name="Header" data-node-id="1:11391">
+                <div className="content-stretch flex gap-[var(--item-spacing\/749_5,0px)] items-start justify-between opacity-[var(--opacity\/43_9,0.439)] px-[60px] py-[40px] relative shrink-0 w-full" data-name="Container" data-node-id="1:11392">
+                  <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container" data-node-id="1:11394">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] tracking-[var(--letter-spacing\/-0_54,-0.54px)] uppercase whitespace-nowrap" data-node-id="1:11395">
+                      <p className="leading-[var(--font-size\/18,18px)]">Software</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container" data-node-id="1:11396">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] tracking-[var(--letter-spacing\/-0_54,-0.54px)] uppercase whitespace-nowrap" data-node-id="1:11397">
+                      <p className="leading-[var(--font-size\/18,18px)]">{`{ Gotham }`}</p>
+                    </div>
+                  </div>
+                  <Component1 className="content-stretch flex flex-col items-start relative self-stretch shrink-0" />
+                </div>
+                <div className="content-stretch flex flex-col items-start max-w-[1728px] pb-[6.39px] pt-[33.01px] px-[60px] relative shrink-0 w-[1728px]" data-name="Container" data-node-id="1:11400">
+                  <div className="content-stretch flex flex-col items-center opacity-[var(--opacity\/43_9,0.439)] relative shrink-0 w-full" data-name="Heading 2" data-node-id="1:11401">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/124_8,124.8px)] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/120,120px)] text-center tracking-[var(--letter-spacing\/-4_8,-4.8px)] w-full whitespace-pre-wrap" data-node-id="1:11402">
+                      <p className="mb-0">Decision dominance from</p>
+                      <p>space to mud</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col items-start pb-[40px] pt-0 px-0 relative shrink-0 w-full" data-name="Margin" data-node-id="1:11403">
+                  <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11404">
+                    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11405">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/67,#aaa)] text-[length:var(--font-size\/18,18px)] text-center w-full" data-node-id="1:11406">
+                        <p className="leading-[var(--line-height\/25,25px)] whitespace-pre-wrap">Operating System for</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] text-center whitespace-nowrap" data-node-id="1:11407">
+                      <p className="leading-[var(--line-height\/25,25px)]">Global Decision-Making</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[1077.28px] relative shrink-0 w-full" data-name="Video:mask-group" data-node-id="1:11408">
+                <div className="absolute aspect-[1920/1077.280029296875] content-stretch flex flex-col items-start left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0%_0px] mask-size-[100%_1077.28px] right-0 top-0" data-name="Gotham-Full-Bleed-02.mp4" data-node-id="1:11411" style={{ maskImage: `url('${imgGothamFullBleed02Mp4}')` }}>
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgGothamFullBleed02Mp5} />
+                  </div>
+                  <div className="content-stretch flex flex-col items-center justify-end relative shrink-0 w-full" data-name="Container" data-node-id="1:11412">
+                    <div className="flex-[1_0_0] min-h-px min-w-px shrink-0 w-full" data-name="Rectangle" data-node-id="1:11413" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Section" data-node-id="1:11414">
+              <div className="content-stretch flex flex-col gap-[var(--item-spacing\/273_6,273.6px)] items-center min-h-[900px] relative shrink-0 w-full" data-name="Header" data-node-id="1:11415">
+                <div className="content-stretch flex gap-[var(--item-spacing\/749_5,0px)] items-start justify-between opacity-[var(--opacity\/43_9,0.439)] px-[60px] py-[40px] relative shrink-0 w-full" data-name="Container" data-node-id="1:11417">
+                  <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container" data-node-id="1:11418">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] tracking-[var(--letter-spacing\/-0_54,-0.54px)] uppercase whitespace-nowrap" data-node-id="1:11419">
+                      <p className="leading-[var(--font-size\/18,18px)]">Software</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container" data-node-id="1:11420">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] tracking-[var(--letter-spacing\/-0_54,-0.54px)] uppercase whitespace-nowrap" data-node-id="1:11421">
+                      <p className="leading-[var(--font-size\/18,18px)]">{`{ Gotham }`}</p>
+                    </div>
+                  </div>
+                  <Component1 className="content-stretch flex flex-col items-start relative self-stretch shrink-0" />
+                </div>
+                <div className="content-stretch flex flex-col items-start max-w-[1728px] pb-[23.19px] pt-[16.81px] px-[60px] relative shrink-0 w-[1503.96px]" data-name="Container" data-node-id="1:11424">
+                  <div className="content-stretch flex flex-col items-center opacity-[var(--opacity\/43_9,0.439)] relative shrink-0 w-full" data-name="Heading 2" data-node-id="1:11425">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/120,120px)] text-center tracking-[var(--letter-spacing\/-4_8,-4.8px)] w-full" data-node-id="1:11426">
+                      <p className="leading-[var(--line-height\/124_8,124.8px)] whitespace-pre-wrap">Orchestrate combat power</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col items-start pb-[40px] pt-0 px-0 relative shrink-0 w-full" data-name="Margin" data-node-id="1:11427">
+                  <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11428">
+                    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11429">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/67,#aaa)] text-[length:var(--font-size\/18,18px)] text-center w-full" data-node-id="1:11430">
+                        <p className="leading-[var(--line-height\/25,25px)] whitespace-pre-wrap">Operating System for</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] text-center whitespace-nowrap" data-node-id="1:11431">
+                      <p className="leading-[var(--line-height\/25,25px)]">Global Decision-Making</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[1080px] relative shrink-0 w-full" data-name="Video:mask-group" data-node-id="1:11432">
+                <div className="absolute aspect-[1920/1080] content-stretch flex flex-col items-start left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0%_0px] mask-size-[100%_1080px] right-0 top-0" data-name="Gotham-Full-Bleed-03.mp4" data-node-id="1:11435" style={{ maskImage: `url('${imgGothamFullBleed03Mp4}')` }}>
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgGothamFullBleed03Mp5} />
+                  </div>
+                  <div className="content-stretch flex flex-col items-center justify-end relative shrink-0 w-full" data-name="Container" data-node-id="1:11436">
+                    <div className="flex-[1_0_0] min-h-px min-w-px shrink-0 w-full" data-name="Rectangle" data-node-id="1:11437" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Section" data-node-id="1:11438">
+              <div className="content-stretch flex flex-col gap-[var(--item-spacing\/211_2,211.2px)] items-center min-h-[900px] relative shrink-0 w-full" data-name="Header" data-node-id="1:11439">
+                <div className="content-stretch flex gap-[var(--item-spacing\/749_5,0px)] items-start justify-between opacity-[var(--opacity\/43_9,0.439)] px-[60px] py-[40px] relative shrink-0 w-full" data-name="Container" data-node-id="1:11440">
+                  <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container" data-node-id="1:11441">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] tracking-[var(--letter-spacing\/-0_54,-0.54px)] uppercase whitespace-nowrap" data-node-id="1:11442">
+                      <p className="leading-[var(--font-size\/18,18px)]">Software</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container" data-node-id="1:11443">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] tracking-[var(--letter-spacing\/-0_54,-0.54px)] uppercase whitespace-nowrap" data-node-id="1:11444">
+                      <p className="leading-[var(--font-size\/18,18px)]">{`{ Gotham }`}</p>
+                    </div>
+                  </div>
+                  <Component1 className="content-stretch flex flex-col items-start relative self-stretch shrink-0" />
+                </div>
+                <div className="content-stretch flex flex-col items-start max-w-[1728px] pb-[6.39px] pt-[33.01px] px-[60px] relative shrink-0 w-[1090.45px]" data-name="Container" data-node-id="1:11447">
+                  <div className="content-stretch flex flex-col items-center opacity-[var(--opacity\/43_9,0.439)] relative shrink-0 w-full" data-name="Heading 2" data-node-id="1:11448">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/124_8,124.8px)] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/120,120px)] text-center tracking-[var(--letter-spacing\/-4_8,-4.8px)] w-full whitespace-pre-wrap" data-node-id="1:11449">
+                      <p className="mb-0">AI-driven</p>
+                      <p>combat superiority</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col items-start pb-[40px] pt-0 px-0 relative shrink-0 w-full" data-name="Margin" data-node-id="1:11450">
+                  <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11451">
+                    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11452">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/67,#aaa)] text-[length:var(--font-size\/18,18px)] text-center w-full" data-node-id="1:11453">
+                        <p className="leading-[var(--line-height\/25,25px)] whitespace-pre-wrap">Operating System for</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/85,#d8d8d8)] text-[length:var(--font-size\/18,18px)] text-center whitespace-nowrap" data-node-id="1:11454">
+                      <p className="leading-[var(--line-height\/25,25px)]">Global Decision-Making</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="h-[1080px] relative shrink-0 w-full" data-name="Video:mask-group" data-node-id="1:11455">
+                <div className="absolute aspect-[1920/1080] content-stretch flex flex-col items-start left-0 mask-alpha mask-intersect mask-no-clip mask-no-repeat mask-position-[0%_0px] mask-size-[100%_1080px] right-0 top-0" data-name="Gotham-Full-Bleed-04.mp4" data-node-id="1:11458" style={{ maskImage: `url('${imgGothamFullBleed04Mp4}')` }}>
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgGothamFullBleed04Mp5} />
+                  </div>
+                  <div className="content-stretch flex flex-col items-center justify-end relative shrink-0 w-full" data-name="Container" data-node-id="1:11459">
+                    <div className="flex-[1_0_0] min-h-px min-w-px shrink-0 w-full" data-name="Rectangle" data-node-id="1:11460" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--color\/white\/solid,white)] content-stretch flex flex-col items-start px-[96px] py-[60px] relative shrink-0 w-full" data-name="Background" data-node-id="1:11461">
+            <div className="content-stretch flex flex-col gap-[var(--opacity\/100,100px)] items-start max-w-[1728px] px-[60px] py-0 relative shrink-0 w-full" data-name="Container" data-node-id="1:11462">
+              <div className="content-stretch flex gap-[var(--item-spacing\/10,10px)] items-start justify-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11463">
+                <div className="bg-[#f9f9f9] border-[#f9f9f9] border-[var(--stroke-weight\/1,1px)] border-solid relative rounded-[10px] self-stretch shrink-0 w-[799px]" data-name="Component 4" data-node-id="1:11465">
+                  <div className="absolute content-stretch flex flex-col items-start left-[40px] pb-[72px] pt-0 px-0 right-[40px] top-[40px]" data-name="Margin" data-node-id="I1:11465;1:10765">
+                    <div className="content-stretch flex gap-[var(--item-spacing\/161_75,0px)] items-start justify-between relative shrink-0 w-full" data-name="Container" data-node-id="I1:11465;1:10766">
+                      <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0" data-name="Container" data-node-id="I1:11465;1:10768">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] max-h-[58.33000183105469px] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/42,42px)] tracking-[var(--letter-spacing\/-1_26,-1.26px)] whitespace-nowrap" data-node-id="I1:11465;1:10769">
+                          <p className="leading-[var(--line-height\/58_33,58.33px)] text-[42px]">Explore Defense Solutions</p>
+                        </div>
+                      </div>
+                      <div className="content-stretch flex flex-col h-[58px] items-start pl-[10px] pr-0 py-0 relative shrink-0 w-[68px]" data-name="Margin" data-node-id="I1:11465;1:10770">
+                        <div className="bg-[var(--color\/grey\/85,#d8d8d8)] border-[var(--color\/grey\/85,#d8d8d8)] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex items-center justify-center p-px relative rounded-[29px] shrink-0 size-[58px]" data-name="Background+Border" data-node-id="I1:11465;1:10771">
+                          <div className="relative shrink-0" data-name="Container" data-node-id="I1:11465;1:10773">
+                            <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative">
+                              <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/42,42px)] whitespace-nowrap" data-node-id="I1:11465;1:10774">
+                                <p className="leading-[var(--font-size\/42,42px)]">→</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute content-stretch flex flex-col items-start left-[40px] pb-[45px] pt-0 px-0 right-[40px] top-[204.87px]" data-name="Margin" data-node-id="I1:11465;1:10775">
+                    <div className="content-stretch flex gap-[var(--item-spacing\/196_9,196.9px)] items-center relative shrink-0 w-full" data-name="Container" data-node-id="I1:11465;1:10776">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/-0_48,-0.48px)] uppercase whitespace-nowrap" data-node-id="I1:11465;1:10777">
+                        <p className="leading-[var(--font-size\/16,16px)]">{`{ Explore`}</p>
+                      </div>
+                      <Component className="h-[192.695px] relative shrink-0 w-[200px]" variant="3" />
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/-0_48,-0.48px)] uppercase whitespace-nowrap" data-node-id="I1:11465;1:10780">
+                        <p className="leading-[var(--font-size\/16,16px)]">{`Now }`}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="absolute content-stretch flex flex-col items-start left-[40px] right-[40px] top-[476.54px]" data-name="Container" data-node-id="I1:11465;1:10781">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/44_94,44.94px)] not-italic relative shrink-0 text-[color:var(--color\/grey\/86,#dbdbdb)] text-[length:var(--font-size\/42,42px)] tracking-[var(--letter-spacing\/-1_26,-1.26px)] whitespace-nowrap" data-node-id="I1:11465;1:10782">
+                      <p className="mb-0">Discover the mission-tested Palantir</p>
+                      <p className="mb-0">{`Solutions that confront the world's`}</p>
+                      <p>most complex Defense challenges.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-[var(--color\/grey\/90,#e5e5e5)] content-stretch flex flex-col items-start justify-center relative rounded-[10px] self-stretch shrink-0 w-[799px]" data-name="Figure" data-node-id="1:11483">
+                  <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px min-w-px overflow-clip relative rounded-[10px] shrink-0 w-full" data-name="Container" data-node-id="1:11484">
+                    <div className="aspect-[799/653.9099731445312] relative rounded-[10px] shrink-0 w-full" data-name="Laptop with Gotham software displayed" data-node-id="1:11485">
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[10px]">
+                        <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgLaptopWithGothamSoftwareDisplayed} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--item-spacing\/40,40px)] items-start justify-center relative shrink-0 w-full" data-name="Section" data-node-id="1:11486">
+                <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0 w-[563.4px]" data-name="Container" data-node-id="1:11488">
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/40,40px)] items-start pb-0 pt-[106px] px-0 shrink-0 sticky top-0 w-full" data-name="Header" data-node-id="1:11492">
+                    <div className="content-stretch flex gap-[var(--item-spacing\/s\+,24px)] items-start overflow-clip relative shrink-0 w-full" data-name="Container" data-node-id="1:11493">
+                      <div className="absolute bg-[var(--color\/grey\/86,#dbdbdb)] h-px left-[-49.47px] right-[57.47px] top-[12.88px]" data-name="Horizontal Divider" data-node-id="1:11495" />
+                      <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px min-w-px pb-[4.27px] pt-[3.5px] px-0 relative self-stretch shrink-0" data-name="Container" data-node-id="1:11496">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-[20px] relative shrink-0 w-[49.33px]" data-name="Background" data-node-id="1:11497">
+                          <div className="absolute flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[28px] justify-center leading-[0] left-[5px] not-italic opacity-[var(--opacity\/74_27,0.743)] text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/20,20px)] top-[10px] translate-y-[-50%] w-[39.65px]" data-node-id="1:11498">
+                            <p className="leading-[var(--line-height\/27_78,27.78px)] whitespace-pre-wrap">[0.1]</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content-stretch flex flex-col items-start pb-[4.27px] pt-[3.5px] px-0 relative self-stretch shrink-0" data-name="Container" data-node-id="1:11500">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-[20px] relative shrink-0 w-[38.95px]" data-name="Background" data-node-id="1:11501">
+                          <div className="absolute flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[28px] justify-center leading-[0] left-[5px] not-italic opacity-[var(--opacity\/68_86,0.689)] text-[color:var(--color\/grey\/86,#dbdbdb)] text-[length:var(--font-size\/20,20px)] top-[10px] translate-y-[-50%] w-[29.315px]" data-node-id="1:11502">
+                            <p className="leading-[var(--line-height\/27_78,27.78px)] whitespace-pre-wrap">0.2</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content-stretch flex flex-col items-start pb-[4.27px] pt-[3.5px] px-0 relative self-stretch shrink-0" data-name="Container" data-node-id="1:11504">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-[20px] relative shrink-0 w-[39.33px]" data-name="Background" data-node-id="1:11505">
+                          <div className="absolute flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[28px] justify-center leading-[0] left-[5px] not-italic opacity-[var(--opacity\/68_86,0.689)] text-[color:var(--color\/grey\/86,#dbdbdb)] text-[length:var(--font-size\/20,20px)] top-[10px] translate-y-[-50%] w-[29.707px]" data-node-id="1:11506">
+                            <p className="leading-[var(--line-height\/27_78,27.78px)] whitespace-pre-wrap">0.3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3" data-node-id="1:11507">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[77px] not-italic relative shrink-0 text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/72,72px)] tracking-[var(--letter-spacing\/-2_16,-2.16px)] w-full whitespace-pre-wrap" data-node-id="1:11508">
+                        <p className="mb-0">Powering the</p>
+                        <p>Kill chain</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col gap-[var(--item-spacing\/69_99,69.99px)] items-start relative self-stretch shrink-0 w-[1004.6px]" data-name="Container" data-node-id="1:11513">
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/40,40px)] items-start max-w-[720px] pb-0 pt-[170px] px-0 relative shrink-0 w-[720px]" data-name="Container" data-node-id="1:11515">
+                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11517">
+                      <div className="flex flex-col font-['Alliance_No.1:Regular',sans-serif] justify-center leading-[33.33px] not-italic relative shrink-0 text-[24px] text-[color:var(--color\/grey\/46,#767676)] tracking-[-0.24px] w-full whitespace-pre-wrap" data-node-id="1:11518">
+                        <p className="mb-0">{`Gotham's targeting offering supports soldiers with an Al-powered`}</p>
+                        <p className="mb-0">kill chain, seamlessly and responsibly integrating target</p>
+                        <p>identification and target effector pairing.</p>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11524">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/33_33,33.33px)] not-italic relative shrink-0 text-[color:var(--color\/grey\/46,#767676)] text-[length:var(--item-spacing\/s\+,24px)] tracking-[var(--letter-spacing\/-0_24,-0.24px)] w-full whitespace-pre-wrap" data-node-id="1:11525">
+                        <p className="mb-0">Operators experience enhanced situational awareness and</p>
+                        <p className="mb-0">effectiveness as Gotham streamlines critical decision-making in</p>
+                        <p>the modern battlespace.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[var(--font-size\/72,72px)] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11526">
+                    <div className="border-[var(--color\/grey\/67,#aaa)] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex gap-[var(--item-spacing\/0,0px)] items-start overflow-clip p-[3px] relative rounded-[1782px] shrink-0" data-name="Border" data-node-id="1:11527">
+                      <div className="relative shrink-0" data-name="Button" data-node-id="1:11529">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-[9px] pt-[11px] px-[24px] relative">
+                          <div className="absolute bg-[var(--color\/grey\/86,#dbdbdb)] inset-0 rounded-[1782px]" data-name="Background" data-node-id="1:11530" />
+                          <div className="content-stretch flex flex-col h-[14px] items-center relative shrink-0" data-name="Container" data-node-id="1:11531">
+                            <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/13,#1e2124)] text-[length:var(--font-size\/14,14px)] text-center uppercase whitespace-nowrap" data-node-id="1:11532">
+                              <p className="leading-[var(--font-size\/14,14px)]">Video</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative shrink-0" data-name="Button" data-node-id="1:11534">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-[9px] pt-[11px] px-[24px] relative">
+                          <div className="content-stretch flex flex-col h-[14px] items-center relative shrink-0" data-name="Container" data-node-id="1:11535">
+                            <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/blue\/14,#1e1f2b)] text-[length:var(--font-size\/14,14px)] text-center uppercase whitespace-nowrap" data-node-id="1:11536">
+                              <p className="leading-[var(--font-size\/14,14px)]">Details</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-[var(--color\/black\/solid,black)] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[10px] shrink-0 w-full" data-name="Border" data-node-id="1:11539">
+                      <div className="bg-[var(--color\/grey\/85,#d8d8d8)] relative shrink-0 w-[1002.6px]" data-name="Background" data-node-id="1:11540">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative w-full">
+                          <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-name="Gotham-Card-01.mp4" data-node-id="1:11541">
+                            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                              <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgGothamCard01Mp4} />
+                            </div>
+                            <div className="content-stretch flex flex-col items-center justify-end relative shrink-0 w-full" data-name="Container" data-node-id="1:11542">
+                              <div className="flex-[1_0_0] min-h-px min-w-px shrink-0 w-full" data-name="Rectangle" data-node-id="1:11543" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--item-spacing\/40,40px)] items-start justify-center pb-0 pt-[42px] px-0 relative shrink-0 w-full" data-name="Section" data-node-id="1:11544">
+                <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0 w-[563.4px]" data-name="Container" data-node-id="1:11545">
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/40,40px)] items-start pb-0 pt-[106px] px-0 shrink-0 sticky top-0 w-full" data-name="Header" data-node-id="1:11549">
+                    <div className="content-stretch flex gap-[var(--item-spacing\/s\+,24px)] items-start overflow-clip relative shrink-0 w-full" data-name="Container" data-node-id="1:11550">
+                      <div className="absolute bg-[var(--color\/grey\/86,#dbdbdb)] h-px left-[-79.18px] right-[87.18px] top-[12.88px]" data-name="Horizontal Divider" data-node-id="1:11551" />
+                      <div className="content-stretch flex flex-col items-start pb-[4.27px] pt-[3.5px] px-0 relative self-stretch shrink-0" data-name="Container" data-node-id="1:11552">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-[20px] relative shrink-0 w-[36.69px]" data-name="Background" data-node-id="1:11553">
+                          <div className="absolute flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[28px] justify-center leading-[0] left-[5px] not-italic opacity-[var(--opacity\/51_56,0.516)] text-[color:var(--color\/grey\/86,#dbdbdb)] text-[length:var(--font-size\/20,20px)] top-[10px] translate-y-[-50%] w-[27.051px]" data-node-id="1:11554">
+                            <p className="leading-[var(--line-height\/27_78,27.78px)] whitespace-pre-wrap">0.1</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px min-w-px pb-[4.27px] pt-[3.5px] px-0 relative self-stretch shrink-0" data-name="Container" data-node-id="1:11556">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-[20px] relative shrink-0 w-[51.59px]" data-name="Background" data-node-id="1:11557">
+                          <div className="absolute flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[28px] justify-center leading-[0] left-[5px] not-italic opacity-[var(--opacity\/59_08,0.591)] text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/20,20px)] top-[10px] translate-y-[-50%] w-[41.907px]" data-node-id="1:11558">
+                            <p className="leading-[var(--line-height\/27_78,27.78px)] whitespace-pre-wrap">[0.2]</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content-stretch flex flex-col items-start pb-[4.27px] pt-[3.5px] px-0 relative self-stretch shrink-0" data-name="Container" data-node-id="1:11560">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-[20px] relative shrink-0 w-[39.33px]" data-name="Background" data-node-id="1:11561">
+                          <div className="absolute flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[28px] justify-center leading-[0] left-[5px] not-italic opacity-[var(--opacity\/51_56,0.516)] text-[color:var(--color\/grey\/86,#dbdbdb)] text-[length:var(--font-size\/20,20px)] top-[10px] translate-y-[-50%] w-[29.707px]" data-node-id="1:11562">
+                            <p className="leading-[var(--line-height\/27_78,27.78px)] whitespace-pre-wrap">0.3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3" data-node-id="1:11563">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[77px] not-italic relative shrink-0 text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/72,72px)] tracking-[var(--letter-spacing\/-2_16,-2.16px)] w-full whitespace-pre-wrap" data-node-id="1:11564">
+                        <p className="mb-0">{`Task sensors &`}</p>
+                        <p>effectors</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col gap-[var(--item-spacing\/69_99,69.99px)] items-start relative self-stretch shrink-0 w-[1004.6px]" data-name="Container" data-node-id="1:11565">
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/40,40px)] items-start max-w-[720px] pb-0 pt-[170px] px-0 relative shrink-0 w-[720px]" data-name="Container" data-node-id="1:11566">
+                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11567">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/33_33,33.33px)] not-italic relative shrink-0 text-[color:var(--color\/grey\/46,#767676)] text-[length:var(--item-spacing\/s\+,24px)] tracking-[var(--letter-spacing\/-0_24,-0.24px)] w-full whitespace-nowrap" data-node-id="1:11568">
+                        <p className="mb-0">Gotham enables the autonomous tasking of sensors, from drones</p>
+                        <p className="mb-0">to satellites, based on Al driven rules or manual inputs for human-</p>
+                        <p>in-the-loop control.</p>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11569">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/33_33,33.33px)] not-italic relative shrink-0 text-[color:var(--color\/grey\/46,#767676)] text-[length:var(--item-spacing\/s\+,24px)] tracking-[var(--letter-spacing\/-0_24,-0.24px)] w-full whitespace-pre-wrap" data-node-id="1:11570">
+                        <p className="mb-0">Gotham empowers you to make informed decisions, maximizing</p>
+                        <p className="mb-0">the effectiveness of your assets in even the most dynamic</p>
+                        <p>operational environments.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[var(--font-size\/72,72px)] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11571">
+                    <div className="border-[var(--color\/grey\/67,#aaa)] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex gap-[var(--item-spacing\/0,0px)] items-start overflow-clip p-[3px] relative rounded-[1782px] shrink-0" data-name="Border" data-node-id="1:11572">
+                      <div className="relative shrink-0" data-name="Button" data-node-id="1:11573">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-[9px] pt-[11px] px-[24px] relative">
+                          <div className="absolute bg-[var(--color\/grey\/86,#dbdbdb)] inset-0 rounded-[1782px]" data-name="Background" data-node-id="1:11574" />
+                          <div className="content-stretch flex flex-col h-[14px] items-center relative shrink-0" data-name="Container" data-node-id="1:11575">
+                            <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/13,#1e2124)] text-[length:var(--font-size\/14,14px)] text-center uppercase whitespace-nowrap" data-node-id="1:11576">
+                              <p className="leading-[var(--font-size\/14,14px)]">Video</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative shrink-0" data-name="Button" data-node-id="1:11577">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-[9px] pt-[11px] px-[24px] relative">
+                          <div className="content-stretch flex flex-col h-[14px] items-center relative shrink-0" data-name="Container" data-node-id="1:11578">
+                            <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/blue\/14,#1e1f2b)] text-[length:var(--font-size\/14,14px)] text-center uppercase whitespace-nowrap" data-node-id="1:11579">
+                              <p className="leading-[var(--font-size\/14,14px)]">Details</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-[var(--color\/black\/solid,black)] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[10px] shrink-0 w-full" data-name="Border" data-node-id="1:11580">
+                      <div className="bg-[var(--color\/grey\/85,#d8d8d8)] relative shrink-0 w-[1002.6px]" data-name="Background" data-node-id="1:11581">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative w-full">
+                          <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-name="Gotham-Card-02.mp4" data-node-id="1:11582">
+                            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                              <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgGothamCard02Mp4} />
+                            </div>
+                            <div className="content-stretch flex flex-col items-center justify-end relative shrink-0 w-full" data-name="Container" data-node-id="1:11583">
+                              <div className="flex-[1_0_0] min-h-px min-w-px shrink-0 w-full" data-name="Rectangle" data-node-id="1:11584" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--item-spacing\/40,40px)] items-start justify-center pb-0 pt-[41.99px] px-0 relative shrink-0 w-full" data-name="Section" data-node-id="1:11585">
+                <div className="content-stretch flex flex-col items-start relative self-stretch shrink-0 w-[563.4px]" data-name="Container" data-node-id="1:11586">
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/40_01,40.01px)] items-start pb-0 pt-[106px] px-0 shrink-0 sticky top-0 w-full" data-name="Header" data-node-id="1:11590">
+                    <div className="content-stretch flex gap-[var(--item-spacing\/s\+,24px)] items-start overflow-clip relative shrink-0 w-full" data-name="Container" data-node-id="1:11592">
+                      <div className="absolute bg-[var(--color\/grey\/86,#dbdbdb)] h-px left-[-79.18px] right-[87.18px] top-[12.89px]" data-name="Horizontal Divider" data-node-id="1:11593" />
+                      <div className="content-stretch flex flex-col items-start pb-[4.27px] pt-[3.5px] px-0 relative self-stretch shrink-0" data-name="Container" data-node-id="1:11594">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-[20px] relative shrink-0 w-[36.69px]" data-name="Background" data-node-id="1:11595">
+                          <div className="absolute flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[28px] justify-center leading-[0] left-[5px] not-italic opacity-[var(--opacity\/51_56,0.516)] text-[color:var(--color\/grey\/86,#dbdbdb)] text-[length:var(--font-size\/20,20px)] top-[10px] translate-y-[-50%] w-[27.051px]" data-node-id="1:11596">
+                            <p className="leading-[var(--line-height\/27_78,27.78px)] whitespace-pre-wrap">0.1</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content-stretch flex flex-col items-start pb-[4.27px] pt-[3.5px] px-0 relative self-stretch shrink-0" data-name="Container" data-node-id="1:11597">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-[20px] relative shrink-0 w-[38.95px]" data-name="Background" data-node-id="1:11598">
+                          <div className="absolute flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[28px] justify-center leading-[0] left-[5px] not-italic opacity-[var(--opacity\/51_56,0.516)] text-[color:var(--color\/grey\/86,#dbdbdb)] text-[length:var(--font-size\/20,20px)] top-[10px] translate-y-[-50%] w-[29.315px]" data-node-id="1:11599">
+                            <p className="leading-[var(--line-height\/27_78,27.78px)] whitespace-pre-wrap">0.2</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px min-w-px pb-[4.27px] pt-[3.5px] px-0 relative self-stretch shrink-0" data-name="Container" data-node-id="1:11600">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-[20px] relative shrink-0 w-[51.97px]" data-name="Background" data-node-id="1:11601">
+                          <div className="absolute flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[28px] justify-center leading-[0] left-[5px] not-italic opacity-[var(--opacity\/62_32,0.623)] text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/20,20px)] top-[10px] translate-y-[-50%] w-[42.298px]" data-node-id="1:11602">
+                            <p className="leading-[var(--line-height\/27_78,27.78px)] whitespace-pre-wrap">[0.3]</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Heading 3" data-node-id="1:11604">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[77px] not-italic relative shrink-0 text-[color:var(--color\/grey\/14,#202426)] text-[length:var(--font-size\/72,72px)] tracking-[var(--letter-spacing\/-2_16,-2.16px)] w-full whitespace-pre-wrap" data-node-id="1:11605">
+                        <p className="mb-0">Ops Center</p>
+                        <p>anywhere</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col gap-[var(--item-spacing\/70_01,70.01px)] items-start relative self-stretch shrink-0 w-[1004.6px]" data-name="Container" data-node-id="1:11606">
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/40_01,40.01px)] items-start max-w-[720px] pb-0 pt-[170px] px-0 relative shrink-0 w-[720px]" data-name="Container" data-node-id="1:11608">
+                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11609">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/33_33,33.33px)] not-italic relative shrink-0 text-[color:var(--color\/grey\/46,#767676)] text-[length:var(--item-spacing\/s\+,24px)] tracking-[var(--letter-spacing\/-0_24,-0.24px)] w-full whitespace-pre-wrap" data-node-id="1:11610">
+                        <p className="mb-0">Harness the full power of the platform from operations centers to</p>
+                        <p className="mb-0">the edge, transforming any bunker or outpost into an instant</p>
+                        <p>command center with mixed reality capabilities.</p>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11611">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/33_33,33.33px)] not-italic relative shrink-0 text-[color:var(--color\/grey\/46,#767676)] text-[length:var(--item-spacing\/s\+,24px)] tracking-[var(--letter-spacing\/-0_24,-0.24px)] w-full whitespace-pre-wrap" data-node-id="1:11612">
+                        <p className="mb-0">Immerse yourself in a dynamic environment that bridges the gap</p>
+                        <p>between physical and digital worlds.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[var(--font-size\/72,72px)] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11613">
+                    <div className="border-[var(--color\/grey\/67,#aaa)] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex gap-[var(--item-spacing\/0,0px)] items-start overflow-clip p-[3px] relative rounded-[1782px] shrink-0" data-name="Border" data-node-id="1:11614">
+                      <div className="relative shrink-0" data-name="Button" data-node-id="1:11615">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-[9px] pt-[11px] px-[24px] relative">
+                          <div className="absolute bg-[var(--color\/grey\/86,#dbdbdb)] inset-0 rounded-[1782px]" data-name="Background" data-node-id="1:11616" />
+                          <div className="content-stretch flex flex-col h-[14px] items-center relative shrink-0" data-name="Container" data-node-id="1:11617">
+                            <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/13,#1e2124)] text-[length:var(--font-size\/14,14px)] text-center uppercase whitespace-nowrap" data-node-id="1:11618">
+                              <p className="leading-[var(--font-size\/14,14px)]">Video</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative shrink-0" data-name="Button" data-node-id="1:11619">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center pb-[9px] pt-[11px] px-[24px] relative">
+                          <div className="content-stretch flex flex-col h-[14px] items-center relative shrink-0" data-name="Container" data-node-id="1:11620">
+                            <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/blue\/14,#1e1f2b)] text-[length:var(--font-size\/14,14px)] text-center uppercase whitespace-nowrap" data-node-id="1:11621">
+                              <p className="leading-[var(--font-size\/14,14px)]">Details</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-[var(--color\/black\/solid,black)] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex flex-col items-start overflow-clip p-px relative rounded-[10px] shrink-0 w-full" data-name="Border" data-node-id="1:11622">
+                      <div className="bg-[var(--color\/grey\/85,#d8d8d8)] relative shrink-0 w-[1002.6px]" data-name="Background" data-node-id="1:11623">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative w-full">
+                          <div className="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-name="Gotham-Card-03.mp4" data-node-id="1:11624">
+                            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                              <img alt="" className="absolute left-0 max-w-none size-full top-0" src={imgGothamCard03Mp4} />
+                            </div>
+                            <div className="content-stretch flex flex-col items-center justify-end relative shrink-0 w-full" data-name="Container" data-node-id="1:11625">
+                              <div className="flex-[1_0_0] min-h-px min-w-px shrink-0 w-full" data-name="Rectangle" data-node-id="1:11626" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--font-size\/20,20px)] items-start justify-center pb-0 pt-[42.01px] px-0 relative shrink-0 w-full" data-name="Container" data-node-id="1:11627">
+                <div className="bg-[var(--color\/grey\/13,#1e2124)] content-stretch flex flex-col gap-[var(--font-size\/120,120px)] items-start p-[70px] relative rounded-[10px] self-stretch shrink-0 w-[1058.66px]" data-name="Blockquote" data-node-id="1:11628">
+                  <div className="font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] h-[275px] leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/67,#aaa)] text-[length:var(--opacity\/50,50px)] tracking-[var(--letter-spacing\/-1_25,-1.25px)] w-full" data-name="Paragraph" data-node-id="1:11629">
+                    <div className="absolute flex flex-col h-[55px] justify-center left-[120px] top-[27.5px] translate-y-[-50%] w-[700.619px]" data-node-id="1:11630">
+                      <p className="leading-[var(--line-height\/55,55px)] whitespace-pre-wrap">“[Palantir] came up with ground</p>
+                    </div>
+                    <div className="absolute flex flex-col h-[220px] justify-center leading-[var(--line-height\/55,55px)] left-0 top-[165px] translate-y-[-50%] w-[899.914px] whitespace-pre-wrap" data-node-id="1:11634">
+                      <p className="mb-0">breaking technologies that help us make</p>
+                      <p className="mb-0">better decisions in combat zones. You</p>
+                      <p className="mb-0">are giving us advantages right now that</p>
+                      <p>we need.” —</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/-0_01,0px)] items-start pb-[0.01px] pt-0 px-0 relative shrink-0 w-full" data-name="Figcaption" data-node-id="1:11635">
+                    <div className="content-stretch flex flex-col items-start mb-[-0.01px] relative shrink-0 w-full" data-name="Container" data-node-id="1:11637">
+                      <div className="flex flex-col font-['Alliance_No.1:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[24px] text-[color:var(--color\/white\/solid,white)] tracking-[-0.09px] w-full" data-node-id="1:11638">
+                        <p className="leading-[33.33px] whitespace-pre-wrap">General James N. Mattis</p>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start mb-[-0.01px] relative shrink-0 w-full" data-name="Container" data-node-id="1:11641">
+                      <div className="flex flex-col font-['Alliance_No.1:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-[color:var(--color\/white\/solid,white)] tracking-[-0.09px] w-full" data-node-id="1:11642">
+                        <p className="leading-[25px] whitespace-pre-wrap">Fmr. US Secretary of Defense</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[var(--item-spacing\/301_25,0px)] items-start justify-between relative self-stretch shrink-0 w-[529.33px]" data-name="Container" data-node-id="1:11644">
+                  <div className="content-stretch flex flex-col h-full items-start relative shrink-0" data-name="Container" data-node-id="1:11646">
+                    <div className="flex flex-col font-['Alliance_No.1:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--color\/grey\/13,#1e2124)] tracking-[-0.48px] uppercase whitespace-nowrap" data-node-id="1:11647">
+                      <p className="leading-[22.22px]">{`{ Real People`}</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col h-full items-start relative shrink-0" data-name="Container" data-node-id="1:11650">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/grey\/13,#1e2124)] text-[length:var(--font-size\/16,16px)] tracking-[var(--letter-spacing\/-0_48,-0.48px)] uppercase whitespace-nowrap" data-node-id="1:11651">
+                      <p className="leading-[var(--line-height\/22_22,22.22px)]">{`Real Results }`}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-col gap-[var(--item-spacing\/54,54px)] items-center max-w-[1170px] pb-0 pt-[200px] px-[60px] relative shrink-0 w-[1170px]" data-name="Section" data-node-id="1:11652">
+            <div className="content-stretch flex flex-col items-center relative shrink-0 w-full" data-name="Heading 3" data-node-id="1:11655">
+              <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/72,72px)] text-center tracking-[var(--letter-spacing\/-2_88,-2.88px)] w-full" data-node-id="1:11656">
+                <p className="leading-[var(--opacity\/100,100px)] whitespace-pre-wrap">Are you ready?</p>
+              </div>
+            </div>
+            <Component className="h-[116px] relative shrink-0 w-[120px]" variant="4" />
+            <div className="content-stretch flex flex-col items-center pb-0 pt-[6.445px] px-0 relative shrink-0 w-full" data-name="Container" data-node-id="1:11661">
+              <div className="flex flex-col font-['Alliance_No.1:Regular',sans-serif] justify-center leading-[74.88px] not-italic relative shrink-0 text-[72px] text-[color:var(--color\/grey\/67,#aaa)] text-center tracking-[-2.88px] w-full whitespace-pre-wrap" data-node-id="1:11662">
+                <p className="mb-0">Help revolutionize technology and</p>
+                <p>{`accelerate software's future.`}</p>
+              </div>
+            </div>
+            <div className="bg-[#595959] content-stretch flex items-start justify-center px-[32px] py-[12px] relative rounded-[4px] shrink-0" data-name="Component 5" data-node-id="1:11665">
+              <div className="flex flex-col font-['Alliance_No.1:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-[color:var(--color\/white\/solid,white)] text-center whitespace-nowrap" data-node-id="I1:11665;1:10172">
+                <p className="leading-[25px]">Join Now</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bg-[var(--color\/grey\/13,#1e2124)] content-stretch flex flex-col items-start left-0 pb-[100px] pt-[90px] px-[240px] right-0 top-[15434.75px]" data-name="Footer" data-node-id="1:11667">
+          <div className="content-stretch flex gap-[var(--item-spacing\/30,30px)] items-start justify-center relative shrink-0 w-full" data-name="Container" data-node-id="1:11668">
+            <div className="overflow-clip relative self-stretch shrink-0 w-[460px]" data-name="Container" data-node-id="1:11670">
+              <div className="absolute content-stretch flex flex-col items-start left-0 overflow-clip right-0 top-0" data-name="Container" data-node-id="1:11671">
+                <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] whitespace-nowrap" data-node-id="1:11672">
+                  <p className="leading-[var(--line-height\/22_86,22.86px)]">© 2025 Palantir Technologies Inc.</p>
+                </div>
+              </div>
+              <div className="absolute content-stretch flex flex-col items-start left-0 overflow-clip right-0 top-[28.85px]" data-name="Container" data-node-id="1:11673">
+                <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] whitespace-nowrap" data-node-id="1:11674">
+                  <p className="leading-[var(--line-height\/22_86,22.86px)]">All rights reserved.</p>
+                </div>
+              </div>
+              <div className="absolute border-[var(--color\/grey\/67,#aaa)] border-b-0 border-l-0 border-r-0 border-solid border-t-[var(--stroke-weight\/1,1px)] content-stretch flex items-start left-0 max-w-[264px] pb-0 pt-[21px] px-0 right-[196px] top-[159.41px]" data-name="HorizontalBorder" data-node-id="1:11675">
+                <div className="h-[22.85px] relative shrink-0" data-name="Link:margin" data-node-id="1:11676">
+                  <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col h-full items-start justify-center pl-0 pr-[10px] py-0 relative">
+                    <div className="content-stretch flex flex-col h-[22.85px] items-start relative shrink-0" data-name="Component 6" data-node-id="1:11677">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] max-h-[22.860000610351562px] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] whitespace-nowrap" data-node-id="I1:11677;1:10199">
+                        <p className="leading-[var(--line-height\/22_86,22.86px)] text-[16px]">US</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="h-[22.85px] relative shrink-0" data-name="Link:margin" data-node-id="1:11679">
+                  <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col h-full items-start justify-center pl-0 pr-[10px] py-0 relative">
+                    <div className="content-stretch flex flex-col h-[22.85px] items-start relative shrink-0" data-name="Component 6" data-node-id="1:11680">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] max-h-[22.860000610351562px] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] whitespace-nowrap" data-node-id="I1:11680;1:10203">
+                        <p className="leading-[var(--line-height\/22_86,22.86px)] text-[16px]">UK</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="h-[22.85px] relative shrink-0" data-name="Link:margin" data-node-id="1:11682">
+                  <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col h-full items-start justify-center pl-0 pr-[10px] py-0 relative">
+                    <div className="content-stretch flex flex-col h-[22.85px] items-start relative shrink-0" data-name="Component 6" data-node-id="1:11683">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] max-h-[22.860000610351562px] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] whitespace-nowrap" data-node-id="I1:11683;1:10207">
+                        <p className="leading-[var(--line-height\/22_86,22.86px)] text-[16px]">JP</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="h-[22.85px] relative shrink-0" data-name="Link:margin" data-node-id="1:11685">
+                  <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col h-full items-start justify-center pl-0 pr-[10px] py-0 relative">
+                    <div className="content-stretch flex flex-col h-[22.85px] items-start relative shrink-0" data-name="Component 6" data-node-id="1:11686">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] max-h-[22.860000610351562px] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] whitespace-nowrap" data-node-id="I1:11686;1:10211">
+                        <p className="leading-[var(--line-height\/22_86,22.86px)] text-[16px]">KR</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute border-[var(--color\/grey\/67,#aaa)] border-b-0 border-l-0 border-r-0 border-solid border-t-[var(--stroke-weight\/1,1px)] content-stretch flex flex-col items-start left-0 max-w-[264px] pb-0 pt-px px-0 right-[196px] top-[223.26px]" data-name="HorizontalBorder" data-node-id="1:11688">
+                <div className="relative shrink-0 w-full" data-name="Container" data-node-id="1:11689">
+                  <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[var(--item-spacing\/12,12px)] items-start pb-0 pt-[24px] px-0 relative w-full">
+                    <div className="border-[#aaa] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex h-[38px] items-center justify-center pb-[7.93px] pt-[7.07px] px-px relative rounded-[60px] shrink-0 w-[164px]" data-name="Component 5" data-node-id="1:11691">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] text-center uppercase whitespace-nowrap" data-node-id="I1:11691;1:10183">
+                        <p className="leading-[var(--line-height\/22_86,22.86px)]">Youtube</p>
+                      </div>
+                    </div>
+                    <div className="border-[#aaa] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex h-[38px] items-center justify-center pb-[7.93px] pt-[7.07px] px-px relative rounded-[60px] shrink-0 w-[164px]" data-name="Component 5" data-node-id="1:11693">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] text-center uppercase whitespace-nowrap" data-node-id="I1:11693;1:10183">
+                        <p className="leading-[var(--line-height\/22_86,22.86px)]">X</p>
+                      </div>
+                    </div>
+                    <div className="border-[#aaa] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex h-[38px] items-center justify-center pb-[7.93px] pt-[7.07px] px-px relative rounded-[60px] shrink-0 w-[164px]" data-name="Component 5" data-node-id="1:11695">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] text-center uppercase whitespace-nowrap" data-node-id="I1:11695;1:10183">
+                        <p className="leading-[var(--line-height\/22_86,22.86px)]">Linkedin</p>
+                      </div>
+                    </div>
+                    <div className="border-[#aaa] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex h-[38px] items-center justify-center pb-[7.93px] pt-[7.07px] px-px relative rounded-[60px] shrink-0 w-[164px]" data-name="Component 5" data-node-id="1:11697">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] text-center uppercase whitespace-nowrap" data-node-id="I1:11697;1:10183">
+                        <p className="leading-[var(--line-height\/22_86,22.86px)]">Github</p>
+                      </div>
+                    </div>
+                    <div className="border-[#aaa] border-[var(--stroke-weight\/1,1px)] border-solid content-stretch flex h-[38px] items-center justify-center pb-[7.93px] pt-[7.07px] px-px relative rounded-[60px] shrink-0 w-[164px]" data-name="Component 5" data-node-id="1:11699">
+                      <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] text-center uppercase whitespace-nowrap" data-node-id="I1:11699;1:10183">
+                        <p className="leading-[var(--line-height\/22_86,22.86px)]">Store</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute border-[#aaa] border-b-0 border-l-0 border-r-0 border-solid border-t-[var(--stroke-weight\/1,1px)] content-stretch flex items-start left-0 max-w-[264px] pb-px pl-0 pr-[6px] pt-[20.425px] right-[196px] top-[71.7px]" data-name="Component 7" data-node-id="1:11701">
+                <div className="h-[46.275px] relative shrink-0" data-name="Container" data-node-id="I1:11701;1:10700">
+                  <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col h-full items-center px-[5.41px] py-0 relative">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/22_86,22.86px)] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] text-center whitespace-nowrap" data-node-id="I1:11701;1:10701">
+                      <p className="mb-0">Do Not Sell or Share My Personal</p>
+                      <p>Information</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute h-[66.7px] left-[-13.32px] top-[20px] w-[13.32px]" data-name="Container" data-node-id="I1:11701;1:10702">
+                  <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-center relative size-full">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/-33\%,rgba(255,255,255,0.33))] text-[length:var(--font-size\/16,16px)] text-center whitespace-nowrap" data-node-id="I1:11701;1:10703">
+                      <p className="leading-[var(--line-height\/22_86,22.86px)]">—</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--item-spacing\/30,30px)] items-start justify-center relative self-stretch shrink-0 w-[950px]" data-name="Container" data-node-id="1:11706">
+              <div className="content-stretch flex flex-col h-full items-start relative shrink-0 w-[215px]" data-name="Container" data-node-id="1:11707">
+                <div className="content-stretch flex flex-col gap-[var(--item-spacing\/10,10px)] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11708">
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11709">
+                    <div className="flex flex-col font-['Alliance_No.1:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[10px] text-[color:var(--color\/white\/solid,white)] tracking-[0.5px] uppercase w-full" data-node-id="1:11710">
+                      <p className="leading-[16px] whitespace-pre-wrap">Offerings</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/5_7,5.7px)] items-start relative shrink-0 w-full" data-name="List" data-node-id="1:11713">
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11715">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11716">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11716;1:10218">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">American Tech Fellowship</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11719">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11720">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11720;1:10223">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Anti-Money Laundering</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11723">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11724">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11724;1:10228">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">{`Automotive & Mobility`}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11727">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11728">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11728;1:10233">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Data Protection</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11731">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11732">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11732;1:10238">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Defense</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11735">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11736">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11736;1:10243">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Energy</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11739">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11740">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11740;1:10248">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Federal Health</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11743">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11744">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11744;1:10253">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">FedStart</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11747">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11748">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11748;1:10258">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Financial Services</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11751">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11752">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11752;1:10263">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">{`Food & Beverage`}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11755">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11756">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11756;1:10268">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Palantir for Builders</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="h-[45.7px] overflow-clip relative shrink-0 w-full" data-name="Item" data-node-id="1:11759">
+                      <div className="absolute content-stretch flex flex-col items-start left-0 right-[18.28px] top-[-0.57px]" data-name="Component 6" data-node-id="1:11760">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/22_86,22.86px)] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] whitespace-nowrap" data-node-id="I1:11760;1:10273">
+                          <p className="mb-0">Govt Financial</p>
+                          <p>Management</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11763">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11764">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11764;1:10278">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Hospital Operations</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11767">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11768">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11768;1:10283">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Insurance</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11771">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11772">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11772;1:10288">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Intelligence</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11775">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11776">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11776;1:10293">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Life Sciences</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11779">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11780">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11780;1:10298">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Mission Manager</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11783">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11784">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11784;1:10303">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Procurement</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11787">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11788">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11788;1:10308">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Rail</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11791">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11792">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11792;1:10313">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Readiness</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11795">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11796">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11796;1:10318">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Retail</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11799">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11800">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11800;1:10323">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Secure Collaboration</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11803">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11804">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11804;1:10328">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Semiconductors</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11807">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11808">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11808;1:10333">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Supply Chain</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11811">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11812">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11812;1:10338">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Telecommunications</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11815">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11816">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11816;1:10343">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Utilities</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex flex-col h-full items-start relative shrink-0 w-[215px]" data-name="Container" data-node-id="1:11819">
+                <div className="content-stretch flex flex-col gap-[var(--item-spacing\/10,10px)] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11820">
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11821">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--item-spacing\/10,10px)] tracking-[var(--letter-spacing\/0_5,0.5px)] uppercase w-full" data-node-id="1:11822">
+                      <p className="leading-[var(--font-size\/16,16px)] whitespace-pre-wrap">Impact Studies</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/5_7,5.7px)] items-start relative shrink-0 w-full" data-name="List" data-node-id="1:11823">
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11824">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11825">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11825;1:10348">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Airbus</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11828">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11829">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11829;1:10353">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Axel Springer</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11832">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11833">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11833;1:10358">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Cleveland Clinic</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11836">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11837">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11837;1:10363">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Concordance</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11840">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11841">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11841;1:10368">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Doosan Infracore</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11844">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11845">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11845;1:10373">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Fujitsu</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11848">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11849">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11849;1:10378">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Jacobs</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11852">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11853">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11853;1:10383">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Kinder Morgan</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11856">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11857">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11857;1:10388">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">NHS</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11860">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11861">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11861;1:10393">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">{`Pacific Gas & Electric`}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11864">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11865">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11865;1:10398">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Ringier</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11868">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11869">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11869;1:10403">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Sonnedix</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11872">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11873">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11873;1:10408">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">SOMPO</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11876">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11877">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11877;1:10413">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Swiss Re</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11880">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11881">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11881;1:10418">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Tampa General Hospital</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11884">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11885">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11885;1:10423">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">World Food Programme</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex flex-col h-full items-start relative shrink-0 w-[215px]" data-name="Container" data-node-id="1:11888">
+                <div className="content-stretch flex flex-col gap-[var(--item-spacing\/10,10px)] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11889">
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11890">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--item-spacing\/10,10px)] tracking-[var(--letter-spacing\/0_5,0.5px)] uppercase w-full" data-node-id="1:11891">
+                      <p className="leading-[var(--font-size\/16,16px)] whitespace-pre-wrap">Capabilities</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/5_7,5.7px)] items-start relative shrink-0 w-full" data-name="List" data-node-id="1:11892">
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11893">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11894">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11894;1:10428">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">AI + ML</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11897">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11898">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11898;1:10433">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">AIP for Developers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11901">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11902">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11902;1:10438">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Data Integration</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11905">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11906">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11906;1:10443">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Digital Twin</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11909">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11910">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11910;1:10448">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Dynamic Scheduling</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11913">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11914">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11914;1:10453">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Edge AI</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11917">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11918">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11918;1:10458">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Marketplace</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11921">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11922">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11922;1:10463">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">MetaConstellation</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11925">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11926">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11926;1:10468">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Pipeline Builder</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11929">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11930">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11930;1:10473">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Process Mining</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11933">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11934">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11934;1:10478">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Real-Time Alerting</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11937">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11938">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11938;1:10483">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Streaming</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11941">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11942">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11942;1:10488">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Titanium</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11945">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11946">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11946;1:10493">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Warp Speed</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex flex-col h-full items-start relative shrink-0 w-[215px]" data-name="Container" data-node-id="1:11949">
+                <div className="content-stretch flex flex-col gap-[var(--item-spacing\/10,10px)] items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11950">
+                  <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container" data-node-id="1:11951">
+                    <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--item-spacing\/10,10px)] tracking-[var(--letter-spacing\/0_5,0.5px)] uppercase w-full" data-node-id="1:11952">
+                      <p className="leading-[var(--font-size\/16,16px)] whitespace-pre-wrap">Documents</p>
+                    </div>
+                  </div>
+                  <div className="content-stretch flex flex-col gap-[var(--item-spacing\/5_7,5.7px)] items-start relative shrink-0 w-full" data-name="List" data-node-id="1:11953">
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11954">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11955">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11955;1:10498">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Developer Community</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11958">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11959">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11959;1:10503">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Platform Documentation</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11962">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11963">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11963;1:10508">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Palantir Developers</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11966">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11967">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11967;1:10513">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Trust Center</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="h-[45.7px] overflow-clip relative shrink-0 w-full" data-name="Item" data-node-id="1:11970">
+                      <div className="absolute content-stretch flex flex-col items-start left-0 right-[18.28px] top-[-0.57px]" data-name="Component 6" data-node-id="1:11971">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[var(--line-height\/22_86,22.86px)] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] whitespace-nowrap" data-node-id="I1:11971;1:10518">
+                          <p className="mb-0">Modern Slavery</p>
+                          <p>Statement</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11974">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11975">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11975;1:10523">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Cookies</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11978">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11979">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11979;1:10528">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Privacy and Civil Liberties</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11982">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11983">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11983;1:10533">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Palantir Explained</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11986">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11987">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11987;1:10538">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Sustainability</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11990">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11991">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11991;1:10543">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Human Rights Policy</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11994">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11995">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11995;1:10548">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Privacy Statement</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="content-stretch flex flex-col items-start overflow-clip pl-0 pr-[18.286px] py-0 relative shrink-0 w-full" data-name="Item" data-node-id="1:11998">
+                      <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Component 6" data-node-id="1:11999">
+                        <div className="flex flex-col font-[family-name:var(--font-family\/font-2,'Alliance_No.1:Regular',sans-serif)] justify-center leading-[0] not-italic relative shrink-0 text-[color:var(--color\/white\/solid,white)] text-[length:var(--font-size\/16,16px)] w-full" data-node-id="I1:11999;1:10553">
+                          <p className="leading-[var(--line-height\/22_86,22.86px)] whitespace-pre-wrap">Terms of Use</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute h-[16410.51953125px] inset-0 pointer-events-none">
+          <div className="h-[0.01px] mix-blend-difference pointer-events-auto sticky top-0" data-name="Banner" data-node-id="1:12005">
+            <div className="absolute content-stretch flex items-center left-[240px] pb-[26px] pt-[40px] px-0 top-0" data-name="Container" data-node-id="1:12006">
+              <div className="h-[20px] relative shrink-0 w-[83px]" data-name="Component 1" data-node-id="1:12007">
+                <div className="absolute inset-[0_0.57%_0_0] opacity-[var(--opacity\/100,1)]" data-name="Vector" data-node-id="I1:12007;1:9938">
+                  <div className="absolute inset-0" style={{ "--fill-0": "rgba(255, 255, 255, 1)" } as React.CSSProperties}>
+                    <img alt="" className="block max-w-none size-full" src={img5} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute h-[16410.51953125px] inset-0 pointer-events-none">
+          <div className="h-[0.01px] pointer-events-auto sticky top-0" data-name="Container" data-node-id="1:12012">
+            <div className="absolute content-stretch flex h-[40px] items-start justify-end right-[239.91px] top-[30px]" data-name="Container" data-node-id="1:12013">
+              <div className="content-stretch flex flex-col h-full items-start justify-center min-w-[315px] pl-0 pr-[30px] py-0 relative shrink-0" data-name="Margin" data-node-id="1:12014">
+                <div className="content-stretch flex h-[40px] items-start min-w-[285px] relative shrink-0" data-name="Container" data-node-id="1:12016">
+                  <div className="bg-[#1e2124] border-[var(--stroke-weight\/1,1px)] border-solid border-white content-stretch flex h-[40px] items-center justify-center pb-[8.92px] pl-[99.04px] pr-[99.05px] pt-[8.08px] relative shrink-0" data-name="Component 5" data-node-id="1:12018">
+                    <div className="flex flex-col font-['Alliance_No.1:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--color\/white\/solid,white)] text-center whitespace-nowrap" data-node-id="I1:12018;1:10185">
+                      <p className="leading-[22.86px]">Get Started</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex h-full items-start relative shrink-0" data-name="Container" data-node-id="1:12020">
+                <div className="content-stretch flex flex-col h-[40px] items-start relative shrink-0 w-[39px]" data-name="Button:margin" data-node-id="1:12021">
+                  <div className="bg-[#1e2124] border-[var(--stroke-weight\/1,1px)] border-solid border-white content-stretch flex items-center justify-center p-px relative shrink-0 size-[40px]" data-name="Component 8" data-node-id="1:12022">
+                    <Component className="relative shrink-0 size-[16px]" variant="7" />
+                  </div>
+                </div>
+                <div className="content-stretch flex flex-col h-[40px] items-start relative shrink-0 w-[39px]" data-name="Button:margin" data-node-id="1:12026">
+                  <div className="bg-[#1e2124] border-[var(--stroke-weight\/1,1px)] border-solid border-white content-stretch flex items-center justify-center p-px relative shrink-0 size-[40px]" data-name="Component 9" data-node-id="1:12027">
+                    <div className="relative shrink-0" data-name="Container" data-node-id="I1:12027;1:10720">
+                      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip px-0 py-[6px] relative rounded-[inherit]">
+                        <div className="bg-[var(--color\/white\/solid,white)] h-px relative rounded-[4px] shrink-0 w-[20px]" data-name="Horizontal Divider" data-node-id="I1:12027;1:10721">
+                          <div className="absolute bg-[var(--color\/white\/solid,white)] h-px left-0 rounded-[4px] top-[-6px] w-[20px]" data-name="Horizontal Divider" data-node-id="I1:12027;1:10722" />
+                          <div className="absolute bg-[var(--color\/white\/solid,white)] h-px right-0 rounded-[4px] top-[6px] w-[20px]" data-name="Horizontal Divider" data-node-id="I1:12027;1:10723" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[1200px] left-0 overflow-clip top-0 w-[1920px]" data-name="Container" data-node-id="1:12052">
+        <Component className="absolute h-[61.583px] left-[935px] opacity-0 top-[565.71px] w-[49.99px]" variant="8" />
+      </div>
+    </div>
+  );
+}
+
+### Content Block 2 (Text)
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+
+### Content Block 3 (Text)
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+
+### Content Block 4 (Text)
+These styles are contained in the design: www.palantir.com/Alto: #D8D8D8, www.palantir.com/Inter/Regular: Font(family: "font family/Font 1", style: Regular, size: font size/13_33, weight: font weight/400, lineHeight: 100, letterSpacing: 0), www.palantir.com/Black 60%: #000000, www.palantir.com/Alliance No.1/Regular upper: Font(family: "font family/Font 2", style: Regular, size: item spacing/10, weight: font weight/400, lineHeight: font size/16, letterSpacing: letter spacing/0_5), guardrailhr.replit.app/White: #FFFFFF, www.palantir.com/Semantic/Heading 2: Font(family: "font family/Font 2", style: Regular, size: font size/120, weight: font weight/400, lineHeight: line height/124_8, letterSpacing: letter spacing/-4_8), www.palantir.com/Silver Chalice: #AAAAAA, www.palantir.com/Alliance No.1/Regular: Font(family: "font family/Font 2", style: Regular, size: font size/16, weight: font weight/400, lineHeight: line height/22_86, letterSpacing: 0), www.palantir.com/Black: #000000, www.palantir.com/Shark: #1E2124, www.palantir.com/Semantic/Heading 3: Font(family: "font family/Font 2", style: Regular, size: font size/72, weight: font weight/400, lineHeight: opacity/100, letterSpacing: letter spacing/-2_88), www.palantir.com/Mercury: #E8E8E8, www.palantir.com/Boulder: #767676, www.palantir.com/Semantic/Button upper: Font(family: "font family/Font 2", style: Regular, size: font size/14, weight: font weight/400, lineHeight: font size/14, letterSpacing: 0), www.palantir.com/Steel Gray: #1E1F2B, www.palantir.com/Semantic/Blockquote: Font(family: "font family/Font 2", style: Regular, size: opacity/50, weight: font weight/400, lineHeight: line height/55, letterSpacing: letter spacing/-1_25), www.palantir.com/Scorpion: #595959, www.palantir.com/White 33%: #FFFFFF.
+
+### Content Block 5 (Text)
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.
+
+### Content Block 6 (Text)
+IMPORTANT: After you call this tool, you MUST call get_screenshot to get a screenshot of the node for context.
+
+</mcp_external_output>

@@ -1,0 +1,190 @@
+you are replit agent working in the undone-tools repl. implement a finished studio homepage at /index.html that uses the exact studio copy below and a gotham-like procedural hero (no uploaded images, no external assets). the hero background must evoke palantir gotham (dark globe + orbital dot field + atmospheric depth) while remaining consistent with the undone aesthetic (restraint, big type, subtle dividers).
+
+hard rules
+	•	do not rewrite, paraphrase, or “improve” any copy. paste exactly.
+	•	no placeholders, fake stats, fake testimonials, or fake logos.
+	•	do not modify anything inside /standards/ and do not touch any .std-* styles.
+	•	only edit:
+	•	/index.html (replace studio homepage content entirely)
+	•	/assets/styles.css (append new .studio-* styles only)
+	•	/assets/app.js (append a studio-only hero canvas module; do not break standards logic)
+	•	do not fetch or scrape palantir.com or any external site. no external dependencies.
+
+⸻
+
+goal
+
+make / (studio) clearly different from /standards/:
+	•	studio: what undone is + what we build (materials + marketing infrastructure)
+	•	standards: the formalized document set
+studio must include one primary CTA linking to /standards/.
+
+⸻
+
+hero spec (no assets, must feel gotham)
+
+create a hero background using one canvas:
+	•	a large subtle “globe” arc occupying lower half of hero
+	•	atmosphere rim glow
+	•	faint map/grid impression (simple lat/long lines, very low opacity)
+	•	orbital dot field above the globe (small dots, mostly muted yellow + some red + a few teal)
+	•	subtle parallax drift tied to mouse position on desktop; static on mobile
+	•	animation must be minimal and respectful: 30–45fps target, pause when offscreen, and respect prefers-reduced-motion
+
+implementation requirements
+	1.	in /index.html:
+
+	•	build sections with ids: hero, positioning, marketing, materials, filter, standards, closer
+	•	header/nav:
+	•	left: orb + “UNDONE”
+	•	right links: Studio (active) → / and Standards → /standards/
+	•	hero structure:
+	•	a wrapper .studio-hero
+	•	a canvas element with id studioHeroCanvas positioned full-bleed behind text
+	•	an overlay div .studio-hero-overlay for vignette + readability
+	•	text content in .studio-hero-content above everything
+
+	2.	in /assets/styles.css append:
+/* ========== STUDIO HOMEPAGE (GOTHAM NO-ASSET HERO) ========== */
+all new styles must be .studio-*
+	3.	in /assets/app.js append:
+
+	•	a function initStudioHeroCanvas() that:
+	•	only runs if document.getElementById('studioHeroCanvas') exists
+	•	sets canvas size on resize
+	•	draws globe arc, rim glow, lat/long lines, dots
+	•	animates subtle drift unless reduced motion
+	•	uses IntersectionObserver to pause animation when hero not visible
+	•	do not alter existing standards JS; only append.
+
+⸻
+
+exact copy to paste (do not change)
+
+SECTION 1 — hero (#hero)
+
+eyebrow: studio
+
+h1:
+Most clinic systems don’t fail loudly. They fail in small moments of interpretation.
+
+body:
+`Language softens.
+Instructions drift.
+Marketing says one thing. Operations say another.
+
+That’s where trust erodes.`
+
+micro-line:
+Undone designs clinic systems that don’t require explanation.
+
+SECTION 2 — positioning (#positioning)
+
+h2:
+Operational clarity for clinical environments.
+
+body:
+`Undone is a design studio focused on operational clarity in clinical environments.
+
+Not branding.
+Not campaigns.
+Not “growth.”
+
+We work on the materials clinics rely on every day —
+the ones patients actually read, screenshot, misunderstand, or follow incorrectly.`
+
+SECTION 3 — marketing (#marketing)
+
+h2:
+Marketing, treated as infrastructure.
+
+body:
+`Most clinics don’t have a marketing problem.
+They have a systems problem that shows up as marketing.
+
+Emails that reassure instead of instruct.
+Ads that attract attention but create follow-up.
+Menus that oversell and under-explain.
+Handouts that sound friendly and fail operationally.
+
+We design marketing materials as infrastructure —
+structured to reduce confusion, decision fatigue, and risk.`
+
+SECTION 4 — materials (#materials)
+
+h2:
+The work lives in materials.
+
+list items (two-column list on desktop; stacked on mobile):
+Patient communication Clinic marketing interfaces Menus and service explanations Emails, ads, landing pages Handouts, instructions, follow-ups Internal references patients never see — but feel
+
+closing line:
+If language, layout, or timing affects trust, it’s in scope.
+
+SECTION 5 — filter (#filter)
+
+h2:
+A quality filter.
+
+left label:
+Undone is for clinics that:
+
+left bullets:
+→ Don’t want to explain themselves twice → Value clarity over friendliness → Understand that restraint builds trust
+
+right body:
+`It’s not for teams that need louder branding, trend typography, or emotional filler to feel credible.
+
+That’s intentional.`
+
+SECTION 6 — standards bridge (#standards)
+
+eyebrow: standards
+
+h2:
+Some of this work is formalized.
+
+body:
+`Undone Standards are clinic-ready operational documents —
+built to reduce interpretation, increase compliance, and survive real use.
+
+They’re not templates.
+They’re not customizable.
+They’re designed to hold up.`
+
+cta (link to /standards/):
+View Standards →
+
+SECTION 7 — closer (#closer)
+
+centered line:
+This is what you build when you don’t want your systems to rely on tone.
+
+footer:
+Undone · Studio · Standards © 2025
+
+⸻
+
+styling requirements (match undone + gotham energy)
+	•	base background: deep near-black with subtle radial gradients
+	•	typography: large h1 with clamp + tight line-height
+	•	thin rules and low-opacity borders only
+	•	no “blocky card grid” sections; keep sections airy and editorial
+	•	keep max content width ~1040px
+	•	ensure text readability over canvas using overlay
+
+⸻
+
+QA checklist (must report back)
+
+confirm:
+	•	canvas hero renders and animates subtly ✅
+	•	respects prefers-reduced-motion ✅
+	•	pauses when hero offscreen ✅
+	•	copy pasted exactly ✅
+	•	only .studio-* styles added ✅
+	•	/standards/ untouched ✅
+	•	verified at 390/768/1024/1440/1920 ✅
+	•	nav links correct ✅
+
+final instruction: implement the code changes now, not just a plan.
