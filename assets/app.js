@@ -48,22 +48,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Studio page reveal animations
-  const studioRevealElements = document.querySelectorAll('.studio-reveal');
-  if (studioRevealElements.length) {
-    if (prefersReducedMotion) {
-      studioRevealElements.forEach(el => el.classList.add('is-visible'));
-    } else {
-      const studioObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            studioObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-      studioRevealElements.forEach(el => studioObserver.observe(el));
-    }
+  // Problem Reframe Reveal (Tension & Anticipation)
+  const problemSection = document.querySelector('.problem-reveal-section');
+  if (problemSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          
+          // Cinematic Enhancement: Freeze starfield during reveal
+          setTimeout(() => {
+            window.undoneDriftPaused = true;
+          }, 500); // Freeze when 2nd line appears
+          
+          setTimeout(() => {
+            window.undoneDriftPaused = false;
+          }, 1500); // Resume when resolution fades in
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(problemSection);
   }
 
   // Hero Reveal Animation (Arrival, not rotation)
