@@ -753,6 +753,17 @@ header nav a:hover, header nav a.active { color: #fff; }
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  pointer-events: none; /* Let clicks pass through to canvas if needed, but nav needs pointer-events */
+}
+
+.studio-header > * {
+  pointer-events: auto;
+}
+
+@media (max-width: 1023px) {
+  .studio-header {
+    padding: 80px 24px 20px;
+  }
 }
 
 .studio-brand {
@@ -765,15 +776,15 @@ header nav a:hover, header nav a.active { color: #fff; }
 .studio-brand-group {
   display: flex;
   flex-direction: column;
-  margin-top: -3px; /* Optical adjustment for brand name height */
+  margin-top: 0;
   line-height: 1;
 }
 
 .studio-headline-cycler {
-  height: 20px;
+  height: 28px;
   position: relative;
-  overflow: hidden;
-  margin-top: 4px;
+  overflow: visible;
+  margin-top: 6px;
 }
 
 .cycler-item {
@@ -784,30 +795,32 @@ header nav a:hover, header nav a.active { color: #fff; }
   font-size: 11px;
   color: #8B8D98;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(12px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   letter-spacing: 0.05em;
   text-transform: none;
   font-weight: 400;
+  line-height: 1.2;
 }
 
 @media (min-width: 1024px) {
-  .studio-headline-cycler { height: 26px; }
-  .cycler-item { font-size: 26px; letter-spacing: -0.01em; }
+  .studio-headline-cycler { height: 40px; }
+  .cycler-item { font-size: 28px; letter-spacing: -0.015em; transform: translateY(16px); }
 }
 
 @media (max-width: 1023px) {
-  .cycler-item { font-size: 18px; }
+  .studio-headline-cycler { height: 28px; margin-top: 8px; }
+  .cycler-item { font-size: 18px; line-height: 1.1; transform: translateY(10px); }
 }
 
 .cycler-item.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) !important;
 }
 
 .cycler-item.exit {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-12px) !important;
 }
 
 .studio-orb {
@@ -816,7 +829,7 @@ header nav a:hover, header nav a.active { color: #fff; }
   background: #fff;
   border-radius: 50%;
   opacity: 0.9;
-  margin-top: 5px; /* Alignment with top of text */
+  margin-top: 6px;
 }
 
 .studio-brand-name {
@@ -831,7 +844,7 @@ header nav a:hover, header nav a.active { color: #fff; }
 .studio-nav {
   display: flex;
   gap: 32px;
-  margin-top: 1px; /* Alignment with brand name */
+  margin-top: 1px;
 }
 
 .studio-nav a {
@@ -849,30 +862,32 @@ header nav a:hover, header nav a.active { color: #fff; }
 .studio-hero {
   position: relative;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   text-align: center;
-  padding-bottom: 5vh;
 }
 
 .studio-hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 20;
   width: 100%;
   max-width: 1000px;
   padding: 0 40px;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .studio-h1 {
-  font-size: clamp(32px, 7vw, 64px);
-  line-height: 1.05;
+  font-size: clamp(32px, 8vw, 64px);
+  line-height: 1.1;
   font-weight: 600;
   letter-spacing: -0.04em;
-  color: #fff;
+  color: #ffffff !important;
   margin-bottom: 24px;
-  max-width: 15ch;
+  max-width: 16ch;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1024,7 +1039,7 @@ header nav a:hover, header nav a.active { color: #fff; }
 }
 
 @keyframes studio-scale-in {
-  from { opacity: 0; transform: scale(0.95) translateY(12px); }
+  from { opacity: 0; transform: scale(0.98) translateY(10px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
