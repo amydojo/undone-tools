@@ -1,0 +1,175 @@
+you are a senior front-end engineer + design systems specialist.
+
+mission (second pass)
+the standards pages are structurally “done” but visually mid. your job is NOT to redesign, add sections, or change the positioning/copy strategy. your job is to make the existing /standards pages visually match the homepage quality: atmospheric background depth, typography hierarchy, spacing rhythm, premium link/button styling, and card polish.
+
+hard rules (non-negotiable)
+1) do not add new routes, frameworks, or dependencies.
+2) do not edit /index.html except if you must copy a tiny reusable nav snippet style (prefer not).
+3) do not touch /attached_assets/.
+4) do not change URLs or filenames.
+5) do not remove the IA sections already implemented on:
+   - /standards/index.html
+   - /standards/injectables-aftercare.html
+   - /standards/laser-aftercare.html
+6) do not rewrite copy except for micro-fixes like Title Case / punctuation consistency.
+7) preserve all existing functionality: accordions, reveal, smooth scroll, “g” checkout shortcut, CTA wiring.
+
+files you may edit (only these)
+- /assets/styles.css
+- /assets/app.js (only if a class hook is missing for styling; do not change behavior)
+- /standards/index.html
+- /standards/injectables-aftercare.html
+- /standards/laser-aftercare.html
+
+critical reliability requirement
+ensure all standards pages use root-absolute asset paths:
+<link rel="stylesheet" href="/assets/styles.css">
+<script defer src="/assets/app.js"></script>
+
+------------------------------------------------------------
+discovery (required before changing anything)
+------------------------------------------------------------
+A) open and inspect:
+- /index.html
+- /assets/styles.css
+- /assets/app.js
+- /standards/index.html
+- /standards/injectables-aftercare.html
+- /standards/laser-aftercare.html
+
+B) print a “visual gap diagnosis” with EXACT findings:
+- 5 bullets: what homepage is doing visually (background, type scale, spacing, link style, container widths)
+- 5 bullets: what standards pages are missing / doing wrong (e.g. default link blue, no background depth, cramped rhythm, card contrast too weak, missing max-width wrapper)
+
+(do not skip. this is a completion gate.)
+
+------------------------------------------------------------
+primary fixes (do these in order)
+------------------------------------------------------------
+
+1) STANDARDS SHELL WRAPPER (largest win)
+Implement a shared wrapper class for standards pages:
+- add a top-level wrapper element in EACH standards page:
+  <body class="std-body">
+    <div class="std-shell">
+      ...existing content...
+    </div>
+  </body>
+
+The .std-shell must:
+- match homepage container/max-width behavior (use the same max width you find in /index.html, or infer it)
+- add the same “atmospheric” background treatment the homepage has (subtle gradient/nebula, not flat black)
+- apply consistent section padding (mobile-first) so sections breathe like homepage
+- include a subtle noise/mesh optional layer ONLY if homepage already uses something similar (no new heavy assets)
+
+2) TYPOGRAPHY HIERARCHY PARITY
+Right now standards pages read like a document. Fix by aligning to homepage scale.
+In /assets/styles.css create a standards type scale:
+- .std-eyebrow (tracked uppercase label)
+- .std-h1 (hero headline)
+- .std-subhead (1-sentence max)
+- .std-h2 (section headers)
+- .std-body (paragraph)
+- .std-micro (helper text)
+
+Rules:
+- Title Case headings
+- labels uppercase with letter-spacing
+- body sentence case
+- line-height and font-weight must match homepage vibe (quiet, expensive)
+
+3) SPACING SYSTEM (8px rhythm, but premium)
+Implement standards spacing variables (namespaced):
+:root { --std-8:8px; --std-12:12px; --std-16:16px; --std-24:24px; --std-32:32px; --std-48:48px; --std-64:64px; --std-96:96px; }
+
+Apply:
+- sections need larger top/bottom padding
+- grids need more gap
+- paragraph max-width needs to prevent “wall of text”
+- avoid cramped stacks on iPhone
+
+4) LINK + BUTTON STYLING FIX (this is likely your biggest visual bug)
+Fix the “default link” look:
+- ensure <a> in standards uses the same color + underline behavior as homepage (no bright blue)
+- implement a standards link style:
+  .std-link (subtle, not loud)
+  .std-link:hover (soft glow/underline)
+  .std-link:focus-visible (proper outline)
+
+For buttons:
+- .std-btn-primary and .std-btn-secondary must feel like homepage buttons:
+  - subtle border
+  - minimal fill
+  - micro interaction (translateY 1px, border opacity shift)
+  - focus-visible ring
+
+5) CARD POLISH + CONTRAST (premium, not gray boxes)
+Your product cards + product module likely look flat.
+Implement:
+- .std-card (hairline border, soft gradient wash, proper padding)
+- .std-card:hover (slight lift + border brighten)
+- .std-pill (status pill; Available vs In Build)
+- .std-divider (hairline rule with opacity)
+
+Important: do NOT overuse cards. Keep it restrained.
+
+6) PREVIEW FRAME MUST LOOK INTENTIONAL (not wireframe)
+The “premium preview frame” should look like an editorial artifact:
+- realistic spacing
+- header bar
+- two-column structure hint
+- fine rules
+- muted “content blocks” with varied widths (not equal gray rectangles)
+
+No images. No screenshots. Just typography skeleton that looks designed.
+
+7) MOBILE-FIRST LAYOUT FIXES (iPhone is the judge)
+Ensure:
+- no horizontal scroll
+- no clipped content
+- the hero isn’t too tall
+- product module stacks cleanly
+- tap targets are large enough
+- accordions have comfortable padding
+- text doesn’t sit edge-to-edge (use safe padding)
+
+------------------------------------------------------------
+standards pages constraints (keep existing IA, just restyle)
+------------------------------------------------------------
+- do not remove sections.
+- do not reorder sections.
+- do not replace the positioning copy concept.
+- you may only adjust markup to add wrappers/classes needed for styling parity.
+
+Specific: the standards hub currently has a product grid and hero.
+Make it look like the homepage by applying the wrapper + typography + card polish.
+
+------------------------------------------------------------
+javascript constraints (only minor class hooks if needed)
+------------------------------------------------------------
+Do NOT change behavior. Only do tiny safe edits if necessary:
+- add a class toggle like .is-open on accordion panels for styling
+- ensure reveal animations add a class that CSS can use (e.g. .is-revealed)
+- do not change keyboard shortcuts or URLs
+
+------------------------------------------------------------
+deliverables (required)
+------------------------------------------------------------
+At the end, output:
+
+1) list of files changed
+2) “visual gap diagnosis” recap (the two 5-bullet lists)
+3) confirm these URLs render in preview:
+   - /standards/
+   - /standards/injectables-aftercare.html
+   - /standards/laser-aftercare.html
+4) confirm nested pages load /assets/styles.css and /assets/app.js correctly
+5) confirm link styling is no longer default-blue and matches homepage vibe
+6) confirm mobile: no clipping, no cramped stacks, no horizontal scroll
+
+execution quality bar
+If the standards pages still look like “dark docs with links,” you failed.
+They must feel like the same world as the homepage: premium, atmospheric, restrained, intentional.
+
+execute now.
