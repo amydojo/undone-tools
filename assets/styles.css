@@ -656,26 +656,38 @@
 /* Visual Proof Frame */
 .std-preview-frame {
   position: relative;
-  min-height: 700px;
+  min-height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 50%, rgba(123, 108, 255, 0.02), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(123, 108, 255, 0.03), transparent 70%);
+  overflow: hidden;
 }
 
 .std-mockup-blueprint {
   width: 100%;
-  max-width: 440px;
-  aspect-ratio: 3/4.2;
+  max-width: 460px;
+  aspect-ratio: 3/4.4;
   background: #000;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
-  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 56px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 40px;
   position: relative;
-  box-shadow: 0 60px 120px -30px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 80px 160px -40px rgba(0, 0, 0, 0.95);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.std-mockup-blueprint::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
 }
 
 .std-mockup-blueprint::after {
@@ -685,48 +697,60 @@
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-size: 40px 40px;
+  background-position: center;
   pointer-events: none;
+  opacity: 0.8;
 }
 
 .std-mockup-line {
   height: 1px;
   background: rgba(255, 255, 255, 0.1);
-  width: 60%;
+  width: 40%;
 }
 
 .std-mockup-line.accent {
   background: var(--std-accent);
-  box-shadow: 0 0 12px var(--std-accent);
-  opacity: 0.8;
+  box-shadow: 0 0 15px var(--std-accent);
+  opacity: 0.9;
+  width: 15%;
 }
 
 .std-mockup-block {
-  height: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  height: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.01);
+  position: relative;
+}
+
+.std-mockup-block::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
 }
 
 .std-mockup-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 32px;
 }
 
 .std-mockup-cell {
-  height: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
   background: rgba(255, 255, 255, 0.01);
 }
 
-/* Callouts refined */
+/* Technical Callouts - Hierarchy Refined */
 .std-technical-callout {
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   z-index: 10;
   pointer-events: none;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .std-technical-callout .dot {
@@ -734,29 +758,52 @@
   height: 4px;
   background: var(--std-accent);
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--std-accent);
+  box-shadow: 0 0 12px var(--std-accent);
+  flex-shrink: 0;
 }
 
 .std-technical-callout .line {
-  width: 80px;
+  width: 120px;
   height: 1px;
-  background: rgba(123, 108, 255, 0.2);
+  background: linear-gradient(90deg, var(--std-accent), transparent);
+  opacity: 0.3;
+}
+
+.std-technical-callout[style*="row-reverse"] .line {
+  background: linear-gradient(-90deg, var(--std-accent), transparent);
 }
 
 .std-technical-callout .label {
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.3);
   white-space: nowrap;
-  font-weight: 500;
+  font-weight: 600;
+  transition: color 0.4s ease;
+}
+
+.std-reveal.is-visible .std-technical-callout .label {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 @media (max-width: 1100px) {
-  .std-technical-callout .line { width: 40px; }
-  .std-preview-frame { min-height: 800px; flex-direction: column; padding: 60px 0; }
-  .std-mockup-blueprint { order: 2; margin-top: 40px; }
-  .std-technical-callout { position: relative; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important; width: 100%; max-width: 440px; margin-bottom: 12px; }
+  .std-technical-callout .line { width: 60px; }
+  .std-preview-frame { min-height: 900px; flex-direction: column; padding: 80px 0; }
+  .std-mockup-blueprint { order: 2; margin-top: 64px; max-width: 340px; padding: 40px; }
+  .std-technical-callout { 
+    position: relative; 
+    top: auto !important; 
+    left: auto !important; 
+    right: auto !important; 
+    bottom: auto !important; 
+    width: 100%; 
+    max-width: 340px; 
+    margin-bottom: 24px;
+    justify-content: flex-start;
+    flex-direction: row !important;
+  }
+  .std-technical-callout .line { display: none; }
 }
 
 /* Product Cards */

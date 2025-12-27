@@ -1,0 +1,59 @@
+FAST MODE — REPLIT AGENT TASK
+
+goal:
+make the hero headline animate in a single seamless “resolve” (apple x undone). NO word-by-word or staggered appearance. the whole phrase should come into focus together, then the dot lands slightly after.
+
+requirements:
+- headline reads as ONE unit (“Operational clarity”) resolving from blur → crisp
+- use a lens-pull style crossfade (ghost layer fades out while crisp layer fades in)
+- subtle motion only: translateY 6–10px max, scale 1.01–1.03 max
+- easing must feel apple: cubic-bezier(0.16, 1, 0.3, 1)
+- dot appears ~650–850ms after the phrase starts resolving with a tiny lock-in pop (scale 0.78 → 1.06 → 1)
+- MUST support prefers-reduced-motion (disable animation, show final state)
+- keep existing typography/layout exactly the same (no redesign), only adjust markup minimally (wrap headline in spans if needed)
+
+implementation steps:
+1) find the hero H1 (the main headline that says “Operational clarity”).
+2) replace the inner text with a stacked structure:
+   - a “ghost” layer (same text, blurred, higher opacity, slightly lower + slightly larger)
+   - a “crisp” layer (same text, starts transparent, no blur, slightly lower)
+   - keep dot as its own span so it can animate separately (only on the crisp layer)
+3) add css keyframes:
+   - ghostOut: opacity 1→0, blur 22px→10px, translateY 10px→0, scale 1.03→1
+   - crispIn: opacity 0→1, translateY 7px→0, scale 1.01→1
+   - dotLock: opacity 0→1, translateY 6px→0, scale 0.78→1.06→1
+4) confirm on mobile: no jank, no layout shift, headline does not reflow while animating.
+5) confirm on safari iOS: blur/filter works, layers align perfectly.
+6) keep animation time tight: total hero feel ~1.4–1.8s, dot completes by ~1.8s.
+7) report back with: files changed + exact css selectors used.
+
+use this exact baseline css (adjust selectors to match codebase):
+
+.heroTitle { font-size: clamp(44px, 6vw, 80px); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500; }
+.heroStack{ position: relative; display:inline-block; }
+.heroLayer{ position:absolute; inset:0; display:inline-block; white-space:nowrap; will-change:transform, filter, opacity; }
+.heroLayer--ghost{ opacity:1; filter:blur(22px); transform:translateY(10px) scale(1.03); animation:heroGhostOut 1.35s cubic-bezier(0.16,1,0.3,1) 80ms forwards; }
+.heroLayer--crisp{ opacity:0; transform:translateY(7px) scale(1.01); animation:heroCrispIn 1.15s cubic-bezier(0.16,1,0.3,1) 180ms forwards; }
+.heroDot{ display:inline-block; opacity:0; transform:translateY(6px) scale(0.78); will-change:transform, opacity; }
+.heroDot--crisp{ animation:dotLock 0.9s cubic-bezier(0.16,1,0.3,1) 720ms forwards; }
+
+@keyframes heroGhostOut { to { opacity:0; filter:blur(10px); transform:translateY(0) scale(1);} }
+@keyframes heroCrispIn { to { opacity:1; transform:translateY(0) scale(1);} }
+@keyframes dotLock {
+  0%{ opacity:0; transform:translateY(6px) scale(0.78); }
+  60%{ opacity:1; transform:translateY(-1px) scale(1.06); }
+  100%{ opacity:1; transform:translateY(0) scale(1); }
+}
+
+prefers-reduced-motion:
+@media (prefers-reduced-motion: reduce){
+  .heroLayer--ghost,.heroLayer--crisp,.heroDot--crisp{ animation:none!important; opacity:1!important; filter:none!important; transform:none!important; }
+  .heroLayer--ghost{ display:none; }
+  .heroLayer--crisp{ position:static; }
+  .heroDot{ opacity:1; transform:none; }
+}
+
+success criteria:
+- on load, the phrase resolves as ONE continuous object (no stagger).
+- dot lands slightly after the phrase sharpens.
+- feels like a camera focus pull + settle, not a text effect.
