@@ -153,11 +153,11 @@
 
 .hero-word {
   opacity: 0;
-  filter: blur(4px);
-  letter-spacing: 0.01em;
-  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
-              filter 1.2s cubic-bezier(0.4, 0, 0.2, 1), 
-              letter-spacing 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: blur(8px);
+  letter-spacing: 0.05em;
+  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              filter 1.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              letter-spacing 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-word.revealed {
@@ -169,7 +169,7 @@
 .hero-dot {
   opacity: 0;
   color: var(--std-accent);
-  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-dot.revealed {
@@ -183,7 +183,7 @@
   margin: 0 auto;
   letter-spacing: -0.01em;
   opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .studio-micro.revealed {

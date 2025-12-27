@@ -75,28 +75,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (!word1 || !word2 || !dot || !micro) return;
 
-    // reset initial state
-    word1.style.opacity = '0';
-    word2.style.opacity = '0';
-    dot.style.opacity = '0';
-    micro.style.opacity = '0';
+    // Reset to start hidden
+    word1.classList.remove('revealed');
+    word2.classList.remove('revealed');
+    dot.classList.remove('revealed');
+    micro.classList.remove('revealed');
 
-    // Beat 1: Emergence
+    // Start reveal sequence
     setTimeout(() => {
       word1.classList.add('revealed');
     }, 200);
 
-    // Beat 2: Clarification
     setTimeout(() => {
       word2.classList.add('revealed');
     }, 800);
 
-    // Beat 3: Conviction
     setTimeout(() => {
       dot.classList.add('revealed');
     }, 1400);
 
-    // Release: Subline
     setTimeout(() => {
       micro.classList.add('revealed');
     }, 2000);
