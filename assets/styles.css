@@ -604,52 +604,53 @@
 
 /* Restraint Card */
 .std-restraint-card {
-  padding: 80px;
-  background: var(--std-panel-bg);
-  border: 1px solid var(--std-border);
-  border-radius: 24px;
+  padding: 120px 0;
   max-width: 800px;
   margin: 0 auto;
+  text-align: center;
 }
 
-@media (max-width: 600px) { 
-  .std-restraint-card { padding: 48px 24px; } 
-}
-
-.std-restraint-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.std-restraint-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px 64px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin: 64px 0;
+  text-align: left;
 }
 
 @media (max-width: 600px) {
-  .std-restraint-list { grid-template-columns: 1fr; gap: 24px; }
+  .std-restraint-card { padding: 80px 0; }
+  .std-restraint-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 
-.std-restraint-list li {
-  font-size: 18px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  opacity: 0.9;
+.std-restraint-item {
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 24px;
 }
 
-.std-restraint-list li span {
-  color: var(--std-accent);
+.std-restraint-item h4 {
+  font-size: 14px;
   font-weight: 600;
-  opacity: 0.6;
+  color: #fff;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.std-restraint-item p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
 }
 
 .std-restraint-quote {
-  font-size: 22px;
-  line-height: 1.4;
+  font-size: clamp(24px, 4vw, 36px);
+  line-height: 1.2;
   color: #fff;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+  margin: 80px auto 0;
 }
 
 /* Visual Proof Frame */
