@@ -655,89 +655,108 @@
 
 /* Visual Proof Frame */
 .std-preview-frame {
-  background: #000;
-  border: 1px solid var(--std-border);
-  border-radius: 24px;
   position: relative;
-  overflow: hidden;
+  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+  background: radial-gradient(circle at 50% 50%, rgba(123, 108, 255, 0.02), transparent 70%);
 }
 
-.std-mockup {
+.std-mockup-blueprint {
   width: 100%;
-  max-width: 540px;
-  background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 32px;
+  max-width: 440px;
+  aspect-ratio: 3/4.2;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  transform: translateY(10px);
+  gap: 32px;
+  position: relative;
+  box-shadow: 0 60px 120px -30px rgba(0, 0, 0, 0.9);
 }
 
-.std-mockup-header {
-  width: 120px;
-  height: 8px;
+.std-mockup-blueprint::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.std-mockup-line {
+  height: 1px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 2px;
+  width: 60%;
 }
 
-.std-mockup-hero {
+.std-mockup-line.accent {
+  background: var(--std-accent);
+  box-shadow: 0 0 12px var(--std-accent);
+  opacity: 0.8;
+}
+
+.std-mockup-block {
   height: 100px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.01);
 }
 
-.std-mockup-grid {
+.std-mockup-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 20px;
 }
 
-.std-mockup-item {
-  height: 60px;
+.std-mockup-cell {
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
   background: rgba(255, 255, 255, 0.01);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 6px;
 }
 
-.std-mockup-footer {
-  width: 70%;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 2px;
-}
-
-.std-callout {
+/* Callouts refined */
+.std-technical-callout {
   position: absolute;
-  background: rgba(123, 108, 255, 0.95);
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+  pointer-events: none;
 }
 
-@media (max-width: 768px) {
-  .std-callout { 
-    position: relative; 
-    top: auto !important; 
-    left: auto !important; 
-    right: auto !important; 
-    bottom: auto !important; 
-    margin-top: 16px;
-    display: block;
-    white-space: normal;
-  }
+.std-technical-callout .dot {
+  width: 4px;
+  height: 4px;
+  background: var(--std-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--std-accent);
+}
+
+.std-technical-callout .line {
+  width: 80px;
+  height: 1px;
+  background: rgba(123, 108, 255, 0.2);
+}
+
+.std-technical-callout .label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+@media (max-width: 1100px) {
+  .std-technical-callout .line { width: 40px; }
+  .std-preview-frame { min-height: 800px; flex-direction: column; padding: 60px 0; }
+  .std-mockup-blueprint { order: 2; margin-top: 40px; }
+  .std-technical-callout { position: relative; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important; width: 100%; max-width: 440px; margin-bottom: 12px; }
 }
 
 /* Product Cards */
