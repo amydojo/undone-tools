@@ -71,15 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const word1 = document.querySelector('.hero-word-1');
     const word2 = document.querySelector('.hero-word-2');
     const dot = document.querySelector('.hero-dot');
-    const micro = document.querySelector('.studio-micro');
     
-    if (!word1 || !word2 || !dot || !micro) return;
+    if (!word1 || !word2 || !dot) return;
 
     // Reset to start hidden
     word1.classList.remove('revealed');
     word2.classList.remove('revealed');
     dot.classList.remove('revealed');
-    micro.classList.remove('revealed');
 
     // Start reveal sequence
     setTimeout(() => {
@@ -93,10 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       dot.classList.add('revealed');
     }, 1400);
-
-    setTimeout(() => {
-      micro.classList.add('revealed');
-    }, 2000);
   };
 
   heroReveal();

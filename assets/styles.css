@@ -176,20 +176,6 @@
   opacity: 1;
 }
 
-.studio-micro {
-  font-size: clamp(16px, 2.5vw, 22px);
-  color: rgba(255, 255, 255, 0.65) !important;
-  max-width: 40ch;
-  margin: 0 auto;
-  letter-spacing: -0.01em;
-  opacity: 0;
-  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.studio-micro.revealed {
-  opacity: 1;
-}
-
 /* Scroll Indicator */
 .studio-scroll-indicator {
   position: absolute;
