@@ -140,29 +140,28 @@
 }
 
 .hero-reveal-text {
-  font-size: clamp(44px, 6vw, 80px);
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+  font-size: clamp(44px, 8vw, 90px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   font-weight: 500;
   color: #fff;
-  margin-bottom: 24px;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .hero-stack {
   position: relative;
-  display: inline-block;
-  white-space: nowrap;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-layer {
-  display: inline-block;
+  white-space: nowrap;
   will-change: transform, filter, opacity;
 }
 
@@ -175,57 +174,39 @@
 
 .hero-layer--crisp {
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(7px) scale(1.01);
   opacity: 0;
-  transform: translateY(7px) scale(1.01);
   animation: heroCrispIn 1.15s cubic-bezier(0.16, 1, 0.3, 1) 180ms forwards;
 }
 
-.hero-dot {
-  display: inline-block;
-  color: var(--std-accent);
-  will-change: transform, opacity;
-}
-
-.hero-dot--crisp {
-  opacity: 0;
-  transform: translateY(6px) scale(0.78);
-  animation: dotLock 0.9s cubic-bezier(0.16, 1, 0.3, 1) 720ms forwards;
-}
+/* The dot color handled via span if needed, but for "Operational clarity." as one unit: */
+/* We'll use a specific selector for the dot if it needs to be purple */
 
 @keyframes heroGhostOut {
   to { opacity: 0; filter: blur(10px); transform: translateY(0) scale(1); }
 }
 
 @keyframes heroCrispIn {
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes dotLock {
-  0% { opacity: 0; transform: translateY(6px) scale(0.78); }
-  60% { opacity: 1; transform: translateY(-1px) scale(1.06); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-layer--ghost, .hero-layer--crisp, .hero-dot--crisp {
-    animation: none !important;
-    opacity: 1 !important;
-    filter: none !important;
-    transform: none !important;
-  }
   .hero-layer--ghost { display: none; }
-  .hero-layer--crisp { position: static; }
-  .hero-dot--crisp { opacity: 1; transform: none; }
+  .hero-layer--crisp { 
+    position: relative; 
+    top: auto; 
+    left: auto; 
+    transform: none !important; 
+    opacity: 1 !important; 
+    animation: none !important; 
+  }
 }
 
 @media (max-width: 600px) {
   .hero-reveal-text {
-    font-size: clamp(36px, 12vw, 44px);
-  }
-  .hero-stack {
-    white-space: normal;
-    text-align: center;
+    font-size: clamp(38px, 12vw, 48px);
   }
 }
 
