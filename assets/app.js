@@ -79,18 +79,18 @@ document.addEventListener('DOMContentLoaded', () => {
     word2.classList.remove('revealed');
     dot.classList.remove('revealed');
 
-    // Start reveal sequence
+    // Start reveal sequence with slightly longer, more deliberate staggering
     setTimeout(() => {
       word1.classList.add('revealed');
-    }, 200);
+    }, 400);
 
     setTimeout(() => {
       word2.classList.add('revealed');
-    }, 800);
+    }, 1200);
 
     setTimeout(() => {
       dot.classList.add('revealed');
-    }, 1400);
+    }, 2400);
   };
 
   heroReveal();

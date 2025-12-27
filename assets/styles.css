@@ -153,27 +153,32 @@
 
 .hero-word {
   opacity: 0;
-  filter: blur(8px);
-  letter-spacing: 0.05em;
-  transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1), 
-              filter 1.5s cubic-bezier(0.4, 0, 0.2, 1), 
-              letter-spacing 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: blur(16px);
+  transform: scale(1.05) translateY(10px);
+  will-change: filter, opacity, transform;
+  transition: opacity 2.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 2.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 2.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-word.revealed {
   opacity: 1;
   filter: blur(0);
-  letter-spacing: -0.04em;
+  transform: scale(1) translateY(0);
 }
 
 .hero-dot {
   opacity: 0;
+  transform: scale(0.5);
   color: var(--std-accent);
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-dot.revealed {
   opacity: 1;
+  transform: scale(1);
 }
 
 /* Scroll Indicator */
