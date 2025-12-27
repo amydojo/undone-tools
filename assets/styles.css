@@ -604,21 +604,112 @@
 
 /* Restraint Card */
 .std-restraint-card {
-  padding: 64px;
+  padding: 80px;
   background: var(--std-panel-bg);
   border: 1px solid var(--std-border);
-  border-radius: 16px;
+  border-radius: 24px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-@media (max-width: 600px) { .std-restraint-card { padding: 40px 24px; } }
+@media (max-width: 600px) { 
+  .std-restraint-card { padding: 48px 24px; } 
+}
+
+.std-restraint-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 64px;
+}
+
+@media (max-width: 600px) {
+  .std-restraint-list { grid-template-columns: 1fr; gap: 24px; }
+}
+
+.std-restraint-list li {
+  font-size: 18px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.9;
+}
+
+.std-restraint-list li span {
+  color: var(--std-accent);
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.std-restraint-quote {
+  font-size: 22px;
+  line-height: 1.4;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
 
 /* Visual Proof Frame */
 .std-preview-frame {
   background: #000;
   border: 1px solid var(--std-border);
-  border-radius: 16px;
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+}
+
+.std-mockup {
+  width: 100%;
+  max-width: 540px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transform: translateY(10px);
+}
+
+.std-mockup-header {
+  width: 120px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.std-mockup-hero {
+  height: 100px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+.std-mockup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.std-mockup-item {
+  height: 60px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+.std-mockup-footer {
+  width: 70%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
 }
 
 .std-callout {
