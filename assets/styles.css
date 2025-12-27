@@ -169,23 +169,43 @@
   opacity: 1;
   filter: blur(22px);
   transform: translateY(10px) scale(1.03);
-  animation: heroGhostOut 1.35s cubic-bezier(0.16, 1, 0.3, 1) 80ms forwards;
+  animation: heroGhostOut 1.6s cubic-bezier(0.16, 1, 0.3, 1) 100ms forwards;
 }
 
 .hero-layer--crisp {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) translateY(7px) scale(1.01);
+  transform: translate(-50%, -50%) translateY(8px) scale(1.01);
   opacity: 0;
-  animation: heroCrispIn 1.15s cubic-bezier(0.16, 1, 0.3, 1) 180ms forwards;
+  animation: heroCrispIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) 200ms forwards;
+  width: 100%;
 }
 
-/* The dot color handled via span if needed, but for "Operational clarity." as one unit: */
-/* We'll use a specific selector for the dot if it needs to be purple */
+.hero-mask-wrapper {
+  display: inline-block;
+  mask-image: linear-gradient(to right, #000 0%, #000 0%, transparent 0%);
+  mask-size: 200% 100%;
+  mask-repeat: no-repeat;
+  animation: heroMaskReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) 300ms forwards;
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 0%, transparent 0%);
+  -webkit-mask-size: 200% 100%;
+  -webkit-mask-repeat: no-repeat;
+}
+
+@keyframes heroMaskReveal {
+  0% {
+    mask-image: linear-gradient(to right, #000 0%, transparent 10%);
+    -webkit-mask-image: linear-gradient(to right, #000 0%, transparent 10%);
+  }
+  100% {
+    mask-image: linear-gradient(to right, #000 100%, #000 100%);
+    -webkit-mask-image: linear-gradient(to right, #000 100%, #000 100%);
+  }
+}
 
 @keyframes heroGhostOut {
-  to { opacity: 0; filter: blur(10px); transform: translateY(0) scale(1); }
+  to { opacity: 0; filter: blur(12px); transform: translateY(0) scale(1); }
 }
 
 @keyframes heroCrispIn {
