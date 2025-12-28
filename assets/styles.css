@@ -465,36 +465,208 @@
 /* Grid System */
 .std-grid-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 400px;
   gap: 80px;
+  align-items: center;
 }
 
-@media (max-width: 768px) { .std-grid-2 { grid-template-columns: 1fr; gap: 48px; } }
+@media (max-width: 900px) {
+  .std-grid-2 { grid-template-columns: 1fr; gap: 64px; }
+}
 
-/* Lists */
-.std-bullet-list {
-  list-style: none;
-  padding: 0;
+/* Typography Refresh */
+.std-eyebrow {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--std-accent);
+  margin-bottom: 24px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.std-h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  margin: 0 0 24px 0;
+  color: #fff;
+}
+
+.std-p {
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.5;
+  color: var(--std-text-muted);
+  max-width: 42ch;
   margin: 0;
 }
 
-.std-bullet-list li {
-  font-size: 16px;
-  color: var(--std-text-muted);
-  margin-bottom: 16px;
-  padding-left: 24px;
+/* Product Module Refresh */
+.std-product-module {
+  background: #000;
+  border: 1px solid var(--std-border);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.8);
   position: relative;
+  overflow: hidden;
 }
 
-.std-bullet-list li::before {
+.std-product-module::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 10px;
-  width: 4px;
-  height: 4px;
-  background: var(--std-accent);
-  border-radius: 50%;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.std-module-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.std-module-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 15px;
+  color: #fff;
+}
+
+.std-module-info {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.std-module-info p {
+  font-size: 12px;
+  color: var(--std-text-tertiary);
+  margin-bottom: 8px;
+}
+
+/* Button Refinement */
+.std-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.std-btn-primary {
+  background: #fff;
+  color: #000;
+}
+
+.std-btn-secondary {
+  background: transparent;
+  border: 1px solid var(--std-border);
+  color: #fff;
+  margin-top: 12px;
+}
+
+/* Protocol / Accordion Refinement */
+.std-protocol-section {
+  padding: 120px 0;
+}
+
+.std-accordion-header {
+  width: 100%;
+  padding: 28px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.std-protocol-list {
+  list-style: none;
+  padding: 0 0 40px 0;
+  margin: 0;
+}
+
+.std-protocol-list li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.std-protocol-list li::before {
+  content: "→";
+  color: var(--std-accent);
+  opacity: 0.6;
+}
+
+/* Premium Preview Artifact */
+.std-preview-artifact {
+  background: #fff;
+  color: #000;
+  padding: 56px;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1/1.2;
+  box-shadow: 0 60px 120px -20px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.std-artifact-header {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 32px;
+}
+
+.std-artifact-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 48px;
+}
+
+.std-artifact-rule {
+  height: 2px;
+  background: #000;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.std-artifact-section {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 12px;
+}
+
+.std-artifact-bar {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  margin-bottom: 6px;
 }
 
 /* Standards Index (Rebuilt) */
