@@ -177,31 +177,36 @@
   filter: blur(20px);
   transform: translateY(9px) scale(1.025);
   animation: heroGhostOut 1.35s cubic-bezier(0.16, 1, 0.3, 1) 80ms forwards;
+  z-index: 2; /* Ensure ghost is on top while it resolves */
 }
 
 .hero-layer--crisp {
   opacity: 0;
   transform: translateY(7px) scale(1.01);
   animation: heroCrispIn 1.15s cubic-bezier(0.16, 1, 0.3, 1) 180ms forwards;
+  z-index: 1;
 }
 
 .hero-dot-pop {
   position: absolute;
-  right: -0.05em;
+  right: -0.02em;
   bottom: 0;
   color: var(--std-accent);
   opacity: 0;
   transform: translateY(6px) scale(0.78);
   will-change: transform, opacity;
-  animation: dotLock 0.9s cubic-bezier(0.16, 1, 0.3, 1) 750ms forwards;
+  animation: dotLock 0.9s cubic-bezier(0.16, 1, 0.3, 1) 850ms forwards;
+  z-index: 3; /* Always on top */
 }
 
 @keyframes heroGhostOut {
-  to { opacity: 0; filter: blur(10px); transform: translateY(0) scale(1); }
+  0% { opacity: 1; filter: blur(20px); }
+  100% { opacity: 0; filter: blur(10px); transform: translateY(0) scale(1); }
 }
 
 @keyframes heroCrispIn {
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  0% { opacity: 0; }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes dotLock {
