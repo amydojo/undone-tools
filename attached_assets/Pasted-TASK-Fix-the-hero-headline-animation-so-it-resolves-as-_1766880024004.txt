@@ -1,0 +1,53 @@
+TASK:
+Fix the hero headline animation so it resolves as ONE seamless object (Apple-style focus pull). It must not feel staggered, split, masked, or like a loading state.
+
+DO THIS EXACTLY:
+	1.	Remove overengineering
+	•	DELETE the entire heroMaskReveal animation.
+	•	DELETE all mask-image, -webkit-mask-image, mask-size, and mask keyframes.
+	•	Do NOT use any left→right reveal or wipe effects.
+	2.	Lock layout (no reflow)
+	•	Ensure the hero headline has ONE layout owner.
+	•	Add a hidden sizer span inside the headline so absolute layers don’t collapse layout.
+	•	Both animated layers must overlay perfectly (position:absolute; inset:0;).
+	3.	Unify the phrase
+	•	“Operational clarity” must animate as a SINGLE unit.
+	•	No word-by-word, no per-span timing, no split transforms.
+	•	Dot is the ONLY element allowed to animate separately.
+	4.	Correct positioning (CRITICAL)
+	•	REMOVE top:50%, left:50%, and translate(-50%,-50%) from all hero text layers.
+	•	Use natural text flow with overlay stacking only.
+	5.	Use these exact motion values (Apple-speed)
+	•	Ghost layer:
+	•	blur start: 18–22px (NOT higher)
+	•	translateY: 8–10px
+	•	scale: 1.02–1.03
+	•	animation: 1.35s cubic-bezier(0.16,1,0.3,1) with 80ms delay
+	•	Crisp layer:
+	•	opacity: 0 → 1
+	•	translateY: 7px → 0
+	•	scale: 1.01 → 1
+	•	animation: 1.15s cubic-bezier(0.16,1,0.3,1) with 180ms delay
+	•	Ghost OUT must end at:
+	•	opacity 0
+	•	blur ~10px
+	•	scale 1
+	6.	Dot behavior
+	•	Dot appears AFTER phrase resolves (~700–850ms delay).
+	•	Tiny lock-in pop only:
+	•	scale 0.78 → 1.06 → 1
+	•	no bounce, no easing change.
+	7.	Accessibility
+	•	Respect prefers-reduced-motion: no animation, show final crisp state instantly.
+
+SUCCESS CHECKLIST:
+	•	The phrase feels like it comes into focus, not “arrives.”
+	•	No visual drift between ghost and crisp layers.
+	•	Total feel ≈ 1.4–1.8s max.
+	•	Looks identical on desktop + iOS Safari.
+	•	The animation feels confident, inevitable, and finished.
+
+REPORT BACK:
+	•	Files changed
+	•	Final CSS selectors used
+	•	Confirm mask effects are fully removed

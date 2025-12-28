@@ -145,7 +145,7 @@
   letter-spacing: -0.03em;
   font-weight: 500;
   color: #fff;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -155,61 +155,78 @@
 
 .hero-stack {
   position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hero-sizer {
+  visibility: hidden;
+  pointer-events: none;
+  user-select: none;
 }
 
 .hero-layer {
-  white-space: nowrap;
+  position: absolute;
+  inset: 0;
+  display: inline-block;
   will-change: transform, filter, opacity;
 }
 
 .hero-layer--ghost {
   opacity: 1;
-  filter: blur(32px);
-  transform: translateY(12px) scale(1.04);
-  animation: heroGhostOut 2.4s cubic-bezier(0.16, 1, 0.3, 1) 120ms forwards;
+  filter: blur(20px);
+  transform: translateY(9px) scale(1.025);
+  animation: heroGhostOut 1.35s cubic-bezier(0.16, 1, 0.3, 1) 80ms forwards;
 }
 
 .hero-layer--crisp {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) translateY(10px) scale(1.02);
   opacity: 0;
-  animation: heroCrispIn 2.2s cubic-bezier(0.16, 1, 0.3, 1) 240ms forwards;
-  width: 100%;
+  transform: translateY(7px) scale(1.01);
+  animation: heroCrispIn 1.15s cubic-bezier(0.16, 1, 0.3, 1) 180ms forwards;
 }
 
-.hero-mask-wrapper {
-  display: inline-block;
-  mask-image: linear-gradient(to right, #000 0%, #000 0%, transparent 0%);
-  mask-size: 200% 100%;
-  mask-repeat: no-repeat;
-  animation: heroMaskReveal 2.8s cubic-bezier(0.16, 1, 0.3, 1) 400ms forwards;
-  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 0%, transparent 0%);
-  -webkit-mask-size: 200% 100%;
-  -webkit-mask-repeat: no-repeat;
-}
-
-@keyframes heroMaskReveal {
-  0% {
-    mask-image: linear-gradient(to right, #000 0%, transparent 5%);
-    -webkit-mask-image: linear-gradient(to right, #000 0%, transparent 5%);
-  }
-  100% {
-    mask-image: linear-gradient(to right, #000 100%, #000 100%);
-    -webkit-mask-image: linear-gradient(to right, #000 100%, #000 100%);
-  }
+.hero-dot-pop {
+  position: absolute;
+  right: -0.05em;
+  bottom: 0;
+  color: var(--std-accent);
+  opacity: 0;
+  transform: translateY(6px) scale(0.78);
+  will-change: transform, opacity;
+  animation: dotLock 0.9s cubic-bezier(0.16, 1, 0.3, 1) 750ms forwards;
 }
 
 @keyframes heroGhostOut {
-  to { opacity: 0; filter: blur(16px); transform: translateY(0) scale(1.01); }
+  to { opacity: 0; filter: blur(10px); transform: translateY(0) scale(1); }
 }
 
 @keyframes heroCrispIn {
-  to { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes dotLock {
+  0% { opacity: 0; transform: translateY(6px) scale(0.78); }
+  60% { opacity: 1; transform: translateY(-1px) scale(1.06); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-layer--ghost { display: none; }
+  .hero-layer--crisp { 
+    position: static; 
+    opacity: 1 !important; 
+    filter: none !important; 
+    transform: none !important; 
+    animation: none !important; 
+  }
+  .hero-sizer { display: none; }
+  .hero-dot-pop { opacity: 1; transform: none; animation: none; }
+}
+
+@media (max-width: 600px) {
+  .hero-reveal-text {
+    font-size: clamp(38px, 12vw, 48px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
