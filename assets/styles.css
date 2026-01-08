@@ -264,7 +264,7 @@ html.is-ready .studio-hero-content{
   transform: translate3d(0,14px,0) scale(1.03);
   z-index: 0;
   pointer-events: none;
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
   animation: ghostIn 900ms var(--ease-apple-out) 140ms forwards;
 }
 
@@ -342,7 +342,7 @@ html.is-ready .studio-hero-content{
   html:not(.is-ready) .studio-hero-content {
     opacity: 1; transform: none;
   }
-  .hero-layer--ghost { animation: none; opacity: 0.09; transform: none; filter: blur(18px); }
+  .hero-layer--ghost { animation: none; opacity: 0; filter: none; transform: none; }
   .hero-layer--crisp { animation: none; opacity: 1; transform: none; }
   .hero-dot-pop { opacity: 1; }
   .hero-dot-pop.revealed { animation: none; }
