@@ -3,54 +3,78 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
   <title>Undone — Studio</title>
   <meta name="description" content="Undone designs clinic systems that don't require explanation." />
+
+  <!-- critical: prevent dot flash before CSS loads -->
+  <style>
+    .hero-dot-pop { opacity: 0; }
+  </style>
+
   <link rel="stylesheet" href="./assets/styles.css" />
 </head>
+
 <body class="studio-body">
   <div class="std-shell">
     <header class="studio-header">
-      <a href="/" class="studio-brand">
-        <div class="studio-orb"></div>
+      <a href="/" class="studio-brand" aria-label="Undone home">
+        <div class="studio-orb" aria-hidden="true"></div>
         <span class="studio-brand-name">Undone</span>
       </a>
-      <nav class="studio-nav">
-        <a href="/" class="active">Studio</a>
+      <nav class="studio-nav" aria-label="Primary">
+        <a href="/" class="active" aria-current="page">Studio</a>
         <a href="/standards/">Standards</a>
       </nav>
     </header>
 
     <main>
-      <!-- 1. Cold Open (Arrival, not rotation) -->
-      <section id="hero" class="studio-hero">
-        <canvas id="studioHeroCanvas"></canvas>
+      <!-- hero -->
+      <section id="hero" class="studio-hero" aria-label="Studio hero">
+        <canvas id="studioHeroCanvas" aria-hidden="true"></canvas>
+
         <div class="studio-hero-content">
-          <h1 class="hero-reveal-text">
+          <h1 class="hero-reveal-text" aria-label="Operational clarity.">
             <span class="hero-stack">
-              <span class="hero-sizer">Operational clarity.</span>
-              <span class="hero-layer hero-layer--ghost">Operational clarity.</span>
-              <span class="hero-layer hero-layer--crisp">Operational clarity<span class="hero-dot-pop">.</span></span>
+              <!-- sizer sets layout width; invisible but occupies space -->
+              <span class="hero-sizer" aria-hidden="true">Operational clarity</span>
+
+              <!-- ghost layer -->
+              <span class="hero-layer hero-layer--ghost" aria-hidden="true">
+                Operational clarity
+              </span>
+
+              <!-- crisp layer -->
+              <span class="hero-layer hero-layer--crisp" aria-hidden="true">
+                Operational clarity
+              </span>
+
+              <!-- THE ONLY DOT -->
+              <span class="hero-dot-pop" aria-hidden="true">.</span>
             </span>
           </h1>
         </div>
-        <div class="studio-scroll-indicator">
+
+        <div class="studio-scroll-indicator" aria-hidden="true">
           <div class="studio-scroll-chevron">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
           </div>
         </div>
       </section>
 
-      <!-- 3. Problem Reframed -->
+      <!-- positioning -->
       <section id="positioning" class="studio-section studio-reveal">
         <div class="studio-container">
           <h2 class="studio-h2">Most clinics don't have a marketing problem.</h2>
           <div class="studio-prose">
-            <p>It shows up that way.</p>
+            <p>It just shows up that way.</p>
           </div>
         </div>
       </section>
 
-      <!-- 4. System Lens -->
+      <!-- system lens -->
       <section id="marketing" class="studio-section studio-reveal">
         <div class="studio-container">
           <span class="studio-label">THE INFRASTRUCTURE GAP</span>
@@ -62,7 +86,7 @@
         </div>
       </section>
 
-      <!-- 5. Standards / Materials -->
+      <!-- scope -->
       <section id="materials" class="studio-section studio-reveal">
         <div class="studio-container">
           <span class="studio-label">SCOPE</span>
@@ -77,6 +101,7 @@
         </div>
       </section>
 
+      <!-- standards -->
       <section id="standards" class="studio-section studio-reveal">
         <div class="studio-container">
           <span class="std-label">STANDARDS</span>
@@ -88,7 +113,7 @@
         </div>
       </section>
 
-      <!-- 6. Close -->
+      <!-- closer -->
       <section id="closer" class="studio-closer studio-reveal">
         <div class="studio-container">
           <p class="studio-closer-line">Restraint is the product.</p>
