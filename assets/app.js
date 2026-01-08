@@ -149,7 +149,7 @@
 
     // reveal dot near the end of crisp resolving
     // (0.92 avoids “pause” feeling that happens at 100%)
-    const revealAt = Math.max(650, Math.round(delayMs + durationMs * 0.88));
+    const revealAt = Math.max(650, Math.round(delayMs + durationMs * 0.92));
 
     // ensure browser applied the hidden styles before we reveal
     requestAnimationFrame(() => {

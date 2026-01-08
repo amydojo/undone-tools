@@ -22,7 +22,6 @@
 
   /* motion */
   --ease-apple-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-apple: cubic-bezier(0.42, 0, 0.58, 1);
   --dur-1: 220ms;
   --dur-2: 420ms;
   --dur-3: 820ms;
@@ -261,13 +260,12 @@ html.is-ready .studio-hero-content{
 
 .hero-layer--ghost{
   opacity: 0;
-  filter: blur(20px);                 /* keep blur static */
+  filter: blur(20px);
   transform: translate3d(0,14px,0) scale(1.03);
   z-index: 0;
   pointer-events: none;
-  will-change: transform, opacity;
-  animation: ghostIn 900ms var(--ease-apple-out) 140ms forwards,
-             ghostBreath 6s ease-in-out 1.2s infinite;
+  will-change: transform, opacity, filter;
+  animation: ghostIn 900ms var(--ease-apple-out) 140ms forwards;
 }
 
 /* crisp: no filter animation */
@@ -280,16 +278,12 @@ html.is-ready .studio-hero-content{
   animation: heroCrispIn 1.35s var(--ease-apple-out) 520ms forwards;
 }
 
-/* dot: no filter animation */
+/* dot: positioned inside crisp layer, no independent transform */
 .hero-dot-pop{
-  display:inline-block;
-  position:relative;
-  z-index:999;
+  display:inline;
   color:var(--std-accent);
   opacity:0;
-  transform:translate3d(0,8px,0) scale(0.9);
-  will-change: transform, opacity;
-  backface-visibility:hidden;
+  will-change: opacity;
 }
 
 .hero-dot-pop.revealed {
@@ -313,7 +307,7 @@ html.is-ready .studio-hero-content{
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: chevronFloat 2.2s var(--ease-apple) infinite;
+  animation: chevronFloat 2.2s var(--ease-apple-out) infinite;
   color: rgba(255,255,255,0.6);
 }
 
@@ -322,9 +316,9 @@ html.is-ready .studio-hero-content{
    ────────────────────────────────────────────────────────────────────────── */
 
 @keyframes ghostIn{
-  0%   { opacity: 0;    transform: translate3d(0,14px,0) scale(1.03); filter: blur(26px); }
-  65%  { opacity: 0.12; transform: translate3d(0,2px,0)  scale(1.015); filter: blur(20px); }
-  100% { opacity: 0.09; transform: translate3d(0,0,0)    scale(1.02);  filter: blur(18px); }
+  0%   { opacity: 0;    transform: translate3d(0,14px,0) scale(1.03); filter: blur(28px); }
+  45%  { opacity: 0.15; transform: translate3d(0,3px,0)  scale(1.018); filter: blur(22px); }
+  100% { opacity: 0.09; transform: translate3d(0,0,0)    scale(1.015);  filter: blur(18px); }
 }
 
 @keyframes heroCrispIn{
@@ -333,9 +327,9 @@ html.is-ready .studio-hero-content{
 }
 
 @keyframes dotPop{
-  0%   { opacity:0; transform:translate3d(0,8px,0) scale(0.9); }
-  60%  { opacity:1; transform:translate3d(0,-1px,0) scale(1.08); }
-  100% { opacity:1; transform:translate3d(0,0,0) scale(1); }
+  0%   { opacity:0; }
+  60%  { opacity:1; }
+  100% { opacity:1; }
 }
 
 @keyframes chevronFloat {
@@ -343,14 +337,14 @@ html.is-ready .studio-hero-content{
   50%      { transform: translateY(8px); }
 }
 
-/* reduced motion: show hero immediately + no breathing */
+/* reduced motion: show hero immediately */
 @media (prefers-reduced-motion: reduce) {
   html:not(.is-ready) .studio-hero-content {
-    opacity: 1; transform: none; filter: none;
+    opacity: 1; transform: none;
   }
-  .hero-layer--ghost { animation: none; }
-  .hero-layer--crisp { animation: none; opacity: 1; transform: none; filter: none; }
-  .hero-dot-pop { opacity: 1; transform: none; filter: none; }
+  .hero-layer--ghost { animation: none; opacity: 0.09; transform: none; filter: blur(18px); }
+  .hero-layer--crisp { animation: none; opacity: 1; transform: none; }
+  .hero-dot-pop { opacity: 1; }
   .hero-dot-pop.revealed { animation: none; }
   .studio-scroll-chevron { animation: none; }
 }
@@ -855,12 +849,11 @@ html.is-ready .studio-hero-content{
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   SAFETY: DOT VISIBILITY + LAYERING GUARDRAILS
-   (prevents “dot behind blur” even if blend layers change later)
+   SAFETY: LAYERING GUARDRAILS
+   (GPU acceleration for smooth compositing)
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .hero-stack,
-.hero-layer--crisp,
-.hero-dot-pop {
+.hero-layer--crisp {
   transform: translateZ(0);
 }
