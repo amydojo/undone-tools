@@ -195,6 +195,7 @@
   }
 
   // ---------- hero canvas ----------
+  // (c) Parallax with IntersectionObserver gating: RAF pauses when hero offscreen
 
   function initStudioHeroCanvas(state) {
     const canvas = document.getElementById('studioHeroCanvas');
@@ -329,6 +330,7 @@
     }
 
     function start() {
+      // (d) prefers-reduced-motion: don't start animation
       if (state.prefersReducedMotion) {
         draw();
         return;
@@ -344,7 +346,7 @@
       raf = null;
     }
 
-    // pause when not visible
+    // (c) pause when hero not visible (IntersectionObserver gating)
     const heroSection = canvas.closest('.studio-hero') || canvas.parentElement;
     if ('IntersectionObserver' in window && heroSection) {
       const vis = new IntersectionObserver(
@@ -352,7 +354,7 @@
           entries.forEach(entry => {
             isVisible = entry.isIntersecting;
             if (isVisible) start();
-            else stop();
+            else stop(); // (c) RAF stops when not visible
           });
         },
         { threshold: 0.1 }

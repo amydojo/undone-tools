@@ -258,9 +258,10 @@ html.is-ready .studio-hero-content{
   pointer-events: none;
 }
 
+/* ghost layer — (a) blur stays static; only transform/opacity animate */
 .hero-layer--ghost{
   opacity: 0;
-  filter: blur(20px);
+  filter: blur(18px); /* static blur, not animated */
   transform: translate3d(0,14px,0) scale(1.03);
   z-index: 0;
   pointer-events: none;
@@ -268,7 +269,7 @@ html.is-ready .studio-hero-content{
   animation: ghostIn 900ms var(--ease-apple-out) 140ms forwards;
 }
 
-/* crisp: no filter animation */
+/* crisp layer — (a) no filter animation; only transform/opacity */
 .hero-layer--crisp{
   opacity: 0;
   transform: translate3d(0,10px,0) scale(0.995);
@@ -278,11 +279,11 @@ html.is-ready .studio-hero-content{
   animation: heroCrispIn 1.35s var(--ease-apple-out) 520ms forwards;
 }
 
-/* dot: positioned inside crisp layer, no independent transform */
+/* dot: (b) inline-block occupies space from first paint; only opacity/transform animate (no layout shift) */
 .hero-dot-pop{
-  display:inline;
-  color:var(--std-accent);
-  opacity:0;
+  display: inline-block;
+  color: var(--std-accent);
+  opacity: 0;
   will-change: opacity;
 }
 
@@ -315,17 +316,20 @@ html.is-ready .studio-hero-content{
    Hero keyframes (restrained / no “pause”)
    ────────────────────────────────────────────────────────────────────────── */
 
+/* (a) ghost animation: only transform/opacity (no filter animation) */
 @keyframes ghostIn{
-  0%   { opacity: 0;    transform: translate3d(0,14px,0) scale(1.03); filter: blur(28px); }
-  45%  { opacity: 0.15; transform: translate3d(0,3px,0)  scale(1.018); filter: blur(22px); }
-  100% { opacity: 0.09; transform: translate3d(0,0,0)    scale(1.015);  filter: blur(18px); }
+  0%   { opacity: 0;    transform: translate3d(0,14px,0) scale(1.03); }
+  45%  { opacity: 0.15; transform: translate3d(0,3px,0)  scale(1.018); }
+  100% { opacity: 0.09; transform: translate3d(0,0,0)    scale(1.015); }
 }
 
+/* (a) crisp layer animation: only transform/opacity */
 @keyframes heroCrispIn{
   0%   { opacity:0; transform:translate3d(0,10px,0) scale(0.995); }
   100% { opacity:1; transform:translate3d(0,0,0)    scale(1); }
 }
 
+/* (b) dot animation: only opacity (no layout shift, no transform) */
 @keyframes dotPop{
   0%   { opacity:0; }
   60%  { opacity:1; }
@@ -337,7 +341,7 @@ html.is-ready .studio-hero-content{
   50%      { transform: translateY(8px); }
 }
 
-/* reduced motion: show hero immediately */
+/* (d) prefers-reduced-motion: show final state instantly; disable all motion */
 @media (prefers-reduced-motion: reduce) {
   html:not(.is-ready) .studio-hero-content {
     opacity: 1; transform: none;
@@ -346,7 +350,7 @@ html.is-ready .studio-hero-content{
   .hero-layer--crisp { animation: none; opacity: 1; transform: none; }
   .hero-dot-pop { opacity: 1; }
   .hero-dot-pop.revealed { animation: none; }
-  .studio-scroll-chevron { animation: none; }
+  .studio-scroll-chevron { animation: none; } /* disable chevron animation */
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
