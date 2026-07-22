@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capytopia Patterns — Chaos Vault</title>
+  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
+  <style>
+    .cv-reveal{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.cv-revealed{opacity:1;transform:none}
+    .cv-pattern-stack{display:grid;gap:16px}.cv-pattern-spec{padding:24px;border:1px solid var(--cv-border);border-radius:8px;background:var(--cv-surface-1)}.cv-pattern-spec h2{font-size:22px;color:var(--cv-text);margin:8px 0 12px}.cv-pattern-spec p{font-size:14px;line-height:1.7;color:var(--cv-text-muted)}
+  </style>
+</head>
+<body class="cv-body"><div class="cv-shell">
+<header class="cv-topbar">
+  <a href="/chaos-vault/" class="cv-logo"><div class="cv-logo-mark"></div><span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span></a>
+  <nav class="cv-topbar-nav"><a href="/chaos-vault/">Inventory</a><a href="/chaos-vault/patterns/">Affective Patterns</a><a href="/">Undone Studio</a></nav>
+</header>
+<nav class="cv-sidebar">
+  <div class="cv-sidebar-section"><span class="cv-sidebar-label">Capytopia Harvest</span>
+    <a href="#sensory-assembly" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Sensory Assembly</a>
+    <a href="#avatar-expression" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Avatar Expression</a>
+    <a href="#soft-world" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Soft-World Tasks</a>
+  </div>
+  <div class="cv-sidebar-section"><span class="cv-sidebar-label">Source</span>
+    <a href="/chaos-vault/data/capytopia-patterns.json" class="cv-sidebar-link">Registry JSON</a>
+    <a href="/chaos-vault/CAPYTOPIA_HARVEST.md" class="cv-sidebar-link">Audit Note</a>
+  </div>
+</nav>
+<main class="cv-main">
+  <div class="cv-breadcrumb"><a href="/chaos-vault/">Inventory</a><span class="cv-breadcrumb-sep">/</span><a href="/chaos-vault/patterns/">Patterns</a><span class="cv-breadcrumb-sep">/</span><span>Capytopia</span></div>
+  <div class="cv-page-header cv-reveal">
+    <span class="cv-dept-id">DONOR · AMYDOJO/CAPYTOPIA · VERIFIED COMMIT 627F684</span>
+    <h1 class="cv-page-title"><strong>Capytopia Patterns</strong></h1>
+    <p class="cv-page-desc">A playable café world containing a stepwise drink ritual, expressive capybara customization, sound and motion feedback, quests, game state, and spatial zones. The GitHub connector incorrectly reported the repository as empty; direct commit and file inspection proved otherwise.</p>
+    <div class="cv-page-meta"><span class="cv-badge cv-badge-reconstructed">3 Harvested Patterns</span><span class="cv-badge cv-badge-experimental">Prototype Boundaries Preserved</span></div>
+  </div>
+
+  <section class="cv-section cv-reveal">
+    <span class="cv-section-label">Why It Matters</span>
+    <div class="cv-provenance"><span class="cv-provenance-label">Play as affective infrastructure</span><p>Capytopia does not need to read or diagnose a person to change the emotional quality of an interaction. It creates a small, legible world where actions are concrete, sensory, low-stakes, and visibly accumulative. The strongest portable lesson is not “make everything cute.” It is to give abstract progress a body, place, rhythm, and ending.</p></div>
+  </section>
+
+  <div class="cv-pattern-stack">
+    <section id="sensory-assembly" class="cv-pattern-spec cv-reveal">
+      <span class="cv-dept-id">CV-CAP-001 · RECONSTRUCTED</span>
+      <h2>Sensory Assembly Ritual</h2>
+      <p>A making flow becomes a three-stage ritual. Each ingredient choice advances a visible sequence, optionally produces a corresponding sound, and accumulates as a new layer inside the cup preview. The object remembers the user’s actions so progress is seen rather than merely announced.</p>
+      <table class="cv-meta-table">
+        <tr><td>Portable value</td><td>Ground abstract progress in visible material change. Useful for onboarding, creative tools, care tasks, guided setup, and any process where “what I have done” should remain perceptible.</td></tr>
+        <tr><td>Observed mechanics</td><td>Base → milk → topping; pour, steam, and stir audio; animated cup layers; progress strip; explicit completion.</td></tr>
+        <tr><td>Required safeguards</td><td>Mute, reduced motion, textual state, cancel, and no essential meaning carried by sound.</td></tr>
+        <tr><td>Do not claim</td><td>That sensory feedback is inherently calming, regulating, or therapeutic.</td></tr>
+      </table>
+    </section>
+
+    <section id="avatar-expression" class="cv-pattern-spec cv-reveal">
+      <span class="cv-dept-id">CV-CAP-002 · RECONSTRUCTED</span>
+      <h2>Avatar-Mediated Self-Expression</h2>
+      <p>The user can choose a character expression, color, blush state, held object, and clothing while seeing the result immediately. This creates expressive distance: a person can make the character sleepy, neutral, excited, or dressed for a mood without having to declare that the label describes them.</p>
+      <table class="cv-meta-table">
+        <tr><td>Portable value</td><td>Support symbolic expression without personal interrogation. Particularly useful where direct emotional labels would feel invasive or over-serious.</td></tr>
+        <tr><td>Authority</td><td>The user selects every expressive state. The interface must not infer or diagnose from avatar choices.</td></tr>
+        <tr><td>Required safeguards</td><td>Neutral option, reset, immediate preview, privacy by default, and no identity-expression paywall pressure.</td></tr>
+        <tr><td>Failure mode</td><td>Treating a playful choice as psychological telemetry.</td></tr>
+      </table>
+    </section>
+
+    <section id="soft-world" class="cv-pattern-spec cv-reveal">
+      <span class="cv-dept-id">CV-CAP-003 · EXPERIMENTAL</span>
+      <h2>Soft-World Task Scaffolding</h2>
+      <p>The café divides responsibilities into recognizable places: a service counter, kitchen, seating area, and garden patio. Each zone carries a name, visual treatment, icon, and plain-language purpose. The environment begins to function as a spatial task map rather than a decorative background.</p>
+      <table class="cv-meta-table">
+        <tr><td>Portable value</td><td>Use place to reduce abstract navigation. A bounded world can make categories and next actions easier to remember than nested menus.</td></tr>
+        <tr><td>Observed structure</td><td>Named zones, capybara entities, quests, coins, levels, current tasks, and café layout state.</td></tr>
+        <tr><td>Current limitation</td><td>Zone hit detection and actions remain unfinished in the verified snapshot. This is a promising scaffold, not a completed navigation system.</td></tr>
+        <tr><td>Required safeguards</td><td>List equivalent, keyboard and touch access, visible active zone, and no essential action hidden only inside a canvas.</td></tr>
+      </table>
+    </section>
+  </div>
+
+  <section class="cv-section cv-reveal"><span class="cv-section-label">Quarantine</span><div class="cv-quarantine-zone"><div class="cv-quarantine-header"><span>DO NOT IMPORT LITERALLY</span></div><div class="cv-quarantine-body">
+    <div class="cv-quarantine-item"><code>METRIC</code> The stored capybara happiness number is game state, not psychological measurement.</div>
+    <div class="cv-quarantine-item"><code>ECONOMY</code> Coins, levels, and quests must not become punishment for absence, low capacity, or emotional disclosure.</div>
+    <div class="cv-quarantine-item"><code>ACCESS</code> Canvas-only zone navigation and sound-only feedback are not acceptable production contracts.</div>
+    <div class="cv-quarantine-item"><code>CLAIMS</code> Unfinished zone actions must remain labeled experimental.</div>
+  </div></div></section>
+</main></div><script src="/chaos-vault/assets/cv.js"></script></body></html>
