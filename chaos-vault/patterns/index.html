@@ -36,12 +36,15 @@
       <a href="/chaos-vault/patterns/artifact-compilers.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Artifact Compilers</a>
       <a href="/chaos-vault/patterns/continuity-systems.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Continuity Systems</a>
       <a href="/chaos-vault/patterns/capytopia.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Capytopia Play Systems</a>
+      <a href="/chaos-vault/patterns/design-intent-infrastructure.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Design Intent Infrastructure</a>
     </div>
     <div class="cv-sidebar-section">
       <span class="cv-sidebar-label">Source Material</span>
       <a href="/chaos-vault/data/affective-patterns.json" class="cv-sidebar-link">Core Registry JSON</a>
       <a href="/chaos-vault/data/capytopia-patterns.json" class="cv-sidebar-link">Capytopia Registry JSON</a>
-      <a href="/chaos-vault/library/affective-contracts.js" class="cv-sidebar-link">Reference Helpers JS</a>
+      <a href="/chaos-vault/data/design-intent-patterns.json" class="cv-sidebar-link">Design Intent Registry JSON</a>
+      <a href="/chaos-vault/library/affective-contracts.js" class="cv-sidebar-link">Affective Helpers JS</a>
+      <a href="/chaos-vault/library/design-intent-contract.js" class="cv-sidebar-link">Design Intent Compiler JS</a>
     </div>
   </nav>
 
@@ -49,13 +52,14 @@
     <div class="cv-breadcrumb"><a href="/chaos-vault/">Inventory</a><span class="cv-breadcrumb-sep">/</span><span>Affective Pattern Library</span></div>
 
     <div class="cv-page-header cv-reveal">
-      <span class="cv-dept-id">LAB DOJO · AFFECTIVE INTERFACE ENGINEERING · HARVEST 01</span>
+      <span class="cv-dept-id">LAB DOJO · AFFECTIVE INTERFACE ENGINEERING · HARVEST 01–02</span>
       <h1 class="cv-page-title"><strong>Affective Pattern Library</strong></h1>
-      <p class="cv-thesis">Reusable contracts for software that remains humane when attention, certainty, energy, control, or reality stops matching the happy path.</p>
+      <p class="cv-thesis">Reusable contracts for software that remains humane when attention, certainty, energy, control, compatibility, or reality stops matching the happy path.</p>
       <div class="cv-page-meta">
         <span class="cv-badge cv-badge-tested">27 Core Patterns</span>
         <span class="cv-badge cv-badge-reconstructed">3 Capytopia Patterns</span>
-        <span class="cv-badge cv-badge-reconstructed">13 Donor Systems</span>
+        <span class="cv-badge cv-badge-reconstructed">5 Design Infrastructure Patterns</span>
+        <span class="cv-badge cv-badge-reconstructed">14 Donor Systems</span>
         <span class="cv-badge cv-badge-quarantined">Import Bans Enforced</span>
       </div>
     </div>
@@ -63,13 +67,13 @@
     <section class="cv-section cv-reveal">
       <span class="cv-section-label">Operating Position</span>
       <div class="cv-provenance">
-        <span class="cv-provenance-label">State hypotheses, not emotional facts</span>
-        <p>The library does not treat a face, cursor, voice, avatar choice, streak, or model confidence score as privileged access to a person’s internal state. Adaptation begins with universal support or an explicit user request, remains visible and reversible, expires at a bounded scope, and preserves a route back to the complete interface.</p>
+        <span class="cv-provenance-label">Preserve agency and authorship</span>
+        <p>The library does not treat a face, cursor, voice, avatar choice, streak, or model confidence score as privileged access to a person’s internal state. It also does not let a generator quietly expand from proposing content into controlling routing, persistence, publication, or external actions. Adaptation and automation remain visible, bounded, reversible, and user-owned.</p>
       </div>
     </section>
 
     <section class="cv-section cv-reveal">
-      <span class="cv-section-label">Five Pattern Families</span>
+      <span class="cv-section-label">Six Pattern Families</span>
       <div class="cv-pattern-grid">
         <a class="cv-pattern-card" href="/chaos-vault/patterns/affective-contracts.html">
           <span class="cv-pattern-count">6 PATTERNS · CV-AFX</span>
@@ -96,6 +100,11 @@
           <h2>Capytopia Play Systems</h2>
           <p>Sensory assembly rituals, avatar-mediated expression, and soft-world task scaffolding extracted from the playable café prototype.</p>
         </a>
+        <a class="cv-pattern-card" href="/chaos-vault/patterns/design-intent-infrastructure.html">
+          <span class="cv-pattern-count">5 PATTERNS · CV-DIN</span>
+          <h2>Design Intent Infrastructure</h2>
+          <p>Structured design memory, inspectable generation contracts, compatibility shells, mechanical burden transfer, and authorship-preserving automation.</p>
+        </a>
       </div>
     </section>
 
@@ -114,6 +123,7 @@
         <div class="cv-provenance"><span class="cv-provenance-label">KEYS</span><p>Procedural accompaniment through discovery, risk, paperwork, waiting, and response.</p></div>
         <div class="cv-provenance"><span class="cv-provenance-label">Face Value</span><p>Longitudinal evidence, delta over score, and the skincare-fridge machine metaphor.</p></div>
         <div class="cv-provenance"><span class="cv-provenance-label">Capytopia</span><p>Sensory making, user-controlled character expression, quests, and spatial café task zones.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Left Brain MCP</span><p>Design-intent serialization, inspectable generation contracts, compatibility shells, and mechanical burden transfer.</p></div>
         <div class="cv-provenance"><span class="cv-provenance-label">Let’s Glo / Jellycat Tracker</span><p>Camera, motion, event, and notification primitives retained in the technical departments.</p></div>
       </div>
     </section>
@@ -124,8 +134,9 @@
         <tr><td>Original invention</td><td>Preserve product provenance and authorship. Extract the portable contract without pretending every implementation is production-ready.</td></tr>
         <tr><td>Research-linked hypothesis</td><td>Keep evidence labels, failure modes, competing explanations, and falsification conditions attached.</td></tr>
         <tr><td>Clean-room reconstruction</td><td>Rebuild behavior from audited contracts rather than copying domain-specific source or demo fiction.</td></tr>
-        <tr><td>Replit-origin repository</td><td>Search commit history and fetch a viable commit directly before trusting repository size or branch metadata.</td></tr>
-        <tr><td>Quarantined material</td><td>Document why it must not be imported. Do not quietly rehabilitate fake scores, fake quotes, fake hardware, punitive economies, or manipulative streak systems.</td></tr>
+        <tr><td>Replit-origin repository</td><td>Search commit history, inspect expected product paths on the active ref, and fetch representative files directly before trusting metadata or launch stubs.</td></tr>
+        <tr><td>Generated artifact system</td><td>Separate design memory, generation request, execution authority, rendering, persistence, and publication. Never let one opaque payload control all five.</td></tr>
+        <tr><td>Quarantined material</td><td>Document why it must not be imported. Do not quietly rehabilitate fake scores, fake quotes, fake hardware, open proxies, arbitrary generated execution, punitive economies, or manipulative streak systems.</td></tr>
       </table>
     </section>
   </main>
