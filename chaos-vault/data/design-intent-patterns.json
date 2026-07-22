@@ -1,0 +1,169 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-22",
+  "source": {
+    "repository": "amydojo/left-brain-mcp",
+    "verifiedRef": "main",
+    "harvestType": "surgical clean-room reconstruction",
+    "note": "The original relay accepted arbitrary server-side endpoints and is not reused. The registry preserves the portable design-intent architecture and its affective infrastructure value."
+  },
+  "patterns": [
+    {
+      "id": "CV-DIN-001",
+      "name": "Design Intent Serialization",
+      "category": "design-infrastructure",
+      "status": "reconstructed",
+      "evidence": "implemented donor token system",
+      "kind": "original systems pattern",
+      "origins": ["Left Brain MCP"],
+      "thesis": "Encode visual, semantic, component, motion, responsive, and compatibility decisions as portable structured data so downstream tools do not have to guess the design system.",
+      "observedImplementation": [
+        "semantic and primitive color tokens",
+        "email-state tokens",
+        "component dimensions and spacing",
+        "motion and breakpoint tokens"
+      ],
+      "requiredControls": [
+        "schema version",
+        "source provenance",
+        "human-readable labels",
+        "explicit optional fields",
+        "migration path"
+      ],
+      "risks": [
+        "false precision",
+        "stale tokens treated as current truth",
+        "design nuance flattened into numbers",
+        "undocumented semantic drift"
+      ]
+    },
+    {
+      "id": "CV-DIN-002",
+      "name": "Human-Inspectable Generation Contract",
+      "category": "model-boundaries",
+      "status": "reconstructed",
+      "evidence": "implemented donor interface",
+      "kind": "original interaction contract",
+      "origins": ["Left Brain MCP"],
+      "thesis": "Keep design memory and generation instructions visible, editable, versionable, and separately namespaced before any execution occurs.",
+      "observedImplementation": [
+        "separate token and generation inputs",
+        "visible JSON request",
+        "explicit send action",
+        "returned result surface"
+      ],
+      "requiredControls": [
+        "preview before execution",
+        "cancel",
+        "schema validation",
+        "collision reporting",
+        "redacted diagnostics"
+      ],
+      "risks": [
+        "raw JSON excluding nontechnical users",
+        "hidden defaults",
+        "silent field collisions",
+        "contract changes without review"
+      ]
+    },
+    {
+      "id": "CV-DIN-003",
+      "name": "Reference-Constrained Artifact Compiler",
+      "category": "artifact-compilers",
+      "status": "experimental",
+      "evidence": "source templates and generator intent",
+      "kind": "original infrastructure pattern",
+      "origins": ["Left Brain MCP"],
+      "thesis": "Generate variable content inside an approved compatibility shell rather than regenerating hostile-runtime structure from scratch.",
+      "observedImplementation": [
+        "bulletproof email source templates",
+        "Outlook and Gmail compatibility rules",
+        "responsive mobile variants",
+        "generator-oriented template storage"
+      ],
+      "requiredControls": [
+        "approved template identifiers",
+        "bounded content slots",
+        "output validation",
+        "template provenance",
+        "manual approval before delivery"
+      ],
+      "risks": [
+        "branded source copied without rights",
+        "generated markup escaping bounded slots",
+        "compatibility shell becoming stale",
+        "template constraints hiding content defects"
+      ]
+    },
+    {
+      "id": "CV-DIN-004",
+      "name": "Mechanical Burden Transfer",
+      "category": "affective-infrastructure",
+      "status": "experimental",
+      "evidence": "product architecture",
+      "kind": "original affective systems pattern",
+      "origins": ["Left Brain MCP"],
+      "thesis": "Move repetitive compatibility and production labor to the system while preserving human authorship, meaning, taste, and final authority.",
+      "observedImplementation": [
+        "design intent supplied independently from implementation",
+        "generator receives structured constraints",
+        "compatibility-heavy email source stored as reusable infrastructure"
+      ],
+      "requiredControls": [
+        "human approval",
+        "visible system actions",
+        "reversible output",
+        "no hidden network calls",
+        "no autonomous publication"
+      ],
+      "risks": [
+        "automation quietly taking authorship",
+        "mechanical simplification erasing intentional irregularity",
+        "opaque transformations",
+        "reduced skill visibility"
+      ]
+    },
+    {
+      "id": "CV-DIN-005",
+      "name": "Compatibility as Care",
+      "category": "reliability-contracts",
+      "status": "reconstructed",
+      "evidence": "implemented compatibility shell",
+      "kind": "original affective infrastructure principle",
+      "origins": ["Left Brain MCP"],
+      "thesis": "Treat reliable rendering in the recipient's actual environment as part of the intended emotional and informational experience, not as optional polish.",
+      "observedImplementation": [
+        "Outlook conditional behavior",
+        "Microsoft Office fallbacks",
+        "Gmail and Apple detector protections",
+        "mobile-specific layout rules"
+      ],
+      "requiredControls": [
+        "tested client matrix",
+        "accessible fallback",
+        "plain-content survival path",
+        "known limitation disclosure",
+        "regression checks"
+      ],
+      "risks": [
+        "claiming universal support without testing",
+        "visual fidelity prioritized over legibility",
+        "fallback content omitted",
+        "compatibility debt hidden from users"
+      ]
+    }
+  ],
+  "quarantine": [
+    "arbitrary server-side URL fetching",
+    "open proxy behavior",
+    "broad unauthenticated CORS",
+    "full design or customer payload logging",
+    "shallow merging of design intent and generation instructions",
+    "unescaped response insertion",
+    "arbitrary generated HTML execution",
+    "generator-controlled routing, persistence, external actions, or filenames",
+    "branded templates imported as generic reusable assets",
+    "hidden network calls",
+    "application errors returned as HTTP 200"
+  ]
+}
