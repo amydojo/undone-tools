@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/chaos-vault",
+      "destination": "/vault/",
+      "permanent": true
+    },
+    {
+      "source": "/chaos-vault/",
+      "destination": "/vault/",
+      "permanent": true
+    }
+  ]
+}
