@@ -1,21 +1,21 @@
 # Chaos Vault Harvest Log
 
+## Evidence classes
+
+Chaos Vault distinguishes three kinds of retained material:
+
+1. **Original product inventions** — portable concepts authored across Amy Do and Lab Dojo products, preserved with provenance.
+2. **Research-linked design hypotheses** — patterns that retain evidence labels, limitations, competing explanations, and falsification requirements.
+3. **Clean-room reconstructions** — behavior rebuilt from an audited contract instead of copying domain-specific source or unsafe demo wiring.
+
+A harvested pattern is not automatically a universal effectiveness claim, clinical claim, production-readiness claim, or permission to copy branded source material.
+
 ## Harvest 01 · Affective interface patterns
 
 **Date:** 2026-07-22  
-**Branch:** `agent/harvest-affective-patterns`
+**Original branch:** `agent/harvest-affective-patterns`
 
-This harvest expands Chaos Vault from eight technical departments into a second layer for reusable affective product and interaction contracts.
-
-The work is intentionally split into three evidence types:
-
-1. **Original product inventions** — concepts authored across Amy Do / Lab Dojo products and preserved with their product provenance.
-2. **Research-linked design hypotheses** — patterns from Affective UX Lab that retain their evidence labels, limitations, and falsification requirements.
-3. **Clean-room reconstructions** — portable behavior rebuilt from audited product contracts instead of copying domain-specific source wholesale.
-
-Nothing in this library should be presented as a validated clinical, diagnostic, or universal psychological standard.
-
-## New pattern departments
+### Core departments
 
 | Department | IDs | Primary source systems |
 | --- | --- | --- |
@@ -25,214 +25,189 @@ Nothing in this library should be presented as a validated clinical, diagnostic,
 | Continuity Systems | `CV-CON-*` | Bad Day Receipt, Capsule, Mirror, Living Tapestry, KEYS, Face Value |
 | Control Behavior | `CV-CTL-*` | Interface Behavior Lab, Bad Day Receipt, Mirror |
 
-## Donor audit
+### Donor summary
 
-### Affective UX Lab
+#### Affective UX Lab
 
-Harvested:
+Retained state hypotheses rather than emotional facts, the adaptation ladder, load-adaptive disclosure, gentle reentry, correctable state, calibrated language, reversible simplification, and agency requirements.
 
-- state hypotheses rather than emotional facts
-- adaptation ladder
-- load-adaptive disclosure
-- gentle reentry
-- user-correctable state
-- calibrated language
-- reversible simplification
-- agency, expiration, and falsification requirements
+#### Bad Day Receipt · Carry Forward
 
-Not imported:
+Retained declared load, Interaction Budget, Minimum Necessary Interface, Three Valid Endings, stable temporary modes, emotional continuity, controlled compiler boundaries, graceful AI failure, and recovery attached to action.
 
-- no source is treated as proof that a pattern is universally effective
-- no evidence label is converted into a marketing quality score
+#### Mirror
 
-### Bad Day Receipt · Carry Forward
+Retained observation over optimization, pattern memory over scoring, tentative body-weather language, similar-day context, and non-punitive return.
 
-Harvested:
+#### Capsule
 
-- declared load, not detected emotion
-- Interaction Budget
-- Minimum Necessary Interface
-- Three Valid Endings
-- stable temporary mode
-- emotional continuity envelope
-- model-proposes / application-controls compiler boundary
-- AI failure must not become product failure
-- recovery attached to the originating action
+Retained object continuity, source provenance, specimen versus source separation, preservation ritual, rediscovery, and a local fallback when AI is unavailable.
 
-Not imported:
+#### Glint
 
-- product-specific receipt paper copy and visual skins are not generalized into interface requirements
-- no automatic send, submit, purchase, delete, or account action
+Retained structured camera-to-analysis behavior, bounded template selection, interpretation-conditioned artifact presentation, retries, and validation. Generated dialogue presented as an authentic quote and fake calibrated confidence remain quarantined.
 
-### Mirror
+#### flame.io
 
-Harvested:
+Retained tone selection before vulnerability, bounded daily ritual, multimodal responses, and AI-to-local fallback. Relationship scores, creativity bonuses, vulnerability grading, and streak punishment remain quarantined.
 
-- observation over optimization
-- pattern memory over daily scoring
-- no streaks and no penalties
-- tentative state language
-- similar-day context and what helped afterward
-- relational context over isolated metrics
+#### Fridge Web
 
-Not imported:
+Retained “Something feels off?” mid-task recovery, step-level repair, validate → repair → regenerate → fallback, lazy enrichment, and ingredient normalization.
 
-- no body-weather state is treated as diagnosis
-- no deterministic rule output is treated as a private emotional fact
+Correction: Fridge Web was a mobile-first cooking companion, not a smart-fridge image inventory product.
 
-### Capsule
+#### Living Tapestry
 
-Harvested:
+Retained chronology, recurring-type clusters, idea → action → insight chains, and time-of-day grouping. Positional links must not be presented as semantic truth.
 
-- Object Continuity System
-- source capture as provenance
-- manual Object Field lock
-- specimen versus source separation
-- archive and rediscovery ritual
-- premium local fallback when AI is unavailable
+#### KEYS
 
-Not imported:
+Retained procedural accompaniment through housing discovery, risk, budgeting, paperwork, waiting, and response. The Airbnb-style nightly-rental schema was not retained as an affordable-housing model.
 
-- generated metadata is not treated as observed fact
-- continuity scoring remains experimental and must not become an objective worth score
+#### Interface Behavior Lab
 
-### Glint / boiler-room
+Retained controls as contracts, consequence-weighted friction, state without spectacle, recovery attached to action, and the full action lifecycle.
 
-Harvested:
+#### Face Value
 
-- camera and upload to vision-analysis pipeline
-- separate structured recognition and atmosphere outputs
-- bounded design-template selection
-- interpretation-conditioned artifact presentation
-- retry and validation behavior
+Retained delta over score, longitudinal self-comparison, comparable-condition evidence, and the skincare-fridge machine metaphor. Diagnosis, attractiveness scores, invented percentages, and uncontrolled causal claims remain prohibited.
 
-Quarantined:
+### Core machine-readable assets
 
-- generated dialogue presented as an authentic quote
-- model-generated confidence presented as calibrated probability
-- simplistic emotion-to-color mappings presented as universal
-- unimplemented share and download URLs presented as production behavior
+- `data/affective-patterns.json`
+- `library/affective-contracts.js`
 
-### flame.io
+The core registry contains 27 patterns.
 
-Harvested:
+## Supplemental harvest · Capytopia
 
-- tone selection before prompt delivery
-- daily bounded relationship ritual
-- multimodal response contract
-- AI generation fallback to local prompts
-- database fallback to local state
+**Source:** `amydojo/capytopia`  
+**Verified commit:** `627f68411f8e0110b53c5a72160ef3f4c83a54fc`
 
-Quarantined:
+Capytopia was initially misclassified as empty because connector metadata reported `size: 0`. Direct commit and file inspection proved it contained a substantial React and TypeScript café-game prototype.
 
-- relationship quality points
-- creativity and sentiment bonuses for vulnerable responses
-- streak punishment
-- AI grading of intimacy
+Retained:
 
-### Fridge Web
+- `CV-CAP-001` Sensory Assembly Ritual
+- `CV-CAP-002` Avatar-Mediated Self-Expression
+- `CV-CAP-003` Soft-World Task Scaffolding
 
-Harvested:
+See:
 
-- “Something feels off?” mid-cook recovery reveal
-- step-level repair guidance
-- validate → repair → regenerate → guaranteed fallback
-- lazy secondary enrichment
-- ingredient normalization and matching patterns in the technical inventory
+- `CAPYTOPIA_HARVEST.md`
+- `data/capytopia-patterns.json`
+- `patterns/capytopia.html`
 
-Correction to earlier vault copy:
+## Harvest 02 · Design Intent Infrastructure
 
-Fridge Web was a mobile-first cooking companion that generated meal ideas from available ingredients. It was not a smart-fridge photo inventory product. The original recovery pattern concerned cooking going wrong during guided steps, not disclosing low model confidence.
+**Date:** 2026-07-22  
+**Branch:** `agent/harvest-left-brain-mcp`  
+**Source:** `amydojo/left-brain-mcp`  
+**Verified ref:** `main`
 
-Quarantined:
+### Source correction
 
-- fake Pro upgrade state
-- duplicated enrichment requests
-- silent extra AI calls caused by mismatched hook validation
+The previous harvest log incorrectly grouped `left-brain-mcp` with empty GitHub shells.
 
-### Living Tapestry
+That statement was wrong.
 
-Harvested:
+The repository contains a design-system-to-artifact prototype with:
 
-- chronological spine
-- recurring-type clusters
-- idea → action → insight chains
-- time-of-day bucketing
+- a browser interface for design tokens and generation instructions
+- an Express relay to an external generation endpoint
+- a detailed email-client token system
+- compatibility-hardened email source templates
 
-Quarantined:
+The source is populated and conceptually valuable. Its network relay is unsafe to reuse directly.
 
-- positional links between unrelated entries presented as semantic growth
-- fictional Apple Watch support
-- hollow offline sync
+### Retained patterns
 
-### KEYS
+- `CV-DIN-001` Design Intent Serialization
+- `CV-DIN-002` Human-Inspectable Generation Contract
+- `CV-DIN-003` Reference-Constrained Artifact Compiler
+- `CV-DIN-004` Mechanical Burden Transfer
+- `CV-DIN-005` Compatibility as Care
 
-Harvested:
+### Clean-room reconstruction
 
-- procedural accompaniment through housing discovery, risk, budgeting, paperwork, waiting, and response
-- scam-awareness and application-support service journey
+Added:
 
-Quarantined:
+- `LEFT_BRAIN_MCP_HARVEST.md`
+- `data/design-intent-patterns.json`
+- `contracts/design-intent.schema.json`
+- `library/design-intent-contract.js`
+- `patterns/design-intent-infrastructure.html`
+- `api/compile-design-intent.js`
+- `scripts/validate-left-brain.mjs`
 
-- Airbnb nightly-rental schema as an affordable-housing data model
-- placeholder reviews and unsupported marketplace claims
-- AI coach promises without verified service boundaries
+The reconstructed compiler:
 
-### Interface Behavior Lab
+- keeps tokens and generation instructions separately namespaced
+- detects top-level naming collisions
+- blocks prototype-pollution and execution-control keys
+- returns a deterministic data-only contract
+- performs no network request, rendering, persistence, routing, publication, or model call
 
-Harvested:
+The Vercel reference function:
 
-- a control is a contract
-- friction matches consequence
-- state without spectacle
-- recovery attached to action
-- action lifecycle: approach → clarify → weigh → commit → resolve → recover
-- accessible alternatives for novel input behavior
+- accepts POST only
+- requires `DESIGN_INTENT_API_SECRET`
+- requires bearer authentication
+- sets no-store and defensive response headers
+- enforces a request-size ceiling
+- returns meaningful HTTP status codes
+- logs no request body
+- performs no outbound fetch
 
-Not imported:
+### Not retained
 
-- elapsed hold is not physical pressure
-- pointer proximity is not gaze
-- novelty alone is not a use case
+- arbitrary user-supplied server-side request targets
+- open proxy behavior
+- broad unauthenticated CORS
+- full payload logging
+- shallow merging of design memory and generation instructions
+- unescaped response insertion
+- arbitrary generated HTML execution
+- generator-controlled routing, persistence, external actions, or filenames
+- branded email templates as generic reusable assets
 
-### Face Value
+### Vercel status
 
-Harvested as product thesis only:
+The connected Vercel account contained no projects during this harvest. No deployment was created. The branch is ready to import after review and requires `DESIGN_INTENT_API_SECRET` before the API route can be exercised.
 
-- delta over score
-- longitudinal self-comparison rather than universal skin grading
-- skincare-fridge machine metaphor
-- evidence held under comparable conditions
+## Replit-origin repository audit rule
 
-Quarantined:
+For repositories created from Replit:
 
-- medical diagnosis
-- attractiveness or skin-quality scores
-- invented percentages
-- claims that vision can establish product causality from uncontrolled photos
+1. Do not trust repository size, branch enumeration, a launch stub, or one commit summary alone.
+2. Search commit history.
+3. Inspect the current active ref and expected product paths.
+4. Fetch representative source and assets directly.
+5. Separate surviving product invention from current build health.
+6. Record uncertainty instead of converting missing metadata into an empty-repository claim.
 
-## Machine-readable assets
-
-- `data/affective-patterns.json` — canonical pattern registry
-- `library/affective-contracts.js` — dependency-free clean-room reference helpers
-
-The JavaScript helper library intentionally performs no emotion inference, no external actions, and no generated-markup rendering.
-
-## Import bans
+## Global import bans
 
 Do not import or rehabilitate:
 
-- fake skin, mood, relationship, or emotional severity scores
-- generated quotes presented as authentic source quotations
-- diagnosis from face, voice, cursor, biometrics, or interaction telemetry
+- fake skin, mood, relationship, creativity, talent, or emotional-severity scores
+- diagnosis from face, voice, cursor, biometrics, avatar choices, or interaction telemetry
+- generated quotes presented as authentic quotations
 - permanent psychological profiles
-- automatic consequential adaptation
-- manipulative streak loss or vulnerability scoring
-- fictional hardware integrations
-- scraping bypasses or ToS circumvention
-- fake payment gates
-- arbitrary model-generated HTML, actions, routing, or persistence
+- vulnerability scoring or streak punishment
+- fictional hardware, integrations, payments, or production claims
+- scraping bypasses
+- automatic consequential adaptation or external actions
+- arbitrary model-generated markup, routing, persistence, or filenames
+- arbitrary server-side URL fetching or open proxy behavior
+- hidden network calls or full sensitive payload logging
+- branded source templates without provenance and permission
 
-## Next harvest candidates
+## Current mainline inventory represented by this branch
 
-The GitHub repositories for `left-brain-mcp`, `offbeat`, and `capytopia` are currently empty shells. Their source remains in Replit and cannot be independently harvested through GitHub until the code is pushed or otherwise materialized.
+- 23 technical parts
+- 27 core affective patterns
+- 3 Capytopia patterns
+- 5 Design Intent Infrastructure patterns
+- 35 documented patterns across 14 donor systems

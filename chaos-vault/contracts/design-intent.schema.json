@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://undone.tools/chaos-vault/contracts/design-intent.schema.json",
+  "title": "Chaos Vault Design Intent Input",
+  "description": "Input contract for the clean-room Left Brain MCP reconstruction. The contract carries structured design memory and bounded generation instructions. It does not carry execution targets.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tokens", "generation"],
+  "properties": {
+    "tokens": {
+      "type": "object",
+      "description": "Portable visual, semantic, component, motion, responsive, and compatibility decisions.",
+      "additionalProperties": true
+    },
+    "generation": {
+      "type": "object",
+      "description": "Data-only instructions for a separately controlled artifact generator.",
+      "additionalProperties": true
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Optional human-authored provenance and version labels.",
+      "additionalProperties": {
+        "type": ["string", "number", "boolean", "null"]
+      }
+    }
+  },
+  "allOf": [
+    {
+      "not": {
+        "properties": {
+          "mcpUrl": {}
+        },
+        "required": ["mcpUrl"]
+      }
+    },
+    {
+      "not": {
+        "properties": {
+          "endpoint": {}
+        },
+        "required": ["endpoint"]
+      }
+    }
+  ]
+}
