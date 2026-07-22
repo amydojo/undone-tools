@@ -3,118 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chaos Vault Parts Department — Inventory</title>
-  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
-  <style>
-    .cv-reveal{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.cv-revealed{opacity:1;transform:none}
-    .cv-family-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.cv-family-card{display:block;padding:20px;border:1px solid var(--cv-border);border-radius:8px;background:var(--cv-surface-1);text-decoration:none}.cv-family-card:hover{border-color:rgba(240,192,64,.5);transform:translateY(-2px)}.cv-family-card strong{display:block;color:var(--cv-text);font-size:18px;margin-bottom:8px}.cv-family-card span{display:block;font:10px var(--cv-font-mono);letter-spacing:.09em;color:var(--cv-accent);margin-bottom:8px}.cv-family-card p{font-size:13px;line-height:1.6;color:var(--cv-text-muted)}
-  </style>
+  <meta http-equiv="refresh" content="0; url=/vault/" />
+  <link rel="canonical" href="/vault/" />
+  <title>Chaos Vault has moved</title>
+  <script>
+    const destination = `/vault/${window.location.search}${window.location.hash}`;
+    window.location.replace(destination);
+  </script>
 </head>
-<body class="cv-body"><div class="cv-shell">
-<header class="cv-topbar">
-  <a href="/chaos-vault/" class="cv-logo"><div class="cv-logo-mark"></div><span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span></a>
-  <nav class="cv-topbar-nav"><a href="/chaos-vault/" class="active">Inventory</a><a href="/chaos-vault/patterns/">Affective Patterns</a><a href="/">Undone Studio</a><a href="/standards/">Standards</a></nav>
-</header>
-<nav class="cv-sidebar">
-  <div class="cv-sidebar-section"><span class="cv-sidebar-label">Technical Departments</span>
-    <a href="/chaos-vault/departments/camera.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Camera</a>
-    <a href="/chaos-vault/departments/vision-analysis.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Vision Analysis</a>
-    <a href="/chaos-vault/departments/recovery-patterns.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Recovery Patterns</a>
-    <a href="/chaos-vault/departments/ai-validation.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>AI Validation</a>
-    <a href="/chaos-vault/departments/motion-primitives.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Motion Primitives</a>
-    <a href="/chaos-vault/departments/graph-visualization.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Graph Visualization</a>
-    <a href="/chaos-vault/departments/real-time-events.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Real-Time Events</a>
-    <a href="/chaos-vault/departments/notification-engine.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Notification Engine</a>
-  </div>
-  <div class="cv-sidebar-section"><span class="cv-sidebar-label">Pattern Library</span>
-    <a href="/chaos-vault/patterns/" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Affective Pattern Library</a>
-    <a href="/chaos-vault/patterns/capytopia.html" class="cv-sidebar-link">Capytopia Play Systems</a>
-    <a href="/chaos-vault/patterns/design-intent-infrastructure.html" class="cv-sidebar-link">Design Intent Infrastructure</a>
-    <a href="/chaos-vault/HARVEST_LOG.md" class="cv-sidebar-link">Harvest Log</a>
-  </div>
-</nav>
-<main class="cv-main">
-  <div class="cv-page-header cv-reveal">
-    <span class="cv-dept-id">LAB DOJO · CHAOS VAULT · INVENTORY DASHBOARD</span>
-    <h1 class="cv-page-title"><strong>Parts Department</strong></h1>
-    <p class="cv-page-desc">Reusable engineering primitives and affective interface contracts harvested from audited experiments. Provenance, maturity, limitations, and import bans remain attached.</p>
-    <div class="cv-page-meta"><span class="cv-badge cv-badge-reconstructed">8 Technical Departments</span><span class="cv-badge cv-badge-tested">35 Documented Patterns</span><span class="cv-badge cv-badge-quarantined">Quarantine Enforced</span></div>
-  </div>
-
-  <div class="cv-stat-strip cv-reveal">
-    <div class="cv-stat"><span class="cv-stat-value">23</span><span class="cv-stat-label">Technical Parts</span></div>
-    <div class="cv-stat"><span class="cv-stat-value">27</span><span class="cv-stat-label">Affective Patterns</span></div>
-    <div class="cv-stat"><span class="cv-stat-value">8</span><span class="cv-stat-label">Supplemental Patterns</span></div>
-    <div class="cv-stat"><span class="cv-stat-value">14</span><span class="cv-stat-label">Donor Systems</span></div>
-    <div class="cv-stat"><span class="cv-stat-value">6</span><span class="cv-stat-label">Pattern Families</span></div>
-  </div>
-
-  <section class="cv-section cv-reveal">
-    <span class="cv-section-label">Affective Pattern Library</span>
-    <div class="cv-family-grid">
-      <a class="cv-family-card" href="/chaos-vault/patterns/affective-contracts.html"><span>CV-AFX · 6 PATTERNS</span><strong>Affective Contracts</strong><p>Adaptation, reentry, uncertainty, correction, simplification, and humane mid-task recovery.</p></a>
-      <a class="cv-family-card" href="/chaos-vault/patterns/interaction-budgets.html"><span>CV-IBG · 6 PATTERNS</span><strong>Interaction Budgets</strong><p>Declared load, user-owned modes, tone consent, minimum complete paths, and valid endings.</p></a>
-      <a class="cv-family-card" href="/chaos-vault/patterns/artifact-compilers.html"><span>CV-ART · 5 PATTERNS</span><strong>Artifact Compilers</strong><p>Bounded machines that transform invisible meaning into structured, provenance-aware objects.</p></a>
-      <a class="cv-family-card" href="/chaos-vault/patterns/continuity-systems.html"><span>CV-CON / CV-CTL · 10 PATTERNS</span><strong>Continuity and Control</strong><p>Context across time, delta over score, procedural accompaniment, consequence, and attached recovery.</p></a>
-      <a class="cv-family-card" href="/chaos-vault/patterns/capytopia.html"><span>CV-CAP · 3 PATTERNS</span><strong>Capytopia Play Systems</strong><p>Sensory assembly, avatar-mediated expression, and soft-world task scaffolding.</p></a>
-      <a class="cv-family-card" href="/chaos-vault/patterns/design-intent-infrastructure.html"><span>CV-DIN · 5 PATTERNS</span><strong>Design Intent Infrastructure</strong><p>Structured design memory, inspectable generation contracts, compatibility shells, and authorship-preserving automation.</p></a>
-    </div>
-  </section>
-
-  <section class="cv-section cv-reveal">
-    <span class="cv-section-label">Donor Systems</span>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;">
-      <div class="cv-provenance"><span class="cv-provenance-label">Let’s Glo</span><p>Camera, vision request, motion, and staged-flow primitives.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Fridge Web</span><p>Mid-cook recovery, AI repair, ingredient normalization, and enrichment.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Living Tapestry</span><p>Chronology, recurring-type clusters, and semantic chains.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Jellycat Tracker</span><p>Typed events, reconnecting clients, and notification lifecycle.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Affective UX Lab</span><p>State-hypothesis ethics, adaptation ladder, and evidence-linked patterns.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Bad Day Receipt</span><p>Interaction Budget, Minimum Necessary Interface, Three Valid Endings, continuity.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Mirror</span><p>Pattern memory over scoring and calibrated body-weather language.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Capsule</span><p>Object continuity, source provenance, specimen, archive, rediscovery.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Glint</span><p>Interpretation-conditioned artifact compiler.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">flame.io</span><p>Tone-as-consent and graceful prompt fallback.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">KEYS</span><p>Procedural accompaniment through high-friction housing processes.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Interface Behavior Lab / Face Value</span><p>Controls as contracts, recovery, and longitudinal delta-over-score.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Capytopia</span><p>Sensory making, user-controlled character expression, and spatial café zones.</p></div>
-      <div class="cv-provenance"><span class="cv-provenance-label">Left Brain MCP</span><p>Design-intent serialization, inspectable generation contracts, compatibility shells, and mechanical burden transfer.</p></div>
-    </div>
-  </section>
-
-  <section class="cv-section cv-reveal">
-    <span class="cv-section-label">Technical Inventory</span>
-    <table class="cv-inventory"><thead><tr><th>Part ID</th><th>Name</th><th>Department</th><th>Status</th><th>Donor</th></tr></thead><tbody>
-      <tr><td>CV-CAM-001</td><td><a href="/chaos-vault/departments/camera.html">getUserMedia Permission Flow</a></td><td>Camera</td><td><span class="cv-badge cv-badge-reconstructed">Reconstructed</span></td><td>Let’s Glo</td></tr>
-      <tr><td>CV-CAM-002</td><td><a href="/chaos-vault/departments/camera.html">Canvas Frame Capture</a></td><td>Camera</td><td><span class="cv-badge cv-badge-reconstructed">Reconstructed</span></td><td>Let’s Glo</td></tr>
-      <tr><td>CV-CAM-003</td><td><a href="/chaos-vault/departments/camera.html">Cross-Browser Fallback Ladder</a></td><td>Camera</td><td><span class="cv-badge cv-badge-experimental">Experimental</span></td><td>Let’s Glo</td></tr>
-      <tr><td>CV-VIS-001</td><td><a href="/chaos-vault/departments/vision-analysis.html">Server-Side Observation Contract</a></td><td>Vision Analysis</td><td><span class="cv-badge cv-badge-reconstructed">Reconstructed</span></td><td>Let’s Glo</td></tr>
-      <tr><td>CV-VIS-002</td><td><a href="/chaos-vault/departments/vision-analysis.html">Image Payload Formatter</a></td><td>Vision Analysis</td><td><span class="cv-badge cv-badge-experimental">Experimental</span></td><td>Let’s Glo</td></tr>
-      <tr class="quarantined"><td>CV-VIS-003</td><td>Skin Score Diagnostic</td><td>Vision Analysis</td><td><span class="cv-badge cv-badge-quarantined">Quarantined</span></td><td>Let’s Glo</td></tr>
-      <tr><td>CV-REC-001</td><td><a href="/chaos-vault/departments/recovery-patterns.html">Something Feels Off? Recovery Reveal</a></td><td>Recovery</td><td><span class="cv-badge cv-badge-reconstructed">Reconstructed</span></td><td>Fridge Web</td></tr>
-      <tr><td>CV-REC-002</td><td><a href="/chaos-vault/departments/recovery-patterns.html">Lazy Secondary Enrichment</a></td><td>Recovery</td><td><span class="cv-badge cv-badge-reconstructed">Reconstructed</span></td><td>Fridge Web</td></tr>
-      <tr><td>CV-AIV-001</td><td><a href="/chaos-vault/departments/ai-validation.html">Validate → Repair → Regenerate → Fallback</a></td><td>AI Validation</td><td><span class="cv-badge cv-badge-reconstructed">Reconstructed</span></td><td>Fridge Web</td></tr>
-      <tr><td>CV-AIV-002</td><td><a href="/chaos-vault/departments/ai-validation.html">Schema Validator</a></td><td>AI Validation</td><td><span class="cv-badge cv-badge-tested">Tested</span></td><td>Fridge Web</td></tr>
-      <tr><td>CV-AIV-003</td><td><a href="/chaos-vault/departments/ai-validation.html">Guaranteed Fallback Store</a></td><td>AI Validation</td><td><span class="cv-badge cv-badge-tested">Tested</span></td><td>Fridge Web</td></tr>
-      <tr><td>CV-MOT-001</td><td><a href="/chaos-vault/departments/motion-primitives.html">Spinner Ring Loader</a></td><td>Motion</td><td><span class="cv-badge cv-badge-tested">Tested</span></td><td>Let’s Glo</td></tr>
-      <tr><td>CV-MOT-002</td><td><a href="/chaos-vault/departments/motion-primitives.html">Pulse Dot Trio</a></td><td>Motion</td><td><span class="cv-badge cv-badge-tested">Tested</span></td><td>Let’s Glo</td></tr>
-      <tr><td>CV-MOT-003</td><td><a href="/chaos-vault/departments/motion-primitives.html">Determinate Progress Bar</a></td><td>Motion</td><td><span class="cv-badge cv-badge-tested">Tested</span></td><td>Let’s Glo</td></tr>
-      <tr><td>CV-MOT-004</td><td><a href="/chaos-vault/departments/motion-primitives.html">Fade-Up Reveal</a></td><td>Motion</td><td><span class="cv-badge cv-badge-experimental">Experimental</span></td><td>Let’s Glo</td></tr>
-      <tr><td>CV-GRA-001</td><td><a href="/chaos-vault/departments/graph-visualization.html">Chronology Spine Layer</a></td><td>Graph</td><td><span class="cv-badge cv-badge-experimental">Experimental</span></td><td>Living Tapestry</td></tr>
-      <tr><td>CV-GRA-002</td><td><a href="/chaos-vault/departments/graph-visualization.html">Same-Type Cluster Layer</a></td><td>Graph</td><td><span class="cv-badge cv-badge-experimental">Experimental</span></td><td>Living Tapestry</td></tr>
-      <tr><td>CV-GRA-003</td><td><a href="/chaos-vault/departments/graph-visualization.html">Semantic Chain Layer</a></td><td>Graph</td><td><span class="cv-badge cv-badge-experimental">Experimental</span></td><td>Living Tapestry</td></tr>
-      <tr><td>CV-RTE-001</td><td><a href="/chaos-vault/departments/real-time-events.html">Typed Event Taxonomy</a></td><td>Real-Time Events</td><td><span class="cv-badge cv-badge-reconstructed">Reconstructed</span></td><td>Jellycat Tracker</td></tr>
-      <tr><td>CV-RTE-002</td><td><a href="/chaos-vault/departments/real-time-events.html">Reconnecting Client</a></td><td>Real-Time Events</td><td><span class="cv-badge cv-badge-reconstructed">Reconstructed</span></td><td>Jellycat Tracker</td></tr>
-      <tr><td>CV-NOT-001</td><td><a href="/chaos-vault/departments/notification-engine.html">Notification Lifecycle States</a></td><td>Notifications</td><td><span class="cv-badge cv-badge-reconstructed">Reconstructed</span></td><td>Jellycat Tracker</td></tr>
-      <tr><td>CV-NOT-002</td><td><a href="/chaos-vault/departments/notification-engine.html">Notification Queue Manager</a></td><td>Notifications</td><td><span class="cv-badge cv-badge-experimental">Experimental</span></td><td>Jellycat Tracker</td></tr>
-      <tr class="quarantined"><td>CV-NOT-003</td><td>Fake Pro Tier Gate</td><td>Notifications</td><td><span class="cv-badge cv-badge-quarantined">Quarantined</span></td><td>Jellycat Tracker / Fridge</td></tr>
-    </tbody></table>
-  </section>
-
-  <section class="cv-section cv-reveal"><span class="cv-section-label">Import Restrictions</span><div class="cv-quarantine-zone"><div class="cv-quarantine-header"><span>⛔ QUARANTINE ZONE — DO NOT IMPORT</span></div><div class="cv-quarantine-body">
-    <div class="cv-quarantine-item"><code>INFERENCE</code> Fake skin, mood, relationship, or emotional-severity scores; diagnosis from face, voice, cursor, biometrics, or interaction telemetry.</div>
-    <div class="cv-quarantine-item"><code>AUTHENTICITY</code> Generated quotes presented as authentic source dialogue or generated observations presented as measured fact.</div>
-    <div class="cv-quarantine-item"><code>MANIPULATION</code> Vulnerability scoring, streak punishment, covert capacity labels, or consequential automatic adaptation.</div>
-    <div class="cv-quarantine-item"><code>FICTION</code> Broken integrations, fictional hardware support, fake payments, placeholder URLs, and unimplemented production claims.</div>
-    <div class="cv-quarantine-item"><code>MODEL BOUNDARY</code> Arbitrary generated markup, routing, persistence, filenames, irreversible external actions, arbitrary server-side fetch targets, or open proxy behavior.</div>
-  </div></div></section>
-</main></div><script src="/chaos-vault/assets/cv.js"></script></body></html>
+<body>
+  <main>
+    <h1>Chaos Vault has moved.</h1>
+    <p><a href="/vault/">Open the short Vault URL</a></p>
+  </main>
+</body>
+</html>
