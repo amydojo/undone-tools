@@ -146,8 +146,8 @@ assert.equal(preservedUrl.searchParams.get('utm_medium'), 'social');
 const vaultIndex = read('chaos-vault/index.html');
 assert.match(vaultIndex, /Affective Pattern Library/);
 assert.match(vaultIndex, /\/chaos-vault\/patterns\//);
-assert.match(vaultIndex, /23 Technical Parts/);
-assert.match(vaultIndex, /27 Affective Patterns/);
+assert.match(vaultIndex, /cv-stat-value">23<\/span><span class="cv-stat-label">Technical Parts/);
+assert.match(vaultIndex, /cv-stat-value">27<\/span><span class="cv-stat-label">Affective Patterns/);
 assert.match(vaultIndex, /QUARANTINE ZONE/);
 
 const recoveryPage = read('chaos-vault/departments/recovery-patterns.html');
