@@ -1,43 +1,24 @@
-/* assets/app.js — clean + stable + “apple tier” */
-
+/* assets/app.js — shared Studio, Standards, and commerce behavior */
 (() => {
   'use strict';
 
+  const CAMPAIGN_STORAGE_KEY = 'undone_campaign_v1';
+
   document.addEventListener('DOMContentLoaded', () => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const state = { prefersReducedMotion, heroIntroActive: true };
 
-    // shared state (keeps things coordinated without chaos)
-    const state = {
-      prefersReducedMotion,
-      heroIntroActive: true,
-    };
-
-    // optional global flag (only if you still want to reference it elsewhere)
     window.__HERO_INTRO_ACTIVE__ = true;
 
-    // 1) cinematic “is-ready” gate (prevents instant snap-in)
     setIsReady(state);
-
-    // 2) standards reveals (excluding #hero)
     setupReveal('.std-reveal:not(#hero)', 'is-visible', state);
-
-    // 3) studio reveals
     setupReveal('.studio-reveal', 'is-visible', state);
-
-    // 4) accordions
     setupAccordions();
-
-    // 5) smooth anchors
     setupSmoothAnchors(state);
-
-    // 6) hero dot (reliable timing)
     setupHeroDotReveal(state);
-
-    // 7) atmospheric hero canvas (optimized)
     initStudioHeroCanvas(state);
+    initCommerce();
   });
-
-  // ---------- helpers ----------
 
   function setIsReady(state) {
     const root = document.documentElement;
@@ -45,77 +26,67 @@
       root.classList.add('is-ready');
       return;
     }
-    // short, intentional delay for “arrival”
     window.setTimeout(() => root.classList.add('is-ready'), 420);
   }
 
   function setupReveal(selector, visibleClass, state) {
-    const els = document.querySelectorAll(selector);
-    if (!els.length) return;
+    const elements = document.querySelectorAll(selector);
+    if (!elements.length) return;
 
-    if (state.prefersReducedMotion) {
-      els.forEach(el => el.classList.add(visibleClass));
+    if (state.prefersReducedMotion || !('IntersectionObserver' in window)) {
+      elements.forEach((element) => element.classList.add(visibleClass));
       return;
     }
 
-    const obs = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add(visibleClass);
-          obs.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add(visibleClass);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-    els.forEach(el => obs.observe(el));
+    elements.forEach((element) => observer.observe(element));
   }
 
   function setupAccordions() {
     const headers = document.querySelectorAll('.std-accordion-header');
     if (!headers.length) return;
 
-    headers.forEach(header => {
-      const toggle = () => {
-        const item = header.closest('.std-accordion-item');
-        if (!item) return;
+    headers.forEach((header) => {
+      const item = header.closest('.std-accordion-item');
+      if (!item) return;
 
+      const expanded = item.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', String(expanded));
+
+      header.addEventListener('click', () => {
         const isExpanded = item.getAttribute('aria-expanded') === 'true';
         const group = item.closest('.std-accordion-group');
 
-        // single-open behavior within a group
         if (group) {
-          group.querySelectorAll('.std-accordion-item').forEach(i => {
-            i.setAttribute('aria-expanded', 'false');
+          group.querySelectorAll('.std-accordion-item').forEach((groupItem) => {
+            groupItem.setAttribute('aria-expanded', 'false');
+            const groupHeader = groupItem.querySelector('.std-accordion-header');
+            if (groupHeader) groupHeader.setAttribute('aria-expanded', 'false');
           });
         }
 
         item.setAttribute('aria-expanded', String(!isExpanded));
-      };
-
-      header.addEventListener('click', toggle);
-
-      // keyboard support (if header is not already a <button>)
-      header.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          toggle();
-        }
+        header.setAttribute('aria-expanded', String(!isExpanded));
       });
     });
   }
 
   function setupSmoothAnchors(state) {
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const href = a.getAttribute('href');
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (event) => {
+        const href = anchor.getAttribute('href');
         if (!href || href === '#') return;
-
         const target = document.querySelector(href);
         if (!target) return;
 
-        e.preventDefault();
+        event.preventDefault();
         target.scrollIntoView({
           behavior: state.prefersReducedMotion ? 'auto' : 'smooth',
           block: 'start',
@@ -127,7 +98,6 @@
   function setupHeroDotReveal(state) {
     const dot = document.querySelector('.hero-dot-pop');
     if (!dot) {
-      // don’t block anything if markup changes
       state.heroIntroActive = false;
       window.__HERO_INTRO_ACTIVE__ = false;
       return;
@@ -140,22 +110,13 @@
       return;
     }
 
-    // always start hidden + stable
     dot.classList.remove('revealed');
-
-    // compute timing from the crisp layer animation (so you don’t chase ms forever)
     const crisp = document.querySelector('.hero-layer--crisp');
     const { delayMs, durationMs } = getFirstAnimationTiming(crisp);
-
-    // reveal dot near the end of crisp resolving
-    // (0.92 avoids “pause” feeling that happens at 100%)
     const revealAt = Math.max(650, Math.round(delayMs + durationMs * 0.92));
 
-    // ensure browser applied the hidden styles before we reveal
     requestAnimationFrame(() => {
-      // force a paint baseline (helps avoid flicker on fast machines)
       dot.getBoundingClientRect();
-
       window.setTimeout(() => {
         dot.classList.add('revealed');
         state.heroIntroActive = false;
@@ -164,202 +125,285 @@
     });
   }
 
-  function getFirstAnimationTiming(el) {
-    // default fallback if something is missing
-    if (!el) return { delayMs: 380, durationMs: 1650 };
-
-    const cs = window.getComputedStyle(el);
-
-    // can be comma-separated lists; we take the first animation
-    const dur = (cs.animationDuration || '').split(',')[0].trim();
-    const del = (cs.animationDelay || '').split(',')[0].trim();
-
+  function getFirstAnimationTiming(element) {
+    if (!element) return { delayMs: 380, durationMs: 1650 };
+    const styles = window.getComputedStyle(element);
+    const duration = (styles.animationDuration || '').split(',')[0].trim();
+    const delay = (styles.animationDelay || '').split(',')[0].trim();
     return {
-      durationMs: cssTimeToMs(dur, 1650),
-      delayMs: cssTimeToMs(del, 380),
+      durationMs: cssTimeToMs(duration, 1650),
+      delayMs: cssTimeToMs(delay, 380),
     };
   }
 
   function cssTimeToMs(value, fallback) {
     if (!value) return fallback;
     if (value.endsWith('ms')) {
-      const n = parseFloat(value);
-      return Number.isFinite(n) ? n : fallback;
+      const number = Number.parseFloat(value);
+      return Number.isFinite(number) ? number : fallback;
     }
     if (value.endsWith('s')) {
-      const n = parseFloat(value);
-      return Number.isFinite(n) ? n * 1000 : fallback;
+      const number = Number.parseFloat(value);
+      return Number.isFinite(number) ? number * 1000 : fallback;
     }
-    const n = parseFloat(value);
-    return Number.isFinite(n) ? n : fallback;
+    const number = Number.parseFloat(value);
+    return Number.isFinite(number) ? number : fallback;
   }
 
-  // ---------- hero canvas ----------
-  // (c) Parallax with IntersectionObserver gating: RAF pauses when hero offscreen
+  function initCommerce() {
+    const commerce = window.UndoneCommerce;
+    if (!commerce) return;
+
+    const campaign = captureCampaign(commerce.campaignKeys);
+    const pageProductId = document.body.dataset.product || null;
+    const pagePath = window.location.pathname;
+
+    if (document.body.hasAttribute('data-product-page') && pageProductId) {
+      track('product_page_viewed', {
+        productId: pageProductId,
+        pagePath,
+        campaign,
+      });
+    }
+
+    document.querySelectorAll('[data-buy][data-product]').forEach((anchor) => {
+      const productId = anchor.dataset.product;
+      const placement = anchor.dataset.ctaLocation || 'unknown';
+      const outboundUrl = commerce.buildOutboundUrl({
+        productId,
+        placement,
+        currentUrl: window.location.href,
+        campaign,
+      });
+
+      if (!outboundUrl) {
+        anchor.setAttribute('aria-disabled', 'true');
+        anchor.removeAttribute('target');
+        return;
+      }
+
+      anchor.href = outboundUrl;
+      anchor.target = '_blank';
+      anchor.rel = 'noopener noreferrer external';
+      anchor.addEventListener('click', () => {
+        track(placement === 'sticky' ? 'sticky_etsy_cta_clicked' : 'primary_etsy_cta_clicked', {
+          productId,
+          ctaLocation: placement,
+          pagePath,
+          campaign,
+        });
+      });
+    });
+
+    document.querySelectorAll('[data-preview]').forEach((control) => {
+      control.addEventListener('click', () => {
+        track('preview_activated', {
+          productId: control.dataset.product || pageProductId,
+          ctaLocation: control.dataset.ctaLocation || 'preview',
+          pagePath,
+          campaign,
+        });
+      });
+    });
+
+    document.querySelectorAll('[data-related-product]').forEach((anchor) => {
+      anchor.addEventListener('click', () => {
+        track('related_product_clicked', {
+          productId: pageProductId,
+          relatedProductId: anchor.dataset.relatedProduct,
+          ctaLocation: 'related-product',
+          pagePath,
+          campaign,
+        });
+      });
+    });
+
+    setupCheckoutShortcut(pageProductId);
+    setupStickyCheckout();
+  }
+
+  function captureCampaign(keys) {
+    const allowedKeys = Array.isArray(keys) ? keys : [];
+    const incoming = new URL(window.location.href).searchParams;
+    let stored = {};
+
+    try {
+      stored = JSON.parse(window.sessionStorage.getItem(CAMPAIGN_STORAGE_KEY) || '{}');
+    } catch (_) {
+      stored = {};
+    }
+
+    allowedKeys.forEach((key) => {
+      const value = incoming.get(key);
+      if (value) stored[key] = value.slice(0, 200);
+    });
+
+    try {
+      window.sessionStorage.setItem(CAMPAIGN_STORAGE_KEY, JSON.stringify(stored));
+    } catch (_) {
+      // Session storage can be unavailable in hardened browser modes. Checkout still works.
+    }
+
+    return stored;
+  }
+
+  function setupCheckoutShortcut(pageProductId) {
+    if (!pageProductId) return;
+
+    document.addEventListener('keydown', (event) => {
+      if (event.defaultPrevented || event.repeat || event.metaKey || event.ctrlKey || event.altKey) return;
+      if (event.key.toLowerCase() !== 'g' || isEditableTarget(event.target)) return;
+
+      const primary = document.querySelector('[data-buy][data-cta-location="primary"]:not([aria-disabled="true"])');
+      if (!primary) return;
+
+      event.preventDefault();
+      primary.click();
+    });
+  }
+
+  function isEditableTarget(target) {
+    if (!(target instanceof Element)) return false;
+    return Boolean(target.closest('input, textarea, select, [contenteditable=""], [contenteditable="true"]'));
+  }
+
+  function setupStickyCheckout() {
+    const primary = document.querySelector('[data-primary-cta]');
+    const sticky = document.querySelector('.std-sticky-cta');
+    if (!primary || !sticky || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(([entry]) => {
+      sticky.classList.toggle('is-visible', !entry.isIntersecting);
+    }, { threshold: 0.15 });
+
+    observer.observe(primary);
+  }
+
+  function track(eventName, payload) {
+    if (!window.UndoneAnalytics || typeof window.UndoneAnalytics.track !== 'function') return;
+    window.UndoneAnalytics.track(eventName, payload);
+  }
 
   function initStudioHeroCanvas(state) {
     const canvas = document.getElementById('studioHeroCanvas');
     if (!canvas) return;
-
-    const ctx = canvas.getContext('2d', { alpha: true });
-    if (!ctx) return;
+    const context = canvas.getContext('2d', { alpha: true });
+    if (!context) return;
 
     let width = 0;
     let height = 0;
-    let dpr = 1;
-
-    let raf = null;
+    let pixelRatio = 1;
+    let animationFrame = null;
     let isVisible = true;
-
-    // particles
     let particles = [];
+    let lastFrame = performance.now();
 
-    // precomputed grain (so we don’t “random loop” every frame and stutter)
     const noise = document.createElement('canvas');
-    const noiseCtx = noise.getContext('2d');
-
-    const CONFIG = {
-      particleCount: 28,
-      grainOpacity: 0.05,
-      maxDpr: 2,
-    };
+    const noiseContext = noise.getContext('2d');
+    const config = { particleCount: 28, grainOpacity: 0.05, maxDpr: 2 };
 
     function resize() {
-      dpr = Math.min(window.devicePixelRatio || 1, CONFIG.maxDpr);
+      pixelRatio = Math.min(window.devicePixelRatio || 1, config.maxDpr);
       width = canvas.offsetWidth;
       height = canvas.offsetHeight;
-
-      canvas.width = Math.max(1, Math.floor(width * dpr));
-      canvas.height = Math.max(1, Math.floor(height * dpr));
-
-      // reset transform so scale doesn’t stack
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
-
+      canvas.width = Math.max(1, Math.floor(width * pixelRatio));
+      canvas.height = Math.max(1, Math.floor(height * pixelRatio));
+      context.setTransform(1, 0, 0, 1, 0, 0);
+      context.scale(pixelRatio, pixelRatio);
       buildNoise();
       buildParticles();
-      draw(); // one immediate frame on resize
+      draw();
     }
 
     function buildNoise() {
-      if (!noiseCtx) return;
-
-      // small texture scaled up (cheap + looks good)
-      const nw = 140;
-      const nh = 140;
-      noise.width = nw;
-      noise.height = nh;
-
-      const img = noiseCtx.createImageData(nw, nh);
-      const data = img.data;
-
-      for (let i = 0; i < data.length; i += 4) {
-        const v = (Math.random() * 255) | 0;
-        data[i] = 255;
-        data[i + 1] = 255;
-        data[i + 2] = 255;
-        data[i + 3] = v < 18 ? 10 : 0; // sparse grain (less “snow”)
+      if (!noiseContext) return;
+      noise.width = 140;
+      noise.height = 140;
+      const image = noiseContext.createImageData(noise.width, noise.height);
+      for (let index = 0; index < image.data.length; index += 4) {
+        const value = (Math.random() * 255) | 0;
+        image.data[index] = 255;
+        image.data[index + 1] = 255;
+        image.data[index + 2] = 255;
+        image.data[index + 3] = value < 18 ? 10 : 0;
       }
-      noiseCtx.putImageData(img, 0, 0);
+      noiseContext.putImageData(image, 0, 0);
     }
 
     function buildParticles() {
-      particles = [];
-      for (let i = 0; i < CONFIG.particleCount; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          r: 0.35 + Math.random() * 0.85,
-          vy: 7 + Math.random() * 18, // px/sec
-          a: 0.05 + Math.random() * 0.12,
-        });
-      }
+      particles = Array.from({ length: config.particleCount }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: 0.35 + Math.random() * 0.85,
+        velocity: 7 + Math.random() * 18,
+        alpha: 0.05 + Math.random() * 0.12,
+      }));
     }
-
-    let last = performance.now();
 
     function animate(now) {
       if (!isVisible) {
-        raf = null;
+        animationFrame = null;
         return;
       }
-
-      // during intro, keep raf alive but do basically nothing
       if (state.heroIntroActive || window.__HERO_INTRO_ACTIVE__) {
-        raf = requestAnimationFrame(animate);
+        animationFrame = requestAnimationFrame(animate);
         return;
       }
 
-      const dt = Math.min(0.04, (now - last) / 1000); // cap dt for stability
-      last = now;
-
-      step(dt);
-      draw();
-
-      raf = requestAnimationFrame(animate);
-    }
-
-    function step(dt) {
-      for (const p of particles) {
-        p.y -= p.vy * dt;
-        if (p.y < -12) {
-          p.y = height + 12;
-          p.x = Math.random() * width;
+      const delta = Math.min(0.04, (now - lastFrame) / 1000);
+      lastFrame = now;
+      particles.forEach((particle) => {
+        particle.y -= particle.velocity * delta;
+        if (particle.y < -12) {
+          particle.y = height + 12;
+          particle.x = Math.random() * width;
         }
-      }
+      });
+      draw();
+      animationFrame = requestAnimationFrame(animate);
     }
 
     function draw() {
-      ctx.clearRect(0, 0, width, height);
-
-      // grain overlay (precomputed)
+      context.clearRect(0, 0, width, height);
       if (noise.width && noise.height) {
-        ctx.save();
-        ctx.globalAlpha = CONFIG.grainOpacity;
-        ctx.drawImage(noise, 0, 0, width, height);
-        ctx.restore();
+        context.save();
+        context.globalAlpha = config.grainOpacity;
+        context.drawImage(noise, 0, 0, width, height);
+        context.restore();
       }
-
-      // atmospheric particles
-      for (const p of particles) {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(123, 108, 255, ${p.a})`;
-        ctx.fill();
-      }
+      particles.forEach((particle) => {
+        context.beginPath();
+        context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        context.fillStyle = `rgba(123, 108, 255, ${particle.alpha})`;
+        context.fill();
+      });
     }
 
     function start() {
-      // (d) prefers-reduced-motion: don't start animation
       if (state.prefersReducedMotion) {
         draw();
         return;
       }
-      if (raf) return;
-      last = performance.now();
-      raf = requestAnimationFrame(animate);
+      if (animationFrame) return;
+      lastFrame = performance.now();
+      animationFrame = requestAnimationFrame(animate);
     }
 
     function stop() {
-      if (!raf) return;
-      cancelAnimationFrame(raf);
-      raf = null;
+      if (!animationFrame) return;
+      cancelAnimationFrame(animationFrame);
+      animationFrame = null;
     }
 
-    // (c) pause when hero not visible (IntersectionObserver gating)
-    const heroSection = canvas.closest('.studio-hero') || canvas.parentElement;
-    if ('IntersectionObserver' in window && heroSection) {
-      const vis = new IntersectionObserver(
-        entries => {
-          entries.forEach(entry => {
-            isVisible = entry.isIntersecting;
-            if (isVisible) start();
-            else stop(); // (c) RAF stops when not visible
-          });
-        },
-        { threshold: 0.1 }
-      );
-      vis.observe(heroSection);
+    const hero = canvas.closest('.studio-hero') || canvas.parentElement;
+    if ('IntersectionObserver' in window && hero) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          isVisible = entry.isIntersecting;
+          if (isVisible) start(); else stop();
+        });
+      }, { threshold: 0.1 });
+      observer.observe(hero);
     }
 
     window.addEventListener('resize', resize, { passive: true });
