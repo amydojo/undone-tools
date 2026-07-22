@@ -20,6 +20,25 @@ const requiredFiles = [
   'assets/analytics.js',
   'assets/app.js',
   'PRODUCT_CONTENT_NEEDED.md',
+  'chaos-vault/index.html',
+  'chaos-vault/HARVEST_LOG.md',
+  'chaos-vault/assets/cv.css',
+  'chaos-vault/assets/cv.js',
+  'chaos-vault/data/affective-patterns.json',
+  'chaos-vault/library/affective-contracts.js',
+  'chaos-vault/patterns/index.html',
+  'chaos-vault/patterns/affective-contracts.html',
+  'chaos-vault/patterns/interaction-budgets.html',
+  'chaos-vault/patterns/artifact-compilers.html',
+  'chaos-vault/patterns/continuity-systems.html',
+  'chaos-vault/departments/camera.html',
+  'chaos-vault/departments/vision-analysis.html',
+  'chaos-vault/departments/recovery-patterns.html',
+  'chaos-vault/departments/ai-validation.html',
+  'chaos-vault/departments/motion-primitives.html',
+  'chaos-vault/departments/graph-visualization.html',
+  'chaos-vault/departments/real-time-events.html',
+  'chaos-vault/departments/notification-engine.html',
 ];
 
 requiredFiles.forEach((relativePath) => {
@@ -120,4 +139,107 @@ assert.equal(preservedUrl.searchParams.get('share'), 'saved');
 assert.equal(preservedUrl.searchParams.get('utm_source'), 'existing');
 assert.equal(preservedUrl.searchParams.get('utm_medium'), 'social');
 
-console.log('Undone static funnel validation passed.');
+// Chaos Vault route and provenance checks.
+const vaultIndex = read('chaos-vault/index.html');
+assert.match(vaultIndex, /Affective Pattern Library/);
+assert.match(vaultIndex, /\/chaos-vault\/patterns\//);
+assert.match(vaultIndex, /23 Technical Parts/);
+assert.match(vaultIndex, /26 Affective Patterns/);
+assert.match(vaultIndex, /QUARANTINE ZONE/);
+
+const recoveryPage = read('chaos-vault/departments/recovery-patterns.html');
+assert.match(recoveryPage, /mobile-first cooking companion/);
+assert.match(recoveryPage, /humane mid-task repair/);
+assert.doesNotMatch(recoveryPage, /smart-home \/ fridge inventory prototype/);
+assert.doesNotMatch(recoveryPage, /Fridge item identified/);
+
+const patternPages = [
+  'chaos-vault/patterns/index.html',
+  'chaos-vault/patterns/affective-contracts.html',
+  'chaos-vault/patterns/interaction-budgets.html',
+  'chaos-vault/patterns/artifact-compilers.html',
+  'chaos-vault/patterns/continuity-systems.html',
+];
+patternPages.forEach((relativePath) => {
+  const html = read(relativePath);
+  assert.match(html, /\/chaos-vault\/assets\/cv\.css/);
+  assert.match(html, /\/chaos-vault\/assets\/cv\.js/);
+  assert.doesNotMatch(html, /data-buy|UndoneCommerce|etsy/i, `${relativePath} must remain isolated from commerce`);
+});
+
+// Machine-readable affective pattern registry checks.
+const registry = JSON.parse(read('chaos-vault/data/affective-patterns.json'));
+assert.equal(registry.schemaVersion, '1.0.0');
+assert.ok(Array.isArray(registry.patterns));
+assert.equal(registry.patterns.length, 26);
+
+const ids = registry.patterns.map((pattern) => pattern.id);
+assert.equal(new Set(ids).size, ids.length, 'Affective pattern IDs must be unique');
+
+registry.patterns.forEach((pattern) => {
+  assert.match(pattern.id, /^CV-(AFX|IBG|ART|CON|CTL)-\d{3}$/);
+  assert.ok(pattern.name && pattern.category && pattern.status && pattern.kind && pattern.thesis, `${pattern.id} is incomplete`);
+  assert.ok(Array.isArray(pattern.origins) && pattern.origins.length > 0, `${pattern.id} needs provenance`);
+  assert.ok(Array.isArray(pattern.requiredControls), `${pattern.id} needs required controls`);
+  assert.ok(Array.isArray(pattern.risks) && pattern.risks.length > 0, `${pattern.id} needs risk notes`);
+});
+
+for (const banned of ['fake skin or emotion scores', 'generated quotes presented as authentic quotations', 'permanent psychological profiles']) {
+  assert.ok(registry.quarantine.includes(banned), `Missing quarantine rule: ${banned}`);
+}
+
+// Dependency-free reference helper checks.
+const affectiveSandbox = {
+  module: { exports: {} },
+  exports: {},
+  globalThis: {},
+  Date,
+  Set,
+  Object,
+  Number,
+  String,
+  TypeError,
+};
+vm.createContext(affectiveSandbox);
+vm.runInContext(read('chaos-vault/library/affective-contracts.js'), affectiveSandbox);
+const affective = affectiveSandbox.module.exports;
+
+for (const fn of [
+  'createStateHypothesis',
+  'selectAdaptationTier',
+  'buildInteractionBudget',
+  'resolveToneContract',
+  'compileMinimumNecessaryInterface',
+  'createRecoveryContract',
+  'buildContinuityEnvelope',
+  'calibrateLanguage',
+  'selectArtifactPresentation',
+  'createReversibleAction',
+  'resolveValidEnding',
+]) {
+  assert.equal(typeof affective[fn], 'function', `Missing affective helper ${fn}`);
+}
+
+const budget = affective.buildInteractionBudget({
+  taskId: 'test-task',
+  policies: ['one-step-at-a-time', 'protect-progress'],
+  approved: true,
+});
+assert.equal(budget.selectedBy, 'user');
+assert.equal(budget.externalActionsAllowed, false);
+assert.equal(budget.stableForTask, true);
+
+const ending = affective.resolveValidEnding('release');
+assert.equal(ending.equallyValid, true);
+assert.equal(ending.requiresBoundedUndo, true);
+assert.equal(ending.performsExternalAction, false);
+
+const language = affective.calibrateLanguage({
+  confidence: 0.55,
+  observation: 'this pattern is still taking shape.',
+  competingExplanations: ['limited history'],
+});
+assert.equal(language.label, 'possible');
+assert.equal(language.diagnostic, false);
+
+console.log('Undone static funnel and Chaos Vault validation passed.');
