@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-22",
+  "source": {
+    "repository": "amydojo/offbeat",
+    "verifiedRef": "main",
+    "note": "The current main ref contains a damaged but substantial Vite and React music-playground alpha. Patterns were reconstructed from direct file reads rather than commit-summary metadata."
+  },
+  "patterns": [
+    {
+      "id": "CV-OFF-001",
+      "name": "Sound-as-Object Tile",
+      "category": "direct-manipulation",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original interaction pattern",
+      "origins": ["Offbeat"],
+      "thesis": "Represent a musical role as a small draggable object so a person can act on sound directly before learning channel, track, or signal-routing abstractions.",
+      "observedImplementation": [
+        "Drums, Bass, and Melody represented as named Vibe Tiles",
+        "React DnD drag source",
+        "visible drag state",
+        "drop into a shared Vibe Board"
+      ],
+      "requiredControls": [
+        "keyboard and touch equivalent",
+        "visible sound label",
+        "preview before commitment",
+        "remove and reset",
+        "no essential meaning carried by audio alone"
+      ],
+      "risks": [
+        "oversimplifying the underlying medium",
+        "drag-only accessibility",
+        "decorative objects with unclear consequence"
+      ]
+    },
+    {
+      "id": "CV-OFF-002",
+      "name": "No-Wrong-Notes Constraint Field",
+      "category": "creative-scaffolding",
+      "status": "experimental",
+      "evidence": "product thesis and implemented bounded sample set",
+      "kind": "original learning pattern",
+      "origins": ["Offbeat"],
+      "thesis": "Move difficulty into the curation of compatible materials so exploration can stay expressive without relying on correction, grading, or prerequisite theory.",
+      "observedImplementation": [
+        "small curated loop palette",
+        "role-based labels rather than theory-first controls",
+        "layered playback after placement",
+        "tagline and product framing around no wrong notes"
+      ],
+      "requiredControls": [
+        "explain the bounded palette",
+        "allow experimentation without scoring",
+        "preserve a route to deeper controls",
+        "disclose sample provenance and licensing"
+      ],
+      "risks": [
+        "claiming every output is objectively good",
+        "hiding musical structure permanently",
+        "creative sameness caused by over-curation"
+      ]
+    },
+    {
+      "id": "CV-OFF-003",
+      "name": "Immediate Auditory Consequence",
+      "category": "feedback-contracts",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original interaction pattern",
+      "origins": ["Offbeat"],
+      "thesis": "Make the consequence of placement perceptible immediately so understanding emerges through action and listening rather than explanation alone.",
+      "observedImplementation": [
+        "drop handler starts Tone.js audio",
+        "new loop joins the active mix immediately",
+        "board visibly accumulates placed materials"
+      ],
+      "requiredControls": [
+        "stop",
+        "mute",
+        "volume",
+        "clear",
+        "visible playing state",
+        "error and loading state"
+      ],
+      "risks": [
+        "uncontrolled simultaneous playback",
+        "audio overload",
+        "latency weakening cause and effect",
+        "sound state becoming invisible"
+      ]
+    },
+    {
+      "id": "CV-OFF-004",
+      "name": "Play-to-Artifact Capture",
+      "category": "artifact-compilers",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original artifact pattern",
+      "origins": ["Offbeat"],
+      "thesis": "Allow an ephemeral creative state to become a locally owned artifact through explicit recording and download.",
+      "observedImplementation": [
+        "Tone.Recorder attached to the output",
+        "explicit start and stop recording control",
+        "browser object URL",
+        "download as offbeat.wav"
+      ],
+      "requiredControls": [
+        "explicit recording state",
+        "cancel and discard",
+        "local ownership explanation",
+        "format and licensing disclosure",
+        "object URL cleanup"
+      ],
+      "risks": [
+        "recording without clear consent",
+        "unsupported format claims",
+        "unclear sample rights",
+        "temporary URLs leaking memory"
+      ]
+    }
+  ],
+  "quarantine": [
+    "creativity scores or talent inference",
+    "punishment for dissonance or experimentation",
+    "drag-only interaction",
+    "automatic recording",
+    "unlicensed samples presented as reusable",
+    "the current layered loop field described as a true sequenced timeline",
+    "sound used as the only state signal"
+  ]
+}
