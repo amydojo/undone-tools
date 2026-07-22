@@ -143,9 +143,13 @@ assert.equal(preservedUrl.searchParams.get('utm_medium'), 'social');
 const vaultIndex = read('chaos-vault/index.html');
 assert.match(vaultIndex, /Affective Pattern Library/);
 assert.match(vaultIndex, /\/chaos-vault\/patterns\//);
-assert.match(vaultIndex, /23 Technical Parts/);
-assert.match(vaultIndex, /26 Affective Patterns/);
+assert.match(vaultIndex, />23<\/span><span class="cv-stat-label">Technical Parts/);
+assert.match(vaultIndex, /27 Affective Patterns/);
 assert.match(vaultIndex, /QUARANTINE ZONE/);
+
+const patternIndex = read('chaos-vault/patterns/index.html');
+assert.match(patternIndex, /27 Patterns/);
+assert.match(patternIndex, /State hypotheses, not emotional facts/);
 
 const recoveryPage = read('chaos-vault/departments/recovery-patterns.html');
 assert.match(recoveryPage, /mobile-first cooking companion/);
@@ -171,7 +175,7 @@ patternPages.forEach((relativePath) => {
 const registry = JSON.parse(read('chaos-vault/data/affective-patterns.json'));
 assert.equal(registry.schemaVersion, '1.0.0');
 assert.ok(Array.isArray(registry.patterns));
-assert.equal(registry.patterns.length, 26);
+assert.equal(registry.patterns.length, 27);
 
 const ids = registry.patterns.map((pattern) => pattern.id);
 assert.equal(new Set(ids).size, ids.length, 'Affective pattern IDs must be unique');
