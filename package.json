@@ -1,13 +1,20 @@
 {
-  "name": "workspace",
+  "name": "undone-tools",
   "version": "1.0.0",
-  "description": "## upload to replit (instant) 1) create a new HTML/CSS/JS repl 2) upload the entire folder contents (keep structure) 3) run → open `/` or `/standards/`",
-  "main": "script.js",
+  "private": true,
+  "description": "Undone Studio, Standards, and the isolated Chaos Vault parts and affective-pattern library.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "http-server . -p 5000 -c-1",
+    "check": "node --check assets/products.js && node --check assets/analytics.js && node --check assets/app.js && node --check chaos-vault/assets/cv.js && node --check chaos-vault/library/affective-contracts.js",
+    "validate": "node scripts/validate.mjs",
+    "test": "npm run check && npm run validate"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "affective-interface-engineering",
+    "design-patterns",
+    "static-site"
+  ],
+  "author": "Amy Do",
   "license": "ISC",
   "dependencies": {
     "http-server": "^14.1.1",
