@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-22",
+  "source": {
+    "repository": "amydojo/capytopia",
+    "verifiedCommit": "627f68411f8e0110b53c5a72160ef3f4c83a54fc",
+    "note": "The repository metadata connector incorrectly reported size 0. The commit graph and files are substantial and were verified directly by commit SHA."
+  },
+  "patterns": [
+    {
+      "id": "CV-CAP-001",
+      "name": "Sensory Assembly Ritual",
+      "category": "sensory-play",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original interaction pattern",
+      "origins": ["Capytopia"],
+      "thesis": "Turn a multi-step making task into a visible ritual where each choice produces an optional sensory cue and accumulates inside a shared object preview.",
+      "observedImplementation": [
+        "stepwise base, milk, and topping choices",
+        "pour, steam, and stir sound cues",
+        "animated liquid layers accumulating in a cup",
+        "clear progress visualization and completion state"
+      ],
+      "requiredControls": [
+        "cancel",
+        "sound mute or volume control",
+        "reduced-motion equivalent",
+        "textual state for every sensory cue",
+        "no essential information carried by sound alone"
+      ],
+      "risks": [
+        "sensory overload",
+        "forced animation delays",
+        "sound or motion presented as therapeutic without evidence",
+        "progress spectacle obscuring the actual task"
+      ]
+    },
+    {
+      "id": "CV-CAP-002",
+      "name": "Avatar-Mediated Self-Expression",
+      "category": "affective-contracts",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original interaction pattern",
+      "origins": ["Capytopia"],
+      "thesis": "Let a person externalize tone, identity, or play through a character they control without requiring personal disclosure or letting the system infer an emotional truth.",
+      "observedImplementation": [
+        "user-selected happy, excited, neutral, and sleepy expressions",
+        "optional blush",
+        "held objects",
+        "color and outfit customization with immediate preview"
+      ],
+      "requiredControls": [
+        "neutral option",
+        "reset to default",
+        "immediate preview",
+        "user-selected state only",
+        "private by default"
+      ],
+      "risks": [
+        "interpreting avatar choices as mental-state evidence",
+        "infantilizing users",
+        "monetization pressure around identity expression",
+        "limited representation disguised as personalization"
+      ]
+    },
+    {
+      "id": "CV-CAP-003",
+      "name": "Soft-World Task Scaffolding",
+      "category": "continuity-systems",
+      "status": "experimental",
+      "evidence": "partially implemented prototype",
+      "kind": "original spatial interaction pattern",
+      "origins": ["Capytopia"],
+      "thesis": "Map small responsibilities into recognizable places so the environment itself explains what can happen next: service at the counter, preparation in the kitchen, rest in seating, and lower-pressure wandering in the garden.",
+      "observedImplementation": [
+        "named café zones with distinct purposes",
+        "zone descriptions and iconography",
+        "capybara entities with current tasks",
+        "quest types for making, finding, and care"
+      ],
+      "requiredControls": [
+        "non-spatial list equivalent",
+        "visible active zone",
+        "keyboard and touch access",
+        "clear exit and return",
+        "no essential action hidden in canvas hit detection"
+      ],
+      "risks": [
+        "decorative spatial navigation",
+        "inaccessible canvas interactions",
+        "grind economy replacing meaningful play",
+        "unimplemented zones appearing functional"
+      ]
+    }
+  ],
+  "quarantine": [
+    "happiness values presented as psychological measurement",
+    "coins or levels used to punish absence or vulnerability",
+    "avatar expression interpreted as detected emotion",
+    "sound or motion required to understand task state",
+    "unfinished zone interactions described as working production features"
+  ]
+}
