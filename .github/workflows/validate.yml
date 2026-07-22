@@ -32,4 +32,15 @@ jobs:
         run: npm ci
 
       - name: Run syntax and static validation
-        run: npm test
+        run: |
+          set -o pipefail
+          npm test 2>&1 | tee validation.log
+
+      - name: Upload validation log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-log
+          path: validation.log
+          if-no-files-found: error
+          retention-days: 3
