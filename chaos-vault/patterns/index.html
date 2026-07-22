@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Affective Pattern Library — Chaos Vault</title>
+  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
+  <style>
+    .cv-reveal { opacity: 0; transform: translateY(16px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+    .cv-revealed { opacity: 1; transform: none; }
+    .cv-pattern-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+    .cv-pattern-card { display:block; padding:22px; border:1px solid var(--cv-border); border-radius:8px; background:var(--cv-surface-1); text-decoration:none; min-height:210px; }
+    .cv-pattern-card:hover { border-color:rgba(240,192,64,.5); transform:translateY(-2px); }
+    .cv-pattern-card h2 { margin:12px 0 10px; color:var(--cv-text); font-size:20px; }
+    .cv-pattern-card p { color:var(--cv-text-muted); font-size:14px; line-height:1.65; }
+    .cv-pattern-count { font:11px var(--cv-font-mono); color:var(--cv-accent); letter-spacing:.08em; }
+    .cv-thesis { font-size:clamp(22px,3vw,34px); line-height:1.25; max-width:900px; color:var(--cv-text); margin:12px 0 0; }
+  </style>
+</head>
+<body class="cv-body">
+<div class="cv-shell">
+  <header class="cv-topbar">
+    <a href="/chaos-vault/" class="cv-logo"><div class="cv-logo-mark"></div><span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span></a>
+    <nav class="cv-topbar-nav">
+      <a href="/chaos-vault/">Inventory</a>
+      <a href="/chaos-vault/patterns/" class="active">Affective Patterns</a>
+      <a href="/">Undone Studio</a>
+    </nav>
+  </header>
+
+  <nav class="cv-sidebar">
+    <div class="cv-sidebar-section">
+      <span class="cv-sidebar-label">Pattern Libraries</span>
+      <a href="/chaos-vault/patterns/affective-contracts.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Affective Contracts</a>
+      <a href="/chaos-vault/patterns/interaction-budgets.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Interaction Budgets</a>
+      <a href="/chaos-vault/patterns/artifact-compilers.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Artifact Compilers</a>
+      <a href="/chaos-vault/patterns/continuity-systems.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Continuity Systems</a>
+    </div>
+    <div class="cv-sidebar-section">
+      <span class="cv-sidebar-label">Source Material</span>
+      <a href="/chaos-vault/data/affective-patterns.json" class="cv-sidebar-link">Pattern Registry JSON</a>
+      <a href="/chaos-vault/library/affective-contracts.js" class="cv-sidebar-link">Reference Helpers JS</a>
+    </div>
+  </nav>
+
+  <main class="cv-main">
+    <div class="cv-breadcrumb"><a href="/chaos-vault/">Inventory</a><span class="cv-breadcrumb-sep">/</span><span>Affective Pattern Library</span></div>
+
+    <div class="cv-page-header cv-reveal">
+      <span class="cv-dept-id">LAB DOJO · AFFECTIVE INTERFACE ENGINEERING · HARVEST 01</span>
+      <h1 class="cv-page-title"><strong>Affective Pattern Library</strong></h1>
+      <p class="cv-thesis">Reusable contracts for software that remains humane when attention, certainty, energy, control, or reality stops matching the happy path.</p>
+      <div class="cv-page-meta">
+        <span class="cv-badge cv-badge-tested">27 Patterns</span>
+        <span class="cv-badge cv-badge-reconstructed">12 Donor Systems</span>
+        <span class="cv-badge cv-badge-quarantined">9 Import Bans</span>
+      </div>
+    </div>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Operating Position</span>
+      <div class="cv-provenance">
+        <span class="cv-provenance-label">State hypotheses, not emotional facts</span>
+        <p>The library does not treat a face, cursor, voice, streak, or model confidence score as privileged access to a person’s internal state. Adaptation begins with universal support or an explicit user request, remains visible and reversible, expires at a bounded scope, and preserves a route back to the complete interface.</p>
+      </div>
+    </section>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Four Pattern Families</span>
+      <div class="cv-pattern-grid">
+        <a class="cv-pattern-card" href="/chaos-vault/patterns/affective-contracts.html">
+          <span class="cv-pattern-count">6 PATTERNS · CV-AFX</span>
+          <h2>Affective Contracts</h2>
+          <p>Load-adaptive disclosure, gentle reentry, user-correctable state, calibrated language, reversible simplification, and the quiet recovery reveal.</p>
+        </a>
+        <a class="cv-pattern-card" href="/chaos-vault/patterns/interaction-budgets.html">
+          <span class="cv-pattern-count">6 PATTERNS · CV-IBG</span>
+          <h2>Interaction Budgets</h2>
+          <p>Declared load, minimum necessary interfaces, tone as consent, Three Valid Endings, stable temporary modes, and user-owned presentation policies.</p>
+        </a>
+        <a class="cv-pattern-card" href="/chaos-vault/patterns/artifact-compilers.html">
+          <span class="cv-pattern-count">5 PATTERNS · CV-ART</span>
+          <h2>Artifact Compilers</h2>
+          <p>Meaning-conditioned design, emotional artifact generation, bounded machine metaphors, provenance preservation, and format as semantic infrastructure.</p>
+        </a>
+        <a class="cv-pattern-card" href="/chaos-vault/patterns/continuity-systems.html">
+          <span class="cv-pattern-count">10 PATTERNS · CV-CON / CV-CTL</span>
+          <h2>Continuity and Control</h2>
+          <p>Emotional continuity, object continuity, pattern memory, procedural accompaniment, delta-over-score, and controls that communicate consequence and recovery.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Donor Systems</span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;">
+        <div class="cv-provenance"><span class="cv-provenance-label">Affective UX Lab</span><p>Evidence-linked hypotheses, adaptation ladder, state-hypothesis ethics, and correctable inference.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Bad Day Receipt</span><p>Declared load, Interaction Budget, Minimum Necessary Interface, Three Valid Endings, and continuity envelopes.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Mirror</span><p>Pattern memory over scoring, observation over optimization, tentative body-weather language, and soft return.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Capsule</span><p>Object continuity, specimen extraction, source provenance, preservation ritual, and rediscovery.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Glint</span><p>Interpretation-conditioned artifact presentation and the emotion-to-form compiler.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">flame.io</span><p>Tone selection before vulnerability and graceful AI-to-local prompt fallback.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Fridge Web</span><p>Mid-task recovery guidance, repair-first AI output, and lazy secondary enrichment.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Interface Behavior Lab</span><p>Controls as contracts, consequence-weighted friction, ambient state, and recovery attached to action.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Living Tapestry</span><p>Chronology, recurring-type clusters, and idea-to-action-to-insight topology.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">KEYS</span><p>Procedural accompaniment through discovery, risk, paperwork, waiting, and response.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Face Value</span><p>Longitudinal evidence, delta over score, and the skincare-fridge machine metaphor.</p></div>
+        <div class="cv-provenance"><span class="cv-provenance-label">Let’s Glo / Jellycat Tracker</span><p>Camera, motion, event, and notification primitives retained in the technical departments.</p></div>
+      </div>
+    </section>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Import Standard</span>
+      <table class="cv-meta-table">
+        <tr><td>Original invention</td><td>Preserve product provenance and authorship. Extract the portable contract without pretending every implementation is production-ready.</td></tr>
+        <tr><td>Research-linked hypothesis</td><td>Keep evidence labels, failure modes, competing explanations, and falsification conditions attached.</td></tr>
+        <tr><td>Clean-room reconstruction</td><td>Rebuild behavior from audited contracts rather than copying domain-specific source or demo fiction.</td></tr>
+        <tr><td>Quarantined material</td><td>Document why it must not be imported. Do not quietly rehabilitate fake scores, fake quotes, fake hardware, or manipulative streak systems.</td></tr>
+      </table>
+    </section>
+  </main>
+</div>
+<script src="/chaos-vault/assets/cv.js"></script>
+</body>
+</html>

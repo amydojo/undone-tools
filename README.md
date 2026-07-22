@@ -1,24 +1,77 @@
 # Undone Tools
 
-A static customer-facing site for Undone Studio, the Undone Standards product library, and the isolated Chaos Vault parts department.
+A static site for Undone Studio, the Undone Standards product library, and the isolated Chaos Vault parts department.
 
-## Run on Replit
-
-The repository is configured as a static Replit project.
+## Run locally or on Replit
 
 ```bash
 npx http-server . -p 5000 -c-1
 ```
 
-Open `/` for Studio or `/standards/` for the product library.
+Primary routes:
 
-## Customer-facing systems
+- `/` — Undone Studio
+- `/standards/` — customer-facing product library
+- `/chaos-vault/` — reusable technical parts inventory
+- `/chaos-vault/patterns/` — affective interface pattern library
 
-- `/` uses the `.studio-*` namespace.
-- `/standards/` uses the `.std-*` namespace.
-- `/chaos-vault/` uses the `.cv-*` namespace and remains isolated from commerce.
+## System isolation
+
+- Studio uses the `.studio-*` namespace.
+- Standards uses the `.std-*` namespace.
+- Chaos Vault uses the `.cv-*` namespace.
+- Commerce behavior never runs inside Chaos Vault.
+- Chaos Vault reference helpers perform no network requests, emotion diagnosis, external actions, or generated-markup rendering.
 
 Do not mix these namespaces.
+
+## Chaos Vault
+
+Chaos Vault has two layers.
+
+### Technical departments
+
+- camera
+- vision analysis
+- recovery patterns
+- AI validation
+- motion primitives
+- graph visualization
+- real-time events
+- notification engine
+
+### Affective pattern libraries
+
+- **Affective Contracts** — load-adaptive disclosure, gentle reentry, correctable state, calibrated language, reversible simplification, mid-task recovery
+- **Interaction Budgets** — declared load, Minimum Necessary Interface, tone as consent, Three Valid Endings, stable temporary modes
+- **Artifact Compilers** — interpretation-conditioned design, bounded machine metaphors, emotional artifacts, provenance-preserving generation
+- **Continuity and Control** — emotional and object continuity, pattern memory, procedural accompaniment, delta over score, controls as contracts
+
+Canonical supporting files:
+
+```text
+chaos-vault/data/affective-patterns.json
+chaos-vault/library/affective-contracts.js
+chaos-vault/HARVEST_LOG.md
+.agents/memory/chaos-vault-architecture.md
+```
+
+The pattern registry distinguishes original product inventions, research-linked hypotheses, clean-room reconstructions, and quarantined specimens. A pattern record is not automatically an effectiveness claim.
+
+## Chaos Vault import bans
+
+Do not import or rehabilitate:
+
+- fake skin, mood, relationship, or emotional-severity scores
+- diagnosis from face, voice, cursor, biometrics, or interaction telemetry
+- generated quotes presented as authentic quotations
+- permanent psychological profiles
+- vulnerability scoring or streak punishment
+- fictional hardware or integration claims
+- fake payment gates
+- scraping bypasses
+- automatic consequential adaptation or external actions
+- arbitrary model-generated markup, routing, persistence, or filenames
 
 ## Etsy product configuration
 
@@ -28,9 +81,7 @@ All product destinations live in:
 assets/products.js
 ```
 
-The two active products currently use the Undone by Design Etsy shop as a working fallback because exact listing URLs are not stored in the repository.
-
-Replace each `checkoutUrl` with its exact Etsy Share & Save listing URL. Existing query parameters are preserved. Inbound UTM values are carried forward only when the destination does not already define that field.
+The active products use the Undone by Design Etsy shop as a working fallback when an exact listing URL is not stored in the repository. Replace each `checkoutUrl` with its exact Etsy Share & Save listing URL. Existing query parameters are preserved. Inbound UTM values are carried forward only when the destination does not already define that field.
 
 ## Commerce behavior
 
@@ -86,9 +137,10 @@ Run:
 node --check assets/products.js
 node --check assets/analytics.js
 node --check assets/app.js
+node --check chaos-vault/library/affective-contracts.js
 node scripts/validate.mjs
 ```
 
-The validation script checks required routes, purchase fallbacks, script order, product configuration, query-parameter preservation, and Commerce versus Chaos Vault namespace separation.
+Validation covers storefront routes and commerce behavior plus Chaos Vault route existence, namespace isolation, pattern-registry uniqueness and provenance, quarantine rules, reference-helper exports, and selected affective invariants.
 
 See `PRODUCT_CONTENT_NEEDED.md` for owner-supplied listing links, product facts, and authentic preview assets still needed.
