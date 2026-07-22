@@ -220,7 +220,7 @@ const capytopiaPage = read('chaos-vault/patterns/capytopia.html');
 assert.match(capytopiaPage, /Sensory Assembly Ritual/);
 assert.match(capytopiaPage, /Avatar-Mediated Self-Expression/);
 assert.match(capytopiaPage, /Soft-World Task Scaffolding/);
-assert.match(capytopiaPage, /metadata connector incorrectly reported the repository as empty/);
+assert.match(capytopiaPage, /connector incorrectly reported the repository as empty/);
 assert.match(capytopiaPage, /Zone hit detection and actions remain unfinished/);
 
 const capytopiaAudit = read('chaos-vault/CAPYTOPIA_HARVEST.md');
