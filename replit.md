@@ -2,125 +2,45 @@
 
 ## Overview
 
-Undone is a dual-system static site with:
-1. **Studio homepage** (`/`) — Gotham-inspired procedural hero showcasing operational clarity philosophy
-2. **Standards library** (`/standards/`) — Clinic-ready operational documents with future-proof taxonomy
+Undone is a static HTML, CSS, and JavaScript site with three intentionally isolated areas:
 
-The project is a simple static HTML/CSS/JS site with no backend, database, or build system. It's designed for instant deployment on Replit or any static hosting platform.
+1. Studio homepage at `/` using `.studio-*`
+2. Standards product library at `/standards/` using `.std-*`
+3. Chaos Vault at `/chaos-vault/` using `.cv-*`
 
-## Recent Changes (December 2025)
+There is no backend, database, bundler, or required analytics provider.
 
-- **Studio homepage redesign**: New Gotham-like procedural canvas hero with globe arc, orbital dot field, atmosphere rim glow, and lat/long grid lines
-- **Dual namespace architecture**: `.studio-*` for homepage, `.std-*` for standards — complete isolation prevents CSS leakage
-- **Canvas animation features**: IntersectionObserver pause when offscreen, prefers-reduced-motion support, mouse parallax (desktop only)
-- **7-section studio layout**: Hero, positioning, marketing, materials, filter, standards bridge, closer
-- **Standards library model**: 3 categories (Patient Communication, Patient Education, Clinic Operations)
-- **Server switch**: Changed from `serve` to `http-server` with `-c-1` flag to disable caching
+## Replit workflow
 
-## User Preferences
+Run:
 
-Preferred communication style: Simple, everyday language.
-
-## System Architecture
-
-### Frontend Architecture
-
-**Technology Stack:**
-- Pure HTML5, CSS3, and vanilla JavaScript
-- No frameworks, bundlers, or build tools
-- Static file serving via `http-server` npm package (with cache disabled)
-
-**Design System:**
-- Dark mode aesthetic with CSS custom properties (design tokens)
-- Typography: System fonts (Inter/SF Pro) with clear hierarchy
-- Color palette: Deep blacks (#05050a), muted purples (#7b6cff), high-contrast text
-- Layout: Max-width container (1040px), vertical rhythm, generous whitespace
-- Atmospheric radial gradients on `.std-shell` wrapper
-
-**CSS Architecture:**
-- Homepage uses `.studio-*` namespaced classes (`.studio-shell`, `.studio-hero`, `.studio-reveal`, etc.)
-- Standards pages use `.std-*` namespaced classes (`.std-shell`, `.std-reveal`, `.std-card`, etc.)
-- Both systems coexist in `/assets/styles.css` with clear section dividers — complete namespace isolation
-
-**File Structure:**
-```
-/                     → Root index (homepage)
-/standards/           → Standards section index (anti-hero positioning page)
-/standards/*.html     → Individual product pages
-/assets/styles.css    → Global stylesheet with design tokens
-/assets/app.js        → Client-side interactivity
+```bash
+npx http-server . -p 5000 -c-1
 ```
 
-**JavaScript Patterns:**
-- IntersectionObserver for scroll-triggered reveal animations
-- Two animation systems: `.studio-reveal` for homepage, `.std-reveal` for standards
-- Canvas-based procedural hero animation with IntersectionObserver pause when offscreen
-- Mouse parallax on desktop (pointer: fine media query)
-- Keyboard shortcuts (press 'G' to trigger checkout on product pages)
-- Accessible accordions with aria-expanded and keyboard navigation
-- Smooth scroll respecting prefers-reduced-motion
-- Checkout URL wiring via `<meta name="checkout-url">` tag
+The `.replit` Project workflow uses this command and exposes the static site through the webview.
 
-### Content Architecture
+## Standards commerce architecture
 
-**Page Types:**
-1. Homepage (`/index.html`) - Studio design with procedural canvas hero, uses `.studio-*` classes
-2. Standards landing (`/standards/index.html`) - Library model with 3 categories
-3. Product detail pages (`/standards/injectables-aftercare.html`, `/standards/laser-aftercare.html`)
+- `assets/products.js` is the single source of truth for product identity and Etsy destinations.
+- `assets/analytics.js` is a no-network event adapter.
+- `assets/app.js` handles shared interaction, campaign attribution, checkout links, keyboard shortcut behavior, and sticky mobile CTAs.
+- `assets/commerce.css` contains only `.std-*` customer-facing commerce styles.
 
-**Studio Homepage Sections:**
-1. Hero (procedural canvas with globe, orbital dots)
-2. Positioning (operational clarity)
-3. Marketing (infrastructure approach)
-4. Materials (work scope)
-5. Filter (for/not-for)
-6. Standards bridge (CTA to /standards/)
-7. Closer
+Active products use a working Etsy shop fallback until exact listing URLs are supplied. Replace those values with exact Etsy Share & Save listing URLs without removing their existing query parameters.
 
-**Standards Landing Page Sections:**
-1. Anti-hero opening (disarm)
-2. What this is (taxonomy intro)
-3. Product library (3 categories: Patient Communication, Patient Education, Clinic Operations)
-4. Evolution note (coming soon items)
-5. Closer with footer nav
+## Checkout behavior
 
-**Product Page Sections:**
-1. Hero with SYSTEM STANDARD eyebrow
-2. Product module (4 includes, format, delivery, CTAs)
-3. Protocol accordion (Day 0-1, Days 2-7, What's Normal, Red Flags)
-4. Why this holds up (3 blocks)
-5. Premium preview (id="preview")
-6. FAQ accordion (3 items)
+Active product CTAs include a literal Etsy `href`, so checkout still works if JavaScript fails. JavaScript upgrades the destination with safe attribution parameters.
 
-### Styling Approach
+Pressing `G` opens the primary checkout CTA only on an active product page. The shortcut does not fire inside inputs, textareas, selects, or editable content.
 
-- Mobile-first responsive design using `clamp()` for fluid typography
-- CSS custom properties for consistent theming
-- Subtle gradient backgrounds and border treatments
-- Animation via CSS transitions and JS-controlled class toggling
-- Root-absolute asset paths (`/assets/`) for nested pages
+## Analytics behavior
 
-## External Dependencies
+No external provider is configured. Events are emitted locally through `window.UndoneAnalytics` and the `undone:analytics` browser event. Debug logging is off unless `window.UNDONE_ANALYTICS_DEBUG = true` is set before an interaction.
 
-### NPM Packages
-- **http-server**: Static file server with cache control (`-c-1` disables caching)
+## Safety and content
 
-### External Links (Configurable)
-- **Checkout URLs**: Set via `<meta name="checkout-url">` in each product page head
-- **Etsy Store**: https://undonebydesign.etsy.com (product purchase destination)
+The new product proof pages avoid treatment instructions and label structural previews clearly. Archived injectables and laser pages are not active products or clinical protocols.
 
-### Fonts
-- System font stack only (Inter, SF Pro, system defaults)
-- No external font loading or CDN dependencies
-
-### Hosting
-- Designed for static hosting (Replit, Netlify, Vercel, or any static server)
-- No server-side processing required
-- No database or API dependencies
-
-## Workflow Configuration
-
-**Frontend Server:**
-- Command: `npx http-server . -p 5000 -c-1`
-- Port: 5000
-- Cache disabled for development
+See `PRODUCT_CONTENT_NEEDED.md` for unconfirmed product details and owner actions.
