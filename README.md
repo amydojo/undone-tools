@@ -26,9 +26,12 @@ Chaos Vault contains:
 
 - eight technical departments
 - a 27-pattern core affective-interface registry
+- three Capytopia play patterns
+- four Offbeat play patterns
 - clean-room reference helpers
-- supplemental source-specific play-system registries for Capytopia and Offbeat
 - provenance, maturity, limitations, and quarantine rules
+
+That is 34 documented patterns across 14 donor systems.
 
 Current pattern routes:
 
