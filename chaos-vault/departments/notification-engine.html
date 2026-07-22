@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notification Engine — Chaos Vault Parts Department</title>
+  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
+  <style>
+    .cv-reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .cv-revealed { opacity: 1; transform: none; }
+    .cv-lifecycle-row {
+      display:flex; align-items:center; gap:0;
+    }
+    .cv-lifecycle-state {
+      flex:1; text-align:center; padding:12px 8px;
+      border:1px solid var(--cv-border); margin-right:-1px;
+      background:var(--cv-surface); position:relative;
+    }
+    .cv-lifecycle-state:first-child { border-radius:4px 0 0 4px; }
+    .cv-lifecycle-state:last-child  { border-radius:0 4px 4px 0; margin-right:0; }
+    .cv-lifecycle-state.active { background:var(--cv-surface-2); border-color:var(--cv-accent); z-index:1; }
+    .cv-lifecycle-state .state-name { font-family:var(--cv-font-mono);font-size:10px;letter-spacing:0.1em;color:var(--cv-text-dim); }
+    .cv-lifecycle-state.active .state-name { color:var(--cv-accent); }
+    .cv-lifecycle-state .state-desc { font-size:11px;color:var(--cv-text-muted);margin-top:4px;line-height:1.4; }
+  </style>
+</head>
+<body class="cv-body">
+<div class="cv-shell">
+  <header class="cv-topbar">
+    <a href="/chaos-vault/" class="cv-logo">
+      <div class="cv-logo-mark"></div>
+      <span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span>
+    </a>
+    <nav class="cv-topbar-nav"><a href="/chaos-vault/">Inventory</a><a href="/">Undone Studio</a></nav>
+  </header>
+  <nav class="cv-sidebar">
+    <div class="cv-sidebar-section">
+      <span class="cv-sidebar-label">Departments</span>
+      <a href="/chaos-vault/departments/camera.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Camera</a>
+      <a href="/chaos-vault/departments/vision-analysis.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Vision Analysis</a>
+      <a href="/chaos-vault/departments/recovery-patterns.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Recovery Patterns</a>
+      <a href="/chaos-vault/departments/ai-validation.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>AI Validation</a>
+      <a href="/chaos-vault/departments/motion-primitives.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Motion Primitives</a>
+      <a href="/chaos-vault/departments/graph-visualization.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Graph Visualization</a>
+      <a href="/chaos-vault/departments/real-time-events.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Real-Time Events</a>
+      <a href="/chaos-vault/departments/notification-engine.html" class="cv-sidebar-link active"><span class="cv-sidebar-dot cv-dot-tested"></span>Notification Engine</a>
+    </div>
+  </nav>
+
+  <main class="cv-main">
+    <div class="cv-breadcrumb"><a href="/chaos-vault/">Inventory</a><span class="cv-breadcrumb-sep">/</span><span>Notification Engine</span></div>
+
+    <div class="cv-page-header cv-reveal">
+      <span class="cv-dept-id">DEPT · CV-NOT · 2 PARTS (1 QUARANTINED)</span>
+      <h1 class="cv-page-title"><strong>Notification Engine</strong></h1>
+      <p class="cv-page-desc">Notification lifecycle states and a simple queue manager from Jellycat Tracker. Handles pending, delivered, read, expired, and dismissed transitions. The Pro paywall gate is quarantined.</p>
+      <div class="cv-page-meta">
+        <span class="cv-badge cv-badge-reconstructed">1 Reconstructed</span>
+        <span class="cv-badge cv-badge-experimental">1 Experimental</span>
+        <span class="cv-badge cv-badge-quarantined">1 Quarantined</span>
+      </div>
+    </div>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Provenance</span>
+      <div class="cv-provenance">
+        <span class="cv-provenance-label">Donor · Jellycat Tracker</span>
+        <p>Jellycat Tracker sent in-app notifications when watched items changed price, came back in stock, or were removed from listings. Each notification had a lifecycle: it started as pending (queued server-side), became delivered (sent to the client), transitioned to read (user saw it), and eventually expired or was dismissed. A Pro tier gate existed in the original — that logic is quarantined (CV-NOT-003). The lifecycle contract and the queue manager are the portable parts.</p>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- Lifecycle visual -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Notification Lifecycle</span>
+      <div style="overflow-x:auto;">
+        <div class="cv-lifecycle-row" style="min-width:540px;">
+          <div class="cv-lifecycle-state">
+            <div class="state-name">CREATED</div>
+            <div class="state-desc">Record exists.<br>Not yet sent.</div>
+          </div>
+          <div class="cv-lifecycle-state">
+            <div class="state-name">PENDING</div>
+            <div class="state-desc">Queued for<br>delivery.</div>
+          </div>
+          <div class="cv-lifecycle-state active">
+            <div class="state-name">DELIVERED</div>
+            <div class="state-desc">Client received<br>the push.</div>
+          </div>
+          <div class="cv-lifecycle-state">
+            <div class="state-name">READ</div>
+            <div class="state-desc">User viewed<br>the item.</div>
+          </div>
+          <div class="cv-lifecycle-state">
+            <div class="state-name">DISMISSED</div>
+            <div class="state-desc">User dismissed<br>or cleared.</div>
+          </div>
+          <div class="cv-lifecycle-state">
+            <div class="state-name">EXPIRED</div>
+            <div class="state-desc">TTL elapsed.<br>Auto-removed.</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--cv-text-dim);font-family:var(--cv-font-mono);margin-top:12px;">State transitions: created → pending → delivered → read → dismissed | expired. Any state can transition directly to expired if TTL elapses.</p>
+    </section>
+
+    <!-- CV-NOT-001 -->
+    <section class="cv-section cv-reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+        <div><span class="cv-dept-id" style="margin-bottom:4px;">CV-NOT-001</span><h2 class="cv-section-title">Notification Lifecycle States</h2></div>
+        <span class="cv-badge cv-badge-reconstructed">Reconstructed</span>
+      </div>
+
+      <table class="cv-meta-table">
+        <tr><td>State machine</td><td>5 states with validated transitions. Invalid transitions are rejected, not silently applied.</td></tr>
+        <tr><td>TTL</td><td>Configurable per notification type. Default: 24 hours. Expired notifications are moved to a separate log, not deleted.</td></tr>
+        <tr><td>Persistence</td><td>This contract describes the state model — storage (DB, localStorage, in-memory) is application-defined.</td></tr>
+        <tr><td>Risk</td><td>Low. Pure state machine. No UI dependency.</td></tr>
+      </table>
+
+      <div style="margin-top:20px;">
+        <span class="cv-code-label">STATE MACHINE</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-NOT-001 · Notification Lifecycle</span>
+
+<span class="cv-keyword">const</span> STATES = [<span class="cv-string">'created'</span>,<span class="cv-string">'pending'</span>,<span class="cv-string">'delivered'</span>,<span class="cv-string">'read'</span>,<span class="cv-string">'dismissed'</span>,<span class="cv-string">'expired'</span>]
+
+<span class="cv-keyword">const</span> TRANSITIONS = {
+  created:   [<span class="cv-string">'pending'</span>,   <span class="cv-string">'expired'</span>],
+  pending:   [<span class="cv-string">'delivered'</span>, <span class="cv-string">'expired'</span>],
+  delivered: [<span class="cv-string">'read'</span>,      <span class="cv-string">'expired'</span>],
+  read:      [<span class="cv-string">'dismissed'</span>, <span class="cv-string">'expired'</span>],
+  dismissed: [],                       <span class="cv-comment">// terminal</span>
+  expired:   [],                       <span class="cv-comment">// terminal</span>
+}
+
+<span class="cv-keyword">function</span> <span class="cv-fn">transition</span>(notification, nextState) {
+  <span class="cv-keyword">const</span> allowed = TRANSITIONS[notification.state] ?? []
+  <span class="cv-keyword">if</span> (!allowed.includes(nextState)) {
+    <span class="cv-keyword">throw new</span> <span class="cv-type">Error</span>(
+      <span class="cv-string">`Invalid transition: ${notification.state} → ${nextState}`</span>
+    )
+  }
+  <span class="cv-keyword">return</span> { ...notification, state: nextState, updatedAt: <span class="cv-keyword">new</span> <span class="cv-type">Date</span>() }
+}
+
+<span class="cv-comment">// Notification record shape</span>
+<span class="cv-type">Notification</span> {
+  id:        <span class="cv-type">string</span>
+  type:      <span class="cv-type">string</span>             <span class="cv-comment">// matches CV-RTE-001 event types</span>
+  state:     <span class="cv-keyword">typeof</span> STATES[number]
+  payload:   <span class="cv-type">object</span>
+  createdAt: <span class="cv-type">Date</span>
+  updatedAt: <span class="cv-type">Date</span>
+  expiresAt: <span class="cv-type">Date</span>
+  _read:     <span class="cv-type">boolean</span>
+}</pre>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Live Demo — Notification Lifecycle</span>
+      <p style="font-size:14px;color:var(--cv-text-muted);margin-bottom:24px;">Fire notifications to observe the lifecycle: pending → delivered → read → dismissed. Each notification auto-progresses through states.</p>
+
+      <div class="cv-demo-frame cv-demo-notifications">
+        <div class="cv-demo-topbar">
+          <div class="cv-demo-dot" style="background:#ff5f57"></div>
+          <div class="cv-demo-dot" style="background:#febc2e"></div>
+          <div class="cv-demo-dot" style="background:#28c840"></div>
+          <span class="cv-demo-title">CV-NOT-001 · Notification Lifecycle Demo</span>
+        </div>
+        <div style="padding:24px;display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="cv-btn cv-btn-primary" data-notif-fire>Fire Notification</button>
+            <button class="cv-btn cv-btn-ghost" data-notif-clear>Clear All</button>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;" data-notif-container></div>
+          <p style="font-family:var(--cv-font-mono);font-size:11px;color:var(--cv-text-dim);">Each notification: pending → delivered (1s) → read (3s) → opacity reduces. Click "Fire Notification" repeatedly to observe concurrent lifecycles.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- CV-NOT-002 -->
+    <section class="cv-section cv-reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+        <div><span class="cv-dept-id" style="margin-bottom:4px;">CV-NOT-002</span><h2 class="cv-section-title">Notification Queue Manager</h2></div>
+        <span class="cv-badge cv-badge-experimental">Experimental</span>
+      </div>
+
+      <p style="font-size:15px;color:var(--cv-text-muted);line-height:1.7;margin-bottom:24px;">A simple in-memory queue that prevents notification flooding, enforces per-type rate limits, and coalesces duplicate events before delivery.</p>
+
+      <table class="cv-meta-table">
+        <tr><td>Rate limit</td><td>Max 3 notifications of the same type per 60-second window.</td></tr>
+        <tr><td>Coalescing</td><td>If the same item triggers two price updates within 5 seconds, only the second (most current) is delivered.</td></tr>
+        <tr><td>Risk</td><td>Medium. The coalescing window is application-specific and must be tuned per use case. Default values are guesses.</td></tr>
+      </table>
+
+      <div style="margin-top:20px;">
+        <span class="cv-code-label">QUEUE MANAGER SKETCH</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-NOT-002 · Notification Queue Manager (experimental)</span>
+
+<span class="cv-keyword">class</span> <span class="cv-type">NotificationQueue</span> {
+  #queue   = []
+  #counts  = <span class="cv-keyword">new</span> <span class="cv-type">Map</span>()          <span class="cv-comment">// type → [timestamps]</span>
+  #pending = <span class="cv-keyword">new</span> <span class="cv-type">Map</span>()          <span class="cv-comment">// coalescingKey → timer</span>
+
+  <span class="cv-fn">enqueue</span>(notification) {
+    <span class="cv-keyword">const</span> { type, coalescingKey } = notification
+
+    <span class="cv-comment">// Rate limit check</span>
+    <span class="cv-keyword">const</span> window = <span class="cv-number">60_000</span>, maxPerWindow = <span class="cv-number">3</span>
+    <span class="cv-keyword">const</span> now = Date.now()
+    <span class="cv-keyword">const</span> recent = (this.#counts.get(type) ?? []).filter(t => now - t &lt; window)
+    <span class="cv-keyword">if</span> (recent.length >= maxPerWindow) <span class="cv-keyword">return</span> <span class="cv-comment">// silently drop</span>
+    this.#counts.set(type, [...recent, now])
+
+    <span class="cv-comment">// Coalescing — debounce within 5s by key</span>
+    <span class="cv-keyword">if</span> (coalescingKey) {
+      clearTimeout(this.#pending.get(coalescingKey))
+      this.#pending.set(coalescingKey, setTimeout(() => {
+        this.#deliver(notification)
+        this.#pending.delete(coalescingKey)
+      }, <span class="cv-number">5000</span>))
+      <span class="cv-keyword">return</span>
+    }
+
+    this.#deliver(notification)
+  }
+
+  #deliver(notification) {
+    this.#queue.push({ ...notification, state: <span class="cv-string">'delivered'</span> })
+    this.onDeliver?.(notification)
+  }
+}</pre>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- Quarantine -->
+    <section class="cv-section cv-reveal">
+      <div class="cv-quarantine-zone">
+        <div class="cv-quarantine-header"><span>⛔ CV-NOT-003 — QUARANTINED</span></div>
+        <div class="cv-quarantine-body">
+          <div class="cv-quarantine-item">
+            <code>CV-NOT-003</code>
+            <div>
+              <strong style="display:block;margin-bottom:4px;color:rgba(255,90,110,0.9)">Fake Pro Monetization Gate</strong>
+              The original notification UI included a paywall that restricted users to 3 tracked items unless they upgraded to "Pro." The paywall UI existed but the Stripe/RevenueCat wiring was never completed — the gate was a stub that checked a boolean flag with no real payment verification. Importing this creates a fake access control layer with no security properties.
+              <br><br>
+              <strong style="color:rgba(255,90,110,0.9)">Do not import.</strong> If you need real monetization gating, use the <code style="background:rgba(255,63,90,0.1);padding:2px 5px;border-radius:2px;font-size:11px;">monetization</code> skill to wire Stripe or RevenueCat properly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+<script src="/chaos-vault/assets/cv.js"></script>
+</body>
+</html>

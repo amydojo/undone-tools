@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Camera — Chaos Vault Parts Department</title>
+  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
+  <style>
+    .cv-reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .cv-revealed { opacity: 1; transform: none; }
+  </style>
+</head>
+<body class="cv-body">
+<div class="cv-shell">
+
+  <header class="cv-topbar">
+    <a href="/chaos-vault/" class="cv-logo">
+      <div class="cv-logo-mark"></div>
+      <span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span>
+    </a>
+    <nav class="cv-topbar-nav">
+      <a href="/chaos-vault/">Inventory</a>
+      <a href="/">Undone Studio</a>
+    </nav>
+  </header>
+
+  <nav class="cv-sidebar">
+    <div class="cv-sidebar-section">
+      <span class="cv-sidebar-label">Departments</span>
+      <a href="/chaos-vault/departments/camera.html" class="cv-sidebar-link active">
+        <span class="cv-sidebar-dot cv-dot-reconstructed"></span>Camera
+      </a>
+      <a href="/chaos-vault/departments/vision-analysis.html" class="cv-sidebar-link">
+        <span class="cv-sidebar-dot cv-dot-experimental"></span>Vision Analysis
+      </a>
+      <a href="/chaos-vault/departments/recovery-patterns.html" class="cv-sidebar-link">
+        <span class="cv-sidebar-dot cv-dot-reconstructed"></span>Recovery Patterns
+      </a>
+      <a href="/chaos-vault/departments/ai-validation.html" class="cv-sidebar-link">
+        <span class="cv-sidebar-dot cv-dot-reconstructed"></span>AI Validation
+      </a>
+      <a href="/chaos-vault/departments/motion-primitives.html" class="cv-sidebar-link">
+        <span class="cv-sidebar-dot cv-dot-tested"></span>Motion Primitives
+      </a>
+      <a href="/chaos-vault/departments/graph-visualization.html" class="cv-sidebar-link">
+        <span class="cv-sidebar-dot cv-dot-experimental"></span>Graph Visualization
+      </a>
+      <a href="/chaos-vault/departments/real-time-events.html" class="cv-sidebar-link">
+        <span class="cv-sidebar-dot cv-dot-reconstructed"></span>Real-Time Events
+      </a>
+      <a href="/chaos-vault/departments/notification-engine.html" class="cv-sidebar-link">
+        <span class="cv-sidebar-dot cv-dot-tested"></span>Notification Engine
+      </a>
+    </div>
+  </nav>
+
+  <main class="cv-main">
+
+    <div class="cv-breadcrumb">
+      <a href="/chaos-vault/">Inventory</a>
+      <span class="cv-breadcrumb-sep">/</span>
+      <span>Camera</span>
+    </div>
+
+    <div class="cv-page-header cv-reveal">
+      <span class="cv-dept-id">DEPT · CV-CAM · 3 PARTS</span>
+      <h1 class="cv-page-title"><strong>Camera</strong></h1>
+      <p class="cv-page-desc">Cross-browser mobile camera capture behavior. Handles permission negotiation, fallback ladders, and canvas frame extraction cleanly across iOS Safari, Android Chrome, and desktop.</p>
+      <div class="cv-page-meta">
+        <span class="cv-badge cv-badge-reconstructed">Reconstructed</span>
+        <span class="cv-badge cv-badge-experimental">1 Experimental</span>
+      </div>
+    </div>
+
+    <!-- Provenance -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Provenance</span>
+      <div class="cv-provenance">
+        <span class="cv-provenance-label">Donor · Let's Glo</span>
+        <p>The camera pipeline was the core input mechanism of Let's Glo, a skin-analysis prototype. The clean-room extraction preserves the browser compatibility logic and state machine, while quarantining the Smooth MD scoring layer that sat downstream. The getUserMedia constraint profile and the canvas drawImage + toBlob capture pattern are the portable parts. Everything after "image captured" is intentionally excluded here.</p>
+      </div>
+    </section>
+
+    <!-- Parts index -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Parts in this Department</span>
+
+      <!-- CV-CAM-001 -->
+      <div style="margin-bottom:40px;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+          <div>
+            <span class="cv-dept-id" style="margin-bottom:4px;">CV-CAM-001</span>
+            <h2 class="cv-section-title">getUserMedia Permission Flow</h2>
+          </div>
+          <span class="cv-badge cv-badge-reconstructed">Reconstructed</span>
+        </div>
+
+        <table class="cv-meta-table">
+          <tr><td>Use cases</td><td>Any feature requiring camera input: vision analysis, document scan, QR, selfie capture.</td></tr>
+          <tr><td>Dependencies</td><td><code style="font-family:var(--cv-font-mono);font-size:12px;background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:2px;">navigator.mediaDevices.getUserMedia</code> — available in all modern browsers. Requires HTTPS or localhost.</td></tr>
+          <tr><td>Constraint profile</td><td><code style="font-family:var(--cv-font-mono);font-size:12px;background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:2px;">{ video: { facingMode: { ideal: "environment" } }, audio: false }</code> — requests rear camera on mobile, falls back to any available camera.</td></tr>
+          <tr><td>Risk</td><td>Low. Behavior is browser-standard. Permission UI is entirely OS/browser-controlled.</td></tr>
+        </table>
+
+        <div style="margin-top:20px;">
+          <span class="cv-code-label">CONTRACT SKETCH — PERMISSION FLOW</span>
+          <pre class="cv-code"><span class="cv-comment">// CV-CAM-001 · getUserMedia Permission Flow</span>
+<span class="cv-comment">// Clean-room behavioral reconstruction. Not copied from source.</span>
+
+<span class="cv-keyword">async function</span> <span class="cv-fn">requestCameraPermission</span>() {
+  <span class="cv-comment">// 1. Environment check — fail fast on unsupported browsers</span>
+  <span class="cv-keyword">if</span> (!navigator.mediaDevices?.getUserMedia) {
+    <span class="cv-keyword">return</span> { ok: <span class="cv-keyword">false</span>, reason: <span class="cv-string">'unsupported'</span> }
+  }
+
+  <span class="cv-keyword">try</span> {
+    <span class="cv-keyword">const</span> stream = <span class="cv-keyword">await</span> navigator.mediaDevices.getUserMedia({
+      video: { facingMode: { ideal: <span class="cv-string">'environment'</span> }, width: { ideal: <span class="cv-number">1280</span> } },
+      audio: <span class="cv-keyword">false</span>
+    })
+    <span class="cv-keyword">return</span> { ok: <span class="cv-keyword">true</span>, stream }
+
+  } <span class="cv-keyword">catch</span> (err) {
+    <span class="cv-comment">// Map to stable error types — do not leak raw DOMException</span>
+    <span class="cv-keyword">const</span> reason = {
+      NotAllowedError:        <span class="cv-string">'denied'</span>,
+      PermissionDeniedError:  <span class="cv-string">'denied'</span>,
+      NotFoundError:          <span class="cv-string">'no_camera'</span>,
+      OverconstrainedError:   <span class="cv-string">'overconstrained'</span>,
+    }[err.name] ?? <span class="cv-string">'unknown'</span>
+
+    <span class="cv-keyword">return</span> { ok: <span class="cv-keyword">false</span>, reason }
+  }
+}
+
+<span class="cv-comment">// Always stop tracks when done — prevents indicator staying on</span>
+<span class="cv-keyword">function</span> <span class="cv-fn">releaseStream</span>(stream) {
+  stream?.getTracks().forEach(t => t.stop())
+}</pre>
+        </div>
+      </div>
+
+      <div class="cv-divider"></div>
+
+      <!-- CV-CAM-002 -->
+      <div style="margin-bottom:40px;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+          <div>
+            <span class="cv-dept-id" style="margin-bottom:4px;">CV-CAM-002</span>
+            <h2 class="cv-section-title">Canvas Frame Capture</h2>
+          </div>
+          <span class="cv-badge cv-badge-reconstructed">Reconstructed</span>
+        </div>
+
+        <table class="cv-meta-table">
+          <tr><td>Use cases</td><td>Extracting a still frame from a live video stream into a Blob or DataURL for upload.</td></tr>
+          <tr><td>Dependencies</td><td>HTMLVideoElement, HTMLCanvasElement, <code style="font-family:var(--cv-font-mono);font-size:12px;background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:2px;">canvas.toBlob()</code></td></tr>
+          <tr><td>MIME output</td><td><code style="font-family:var(--cv-font-mono);font-size:12px;background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:2px;">image/jpeg</code> at 0.92 quality — balances file size with vision model input requirements.</td></tr>
+          <tr><td>Risk</td><td>Low. Canvas taint security applies if source video is cross-origin — not relevant in this usage.</td></tr>
+        </table>
+
+        <div style="margin-top:20px;">
+          <span class="cv-code-label">CONTRACT SKETCH — FRAME CAPTURE</span>
+          <pre class="cv-code"><span class="cv-comment">// CV-CAM-002 · Canvas Frame Capture</span>
+
+<span class="cv-keyword">function</span> <span class="cv-fn">captureFrame</span>(videoEl, options = {}) {
+  <span class="cv-keyword">const</span> { quality = <span class="cv-number">0.92</span>, mime = <span class="cv-string">'image/jpeg'</span> } = options
+  <span class="cv-keyword">const</span> canvas = document.createElement(<span class="cv-string">'canvas'</span>)
+  canvas.width  = videoEl.videoWidth
+  canvas.height = videoEl.videoHeight
+
+  <span class="cv-keyword">const</span> ctx = canvas.getContext(<span class="cv-string">'2d'</span>)
+  ctx.drawImage(videoEl, <span class="cv-number">0</span>, <span class="cv-number">0</span>)
+
+  <span class="cv-keyword">return new</span> <span class="cv-type">Promise</span>((resolve, reject) => {
+    canvas.toBlob(
+      blob => blob ? resolve(blob) : reject(<span class="cv-keyword">new</span> <span class="cv-type">Error</span>(<span class="cv-string">'toBlob returned null'</span>)),
+      mime,
+      quality
+    )
+  })
+}
+
+<span class="cv-comment">// Usage</span>
+<span class="cv-keyword">const</span> blob = <span class="cv-keyword">await</span> <span class="cv-fn">captureFrame</span>(videoElement)
+<span class="cv-keyword">const</span> formData = <span class="cv-keyword">new</span> <span class="cv-type">FormData</span>()
+formData.append(<span class="cv-string">'image'</span>, blob, <span class="cv-string">'capture.jpg'</span>)</pre>
+        </div>
+      </div>
+
+      <div class="cv-divider"></div>
+
+      <!-- CV-CAM-003 -->
+      <div style="margin-bottom:40px;">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+          <div>
+            <span class="cv-dept-id" style="margin-bottom:4px;">CV-CAM-003</span>
+            <h2 class="cv-section-title">Cross-Browser Fallback Ladder</h2>
+          </div>
+          <span class="cv-badge cv-badge-experimental">Experimental</span>
+        </div>
+
+        <table class="cv-meta-table">
+          <tr><td>Use cases</td><td>Degrading gracefully from camera → file-input upload → manual URL entry when camera is unavailable.</td></tr>
+          <tr><td>Risk</td><td>Medium. iOS 14.3 and earlier have partial getUserMedia support. WKWebView on iOS does not support camera at all — this fallback is specifically for that context.</td></tr>
+          <tr><td>Caution</td><td>The original donor project included Apple Watch as a hypothetical capture surface. That path is quarantined (HW-001) and excluded here.</td></tr>
+        </table>
+
+        <div class="cv-caution" style="margin-top:20px;">
+          <span class="cv-caution-icon">⚠</span>
+          <div class="cv-caution-text">
+            <strong>Experimental — Not Production-Verified</strong>
+            The fallback ladder has been reconstructed from behavioral observation, not tested across all target browsers. Validate against your specific browser matrix before using.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Live Demo</span>
+      <p style="font-size:14px;color:var(--cv-text-muted);margin-bottom:24px;">Demonstrates the permission state machine. On mobile, this will request real camera access. On unsupported environments it will simulate the fallback state.</p>
+
+      <div class="cv-demo-frame cv-demo-camera">
+        <div class="cv-demo-topbar">
+          <div class="cv-demo-dot" style="background:#ff5f57"></div>
+          <div class="cv-demo-dot" style="background:#febc2e"></div>
+          <div class="cv-demo-dot" style="background:#28c840"></div>
+          <span class="cv-demo-title">CV-CAM-001 / CV-CAM-002 · Permission + Capture</span>
+        </div>
+        <div class="cv-demo-body">
+          <div class="cv-camera-viewfinder" data-camera-viewfinder>
+            <div class="cv-camera-corner tl"></div>
+            <div class="cv-camera-corner tr"></div>
+            <div class="cv-camera-corner bl"></div>
+            <div class="cv-camera-corner br"></div>
+            <div class="cv-camera-status">
+              <p data-camera-status>AWAITING PERMISSION</p>
+            </div>
+            <video style="display:none;width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" muted playsinline></video>
+          </div>
+          <button class="cv-btn cv-btn-primary" data-camera-btn>Request Camera</button>
+          <p style="font-size:11px;font-family:var(--cv-font-mono);color:var(--cv-text-dim);text-align:center;max-width:300px;">State machine: idle → requesting → streaming → captured → idle. On denial: idle → requesting → denied → idle.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+<script src="/chaos-vault/assets/cv.js"></script>
+</body>
+</html>

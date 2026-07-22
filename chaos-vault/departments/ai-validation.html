@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Validation — Chaos Vault Parts Department</title>
+  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
+  <style>
+    .cv-reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .cv-revealed { opacity: 1; transform: none; }
+  </style>
+</head>
+<body class="cv-body">
+<div class="cv-shell">
+  <header class="cv-topbar">
+    <a href="/chaos-vault/" class="cv-logo">
+      <div class="cv-logo-mark"></div>
+      <span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span>
+    </a>
+    <nav class="cv-topbar-nav"><a href="/chaos-vault/">Inventory</a><a href="/">Undone Studio</a></nav>
+  </header>
+  <nav class="cv-sidebar">
+    <div class="cv-sidebar-section">
+      <span class="cv-sidebar-label">Departments</span>
+      <a href="/chaos-vault/departments/camera.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Camera</a>
+      <a href="/chaos-vault/departments/vision-analysis.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Vision Analysis</a>
+      <a href="/chaos-vault/departments/recovery-patterns.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Recovery Patterns</a>
+      <a href="/chaos-vault/departments/ai-validation.html" class="cv-sidebar-link active"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>AI Validation</a>
+      <a href="/chaos-vault/departments/motion-primitives.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Motion Primitives</a>
+      <a href="/chaos-vault/departments/graph-visualization.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Graph Visualization</a>
+      <a href="/chaos-vault/departments/real-time-events.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Real-Time Events</a>
+      <a href="/chaos-vault/departments/notification-engine.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Notification Engine</a>
+    </div>
+  </nav>
+
+  <main class="cv-main">
+    <div class="cv-breadcrumb"><a href="/chaos-vault/">Inventory</a><span class="cv-breadcrumb-sep">/</span><span>AI Validation</span></div>
+
+    <div class="cv-page-header cv-reveal">
+      <span class="cv-dept-id">DEPT · CV-AIV · 3 PARTS</span>
+      <h1 class="cv-page-title"><strong>AI Validation</strong></h1>
+      <p class="cv-page-desc">A four-stage reliability sequence for AI-generated structured data: validate the schema, attempt repair if malformed, regenerate with a corrected prompt if repair fails, and guarantee a safe fallback if all else fails. No silent failures.</p>
+      <div class="cv-page-meta">
+        <span class="cv-badge cv-badge-reconstructed">1 Reconstructed</span>
+        <span class="cv-badge cv-badge-tested">2 Tested</span>
+      </div>
+    </div>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Provenance</span>
+      <div class="cv-provenance">
+        <span class="cv-provenance-label">Donor · Fridge Web</span>
+        <p>Fridge Web called an AI model to parse food item data from images and return structured JSON (name, category, freshness estimate). AI models frequently return malformed JSON, miss required fields, or hallucinate unexpected keys. Rather than crashing or silently returning partial data, the system implemented a layered reliability pipeline. The sequence — validate, repair, regenerate, guaranteed-fallback — is the portable, domain-neutral core of that approach.</p>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- CV-AIV-001: Full sequence -->
+    <section class="cv-section cv-reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+        <div>
+          <span class="cv-dept-id" style="margin-bottom:4px;">CV-AIV-001</span>
+          <h2 class="cv-section-title">Validate → Repair → Regenerate → Fallback</h2>
+        </div>
+        <span class="cv-badge cv-badge-reconstructed">Reconstructed</span>
+      </div>
+
+      <p style="font-size:15px;color:var(--cv-text-muted);line-height:1.7;margin-bottom:24px;">The complete four-stage sequence. Each stage only runs if the previous stage failed. The fallback stage always succeeds — it returns a known-safe object rather than an error.</p>
+
+      <table class="cv-meta-table">
+        <tr><td>Stage 1: Validate</td><td>Check the raw model output against the expected schema. If valid, return immediately — skip stages 2–4.</td></tr>
+        <tr><td>Stage 2: Repair</td><td>Attempt to coerce the malformed output into the expected shape (extract fields, parse embedded JSON, fill defaults).</td></tr>
+        <tr><td>Stage 3: Regenerate</td><td>Re-call the model with a stricter prompt that explicitly describes the schema and includes a correction instruction. Max 1 regeneration attempt.</td></tr>
+        <tr><td>Stage 4: Fallback</td><td>Return a hardcoded, guaranteed-valid safe object. The app continues. Log the failure for investigation.</td></tr>
+        <tr><td>Risk</td><td>Low. The sequence is purely defensive and does not alter the calling interface.</td></tr>
+      </table>
+
+      <div style="margin-top:24px;">
+        <span class="cv-code-label">SEQUENCE CONTRACT</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-AIV-001 · Validate → Repair → Regenerate → Fallback</span>
+
+<span class="cv-keyword">async function</span> <span class="cv-fn">reliableAICall</span>(prompt, schema, fallback) {
+  <span class="cv-comment">// Stage 1: Call + validate</span>
+  <span class="cv-keyword">const</span> raw = <span class="cv-keyword">await</span> <span class="cv-fn">callModel</span>(prompt)
+  <span class="cv-keyword">const</span> v1 = <span class="cv-fn">validate</span>(raw, schema)
+  <span class="cv-keyword">if</span> (v1.ok) <span class="cv-keyword">return</span> { data: v1.data, stage: <span class="cv-number">1</span> }
+
+  <span class="cv-comment">// Stage 2: Repair</span>
+  <span class="cv-keyword">const</span> repaired = <span class="cv-fn">attemptRepair</span>(raw, schema)
+  <span class="cv-keyword">if</span> (repaired.ok) <span class="cv-keyword">return</span> { data: repaired.data, stage: <span class="cv-number">2</span> }
+
+  <span class="cv-comment">// Stage 3: Regenerate (one attempt only)</span>
+  <span class="cv-keyword">try</span> {
+    <span class="cv-keyword">const</span> raw2 = <span class="cv-keyword">await</span> <span class="cv-fn">callModel</span>(<span class="cv-fn">strictenPrompt</span>(prompt, schema, v1.errors))
+    <span class="cv-keyword">const</span> v2 = <span class="cv-fn">validate</span>(raw2, schema)
+    <span class="cv-keyword">if</span> (v2.ok) <span class="cv-keyword">return</span> { data: v2.data, stage: <span class="cv-number">3</span> }
+  } <span class="cv-keyword">catch</span> { <span class="cv-comment">/* fall through */</span> }
+
+  <span class="cv-comment">// Stage 4: Guaranteed fallback — never throws</span>
+  <span class="cv-fn">logFailure</span>({ prompt, schema, stage: <span class="cv-number">4</span> })
+  <span class="cv-keyword">return</span> { data: fallback, stage: <span class="cv-number">4</span>, usedFallback: <span class="cv-keyword">true</span> }
+}</pre>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Interactive Demo — Step Through the Sequence</span>
+      <p style="font-size:14px;color:var(--cv-text-muted);margin-bottom:24px;">Simulates a call where Stages 1 and 2 fail, triggering regeneration, then fallback. Click "Next Stage" to advance.</p>
+
+      <div class="cv-demo-frame cv-demo-ai-states">
+        <div class="cv-demo-topbar">
+          <div class="cv-demo-dot" style="background:#ff5f57"></div>
+          <div class="cv-demo-dot" style="background:#febc2e"></div>
+          <div class="cv-demo-dot" style="background:#28c840"></div>
+          <span class="cv-demo-title">CV-AIV-001 · Reliability Sequence</span>
+        </div>
+        <div class="cv-demo-body" style="align-items:flex-start;padding:32px;gap:24px;">
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <button class="cv-btn cv-btn-primary" data-ai-next>Next Stage →</button>
+            <button class="cv-btn cv-btn-ghost" data-ai-reset>Reset</button>
+          </div>
+          <div style="display:flex;gap:32px;width:100%;flex-wrap:wrap;">
+            <div class="cv-state-machine" style="flex:1;min-width:180px;">
+              <div class="cv-sm-state" data-stage="0">
+                <div class="cv-sm-node"></div>
+                <div class="cv-sm-content">
+                  <div class="cv-sm-title">1. Validate</div>
+                  <div class="cv-sm-desc">Check raw output against schema</div>
+                </div>
+              </div>
+              <div class="cv-sm-state" data-stage="1">
+                <div class="cv-sm-node"></div>
+                <div class="cv-sm-content">
+                  <div class="cv-sm-title">2. Repair</div>
+                  <div class="cv-sm-desc">Coerce malformed fields</div>
+                </div>
+              </div>
+              <div class="cv-sm-state" data-stage="2">
+                <div class="cv-sm-node"></div>
+                <div class="cv-sm-content">
+                  <div class="cv-sm-title">3. Regenerate</div>
+                  <div class="cv-sm-desc">Re-call with stricter prompt</div>
+                </div>
+              </div>
+              <div class="cv-sm-state" data-stage="3">
+                <div class="cv-sm-node"></div>
+                <div class="cv-sm-content">
+                  <div class="cv-sm-title">4. Fallback</div>
+                  <div class="cv-sm-desc">Return guaranteed-safe object</div>
+                </div>
+              </div>
+            </div>
+            <div style="flex:1;min-width:220px;max-height:200px;overflow-y:auto;background:#000;border:1px solid var(--cv-border);border-radius:4px;padding:16px;" data-ai-log></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- CV-AIV-002 -->
+    <section class="cv-section cv-reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+        <div><span class="cv-dept-id" style="margin-bottom:4px;">CV-AIV-002</span><h2 class="cv-section-title">Schema Validator</h2></div>
+        <span class="cv-badge cv-badge-tested">Tested</span>
+      </div>
+      <p style="font-size:15px;color:var(--cv-text-muted);line-height:1.7;margin-bottom:24px;">A lightweight, zero-dependency runtime schema validator for AI response objects. No Zod, no Ajv — just a portable function that checks field presence, type, and optionally range.</p>
+      <table class="cv-meta-table">
+        <tr><td>Dependencies</td><td>None. Vanilla JS. &lt;40 lines.</td></tr>
+        <tr><td>Use cases</td><td>Stage 1 of CV-AIV-001. Also useful for any runtime type-checking of external data.</td></tr>
+        <tr><td>Limitations</td><td>Not a full JSON Schema validator — handles the common 80% case (required fields, type checks, enum membership). Complex nested schemas need Zod or AJV.</td></tr>
+      </table>
+      <div style="margin-top:20px;">
+        <span class="cv-code-label">VALIDATOR</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-AIV-002 · Schema Validator</span>
+
+<span class="cv-keyword">function</span> <span class="cv-fn">validate</span>(data, schema) {
+  <span class="cv-keyword">const</span> errors = []
+
+  <span class="cv-keyword">for</span> (<span class="cv-keyword">const</span> [key, rule] <span class="cv-keyword">of</span> Object.entries(schema)) {
+    <span class="cv-keyword">const</span> val = data?.[key]
+    <span class="cv-keyword">if</span> (rule.required && (val === <span class="cv-keyword">undefined</span> || val === <span class="cv-keyword">null</span>)) {
+      errors.push(`Missing required field: ${key}`)
+      <span class="cv-keyword">continue</span>
+    }
+    <span class="cv-keyword">if</span> (val !== <span class="cv-keyword">undefined</span> && rule.type && <span class="cv-keyword">typeof</span> val !== rule.type) {
+      errors.push(`Field ${key}: expected ${rule.type}, got ${<span class="cv-keyword">typeof</span> val}`)
+    }
+    <span class="cv-keyword">if</span> (rule.enum && !rule.enum.includes(val)) {
+      errors.push(`Field ${key}: "${val}" not in ${JSON.stringify(rule.enum)}`)
+    }
+  }
+
+  <span class="cv-keyword">return</span> errors.length === <span class="cv-number">0</span>
+    ? { ok: <span class="cv-keyword">true</span>, data }
+    : { ok: <span class="cv-keyword">false</span>, errors }
+}
+
+<span class="cv-comment">// Example schema</span>
+<span class="cv-keyword">const</span> itemSchema = {
+  name:     { required: <span class="cv-keyword">true</span>,  type: <span class="cv-string">'string'</span> },
+  category: { required: <span class="cv-keyword">true</span>,  type: <span class="cv-string">'string'</span>, enum: [<span class="cv-string">'produce'</span>, <span class="cv-string">'dairy'</span>, <span class="cv-string">'other'</span>] },
+  freshDays:{ required: <span class="cv-keyword">false</span>, type: <span class="cv-string">'number'</span> },
+}</pre>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- CV-AIV-003 -->
+    <section class="cv-section cv-reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+        <div><span class="cv-dept-id" style="margin-bottom:4px;">CV-AIV-003</span><h2 class="cv-section-title">Guaranteed Fallback Store</h2></div>
+        <span class="cv-badge cv-badge-tested">Tested</span>
+      </div>
+      <p style="font-size:15px;color:var(--cv-text-muted);line-height:1.7;margin-bottom:24px;">A static registry of per-schema fallback objects. Imported at build time — no async, no failure mode. When Stage 4 fires, the app never crashes.</p>
+      <table class="cv-meta-table">
+        <tr><td>Contract</td><td>Each entry in the store must satisfy the schema it corresponds to. Failing to maintain this parity silently defeats the purpose of the pattern.</td></tr>
+        <tr><td>Caution</td><td>Fallback objects are intentionally minimal — they communicate "we couldn't get data" rather than fabricating plausible values. Do not add fake data to fallbacks.</td></tr>
+      </table>
+      <div style="margin-top:20px;">
+        <span class="cv-code-label">FALLBACK STORE</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-AIV-003 · Guaranteed Fallback Store</span>
+
+<span class="cv-keyword">const</span> FALLBACKS = {
+  <span class="cv-comment">// Keys match schema IDs</span>
+  item: {
+    name:      <span class="cv-string">'Unknown item'</span>,   <span class="cv-comment">// honest, not fabricated</span>
+    category:  <span class="cv-string">'other'</span>,
+    freshDays: <span class="cv-keyword">null</span>,               <span class="cv-comment">// null = we don't know</span>
+    _fallback: <span class="cv-keyword">true</span>,               <span class="cv-comment">// flag for UI to show notice</span>
+  },
+  observation: {
+    observations: [],
+    model:        <span class="cv-string">'unavailable'</span>,
+    latency_ms:   <span class="cv-number">0</span>,
+    _fallback:    <span class="cv-keyword">true</span>,
+  }
+}
+
+<span class="cv-keyword">export function</span> <span class="cv-fn">getFallback</span>(schemaId) {
+  <span class="cv-keyword">return</span> structuredClone(FALLBACKS[schemaId] ?? { _fallback: <span class="cv-keyword">true</span> })
+}</pre>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="/chaos-vault/assets/cv.js"></script>
+</body>
+</html>

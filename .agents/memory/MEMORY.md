@@ -1,0 +1,1 @@
+- [Chaos Vault architecture](chaos-vault-architecture.md) — third isolated area at /chaos-vault/, .cv-* namespace, amber accent #f0c040, never mix with .studio-* or .std-*

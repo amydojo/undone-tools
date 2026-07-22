@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Motion Primitives — Chaos Vault Parts Department</title>
+  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
+  <style>
+    .cv-reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .cv-revealed { opacity: 1; transform: none; }
+
+    .cv-motion-tab {
+      font-size: 12px; font-family: var(--cv-font-mono); padding: 6px 14px;
+      border: 1px solid var(--cv-border); border-radius: 3px; background: none;
+      color: var(--cv-text-dim); cursor: pointer; transition: all 180ms ease;
+    }
+    .cv-motion-tab.active { border-color: var(--cv-accent); color: var(--cv-accent); background: var(--cv-accent-dim); }
+    .cv-motion-tab:hover:not(.active) { color: var(--cv-text-muted); border-color: var(--cv-border-mid); }
+
+    .cv-motion-panel {
+      display: none; flex-direction: column; align-items: center;
+      justify-content: center; gap: 32px; min-height: 180px; padding: 40px;
+    }
+    .cv-motion-panel.default-open { display: flex; }
+
+    /* Wipe-in reveal demo */
+    @keyframes cv-wipe-in {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .cv-demo-wipe-item {
+      font-size: 14px; color: var(--cv-text-muted); width: 100%; max-width: 340px;
+      padding: 12px 16px; background: var(--cv-surface-2); border: 1px solid var(--cv-border);
+      border-radius: 4px; animation: cv-wipe-in 0.5s var(--cv-ease) both;
+    }
+    .cv-demo-wipe-item:nth-child(2) { animation-delay: 0.12s; }
+    .cv-demo-wipe-item:nth-child(3) { animation-delay: 0.24s; }
+    .cv-demo-wipe-item:nth-child(4) { animation-delay: 0.36s; }
+
+    /* Skeleton pulse */
+    @keyframes cv-skel { 0%,100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+    .cv-skel-line {
+      height: 10px; border-radius: 3px; background: rgba(255,255,255,0.1);
+      animation: cv-skel 1.6s ease-in-out infinite;
+    }
+    .cv-skel-line:nth-child(2) { animation-delay: 0.2s; }
+    .cv-skel-line:nth-child(3) { animation-delay: 0.4s; }
+  </style>
+</head>
+<body class="cv-body">
+<div class="cv-shell">
+  <header class="cv-topbar">
+    <a href="/chaos-vault/" class="cv-logo">
+      <div class="cv-logo-mark"></div>
+      <span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span>
+    </a>
+    <nav class="cv-topbar-nav"><a href="/chaos-vault/">Inventory</a><a href="/">Undone Studio</a></nav>
+  </header>
+  <nav class="cv-sidebar">
+    <div class="cv-sidebar-section">
+      <span class="cv-sidebar-label">Departments</span>
+      <a href="/chaos-vault/departments/camera.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Camera</a>
+      <a href="/chaos-vault/departments/vision-analysis.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Vision Analysis</a>
+      <a href="/chaos-vault/departments/recovery-patterns.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Recovery Patterns</a>
+      <a href="/chaos-vault/departments/ai-validation.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>AI Validation</a>
+      <a href="/chaos-vault/departments/motion-primitives.html" class="cv-sidebar-link active"><span class="cv-sidebar-dot cv-dot-tested"></span>Motion Primitives</a>
+      <a href="/chaos-vault/departments/graph-visualization.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Graph Visualization</a>
+      <a href="/chaos-vault/departments/real-time-events.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Real-Time Events</a>
+      <a href="/chaos-vault/departments/notification-engine.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Notification Engine</a>
+    </div>
+  </nav>
+
+  <main class="cv-main">
+    <div class="cv-breadcrumb"><a href="/chaos-vault/">Inventory</a><span class="cv-breadcrumb-sep">/</span><span>Motion Primitives</span></div>
+
+    <div class="cv-page-header cv-reveal">
+      <span class="cv-dept-id">DEPT · CV-MOT · 4 PARTS</span>
+      <h1 class="cv-page-title"><strong>Motion Primitives</strong></h1>
+      <p class="cv-page-desc">Reusable loaders and microinteraction primitives from Let's Glo. Pure CSS — no JavaScript dependency. Drop in, compose freely, override via custom properties.</p>
+      <div class="cv-page-meta">
+        <span class="cv-badge cv-badge-tested">3 Tested</span>
+        <span class="cv-badge cv-badge-experimental">1 Experimental</span>
+      </div>
+    </div>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Provenance</span>
+      <div class="cv-provenance">
+        <span class="cv-provenance-label">Donor · Let's Glo</span>
+        <p>Let's Glo used several loading states between camera capture and AI response return. The loaders were all CSS-only, branded to the app's purple/glow aesthetic. The portable reconstruction here strips the domain branding and exposes them as a themeable primitive set. The "wellness microinteraction" origin means these are designed to feel calm and reassuring rather than urgent — which is a useful default for async AI workflows.</p>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- Parts -->
+    <section class="cv-section cv-reveal">
+      <div class="cv-parts-grid">
+        <div style="background:var(--cv-surface);border:1px solid var(--cv-border);border-radius:6px;padding:20px;">
+          <span class="cv-part-id">CV-MOT-001</span>
+          <div class="cv-part-name">Spinner Ring</div>
+          <div class="cv-part-desc">Indeterminate ring loader. Use for operations with unknown completion time.</div>
+          <span class="cv-badge cv-badge-tested" style="margin-top:10px;">Tested</span>
+        </div>
+        <div style="background:var(--cv-surface);border:1px solid var(--cv-border);border-radius:6px;padding:20px;">
+          <span class="cv-part-id">CV-MOT-002</span>
+          <div class="cv-part-name">Pulse Dot Trio</div>
+          <div class="cv-part-desc">Three staggered dots. Use for "thinking" / processing states. Calmer than a spinner.</div>
+          <span class="cv-badge cv-badge-tested" style="margin-top:10px;">Tested</span>
+        </div>
+        <div style="background:var(--cv-surface);border:1px solid var(--cv-border);border-radius:6px;padding:20px;">
+          <span class="cv-part-id">CV-MOT-003</span>
+          <div class="cv-part-name">Progress Bar</div>
+          <div class="cv-part-desc">Determinate horizontal fill. Use when completion percentage is knowable.</div>
+          <span class="cv-badge cv-badge-tested" style="margin-top:10px;">Tested</span>
+        </div>
+        <div style="background:var(--cv-surface);border:1px solid var(--cv-border);border-radius:6px;padding:20px;">
+          <span class="cv-part-id">CV-MOT-004</span>
+          <div class="cv-part-name">Fade-Up Reveal</div>
+          <div class="cv-part-desc">Staggered wipe-in for list items. Use when content arrives sequentially.</div>
+          <span class="cv-badge cv-badge-experimental" style="margin-top:10px;">Experimental</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live demo -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Live Demo</span>
+      <div class="cv-demo-frame cv-demo-motion">
+        <div class="cv-demo-topbar">
+          <div class="cv-demo-dot" style="background:#ff5f57"></div>
+          <div class="cv-demo-dot" style="background:#febc2e"></div>
+          <div class="cv-demo-dot" style="background:#28c840"></div>
+          <span class="cv-demo-title">CV-MOT · All Primitives</span>
+          <div style="margin-left:auto;display:flex;gap:6px;">
+            <button class="cv-motion-tab active" data-motion-tab="ring">Ring</button>
+            <button class="cv-motion-tab" data-motion-tab="dots">Dots</button>
+            <button class="cv-motion-tab" data-motion-tab="bar">Bar</button>
+            <button class="cv-motion-tab" data-motion-tab="wipe">Wipe</button>
+            <button class="cv-motion-tab" data-motion-tab="skeleton">Skeleton</button>
+          </div>
+        </div>
+
+        <!-- Ring -->
+        <div class="cv-motion-panel default-open" data-motion-panel="ring">
+          <div class="cv-loader-ring"></div>
+          <p style="font-family:var(--cv-font-mono);font-size:11px;color:var(--cv-text-dim);">CV-MOT-001 · Spinner Ring · Indeterminate</p>
+        </div>
+
+        <!-- Dots -->
+        <div class="cv-motion-panel" data-motion-panel="dots">
+          <div class="cv-loader-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <p style="font-family:var(--cv-font-mono);font-size:11px;color:var(--cv-text-dim);">CV-MOT-002 · Pulse Dot Trio · Staggered</p>
+        </div>
+
+        <!-- Bar -->
+        <div class="cv-motion-panel" data-motion-panel="bar">
+          <div style="width:280px;">
+            <div class="cv-progress-bar"><div class="cv-progress-fill" style="--target-w:73%;animation-duration:2s;"></div></div>
+            <p style="font-family:var(--cv-font-mono);font-size:11px;color:var(--cv-text-dim);margin-top:12px;text-align:center;">CV-MOT-003 · Progress Bar · 73%</p>
+          </div>
+        </div>
+
+        <!-- Wipe -->
+        <div class="cv-motion-panel" data-motion-panel="wipe">
+          <div class="cv-demo-wipe-item">Item resolved: Leafy greens</div>
+          <div class="cv-demo-wipe-item">Category: Produce</div>
+          <div class="cv-demo-wipe-item">Freshness window: 3 days</div>
+          <div class="cv-demo-wipe-item">Storage: Crisper drawer</div>
+          <p style="font-family:var(--cv-font-mono);font-size:11px;color:var(--cv-text-dim);">CV-MOT-004 · Fade-Up · Staggered list reveal</p>
+        </div>
+
+        <!-- Skeleton -->
+        <div class="cv-motion-panel" data-motion-panel="skeleton">
+          <div style="width:280px;display:flex;flex-direction:column;gap:10px;">
+            <div class="cv-skel-line" style="width:60%"></div>
+            <div class="cv-skel-line" style="width:100%"></div>
+            <div class="cv-skel-line" style="width:80%"></div>
+          </div>
+          <p style="font-family:var(--cv-font-mono);font-size:11px;color:var(--cv-text-dim);">Skeleton pulse · Loading placeholder</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CSS reference -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Implementation — Copy-Paste CSS</span>
+      <pre class="cv-code"><span class="cv-comment">/* CV-MOT-001 · Spinner Ring */</span>
+<span class="cv-type">.loader-ring</span> {
+  width: <span class="cv-number">32</span>px; height: <span class="cv-number">32</span>px;
+  border: <span class="cv-number">2</span>px solid rgba(<span class="cv-number">255</span>,<span class="cv-number">255</span>,<span class="cv-number">255</span>,<span class="cv-number">0.1</span>);
+  border-top-color: currentColor;
+  border-radius: <span class="cv-number">50</span>%;
+  animation: spin <span class="cv-number">0.8</span>s linear infinite;
+}
+<span class="cv-keyword">@keyframes</span> spin { to { transform: rotate(<span class="cv-number">360</span>deg); } }
+
+<span class="cv-comment">/* CV-MOT-002 · Pulse Dot Trio */</span>
+<span class="cv-type">.loader-dots span</span> {
+  display: inline-block; width: <span class="cv-number">6</span>px; height: <span class="cv-number">6</span>px;
+  border-radius: <span class="cv-number">50</span>%; background: currentColor;
+  animation: pulse <span class="cv-number">1.2</span>s ease-in-out infinite;
+}
+<span class="cv-type">.loader-dots span:nth-child(2)</span> { animation-delay: <span class="cv-number">0.2</span>s; }
+<span class="cv-type">.loader-dots span:nth-child(3)</span> { animation-delay: <span class="cv-number">0.4</span>s; }
+<span class="cv-keyword">@keyframes</span> pulse { <span class="cv-number">0</span>%,<span class="cv-number">100</span>% { opacity: <span class="cv-number">0.3</span>; transform: scale(<span class="cv-number">0.95</span>); } <span class="cv-number">50</span>% { opacity: <span class="cv-number">1</span>; transform: scale(<span class="cv-number">1.05</span>); } }
+
+<span class="cv-comment">/* CV-MOT-003 · Progress Bar */</span>
+<span class="cv-type">.progress-track</span> { height: <span class="cv-number">3</span>px; background: rgba(<span class="cv-number">255</span>,<span class="cv-number">255</span>,<span class="cv-number">255</span>,<span class="cv-number">0.06</span>); border-radius: <span class="cv-number">2</span>px; }
+<span class="cv-type">.progress-fill</span>  { height: <span class="cv-number">100</span>%; background: currentColor; border-radius: <span class="cv-number">2</span>px; transition: width <span class="cv-number">0.4</span>s ease; }</pre>
+    </section>
+  </main>
+</div>
+<script src="/chaos-vault/assets/cv.js"></script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Graph Visualization — Chaos Vault Parts Department</title>
+  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
+  <style>
+    .cv-reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .cv-revealed { opacity: 1; transform: none; }
+    .cv-layer-toggle {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 12px;
+      font-family: var(--cv-font-mono); cursor: pointer; color: var(--cv-text-muted);
+      padding: 6px 12px; border: 1px solid var(--cv-border); border-radius: 3px;
+      background: none; transition: all 180ms ease;
+    }
+    .cv-layer-toggle.on { color: var(--cv-text); border-color: var(--cv-border-mid); background: var(--cv-surface-2); }
+    .cv-layer-toggle .swatch { width: 8px; height: 8px; border-radius: 50%; flex-shrink:0; }
+  </style>
+</head>
+<body class="cv-body">
+<div class="cv-shell">
+  <header class="cv-topbar">
+    <a href="/chaos-vault/" class="cv-logo">
+      <div class="cv-logo-mark"></div>
+      <span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span>
+    </a>
+    <nav class="cv-topbar-nav"><a href="/chaos-vault/">Inventory</a><a href="/">Undone Studio</a></nav>
+  </header>
+  <nav class="cv-sidebar">
+    <div class="cv-sidebar-section">
+      <span class="cv-sidebar-label">Departments</span>
+      <a href="/chaos-vault/departments/camera.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Camera</a>
+      <a href="/chaos-vault/departments/vision-analysis.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Vision Analysis</a>
+      <a href="/chaos-vault/departments/recovery-patterns.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Recovery Patterns</a>
+      <a href="/chaos-vault/departments/ai-validation.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>AI Validation</a>
+      <a href="/chaos-vault/departments/motion-primitives.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Motion Primitives</a>
+      <a href="/chaos-vault/departments/graph-visualization.html" class="cv-sidebar-link active"><span class="cv-sidebar-dot cv-dot-experimental"></span>Graph Visualization</a>
+      <a href="/chaos-vault/departments/real-time-events.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Real-Time Events</a>
+      <a href="/chaos-vault/departments/notification-engine.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Notification Engine</a>
+    </div>
+  </nav>
+
+  <main class="cv-main">
+    <div class="cv-breadcrumb"><a href="/chaos-vault/">Inventory</a><span class="cv-breadcrumb-sep">/</span><span>Graph Visualization</span></div>
+
+    <div class="cv-page-header cv-reveal">
+      <span class="cv-dept-id">DEPT · CV-GRA · 3 PARTS</span>
+      <h1 class="cv-page-title"><strong>Graph Visualization</strong></h1>
+      <p class="cv-page-desc">A three-layer composable graph model for knowledge and activity data. Layers can be toggled independently: a chronology spine, same-type clusters, and semantic idea→action→insight chains.</p>
+      <div class="cv-page-meta">
+        <span class="cv-badge cv-badge-experimental">3 Experimental</span>
+      </div>
+    </div>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Provenance</span>
+      <div class="cv-provenance">
+        <span class="cv-provenance-label">Donor · Living Tapestry</span>
+        <p>Living Tapestry was a personal knowledge and activity tracker that visualized journal entries, tasks, and reflections as an interconnected graph. The key insight was that three distinct relationship types (when things happened, what type they were, and how they related semantically) could be layered onto the same set of nodes without conflating the different lenses. Each layer answers a different question: the chronology layer answers "when?", clusters answer "how many of this type?", and semantic chains answer "what led to what?"</p>
+      </div>
+    </section>
+
+    <div class="cv-caution cv-reveal">
+      <span class="cv-caution-icon">⚠</span>
+      <div class="cv-caution-text">
+        <strong>Experimental — No Production Deployment</strong>
+        This reconstruction is based on the observed model, not a tested implementation. The Canvas rendering demo below is a simplified proof-of-concept. A production graph would require a proper layout algorithm (force-directed, hierarchical, or radial) and interactive hit-testing. D3.js or Sigma.js are natural fits for extending this.
+      </div>
+    </div>
+
+    <div class="cv-divider"></div>
+
+    <!-- Model description -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">The Three-Layer Model</span>
+
+      <div class="cv-steps">
+        <div class="cv-step">
+          <div class="cv-step-num">1</div>
+          <div class="cv-step-content">
+            <div class="cv-step-title" style="color:var(--cv-experimental);">Chronology Spine — CV-GRA-001</div>
+            <div class="cv-step-desc">A linear timeline of all nodes ordered by creation date. Edges connect temporally adjacent events. This layer answers "what happened in sequence?" and is the structural backbone the other layers attach to.</div>
+          </div>
+          <span class="cv-badge cv-badge-experimental cv-step-badge">Experimental</span>
+        </div>
+        <div class="cv-step">
+          <div class="cv-step-num">2</div>
+          <div class="cv-step-content">
+            <div class="cv-step-title" style="color:var(--cv-tested);">Same-Type Clusters — CV-GRA-002</div>
+            <div class="cv-step-desc">Groups of nodes sharing a type (Idea, Action, Insight, Reflection) are drawn as weighted clusters. The cluster radius scales with the node count. This layer answers "where is attention concentrated?"</div>
+          </div>
+          <span class="cv-badge cv-badge-experimental cv-step-badge">Experimental</span>
+        </div>
+        <div class="cv-step">
+          <div class="cv-step-num">3</div>
+          <div class="cv-step-content">
+            <div class="cv-step-title" style="color:var(--cv-reconstructed);">Semantic Chain — CV-GRA-003</div>
+            <div class="cv-step-desc">Directed edges expressing Idea→Action, Action→Insight, and Insight→Idea relationships. This layer answers "what caused what?" and is the most application-specific of the three — the edge types must be defined by the caller.</div>
+          </div>
+          <span class="cv-badge cv-badge-experimental cv-step-badge">Experimental</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live demo -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Live Demo — Toggle Layers</span>
+      <p style="font-size:14px;color:var(--cv-text-muted);margin-bottom:20px;">Toggle each layer independently. The canvas re-renders to show only the active layers.</p>
+
+      <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;">
+        <button class="cv-layer-toggle on" data-layer="chronology" id="tog-1">
+          <span class="swatch" style="background:var(--cv-experimental)"></span>Layer 1: Chronology
+        </button>
+        <button class="cv-layer-toggle on" data-layer="clusters" id="tog-2">
+          <span class="swatch" style="background:var(--cv-tested)"></span>Layer 2: Clusters
+        </button>
+        <button class="cv-layer-toggle on" data-layer="semantic" id="tog-3">
+          <span class="swatch" style="background:var(--cv-reconstructed)"></span>Layer 3: Semantic
+        </button>
+      </div>
+
+      <div class="cv-demo-frame">
+        <div class="cv-demo-topbar">
+          <div class="cv-demo-dot" style="background:#ff5f57"></div>
+          <div class="cv-demo-dot" style="background:#febc2e"></div>
+          <div class="cv-demo-dot" style="background:#28c840"></div>
+          <span class="cv-demo-title">CV-GRA · Three-Layer Graph Model</span>
+        </div>
+        <div style="padding:0;">
+          <canvas class="cv-graph-canvas" id="graphCanvas"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data model -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Data Model</span>
+      <pre class="cv-code"><span class="cv-comment">// CV-GRA · Node and Edge Schema</span>
+
+<span class="cv-type">Node</span> {
+  id:        <span class="cv-type">string</span>
+  type:      <span class="cv-string">'idea'</span> | <span class="cv-string">'action'</span> | <span class="cv-string">'insight'</span> | <span class="cv-string">'reflection'</span>
+  label:     <span class="cv-type">string</span>
+  createdAt: <span class="cv-type">Date</span>          <span class="cv-comment">// used by Layer 1 (chronology)</span>
+  cluster?:  <span class="cv-type">string</span>        <span class="cv-comment">// used by Layer 2 (cluster ID)</span>
+}
+
+<span class="cv-type">Edge</span> {
+  from:  <span class="cv-type">string</span>            <span class="cv-comment">// Node ID</span>
+  to:    <span class="cv-type">string</span>            <span class="cv-comment">// Node ID</span>
+  layer: <span class="cv-string">'chronology'</span> | <span class="cv-string">'cluster'</span> | <span class="cv-string">'semantic'</span>
+  rel?:  <span class="cv-string">'idea_to_action'</span> | <span class="cv-string">'action_to_insight'</span> | <span class="cv-string">'insight_to_idea'</span>
+}
+
+<span class="cv-comment">// Renderer receives { nodes, edges, activeLayers }</span>
+<span class="cv-comment">// and draws only edges matching active layers</span></pre>
+    </section>
+  </main>
+</div>
+<script src="/chaos-vault/assets/cv.js"></script>
+<script>
+  // Layer toggle wiring — specific to this page, not in cv.js
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.cv-layer-toggle');
+    const activeLayers = new Set(['chronology', 'clusters', 'semantic']);
+
+    toggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const layer = btn.dataset.layer;
+        if (activeLayers.has(layer)) { activeLayers.delete(layer); btn.classList.remove('on'); }
+        else { activeLayers.add(layer); btn.classList.add('on'); }
+        drawGraph(activeLayers);
+      });
+    });
+
+    function drawGraph(active) {
+      const canvas = document.getElementById('graphCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.offsetWidth || 800;
+      const H = 340;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.scale(dpr, dpr);
+
+      const nodes = [
+        { id:'e1',x:70, y:55, layer:'chronology',label:'Idea A',  color:'#f0c040',r:7 },
+        { id:'e2',x:180,y:55, layer:'chronology',label:'Action B',color:'#f0c040',r:7 },
+        { id:'e3',x:290,y:55, layer:'chronology',label:'Insight C',color:'#f0c040',r:7},
+        { id:'e4',x:400,y:55, layer:'chronology',label:'Idea D',  color:'#f0c040',r:7 },
+        { id:'e5',x:510,y:55, layer:'chronology',label:'Action E',color:'#f0c040',r:7 },
+        { id:'c1',x:100,y:180,layer:'clusters',  label:'Ideas ×3', color:'#60c8ff',r:14},
+        { id:'c2',x:280,y:180,layer:'clusters',  label:'Actions ×4',color:'#60c8ff',r:16},
+        { id:'c3',x:460,y:180,layer:'clusters',  label:'Insights ×2',color:'#60c8ff',r:11},
+        { id:'s1',x:130,y:290,layer:'semantic',  label:'I→A',     color:'#4fffb0',r:8 },
+        { id:'s2',x:300,y:290,layer:'semantic',  label:'A→Ins',   color:'#4fffb0',r:8 },
+        { id:'s3',x:450,y:290,layer:'semantic',  label:'Ins→I',   color:'#4fffb0',r:8 },
+      ];
+
+      const edges = [
+        {a:'e1',b:'e2',layer:'chronology'},{a:'e2',b:'e3',layer:'chronology'},
+        {a:'e3',b:'e4',layer:'chronology'},{a:'e4',b:'e5',layer:'chronology'},
+        {a:'e1',b:'c1',layer:'clusters'}, {a:'e2',b:'c2',layer:'clusters'},
+        {a:'e4',b:'c1',layer:'clusters'}, {a:'e5',b:'c2',layer:'clusters'},
+        {a:'e3',b:'c3',layer:'clusters'},
+        {a:'c1',b:'s1',layer:'semantic'}, {a:'c2',b:'s1',layer:'semantic'},
+        {a:'c2',b:'s2',layer:'semantic'}, {a:'c3',b:'s2',layer:'semantic'},
+        {a:'c3',b:'s3',layer:'semantic'}, {a:'s3',b:'c1',layer:'semantic'},
+      ];
+
+      const layerMap = { chronology:'chronology', clusters:'clusters', semantic:'semantic' };
+      ctx.clearRect(0,0,W,H);
+
+      // Layer strip labels
+      [['LAYER 1 — CHRONOLOGY',35],['LAYER 2 — CLUSTERS',160],['LAYER 3 — SEMANTIC',272]].forEach(([lbl,y]) => {
+        ctx.font = '9px monospace'; ctx.fillStyle = 'rgba(255,255,255,0.1)';
+        ctx.fillText(lbl, 8, y);
+      });
+      [70,165,275].forEach(y => {
+        ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y);
+        ctx.strokeStyle='rgba(255,255,255,0.03)'; ctx.lineWidth=1; ctx.stroke();
+      });
+
+      edges.forEach(e => {
+        if (!active.has(e.layer)) return;
+        const a = nodes.find(n=>n.id===e.a), b = nodes.find(n=>n.id===e.b);
+        if (!a||!b) return;
+        ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle='rgba(255,255,255,0.07)'; ctx.lineWidth=1; ctx.stroke();
+      });
+
+      nodes.forEach(n => {
+        const visible = active.has(n.layer);
+        ctx.globalAlpha = visible ? 0.9 : 0.12;
+        ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+        ctx.fillStyle = n.color; ctx.fill();
+        ctx.globalAlpha = visible ? 0.55 : 0.08;
+        ctx.font = '10px system-ui,sans-serif'; ctx.fillStyle='rgba(255,255,255,0.8)';
+        ctx.fillText(n.label, n.x+n.r+4, n.y+4);
+        ctx.globalAlpha = 1;
+      });
+    }
+
+    drawGraph(activeLayers);
+  });
+</script>
+</body>
+</html>

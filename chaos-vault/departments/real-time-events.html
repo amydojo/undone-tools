@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Real-Time Events — Chaos Vault Parts Department</title>
+  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
+  <style>
+    .cv-reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .cv-revealed { opacity: 1; transform: none; }
+    .cv-conn-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--cv-quarantined); transition: background 0.3s ease;
+      flex-shrink: 0;
+    }
+    .cv-conn-dot.connected { background: var(--cv-reconstructed); }
+    .cv-conn-dot.reconnecting { background: var(--cv-experimental); animation: cv-pulse-glow 0.8s ease-in-out infinite; }
+  </style>
+</head>
+<body class="cv-body">
+<div class="cv-shell">
+  <header class="cv-topbar">
+    <a href="/chaos-vault/" class="cv-logo">
+      <div class="cv-logo-mark"></div>
+      <span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span>
+    </a>
+    <nav class="cv-topbar-nav"><a href="/chaos-vault/">Inventory</a><a href="/">Undone Studio</a></nav>
+  </header>
+  <nav class="cv-sidebar">
+    <div class="cv-sidebar-section">
+      <span class="cv-sidebar-label">Departments</span>
+      <a href="/chaos-vault/departments/camera.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Camera</a>
+      <a href="/chaos-vault/departments/vision-analysis.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Vision Analysis</a>
+      <a href="/chaos-vault/departments/recovery-patterns.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Recovery Patterns</a>
+      <a href="/chaos-vault/departments/ai-validation.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>AI Validation</a>
+      <a href="/chaos-vault/departments/motion-primitives.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Motion Primitives</a>
+      <a href="/chaos-vault/departments/graph-visualization.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Graph Visualization</a>
+      <a href="/chaos-vault/departments/real-time-events.html" class="cv-sidebar-link active"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Real-Time Events</a>
+      <a href="/chaos-vault/departments/notification-engine.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Notification Engine</a>
+    </div>
+  </nav>
+
+  <main class="cv-main">
+    <div class="cv-breadcrumb"><a href="/chaos-vault/">Inventory</a><span class="cv-breadcrumb-sep">/</span><span>Real-Time Events</span></div>
+
+    <div class="cv-page-header cv-reveal">
+      <span class="cv-dept-id">DEPT · CV-RTE · 2 PARTS</span>
+      <h1 class="cv-page-title"><strong>Real-Time Events</strong></h1>
+      <p class="cv-page-desc">A typed event taxonomy and a reconnecting client pattern for persistent event streams. Derived from Jellycat Tracker's SSE architecture — portable to any server-sent or WebSocket event source.</p>
+      <div class="cv-page-meta">
+        <span class="cv-badge cv-badge-reconstructed">2 Reconstructed</span>
+      </div>
+    </div>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Provenance</span>
+      <div class="cv-provenance">
+        <span class="cv-provenance-label">Donor · Jellycat Tracker</span>
+        <p>Jellycat Tracker tracked real-time stock changes, price updates, and wishlist events across multiple Jellycat product listings. The backend pushed events via Server-Sent Events (SSE); the client needed to remain connected across page focus changes, network interruptions, and server restarts. The typed event taxonomy ensured that each event type could be handled independently without a fragile if/else chain. The reconnecting client is the portable behavioral contract — the specific Jellycat event types are replaced here with generic examples.</p>
+      </div>
+    </section>
+
+    <div class="cv-caution cv-reveal">
+      <span class="cv-caution-icon">⚠</span>
+      <div class="cv-caution-text">
+        <strong>Domain Events Replaced</strong>
+        The original taxonomy was specific to Jellycat product tracking. The event type names used here are generic analogs. The retailer scraping bypass logic that populated some events is quarantined (DATA-002) and not reproduced.
+      </div>
+    </div>
+
+    <div class="cv-divider"></div>
+
+    <!-- CV-RTE-001 -->
+    <section class="cv-section cv-reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+        <div><span class="cv-dept-id" style="margin-bottom:4px;">CV-RTE-001</span><h2 class="cv-section-title">Typed Event Taxonomy</h2></div>
+        <span class="cv-badge cv-badge-reconstructed">Reconstructed</span>
+      </div>
+
+      <p style="font-size:15px;color:var(--cv-text-muted);line-height:1.7;margin-bottom:24px;">A discriminated union of event types, each with a typed payload. Handlers register per-type — no switch statements, no shared payload shape assumptions.</p>
+
+      <table class="cv-meta-table">
+        <tr><td>Pattern</td><td>Discriminated union (TypeScript) or tagged object (plain JS). Each event has a <code style="font-family:var(--cv-font-mono);font-size:12px;background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:2px;">type</code> string and a narrowed <code style="font-family:var(--cv-font-mono);font-size:12px;background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:2px;">payload</code>.</td></tr>
+        <tr><td>Extension</td><td>Add new event types by extending the union — existing handlers are unaffected.</td></tr>
+        <tr><td>Risk</td><td>Low. The pattern is domain-neutral. Payload shapes are application-defined.</td></tr>
+      </table>
+
+      <div style="margin-top:20px;">
+        <span class="cv-code-label">TAXONOMY DEFINITION</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-RTE-001 · Typed Event Taxonomy (TypeScript)</span>
+
+<span class="cv-comment">// Define all event types as a discriminated union</span>
+<span class="cv-keyword">type</span> <span class="cv-type">AppEvent</span> =
+  | { type: <span class="cv-string">'collection:item_added'</span>;    payload: { id: <span class="cv-type">string</span>; label: <span class="cv-type">string</span> } }
+  | { type: <span class="cv-string">'collection:item_removed'</span>;  payload: { id: <span class="cv-type">string</span> } }
+  | { type: <span class="cv-string">'collection:price_updated'</span>; payload: { id: <span class="cv-type">string</span>; price: <span class="cv-type">number</span> } }
+  | { type: <span class="cv-string">'user:session_started'</span>;    payload: { deviceId: <span class="cv-type">string</span> } }
+  | { type: <span class="cv-string">'system:heartbeat'</span>;        payload: { uptime: <span class="cv-type">number</span> } }
+
+<span class="cv-comment">// Handler registry — register once, fire many times</span>
+<span class="cv-keyword">const</span> handlers = <span class="cv-keyword">new</span> <span class="cv-type">Map</span>&lt;<span class="cv-type">string</span>, <span class="cv-type">Function</span>&gt;()
+
+<span class="cv-keyword">function</span> <span class="cv-fn">on</span>&lt;<span class="cv-type">T</span> <span class="cv-keyword">extends</span> <span class="cv-type">AppEvent</span>[<span class="cv-string">'type'</span>]&gt;(
+  type: <span class="cv-type">T</span>,
+  handler: (payload: <span class="cv-type">Extract</span>&lt;<span class="cv-type">AppEvent</span>, { type: <span class="cv-type">T</span> }&gt;[<span class="cv-string">'payload'</span>]) => <span class="cv-keyword">void</span>
+) { handlers.set(type, handler) }
+
+<span class="cv-keyword">function</span> <span class="cv-fn">dispatch</span>(event: <span class="cv-type">AppEvent</span>) {
+  handlers.get(event.type)?.(event.payload)
+}
+
+<span class="cv-comment">// Usage</span>
+<span class="cv-fn">on</span>(<span class="cv-string">'collection:item_added'</span>, ({ id, label }) => {
+  console.log(<span class="cv-string">`New item: ${label} (${id})`</span>)
+})</pre>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- CV-RTE-002 -->
+    <section class="cv-section cv-reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+        <div><span class="cv-dept-id" style="margin-bottom:4px;">CV-RTE-002</span><h2 class="cv-section-title">Reconnecting Client</h2></div>
+        <span class="cv-badge cv-badge-reconstructed">Reconstructed</span>
+      </div>
+
+      <p style="font-size:15px;color:var(--cv-text-muted);line-height:1.7;margin-bottom:24px;">A thin wrapper around EventSource (SSE) that handles reconnection with exponential backoff, page visibility pausing, and a clean disconnect API. Keeps the application layer unaware of connection state mechanics.</p>
+
+      <table class="cv-meta-table">
+        <tr><td>Backoff</td><td>1s → 2s → 4s → 8s → 16s → max 30s. Reset on successful message receipt.</td></tr>
+        <tr><td>Visibility</td><td>Pauses reconnection attempts when <code style="font-family:var(--cv-font-mono);font-size:12px;background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:2px;">document.visibilityState === 'hidden'</code>. Reconnects immediately on focus return.</td></tr>
+        <tr><td>Risk</td><td>Low. EventSource is well-supported. The reconnect logic is additive — it doesn't interfere with native SSE retry.</td></tr>
+      </table>
+
+      <div style="margin-top:20px;">
+        <span class="cv-code-label">RECONNECTING CLIENT</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-RTE-002 · Reconnecting SSE Client</span>
+
+<span class="cv-keyword">function</span> <span class="cv-fn">createReconnectingClient</span>(url, onEvent) {
+  <span class="cv-keyword">let</span> source, attempts = <span class="cv-number">0</span>, timer, paused = <span class="cv-keyword">false</span>
+  <span class="cv-keyword">const</span> DELAYS = [<span class="cv-number">1000</span>, <span class="cv-number">2000</span>, <span class="cv-number">4000</span>, <span class="cv-number">8000</span>, <span class="cv-number">16000</span>, <span class="cv-number">30000</span>]
+
+  <span class="cv-keyword">function</span> <span class="cv-fn">connect</span>() {
+    <span class="cv-keyword">if</span> (paused) <span class="cv-keyword">return</span>
+    source = <span class="cv-keyword">new</span> <span class="cv-type">EventSource</span>(url)
+
+    source.onmessage = e => {
+      attempts = <span class="cv-number">0</span>                        <span class="cv-comment">// reset backoff on success</span>
+      <span class="cv-keyword">try</span> { onEvent(JSON.parse(e.data)) }
+      <span class="cv-keyword">catch</span> { <span class="cv-comment">/* malformed JSON — skip silently */</span> }
+    }
+
+    source.onerror = () => {
+      source.close()
+      <span class="cv-keyword">const</span> delay = DELAYS[Math.min(attempts++, DELAYS.length - <span class="cv-number">1</span>)]
+      timer = setTimeout(connect, delay)
+    }
+  }
+
+  <span class="cv-comment">// Pause when tab is hidden</span>
+  document.addEventListener(<span class="cv-string">'visibilitychange'</span>, () => {
+    paused = document.hidden
+    <span class="cv-keyword">if</span> (!paused && !source?.readyState) connect()
+  })
+
+  connect()
+
+  <span class="cv-keyword">return</span> {
+    disconnect: () => { source?.close(); clearTimeout(timer) }
+  }
+}</pre>
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Live Demo — Simulated Event Stream</span>
+      <p style="font-size:14px;color:var(--cv-text-muted);margin-bottom:24px;">Simulates an event stream using setInterval. No real server connection. Toggle Start/Stop to simulate connect and disconnect states.</p>
+
+      <div class="cv-demo-frame cv-demo-events">
+        <div class="cv-demo-topbar">
+          <div class="cv-demo-dot" style="background:#ff5f57"></div>
+          <div class="cv-demo-dot" style="background:#febc2e"></div>
+          <div class="cv-demo-dot" style="background:#28c840"></div>
+          <span class="cv-demo-title">CV-RTE-002 · Live Event Stream</span>
+          <div style="margin-left:auto;display:flex;align-items:center;gap:8px;">
+            <span class="cv-conn-dot" data-event-status title="Disconnected"></span>
+            <span style="font-family:var(--cv-font-mono);font-size:10px;color:var(--cv-text-dim);">CONNECTION</span>
+          </div>
+        </div>
+        <div style="padding:24px;display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:8px;">
+            <button class="cv-btn cv-btn-primary" data-event-start>▶ Connect</button>
+            <button class="cv-btn cv-btn-ghost" data-event-stop>■ Disconnect</button>
+          </div>
+          <div class="cv-event-stream" data-event-stream></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+<script src="/chaos-vault/assets/cv.js"></script>
+</body>
+</html>

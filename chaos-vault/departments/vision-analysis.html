@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vision Analysis — Chaos Vault Parts Department</title>
+  <link rel="stylesheet" href="/chaos-vault/assets/cv.css" />
+  <style>
+    .cv-reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .cv-revealed { opacity: 1; transform: none; }
+  </style>
+</head>
+<body class="cv-body">
+<div class="cv-shell">
+
+  <header class="cv-topbar">
+    <a href="/chaos-vault/" class="cv-logo">
+      <div class="cv-logo-mark"></div>
+      <span class="cv-logo-name"><strong>Chaos Vault</strong> Parts Department</span>
+    </a>
+    <nav class="cv-topbar-nav">
+      <a href="/chaos-vault/">Inventory</a>
+      <a href="/">Undone Studio</a>
+    </nav>
+  </header>
+
+  <nav class="cv-sidebar">
+    <div class="cv-sidebar-section">
+      <span class="cv-sidebar-label">Departments</span>
+      <a href="/chaos-vault/departments/camera.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Camera</a>
+      <a href="/chaos-vault/departments/vision-analysis.html" class="cv-sidebar-link active"><span class="cv-sidebar-dot cv-dot-experimental"></span>Vision Analysis</a>
+      <a href="/chaos-vault/departments/recovery-patterns.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Recovery Patterns</a>
+      <a href="/chaos-vault/departments/ai-validation.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>AI Validation</a>
+      <a href="/chaos-vault/departments/motion-primitives.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Motion Primitives</a>
+      <a href="/chaos-vault/departments/graph-visualization.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-experimental"></span>Graph Visualization</a>
+      <a href="/chaos-vault/departments/real-time-events.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-reconstructed"></span>Real-Time Events</a>
+      <a href="/chaos-vault/departments/notification-engine.html" class="cv-sidebar-link"><span class="cv-sidebar-dot cv-dot-tested"></span>Notification Engine</a>
+    </div>
+  </nav>
+
+  <main class="cv-main">
+
+    <div class="cv-breadcrumb">
+      <a href="/chaos-vault/">Inventory</a>
+      <span class="cv-breadcrumb-sep">/</span>
+      <span>Vision Analysis</span>
+    </div>
+
+    <div class="cv-page-header cv-reveal">
+      <span class="cv-dept-id">DEPT · CV-VIS · 2 PARTS (1 QUARANTINED)</span>
+      <h1 class="cv-page-title"><strong>Vision Analysis</strong></h1>
+      <p class="cv-page-desc">A cautious server-side image observation contract. Defines what the route sends, what the vision model returns, and what the caller is allowed to infer. Does not invent diagnostic scores.</p>
+      <div class="cv-page-meta">
+        <span class="cv-badge cv-badge-reconstructed">1 Reconstructed</span>
+        <span class="cv-badge cv-badge-experimental">1 Experimental</span>
+        <span class="cv-badge cv-badge-quarantined">1 Quarantined</span>
+      </div>
+    </div>
+
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Provenance</span>
+      <div class="cv-provenance">
+        <span class="cv-provenance-label">Donor · Let's Glo (vision route)</span>
+        <p>The original vision route accepted a JPEG blob, forwarded it to a multimodal model (GPT-4o or Claude), and returned structured observations. The portable part is the request/response contract: what gets sent, what the model is asked to do, and how the response is parsed and validated. The Smooth MD "skin health score" layer — which assigned invented numeric ratings to skin attributes — is excluded and quarantined. No diagnostic interpretation logic is reproduced here.</p>
+      </div>
+    </section>
+
+    <div class="cv-caution cv-reveal">
+      <span class="cv-caution-icon">⚠</span>
+      <div class="cv-caution-text">
+        <strong>Domain Specificity Warning</strong>
+        The original route was designed for skin analysis for a specific clinic software product. The general contract shape here is portable — but any deployment must define its own prompt, its own schema, and its own interpretation rules. Do not reuse the original prompt verbatim. It encodes Smooth MD assumptions.
+      </div>
+    </div>
+
+    <div class="cv-divider"></div>
+
+    <!-- CV-VIS-001 -->
+    <section class="cv-section cv-reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+        <div>
+          <span class="cv-dept-id" style="margin-bottom:4px;">CV-VIS-001</span>
+          <h2 class="cv-section-title">Server-Side Observation Contract</h2>
+        </div>
+        <span class="cv-badge cv-badge-reconstructed">Reconstructed</span>
+      </div>
+
+      <table class="cv-meta-table">
+        <tr><td>Use cases</td><td>Any route that accepts an image and returns structured observations without making clinical or diagnostic claims.</td></tr>
+        <tr><td>Dependencies</td><td>Any multimodal LLM with vision input (OpenAI, Anthropic, Google). Prompts are project-specific and not included.</td></tr>
+        <tr><td>Caution</td><td>The model returns natural language. The contract defines a JSON envelope — not a scoring system. Do not add numeric scores without a validated methodology.</td></tr>
+      </table>
+
+      <div style="margin-top:24px;">
+        <span class="cv-code-label">REQUEST CONTRACT</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-VIS-001 · Observation Contract · Request shape</span>
+<span class="cv-comment">// POST /api/vision/observe</span>
+<span class="cv-comment">// Content-Type: multipart/form-data</span>
+
+<span class="cv-type">Request</span> {
+  image: <span class="cv-type">Blob</span>          <span class="cv-comment">// JPEG, max 5MB, from CV-CAM-002</span>
+  context?: <span class="cv-type">string</span>   <span class="cv-comment">// optional caller-provided context string</span>
+  session_id: <span class="cv-type">string</span> <span class="cv-comment">// for audit logging — not stored with image</span>
+}</pre>
+      </div>
+
+      <div style="margin-top:16px;">
+        <span class="cv-code-label">RESPONSE CONTRACT (safe shape)</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-VIS-001 · Observation Contract · Response shape</span>
+<span class="cv-comment">// What the route returns — observations only, no scores</span>
+
+<span class="cv-type">Response</span> {
+  ok:           <span class="cv-type">boolean</span>
+  observations: <span class="cv-type">string</span>[]  <span class="cv-comment">// raw natural-language observations from model</span>
+  model:        <span class="cv-type">string</span>     <span class="cv-comment">// e.g. "gpt-4o" — for traceability</span>
+  latency_ms:   <span class="cv-type">number</span>
+  <span class="cv-comment">// ↓ deliberately absent: scores, ratings, diagnoses, percentages</span>
+}
+
+<span class="cv-comment">// Error shape — always return, never throw to client</span>
+<span class="cv-type">ErrorResponse</span> {
+  ok:     <span class="cv-keyword">false</span>
+  reason: <span class="cv-string">'model_unavailable'</span> | <span class="cv-string">'invalid_image'</span> | <span class="cv-string">'rate_limited'</span> | <span class="cv-string">'unknown'</span>
+}</pre>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- CV-VIS-002 -->
+    <section class="cv-section cv-reveal">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;gap:16px;flex-wrap:wrap;">
+        <div>
+          <span class="cv-dept-id" style="margin-bottom:4px;">CV-VIS-002</span>
+          <h2 class="cv-section-title">Image Payload Formatter</h2>
+        </div>
+        <span class="cv-badge cv-badge-experimental">Experimental</span>
+      </div>
+
+      <table class="cv-meta-table">
+        <tr><td>Use cases</td><td>Converting a canvas Blob to the appropriate format for the target LLM vision API (base64 data URL vs. multipart).</td></tr>
+        <tr><td>Risk</td><td>Medium. Base64 encoding increases payload size ~33%. Large images should be resized client-side before encoding.</td></tr>
+        <tr><td>Dependencies</td><td>FileReader API or modern <code style="font-family:var(--cv-font-mono);font-size:12px;background:rgba(255,255,255,0.04);padding:2px 6px;border-radius:2px;">blob.arrayBuffer()</code></td></tr>
+      </table>
+
+      <div style="margin-top:24px;">
+        <span class="cv-code-label">PAYLOAD FORMATTER</span>
+        <pre class="cv-code"><span class="cv-comment">// CV-VIS-002 · Image Payload Formatter (experimental)</span>
+
+<span class="cv-keyword">async function</span> <span class="cv-fn">formatForVision</span>(blob, targetAPI) {
+  <span class="cv-comment">// Resize if over threshold — vision models don't need full-res</span>
+  <span class="cv-keyword">const</span> MAX_BYTES = <span class="cv-number">1_200_000</span>
+  <span class="cv-keyword">const</span> resized = blob.size > MAX_BYTES
+    ? <span class="cv-keyword">await</span> <span class="cv-fn">resizeBlob</span>(blob, { maxDimension: <span class="cv-number">1024</span> })
+    : blob
+
+  <span class="cv-keyword">if</span> (targetAPI === <span class="cv-string">'openai'</span>) {
+    <span class="cv-comment">// OpenAI expects base64 data URL</span>
+    <span class="cv-keyword">const</span> b64 = <span class="cv-keyword">await</span> <span class="cv-fn">blobToBase64</span>(resized)
+    <span class="cv-keyword">return</span> { type: <span class="cv-string">'image_url'</span>, image_url: { url: b64 } }
+  }
+
+  <span class="cv-comment">// Anthropic / others: multipart FormData</span>
+  <span class="cv-keyword">const</span> fd = <span class="cv-keyword">new</span> <span class="cv-type">FormData</span>()
+  fd.append(<span class="cv-string">'image'</span>, resized, <span class="cv-string">'capture.jpg'</span>)
+  <span class="cv-keyword">return</span> fd
+}</pre>
+      </div>
+    </section>
+
+    <div class="cv-divider"></div>
+
+    <!-- CV-VIS-003 Quarantined -->
+    <section class="cv-section cv-reveal">
+      <div class="cv-quarantine-zone">
+        <div class="cv-quarantine-header">
+          <span>⛔ CV-VIS-003 — QUARANTINED</span>
+        </div>
+        <div class="cv-quarantine-body">
+          <div class="cv-quarantine-item">
+            <code>CV-VIS-003</code>
+            <div>
+              <strong style="display:block;margin-bottom:4px;color:rgba(255,90,110,0.9)">Skin Score Diagnostic</strong>
+              Assigned 0–100 numeric scores to skin attributes (hydration, clarity, tone evenness). These scores were invented outputs of a prompt instructing the model to rate features — they have no clinical validation, no reproducibility guarantee, and no grounding in dermatological methodology. The model was effectively making up numbers.
+              <br><br>
+              <strong style="color:rgba(255,90,110,0.9)">Do not import.</strong> If you need to surface model output as "scores," implement a validated rubric with explicit uncertainty disclosure.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo: mock observation -->
+    <section class="cv-section cv-reveal">
+      <span class="cv-section-label">Contract Trace (Mock — No Real Vision Call)</span>
+      <p style="font-size:14px;color:var(--cv-text-muted);margin-bottom:24px;">This demonstrates the request/response shape using a mock payload. No image is sent anywhere. No real API call is made.</p>
+
+      <div class="cv-demo-frame">
+        <div class="cv-demo-topbar">
+          <div class="cv-demo-dot" style="background:#ff5f57"></div>
+          <div class="cv-demo-dot" style="background:#febc2e"></div>
+          <div class="cv-demo-dot" style="background:#28c840"></div>
+          <span class="cv-demo-title">CV-VIS-001 · Mock Observation Trace</span>
+        </div>
+        <div class="cv-demo-body" style="align-items:flex-start;gap:12px;">
+          <div style="width:100%;max-width:560px;">
+            <div style="font-family:var(--cv-font-mono);font-size:11px;color:var(--cv-text-dim);margin-bottom:8px;">REQUEST (simulated)</div>
+            <pre class="cv-code" style="margin:0;font-size:12px;">{
+  "image": "[JPEG Blob — 68KB]",
+  "context": "general object observation",
+  "session_id": "sess_demo_0001"
+}</pre>
+            <div style="font-family:var(--cv-font-mono);font-size:11px;color:var(--cv-text-dim);margin:16px 0 8px;">RESPONSE (mocked — not from a live model)</div>
+            <pre class="cv-code" style="margin:0;font-size:12px;">{
+  "ok": true,
+  "observations": [
+    "The image shows an object in natural light.",
+    "Surface texture appears uniform.",
+    "No anomalies detected in composition."
+  ],
+  "model": "mock-v0",
+  "latency_ms": 0
+  <span class="cv-comment">// Note: no scores, no ratings, no diagnosis</span>
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+<script src="/chaos-vault/assets/cv.js"></script>
+</body>
+</html>
