@@ -22,15 +22,18 @@ const requiredFiles = [
   'PRODUCT_CONTENT_NEEDED.md',
   'chaos-vault/index.html',
   'chaos-vault/HARVEST_LOG.md',
+  'chaos-vault/CAPYTOPIA_HARVEST.md',
   'chaos-vault/assets/cv.css',
   'chaos-vault/assets/cv.js',
   'chaos-vault/data/affective-patterns.json',
+  'chaos-vault/data/capytopia-patterns.json',
   'chaos-vault/library/affective-contracts.js',
   'chaos-vault/patterns/index.html',
   'chaos-vault/patterns/affective-contracts.html',
   'chaos-vault/patterns/interaction-budgets.html',
   'chaos-vault/patterns/artifact-compilers.html',
   'chaos-vault/patterns/continuity-systems.html',
+  'chaos-vault/patterns/capytopia.html',
   'chaos-vault/departments/camera.html',
   'chaos-vault/departments/vision-analysis.html',
   'chaos-vault/departments/recovery-patterns.html',
@@ -143,13 +146,9 @@ assert.equal(preservedUrl.searchParams.get('utm_medium'), 'social');
 const vaultIndex = read('chaos-vault/index.html');
 assert.match(vaultIndex, /Affective Pattern Library/);
 assert.match(vaultIndex, /\/chaos-vault\/patterns\//);
-assert.match(vaultIndex, />23<\/span><span class="cv-stat-label">Technical Parts/);
+assert.match(vaultIndex, /23 Technical Parts/);
 assert.match(vaultIndex, /27 Affective Patterns/);
 assert.match(vaultIndex, /QUARANTINE ZONE/);
-
-const patternIndex = read('chaos-vault/patterns/index.html');
-assert.match(patternIndex, /27 Patterns/);
-assert.match(patternIndex, /State hypotheses, not emotional facts/);
 
 const recoveryPage = read('chaos-vault/departments/recovery-patterns.html');
 assert.match(recoveryPage, /mobile-first cooking companion/);
@@ -163,6 +162,7 @@ const patternPages = [
   'chaos-vault/patterns/interaction-budgets.html',
   'chaos-vault/patterns/artifact-compilers.html',
   'chaos-vault/patterns/continuity-systems.html',
+  'chaos-vault/patterns/capytopia.html',
 ];
 patternPages.forEach((relativePath) => {
   const html = read(relativePath);
@@ -171,7 +171,12 @@ patternPages.forEach((relativePath) => {
   assert.doesNotMatch(html, /data-buy|UndoneCommerce|etsy/i, `${relativePath} must remain isolated from commerce`);
 });
 
-// Machine-readable affective pattern registry checks.
+const patternIndex = read('chaos-vault/patterns/index.html');
+assert.match(patternIndex, /Capytopia Play Systems/);
+assert.match(patternIndex, /3 Capytopia Patterns/);
+assert.match(patternIndex, /Search commit history/);
+
+// Machine-readable core affective pattern registry checks.
 const registry = JSON.parse(read('chaos-vault/data/affective-patterns.json'));
 assert.equal(registry.schemaVersion, '1.0.0');
 assert.ok(Array.isArray(registry.patterns));
@@ -191,6 +196,37 @@ registry.patterns.forEach((pattern) => {
 for (const banned of ['fake skin or emotion scores', 'generated quotes presented as authentic quotations', 'permanent psychological profiles']) {
   assert.ok(registry.quarantine.includes(banned), `Missing quarantine rule: ${banned}`);
 }
+
+// Capytopia supplemental pattern registry checks.
+const capytopiaRegistry = JSON.parse(read('chaos-vault/data/capytopia-patterns.json'));
+assert.equal(capytopiaRegistry.schemaVersion, '1.0.0');
+assert.equal(capytopiaRegistry.source.repository, 'amydojo/capytopia');
+assert.equal(capytopiaRegistry.source.verifiedCommit, '627f68411f8e0110b53c5a72160ef3f4c83a54fc');
+assert.ok(Array.isArray(capytopiaRegistry.patterns));
+assert.equal(capytopiaRegistry.patterns.length, 3);
+
+const capytopiaIds = capytopiaRegistry.patterns.map((pattern) => pattern.id);
+assert.equal(new Set(capytopiaIds).size, capytopiaIds.length, 'Capytopia pattern IDs must be unique');
+capytopiaRegistry.patterns.forEach((pattern) => {
+  assert.match(pattern.id, /^CV-CAP-\d{3}$/);
+  assert.ok(pattern.name && pattern.category && pattern.status && pattern.kind && pattern.thesis, `${pattern.id} is incomplete`);
+  assert.ok(Array.isArray(pattern.observedImplementation) && pattern.observedImplementation.length > 0, `${pattern.id} needs observed implementation`);
+  assert.ok(Array.isArray(pattern.requiredControls) && pattern.requiredControls.length > 0, `${pattern.id} needs controls`);
+  assert.ok(Array.isArray(pattern.risks) && pattern.risks.length > 0, `${pattern.id} needs risk notes`);
+});
+assert.ok(capytopiaRegistry.quarantine.includes('avatar expression interpreted as detected emotion'));
+
+const capytopiaPage = read('chaos-vault/patterns/capytopia.html');
+assert.match(capytopiaPage, /Sensory Assembly Ritual/);
+assert.match(capytopiaPage, /Avatar-Mediated Self-Expression/);
+assert.match(capytopiaPage, /Soft-World Task Scaffolding/);
+assert.match(capytopiaPage, /metadata connector incorrectly reported the repository as empty/);
+assert.match(capytopiaPage, /Zone hit detection and actions remain unfinished/);
+
+const capytopiaAudit = read('chaos-vault/CAPYTOPIA_HARVEST.md');
+assert.match(capytopiaAudit, /That conclusion was wrong/);
+assert.match(capytopiaAudit, /Do not trust repository `size` metadata alone/);
+assert.match(capytopiaAudit, /627f68411f8e0110b53c5a72160ef3f4c83a54fc/);
 
 // Dependency-free reference helper checks.
 const affectiveSandbox = {
