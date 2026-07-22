@@ -7,7 +7,6 @@
   <title>Undone — Studio</title>
   <meta name="description" content="Undone designs clinic systems that don't require explanation." />
 
-  <!-- critical: prevent dot flash before CSS loads -->
   <style>
     .hero-dot-pop { opacity: 0; }
   </style>
@@ -25,29 +24,20 @@
       <nav class="studio-nav" aria-label="Primary">
         <a href="/" class="active" aria-current="page">Studio</a>
         <a href="/standards/">Standards</a>
+        <a href="/vault/">Vault</a>
       </nav>
     </header>
 
     <main>
-      <!-- hero -->
       <section id="hero" class="studio-hero" aria-label="Studio hero">
         <canvas id="studioHeroCanvas" aria-hidden="true"></canvas>
 
         <div class="studio-hero-content">
           <h1 class="hero-reveal-text" aria-label="Operational clarity.">
             <span class="hero-stack">
-              <!-- sizer sets layout width; invisible but occupies space -->
               <span class="hero-sizer" aria-hidden="true">Operational clarity</span>
-
-              <!-- ghost layer -->
-              <span class="hero-layer hero-layer--ghost" aria-hidden="true">
-                Operational clarity
-              </span>
-
-              <!-- crisp layer -->
-              <span class="hero-layer hero-layer--crisp" aria-hidden="true">
-                Operational clarity<span class="hero-dot-pop">.</span>
-              </span>
+              <span class="hero-layer hero-layer--ghost" aria-hidden="true">Operational clarity</span>
+              <span class="hero-layer hero-layer--crisp" aria-hidden="true">Operational clarity<span class="hero-dot-pop">.</span></span>
             </span>
           </h1>
         </div>
@@ -61,17 +51,13 @@
         </div>
       </section>
 
-      <!-- positioning -->
       <section id="positioning" class="studio-section studio-reveal">
         <div class="studio-container">
           <h2 class="studio-h2">Most clinics don't have a marketing problem.</h2>
-          <div class="studio-prose">
-            <p>It just shows up that way.</p>
-          </div>
+          <div class="studio-prose"><p>It just shows up that way.</p></div>
         </div>
       </section>
 
-      <!-- system lens -->
       <section id="marketing" class="studio-section studio-reveal">
         <div class="studio-container">
           <span class="studio-label">THE INFRASTRUCTURE GAP</span>
@@ -83,7 +69,6 @@
         </div>
       </section>
 
-      <!-- scope -->
       <section id="materials" class="studio-section studio-reveal">
         <div class="studio-container">
           <span class="studio-label">SCOPE</span>
@@ -98,28 +83,31 @@
         </div>
       </section>
 
-      <!-- standards -->
       <section id="standards" class="studio-section studio-reveal">
         <div class="studio-container">
           <span class="std-label">STANDARDS</span>
           <h2 class="studio-h2">Clinic-ready systems.</h2>
-          <div class="studio-prose">
-            <p>Formalized documents built to hold up under real use.</p>
-          </div>
+          <div class="studio-prose"><p>Formalized documents built to hold up under real use.</p></div>
           <a href="/standards/" class="studio-cta">View Standards →</a>
         </div>
       </section>
 
-      <!-- closer -->
-      <section id="closer" class="studio-closer studio-reveal">
+      <section id="vault" class="studio-section studio-reveal">
         <div class="studio-container">
-          <p class="studio-closer-line">Restraint is the product.</p>
+          <span class="studio-label">LAB DOJO ARCHIVE</span>
+          <h2 class="studio-h2">Parts worth keeping.</h2>
+          <div class="studio-prose"><p>Reusable affective patterns, technical primitives, and recovered inventions from the builds that came before.</p></div>
+          <a href="/vault/" class="studio-cta">Enter Chaos Vault →</a>
         </div>
+      </section>
+
+      <section id="closer" class="studio-closer studio-reveal">
+        <div class="studio-container"><p class="studio-closer-line">Restraint is the product.</p></div>
       </section>
     </main>
 
     <footer class="studio-footer">
-      <span>Undone · Studio · Standards</span>
+      <span>Undone · Studio · Standards · Vault</span>
       <span>© 2025</span>
     </footer>
   </div>

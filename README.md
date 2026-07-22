@@ -12,16 +12,20 @@ Primary routes:
 
 - `/` — Undone Studio
 - `/standards/` — customer-facing product library
-- `/chaos-vault/` — reusable technical parts inventory
-- `/chaos-vault/patterns/` — affective and systems pattern library
+- `/vault/` — canonical Chaos Vault front door
+- `/chaos-vault/` — legacy route that redirects to `/vault/`
+- `/chaos-vault/patterns/` — detailed affective and systems pattern library
 - `/chaos-vault/patterns/design-intent-infrastructure.html` — Left Brain MCP clean-room harvest
+
+The short `/vault/` route is the intended public entry. It uses progressive disclosure, local search, three primary routes, and an editorial archive visual system. Detailed records and working demonstrations remain under `/chaos-vault/` so existing deep links do not break.
 
 ## System isolation
 
 - Studio uses the `.studio-*` namespace.
 - Standards uses the `.std-*` namespace.
-- Chaos Vault uses the `.cv-*` namespace.
-- Commerce behavior never runs inside Chaos Vault.
+- The detailed archive uses the `.cv-*` namespace.
+- The short front door uses the `.vault-*` namespace.
+- Commerce behavior never runs inside either Vault surface.
 - Chaos Vault reference helpers perform no emotion diagnosis, external actions, generated-markup execution, or hidden network requests.
 
 Do not mix these namespaces.
@@ -55,6 +59,9 @@ The current mainline harvest contains 27 core affective patterns, three Capytopi
 Canonical supporting files:
 
 ```text
+vault/index.html
+vault/vault.css
+vault/vault.js
 chaos-vault/data/affective-patterns.json
 chaos-vault/data/capytopia-patterns.json
 chaos-vault/data/design-intent-patterns.json
@@ -87,8 +94,6 @@ Content-Type: application/json
 ```
 
 A missing secret fails closed with `503 service_not_configured`.
-
-The connected Vercel account contained no projects at harvest time, so no preview or production deployment was created. Import the GitHub branch into Vercel only after review.
 
 ## Chaos Vault import bans
 
@@ -165,4 +170,4 @@ Run:
 npm test
 ```
 
-The validation suite checks customer routes, purchase fallbacks, script order, query-parameter preservation, Commerce versus Chaos Vault isolation, pattern integrity, source-correction records, the dependency-free design-intent compiler, and the authenticated Vercel function boundary.
+The validation suite checks customer routes, purchase fallbacks, script order, query-parameter preservation, Commerce versus Chaos Vault isolation, pattern integrity, source-correction records, the dependency-free design-intent compiler, the authenticated Vercel function boundary, and the `/vault/` front-door contract.
