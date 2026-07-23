@@ -81,16 +81,18 @@ assert.doesNotMatch(page, /fonts\.googleapis|unpkg|jsdelivr|cdnjs/i, 'Harvest pa
 const harvest = read('chaos-vault/ARTIFACT_INFRASTRUCTURE_HARVEST.md');
 assert.match(harvest, /No donor code is imported/);
 assert.match(harvest, /illustrates, does not validate/i);
-assert.match(harvest, /49 documented patterns across 17 donor systems/);
+assert.match(harvest, /Get Fridge deepens the existing Fridge Web donor/);
+assert.match(harvest, /49 documented patterns across 16 donor systems/);
 
 const patternIndex = read('chaos-vault/patterns/index.html');
 assert.match(patternIndex, /Affective Artifact Infrastructure/);
 assert.match(patternIndex, /14 Artifact Infrastructure Patterns/);
-assert.match(patternIndex, /17 Donor Systems/);
+assert.match(patternIndex, /16 Donor Systems/);
+assert.match(patternIndex, /Get Fridge \/ Fridge Web/);
 
 const vault = read('vault/index.html');
 assert.match(vault, /49<\/strong><span>documented patterns/);
-assert.match(vault, /17<\/strong><span>donor systems/);
+assert.match(vault, /16<\/strong><span>donor systems/);
 assert.match(vault, /CV·AFI/);
 assert.match(vault, /artifact-infrastructure-patterns\.json/);
 
