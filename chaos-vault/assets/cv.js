@@ -1,327 +1,506 @@
-/* ═══════════════════════════════════════════════════════════════════════════
-   CHAOS VAULT PARTS DEPARTMENT — cv.js
-   Namespace: ChaosVault | Isolated from app.js
-   ═══════════════════════════════════════════════════════════════════════════ */
+/* Chaos Vault shared runtime.
+   Keeps technical specimens functional and adds mobile-first archive navigation. */
 
 (function ChaosVault() {
   'use strict';
 
-  /* ── Init ───────────────────────────────────────────────────────────────── */
+  const mobileStylesheet = '/chaos-vault/assets/mobile.css';
+  if (!document.querySelector(`link[href="${mobileStylesheet}"]`)) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = mobileStylesheet;
+    document.head.appendChild(link);
+  }
+
+  const CV = { demos: {} };
+  const mobileQuery = window.matchMedia('(max-width: 980px)');
+
   document.addEventListener('DOMContentLoaded', () => {
     CV.scrollReveal.init();
     CV.accordion.init();
     CV.activeNav.init();
+    CV.mobileNav.init();
+    CV.mobileSummary.init();
+    CV.mobileDisclosure.init();
+    CV.mobilePatternDetails.init();
 
-    if (document.querySelector('.cv-demo-camera'))       CV.demos.camera();
-    if (document.querySelector('.cv-demo-recovery'))     CV.demos.recovery();
-    if (document.querySelector('.cv-demo-ai-states'))    CV.demos.aiStates();
-    if (document.querySelector('.cv-demo-motion'))       CV.demos.motion();
-    if (document.querySelector('.cv-demo-graph'))        CV.demos.graph();
-    if (document.querySelector('.cv-demo-events'))       CV.demos.events();
-    if (document.querySelector('.cv-demo-notifications'))CV.demos.notifications();
+    if (document.querySelector('.cv-demo-camera')) CV.demos.camera();
+    if (document.querySelector('.cv-demo-ai-states')) CV.demos.aiStates();
+    if (document.querySelector('.cv-demo-motion')) CV.demos.motion();
+    if (document.querySelector('.cv-demo-graph')) CV.demos.graph();
+    if (document.querySelector('.cv-demo-events')) CV.demos.events();
+    if (document.querySelector('.cv-demo-notifications')) CV.demos.notifications();
   });
 
-  /* ── Namespace ──────────────────────────────────────────────────────────── */
-  const CV = {};
-
-  /* ── Scroll Reveal ──────────────────────────────────────────────────────── */
   CV.scrollReveal = {
     init() {
-      const els = document.querySelectorAll('.cv-reveal');
-      if (!els.length) return;
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('cv-revealed');
-            obs.unobserve(e.target);
-          }
+      const elements = document.querySelectorAll('.cv-reveal');
+      if (!elements.length) return;
+      if (!('IntersectionObserver' in window)) {
+        elements.forEach((element) => element.classList.add('cv-revealed'));
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('cv-revealed');
+          observer.unobserve(entry.target);
         });
       }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-      els.forEach(el => obs.observe(el));
-    }
+      elements.forEach((element) => observer.observe(element));
+    },
   };
 
-  /* ── Accordion (recovery reveal toggles) ───────────────────────────────── */
   CV.accordion = {
     init() {
-      document.querySelectorAll('.cv-recovery-trigger').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const target = document.getElementById(btn.dataset.target);
+      document.querySelectorAll('.cv-recovery-trigger').forEach((button) => {
+        button.addEventListener('click', () => {
+          const target = document.getElementById(button.dataset.target);
           if (!target) return;
-          const isOpen = target.classList.contains('open');
-          target.classList.toggle('open', !isOpen);
-          btn.setAttribute('aria-expanded', String(!isOpen));
-          const arrow = btn.querySelector('.cv-trigger-arrow');
-          if (arrow) arrow.textContent = isOpen ? '▸' : '▾';
+          const open = !target.classList.contains('open');
+          target.classList.toggle('open', open);
+          button.setAttribute('aria-expanded', String(open));
+          const arrow = button.querySelector('.cv-trigger-arrow');
+          if (arrow) arrow.textContent = open ? '▾' : '▸';
         });
       });
-    }
+    },
   };
 
-  /* ── Active nav highlighting ────────────────────────────────────────────── */
   CV.activeNav = {
     init() {
-      const path = location.pathname;
-      document.querySelectorAll('.cv-sidebar-link').forEach(link => {
+      const currentPath = location.pathname.replace(/\/$/, '');
+      document.querySelectorAll('.cv-sidebar-link').forEach((link) => {
         const href = link.getAttribute('href');
-        if (href && path.endsWith(href.replace(/^.*\//, '').replace(/^\//, ''))) {
-          link.classList.add('active');
+        if (!href || href.startsWith('#')) return;
+        try {
+          const linkPath = new URL(href, location.origin).pathname.replace(/\/$/, '');
+          if (linkPath === currentPath) link.classList.add('active');
+        } catch (_) {
+          // Ignore non-navigation references.
         }
       });
-    }
+    },
   };
 
-  /* ── Demos ──────────────────────────────────────────────────────────────── */
-  CV.demos = {};
+  CV.mobileNav = {
+    init() {
+      const body = document.body;
+      const topbar = document.querySelector('.cv-topbar');
+      const sidebar = document.querySelector('.cv-sidebar');
+      if (!topbar || !sidebar) return;
 
-  /* Camera Demo — simulates getUserMedia state machine */
-  CV.demos.camera = function() {
-    const el = document.querySelector('.cv-demo-camera');
-    if (!el) return;
+      sidebar.id = sidebar.id || 'cv-mobile-drawer';
 
-    const btn = el.querySelector('[data-camera-btn]');
-    const status = el.querySelector('[data-camera-status]');
-    const viewfinder = el.querySelector('[data-camera-viewfinder]');
-    const video = el.querySelector('video');
+      const menuButton = document.createElement('button');
+      menuButton.type = 'button';
+      menuButton.className = 'cv-mobile-menu-toggle';
+      menuButton.textContent = 'Browse';
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-controls', sidebar.id);
+      topbar.appendChild(menuButton);
 
+      const closeButton = document.createElement('button');
+      closeButton.type = 'button';
+      closeButton.className = 'cv-mobile-close';
+      closeButton.textContent = 'Close';
+      closeButton.setAttribute('aria-label', 'Close archive navigation');
+      sidebar.prepend(closeButton);
+
+      const searchWrap = document.createElement('div');
+      searchWrap.className = 'cv-mobile-nav-search';
+      const searchLabel = document.createElement('label');
+      searchLabel.htmlFor = 'cv-mobile-nav-search';
+      searchLabel.textContent = 'Filter this archive';
+      const searchInput = document.createElement('input');
+      searchInput.id = 'cv-mobile-nav-search';
+      searchInput.type = 'search';
+      searchInput.placeholder = 'Pattern, part, or donor';
+      searchInput.autocomplete = 'off';
+      searchWrap.append(searchLabel, searchInput);
+      closeButton.insertAdjacentElement('afterend', searchWrap);
+
+      const backdrop = document.createElement('button');
+      backdrop.type = 'button';
+      backdrop.className = 'cv-mobile-backdrop';
+      backdrop.setAttribute('aria-label', 'Close archive navigation');
+      sidebar.insertAdjacentElement('afterend', backdrop);
+
+      const mobileBar = document.createElement('nav');
+      mobileBar.className = 'cv-mobile-bar';
+      mobileBar.setAttribute('aria-label', 'Mobile archive shortcuts');
+
+      const vaultLink = document.createElement('a');
+      vaultLink.href = '/vault/';
+      vaultLink.textContent = 'Vault';
+
+      const browseButton = document.createElement('button');
+      browseButton.type = 'button';
+      browseButton.textContent = 'Browse';
+
+      const topButton = document.createElement('button');
+      topButton.type = 'button';
+      topButton.textContent = 'Top';
+
+      mobileBar.append(vaultLink, browseButton, topButton);
+      body.appendChild(mobileBar);
+
+      const links = Array.from(sidebar.querySelectorAll('.cv-sidebar-link'));
+      const sections = Array.from(sidebar.querySelectorAll('.cv-sidebar-section'));
+      let lastFocused = null;
+
+      function setOpen(open) {
+        body.classList.toggle('cv-nav-open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.textContent = open ? 'Close' : 'Browse';
+        if (open) {
+          lastFocused = document.activeElement;
+          window.setTimeout(() => searchInput.focus(), 40);
+        } else if (lastFocused instanceof HTMLElement) {
+          lastFocused.focus();
+        }
+      }
+
+      function filterNavigation() {
+        const query = searchInput.value.trim().toLowerCase();
+        links.forEach((link) => {
+          const matches = !query || link.textContent.toLowerCase().includes(query);
+          link.hidden = !matches;
+        });
+        sections.forEach((section) => {
+          const visibleLinks = Array.from(section.querySelectorAll('.cv-sidebar-link')).some((link) => !link.hidden);
+          section.hidden = !visibleLinks;
+        });
+      }
+
+      menuButton.addEventListener('click', () => setOpen(menuButton.getAttribute('aria-expanded') !== 'true'));
+      browseButton.addEventListener('click', () => setOpen(true));
+      closeButton.addEventListener('click', () => setOpen(false));
+      backdrop.addEventListener('click', () => setOpen(false));
+      searchInput.addEventListener('input', filterNavigation);
+      sidebar.addEventListener('click', (event) => {
+        if (event.target.closest('a')) setOpen(false);
+      });
+      topButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && body.classList.contains('cv-nav-open')) setOpen(false);
+      });
+      mobileQuery.addEventListener('change', (event) => {
+        if (!event.matches) setOpen(false);
+      });
+    },
+  };
+
+  CV.mobileSummary = {
+    init() {
+      if (!mobileQuery.matches) return;
+      const summary = document.querySelector('.cv-page-desc, .cv-thesis');
+      if (!summary || summary.textContent.trim().length < 150) return;
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'cv-mobile-summary-toggle';
+      button.textContent = 'Read full summary';
+      button.setAttribute('aria-expanded', 'false');
+      summary.insertAdjacentElement('afterend', button);
+
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') !== 'true';
+        summary.classList.toggle('is-expanded', expanded);
+        button.setAttribute('aria-expanded', String(expanded));
+        button.textContent = expanded ? 'Collapse summary' : 'Read full summary';
+      });
+    },
+  };
+
+  CV.mobileDisclosure = {
+    init() {
+      if (!mobileQuery.matches) return;
+      const sections = Array.from(document.querySelectorAll('.cv-main > .cv-section'));
+      if (!sections.length) return;
+
+      let preferredIndex = sections.findIndex((section) => section.querySelector('.cv-pattern-grid, .cv-family-grid, .cv-parts-grid, .cv-demo-frame'));
+      if (preferredIndex < 0) preferredIndex = 0;
+
+      sections.forEach((section, index) => {
+        const label = section.querySelector(':scope > .cv-section-label, :scope > .cv-section-title');
+        if (!label) return;
+
+        const movable = Array.from(section.childNodes).filter((node) => node !== label && !(node.nodeType === Node.TEXT_NODE && !node.textContent.trim()));
+        if (!movable.length) return;
+
+        const body = document.createElement('div');
+        body.className = 'cv-mobile-section-body';
+        movable.forEach((node) => body.appendChild(node));
+        section.appendChild(body);
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'cv-mobile-section-toggle';
+        button.setAttribute('aria-expanded', String(index === preferredIndex));
+        button.textContent = index === preferredIndex ? 'Hide' : 'Show';
+        label.insertAdjacentElement('afterend', button);
+        body.hidden = index !== preferredIndex;
+
+        button.addEventListener('click', () => {
+          const open = button.getAttribute('aria-expanded') !== 'true';
+          button.setAttribute('aria-expanded', String(open));
+          button.textContent = open ? 'Hide' : 'Show';
+          body.hidden = !open;
+        });
+      });
+    },
+  };
+
+  CV.mobilePatternDetails = {
+    init() {
+      if (!mobileQuery.matches) return;
+
+      document.querySelectorAll('.cv-pattern-spec').forEach((card, index) => {
+        const children = Array.from(card.children);
+        const firstParagraph = children.find((child) => child.tagName === 'P');
+        if (!firstParagraph) return;
+        const firstParagraphIndex = children.indexOf(firstParagraph);
+        const detailNodes = children.slice(firstParagraphIndex + 1);
+        if (!detailNodes.length) return;
+
+        const details = document.createElement('div');
+        details.className = 'cv-mobile-pattern-details';
+        details.id = `cv-pattern-details-${index + 1}`;
+        detailNodes.forEach((node) => details.appendChild(node));
+        details.hidden = true;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'cv-mobile-pattern-toggle';
+        button.textContent = 'Implementation details';
+        button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-controls', details.id);
+
+        firstParagraph.insertAdjacentElement('afterend', button);
+        button.insertAdjacentElement('afterend', details);
+
+        button.addEventListener('click', () => {
+          const open = button.getAttribute('aria-expanded') !== 'true';
+          button.setAttribute('aria-expanded', String(open));
+          button.textContent = open ? 'Hide implementation details' : 'Implementation details';
+          details.hidden = !open;
+        });
+
+        if (location.hash && card.id === location.hash.slice(1)) {
+          button.setAttribute('aria-expanded', 'true');
+          button.textContent = 'Hide implementation details';
+          details.hidden = false;
+        }
+      });
+    },
+  };
+
+  CV.demos.camera = function cameraDemo() {
+    const element = document.querySelector('.cv-demo-camera');
+    if (!element) return;
+    const button = element.querySelector('[data-camera-btn]');
+    const status = element.querySelector('[data-camera-status]');
+    const video = element.querySelector('video');
     let state = 'idle';
 
     const states = {
-      idle:        { label: 'AWAITING PERMISSION', color: 'var(--cv-text-dim)' },
-      requesting:  { label: 'REQUESTING PERMISSION…', color: 'var(--cv-experimental)' },
-      streaming:   { label: 'STREAM ACTIVE', color: 'var(--cv-reconstructed)' },
-      denied:      { label: 'PERMISSION DENIED — FALLBACK MODE', color: 'var(--cv-quarantined)' },
-      nosupport:   { label: 'NO SUPPORT — FILE UPLOAD FALLBACK', color: 'var(--cv-awaiting)' },
-      captured:    { label: 'FRAME CAPTURED TO CANVAS', color: 'var(--cv-tested)' },
+      idle: { label: 'AWAITING PERMISSION', color: 'var(--cv-text-dim)' },
+      requesting: { label: 'REQUESTING PERMISSION…', color: 'var(--cv-experimental)' },
+      streaming: { label: 'STREAM ACTIVE', color: 'var(--cv-reconstructed)' },
+      denied: { label: 'PERMISSION DENIED — FALLBACK MODE', color: 'var(--cv-quarantined)' },
+      nosupport: { label: 'NO SUPPORT — FILE UPLOAD FALLBACK', color: 'var(--cv-awaiting)' },
+      captured: { label: 'FRAME CAPTURED TO CANVAS', color: 'var(--cv-tested)' },
     };
 
-    function setState(s) {
-      state = s;
-      const info = states[s] || states.idle;
-      if (status) { status.textContent = info.label; status.style.color = info.color; }
+    function setState(nextState) {
+      state = nextState;
+      const info = states[nextState] || states.idle;
+      if (status) {
+        status.textContent = info.label;
+        status.style.color = info.color;
+      }
     }
 
-    if (btn) {
-      btn.addEventListener('click', async () => {
-        if (state === 'streaming') {
-          setState('captured');
-          btn.textContent = 'Reset';
-          if (video && video.srcObject) {
-            video.srcObject.getTracks().forEach(t => t.stop());
-            video.srcObject = null;
-          }
-          return;
-        }
-        if (state === 'captured' || state === 'denied' || state === 'nosupport') {
-          setState('idle');
-          btn.textContent = 'Request Camera';
-          if (video) video.style.display = 'none';
-          return;
-        }
+    button?.addEventListener('click', async () => {
+      if (state === 'streaming') {
+        setState('captured');
+        button.textContent = 'Reset';
+        video?.srcObject?.getTracks().forEach((track) => track.stop());
+        if (video) video.srcObject = null;
+        return;
+      }
+      if (['captured', 'denied', 'nosupport'].includes(state)) {
+        setState('idle');
+        button.textContent = 'Request Camera';
+        if (video) video.style.display = 'none';
+        return;
+      }
 
-        setState('requesting');
-        btn.textContent = '…';
+      setState('requesting');
+      button.textContent = '…';
+      if (!navigator.mediaDevices?.getUserMedia) {
+        window.setTimeout(() => {
+          setState('nosupport');
+          button.textContent = 'Reset';
+        }, 800);
+        return;
+      }
 
-        if (!navigator.mediaDevices?.getUserMedia) {
-          setTimeout(() => { setState('nosupport'); btn.textContent = 'Reset'; }, 800);
-          return;
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: { ideal: 'environment' }, width: { ideal: 640 } },
+          audio: false,
+        });
+        if (video) {
+          video.srcObject = stream;
+          video.style.display = 'block';
+          video.play().catch(() => {});
         }
-
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia({
-            video: { facingMode: { ideal: 'environment' }, width: { ideal: 640 } },
-            audio: false
-          });
-          if (video) {
-            video.srcObject = stream;
-            video.style.display = 'block';
-            video.play().catch(() => {});
-          }
-          setState('streaming');
-          btn.textContent = 'Capture Frame';
-        } catch (err) {
-          if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
-            setState('denied');
-          } else {
-            setState('nosupport');
-          }
-          btn.textContent = 'Reset';
-        }
-      });
-    }
+        setState('streaming');
+        button.textContent = 'Capture Frame';
+      } catch (error) {
+        setState(['NotAllowedError', 'PermissionDeniedError'].includes(error.name) ? 'denied' : 'nosupport');
+        button.textContent = 'Reset';
+      }
+    });
   };
 
-  /* Recovery Demo — "Something feels off?" reveal */
-  CV.demos.recovery = function() {
-    const el = document.querySelector('.cv-demo-recovery');
-    if (!el) return;
-    // handled by CV.accordion.init via .cv-recovery-trigger
-  };
-
-  /* AI States Demo — step-through state machine */
-  CV.demos.aiStates = function() {
-    const el = document.querySelector('.cv-demo-ai-states');
-    if (!el) return;
-
-    const steps = el.querySelectorAll('.cv-sm-state');
-    const nextBtn = el.querySelector('[data-ai-next]');
-    const resetBtn = el.querySelector('[data-ai-reset]');
-    const logEl = el.querySelector('[data-ai-log]');
-    let current = -1;
-
-    const labels = ['validate', 'repair', 'regenerate', 'fallback'];
-    const logs = [
+  CV.demos.aiStates = function aiStatesDemo() {
+    const element = document.querySelector('.cv-demo-ai-states');
+    if (!element) return;
+    const steps = Array.from(element.querySelectorAll('.cv-sm-state'));
+    const nextButton = element.querySelector('[data-ai-next]');
+    const resetButton = element.querySelector('[data-ai-reset]');
+    const log = element.querySelector('[data-ai-log]');
+    const messages = [
       '→ Checking response schema…',
       '→ Schema invalid. Attempting field repair…',
       '→ Repair incomplete. Triggering regeneration…',
-      '→ Max retries reached. Loading guaranteed fallback.'
+      '→ Max retries reached. Loading guaranteed fallback.',
     ];
+    let current = -1;
 
     function advance() {
       if (current >= steps.length - 1) return;
       if (current >= 0) steps[current].classList.remove('active');
-      current++;
+      current += 1;
       steps[current].classList.add('active');
-      if (logEl) {
+      if (log) {
         const line = document.createElement('div');
         line.style.cssText = 'font-family:var(--cv-font-mono);font-size:12px;color:var(--cv-text-muted);padding:4px 0;border-bottom:1px solid var(--cv-border);animation:cv-fade-up 0.3s ease';
-        line.textContent = logs[current] || '→ Step complete.';
-        logEl.appendChild(line);
-        logEl.scrollTop = logEl.scrollHeight;
+        line.textContent = messages[current] || '→ Step complete.';
+        log.appendChild(line);
+        log.scrollTop = log.scrollHeight;
       }
-      if (nextBtn && current >= steps.length - 1) nextBtn.disabled = true;
+      if (nextButton && current >= steps.length - 1) nextButton.disabled = true;
     }
 
     function reset() {
-      steps.forEach(s => { s.classList.remove('active', 'done', 'failed'); });
+      steps.forEach((step) => step.classList.remove('active', 'done', 'failed'));
       current = -1;
-      if (nextBtn) nextBtn.disabled = false;
-      if (logEl) logEl.innerHTML = '';
+      if (nextButton) nextButton.disabled = false;
+      if (log) log.textContent = '';
     }
 
-    if (nextBtn) nextBtn.addEventListener('click', advance);
-    if (resetBtn) resetBtn.addEventListener('click', reset);
+    nextButton?.addEventListener('click', advance);
+    resetButton?.addEventListener('click', reset);
   };
 
-  /* Motion Demo — showcases loader/microinteraction primitives */
-  CV.demos.motion = function() {
-    const el = document.querySelector('.cv-demo-motion');
-    if (!el) return;
-    // Loaders are CSS-driven; JS only handles the toggle
-    const tabs = el.querySelectorAll('[data-motion-tab]');
-    const panels = el.querySelectorAll('[data-motion-panel]');
-    tabs.forEach(tab => {
+  CV.demos.motion = function motionDemo() {
+    const element = document.querySelector('.cv-demo-motion');
+    if (!element) return;
+    const tabs = element.querySelectorAll('[data-motion-tab]');
+    const panels = element.querySelectorAll('[data-motion-panel]');
+    tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        panels.forEach(p => p.style.display = 'none');
+        tabs.forEach((item) => item.classList.remove('active'));
+        panels.forEach((panel) => { panel.style.display = 'none'; });
         tab.classList.add('active');
-        const target = el.querySelector(`[data-motion-panel="${tab.dataset.motionTab}"]`);
+        const target = element.querySelector(`[data-motion-panel="${tab.dataset.motionTab}"]`);
         if (target) target.style.display = 'flex';
       });
     });
   };
 
-  /* Graph Demo — three-layer Living Tapestry visualization */
-  CV.demos.graph = function() {
+  CV.demos.graph = function graphDemo() {
     const canvas = document.querySelector('.cv-graph-canvas');
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const W = canvas.offsetWidth;
-    const H = canvas.offsetHeight || 340;
-    canvas.width = W * (window.devicePixelRatio || 1);
-    canvas.height = H * (window.devicePixelRatio || 1);
-    ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+    const context = canvas.getContext('2d');
+    if (!context) return;
 
     const nodes = [
-      // Layer 1: Chronology (timeline spine)
-      { id: 'e1', x: 80,  y: 60,  layer: 1, label: 'Idea', color: '#f0c040', r: 7 },
-      { id: 'e2', x: 200, y: 60,  layer: 1, label: 'Action', color: '#f0c040', r: 7 },
-      { id: 'e3', x: 320, y: 60,  layer: 1, label: 'Insight', color: '#f0c040', r: 7 },
-      { id: 'e4', x: 440, y: 60,  layer: 1, label: 'Action', color: '#f0c040', r: 7 },
-
-      // Layer 2: Same-type clusters
-      { id: 'c1', x: 80,  y: 180, layer: 2, label: 'Idea ×3', color: '#60c8ff', r: 12 },
-      { id: 'c2', x: 280, y: 180, layer: 2, label: 'Action ×4', color: '#60c8ff', r: 14 },
-      { id: 'c3', x: 460, y: 180, layer: 2, label: 'Insight ×2', color: '#60c8ff', r: 10 },
-
-      // Layer 3: Semantic (idea→action→insight chain)
-      { id: 's1', x: 120, y: 290, layer: 3, label: 'Idea→Action', color: '#4fffb0', r: 8 },
-      { id: 's2', x: 280, y: 290, layer: 3, label: 'Action→Insight', color: '#4fffb0', r: 8 },
-      { id: 's3', x: 420, y: 290, layer: 3, label: 'Insight→Idea', color: '#4fffb0', r: 8 },
+      { x: 80, y: 60, label: 'Idea', color: '#f04b2f', radius: 7 },
+      { x: 200, y: 60, label: 'Action', color: '#f04b2f', radius: 7 },
+      { x: 320, y: 60, label: 'Insight', color: '#f04b2f', radius: 7 },
+      { x: 440, y: 60, label: 'Action', color: '#f04b2f', radius: 7 },
+      { x: 80, y: 180, label: 'Idea ×3', color: '#3158ff', radius: 12 },
+      { x: 280, y: 180, label: 'Action ×4', color: '#3158ff', radius: 14 },
+      { x: 460, y: 180, label: 'Insight ×2', color: '#3158ff', radius: 10 },
+      { x: 120, y: 290, label: 'Idea→Action', color: '#147d5a', radius: 8 },
+      { x: 280, y: 290, label: 'Action→Insight', color: '#147d5a', radius: 8 },
+      { x: 420, y: 290, label: 'Insight→Idea', color: '#147d5a', radius: 8 },
     ];
-
-    const edges = [
-      ['e1','e2'], ['e2','e3'], ['e3','e4'],         // chronology spine
-      ['e1','c1'], ['e2','c2'], ['e4','c2'], ['e3','c3'], // cluster links
-      ['c1','s1'], ['c2','s1'], ['c2','s2'], ['c3','s2'], ['c3','s3'], // semantic
-      ['s3','c1'],                                   // feedback loop
-    ];
+    const edges = [[0, 1], [1, 2], [2, 3], [0, 4], [1, 5], [3, 5], [2, 6], [4, 7], [5, 7], [5, 8], [6, 8], [6, 9], [9, 4]];
 
     function draw() {
-      ctx.clearRect(0, 0, W, H);
+      const width = canvas.clientWidth || 520;
+      const height = 340;
+      const ratio = window.devicePixelRatio || 1;
+      const scale = width / 520;
+      canvas.width = Math.round(width * ratio);
+      canvas.height = Math.round(height * ratio);
+      context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      context.clearRect(0, 0, width, height);
 
-      // Layer labels
-      const layerLabels = ['LAYER 1 — CHRONOLOGY', 'LAYER 2 — CLUSTERS', 'LAYER 3 — SEMANTIC'];
-      const layerY = [40, 160, 270];
-      layerLabels.forEach((lbl, i) => {
-        ctx.font = '9px "SF Mono", monospace';
-        ctx.fillStyle = 'rgba(255,255,255,0.12)';
-        ctx.fillText(lbl, 8, layerY[i]);
+      ['LAYER 1 — CHRONOLOGY', 'LAYER 2 — CLUSTERS', 'LAYER 3 — SEMANTIC'].forEach((label, index) => {
+        context.font = '9px "SF Mono", monospace';
+        context.fillStyle = 'rgba(255,255,255,0.35)';
+        context.fillText(label, 8, [40, 160, 270][index]);
       });
 
-      // Layer lines
-      [75, 195, 305].forEach(y => {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(W, y);
-        ctx.strokeStyle = 'rgba(255,255,255,0.04)';
-        ctx.lineWidth = 1;
-        ctx.stroke();
+      [75, 195, 305].forEach((y) => {
+        context.beginPath();
+        context.moveTo(0, y);
+        context.lineTo(width, y);
+        context.strokeStyle = 'rgba(255,255,255,0.10)';
+        context.stroke();
       });
 
-      // Edges
-      edges.forEach(([aId, bId]) => {
-        const a = nodes.find(n => n.id === aId);
-        const b = nodes.find(n => n.id === bId);
-        if (!a || !b) return;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.strokeStyle = 'rgba(255,255,255,0.08)';
-        ctx.lineWidth = 1;
-        ctx.stroke();
+      edges.forEach(([from, to]) => {
+        const a = nodes[from];
+        const b = nodes[to];
+        context.beginPath();
+        context.moveTo(a.x * scale, a.y);
+        context.lineTo(b.x * scale, b.y);
+        context.strokeStyle = 'rgba(255,255,255,0.16)';
+        context.stroke();
       });
 
-      // Nodes
-      nodes.forEach(n => {
-        ctx.beginPath();
-        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.fillStyle = n.color;
-        ctx.globalAlpha = 0.85;
-        ctx.fill();
-        ctx.globalAlpha = 1;
-
-        ctx.font = '10px system-ui, sans-serif';
-        ctx.fillStyle = 'rgba(255,255,255,0.55)';
-        ctx.fillText(n.label, n.x + n.r + 4, n.y + 4);
+      nodes.forEach((node) => {
+        const x = node.x * scale;
+        context.beginPath();
+        context.arc(x, node.y, node.radius, 0, Math.PI * 2);
+        context.fillStyle = node.color;
+        context.fill();
+        context.font = '10px system-ui, sans-serif';
+        context.fillStyle = 'rgba(255,255,255,0.72)';
+        context.fillText(node.label, x + node.radius + 4, node.y + 4);
       });
     }
 
     draw();
+    window.addEventListener('resize', draw, { passive: true });
   };
 
-  /* Real-time Events Demo — simulated SSE event stream */
-  CV.demos.events = function() {
-    const el = document.querySelector('.cv-demo-events');
-    if (!el) return;
-
-    const stream = el.querySelector('[data-event-stream]');
-    const statusDot = el.querySelector('[data-event-status]');
-    const startBtn = el.querySelector('[data-event-start]');
-    const stopBtn = el.querySelector('[data-event-stop]');
-    let interval = null;
-
-    const eventTypes = [
+  CV.demos.events = function eventsDemo() {
+    const element = document.querySelector('.cv-demo-events');
+    if (!element) return;
+    const stream = element.querySelector('[data-event-stream]');
+    const statusDot = element.querySelector('[data-event-status]');
+    const startButton = element.querySelector('[data-event-start]');
+    const stopButton = element.querySelector('[data-event-stop]');
+    const types = [
       'collection:item_added',
       'collection:item_removed',
       'user:session_started',
@@ -331,104 +510,106 @@
       'system:cache_revalidated',
       'collection:availability_changed',
     ];
+    let interval = null;
 
-    function randomPayload(type) {
-      if (type.startsWith('collection:item')) return `{ "id": "jc_${Math.random().toString(36).slice(2,6)}", "sku": "JELLYCAT-${~~(Math.random()*9000+1000)}" }`;
-      if (type === 'system:heartbeat') return `{ "uptime": ${~~(Math.random()*86400)}s }`;
+    function payload(type) {
+      if (type.startsWith('collection:item')) return `{ "id": "jc_${Math.random().toString(36).slice(2, 6)}", "sku": "JELLYCAT-${Math.floor(Math.random() * 9000 + 1000)}" }`;
+      if (type === 'system:heartbeat') return `{ "uptime": ${Math.floor(Math.random() * 86400)} }`;
       return `{ "ts": ${Date.now()} }`;
     }
 
     function emit() {
       if (!stream) return;
-      const type = eventTypes[~~(Math.random() * eventTypes.length)];
+      const type = types[Math.floor(Math.random() * types.length)];
       const row = document.createElement('div');
       row.className = 'cv-event-row';
-      const ts = new Date().toLocaleTimeString('en', { hour12: false });
-      row.innerHTML = `<span class="cv-event-ts">${ts}</span><span class="cv-event-type">${type}</span><span class="cv-event-payload">${randomPayload(type)}</span>`;
+      const timestamp = document.createElement('span');
+      timestamp.className = 'cv-event-ts';
+      timestamp.textContent = new Date().toLocaleTimeString('en', { hour12: false });
+      const typeLabel = document.createElement('span');
+      typeLabel.className = 'cv-event-type';
+      typeLabel.textContent = type;
+      const data = document.createElement('span');
+      data.className = 'cv-event-payload';
+      data.textContent = payload(type);
+      row.append(timestamp, typeLabel, data);
       stream.prepend(row);
-      // trim to 12
-      while (stream.children.length > 12) stream.removeChild(stream.lastChild);
+      while (stream.children.length > 12) stream.lastElementChild.remove();
     }
 
-    if (startBtn) {
-      startBtn.addEventListener('click', () => {
-        if (interval) return;
-        interval = setInterval(emit, 800);
-        if (statusDot) { statusDot.style.background = 'var(--cv-reconstructed)'; statusDot.title = 'Connected'; }
-        startBtn.disabled = true;
-        if (stopBtn) stopBtn.disabled = false;
-        emit(); // immediate first
-      });
-    }
-
-    if (stopBtn) {
-      stopBtn.disabled = true;
-      stopBtn.addEventListener('click', () => {
-        clearInterval(interval);
-        interval = null;
-        if (statusDot) { statusDot.style.background = 'var(--cv-quarantined)'; statusDot.title = 'Disconnected'; }
-        startBtn.disabled = false;
-        stopBtn.disabled = true;
-      });
-    }
+    if (stopButton) stopButton.disabled = true;
+    startButton?.addEventListener('click', () => {
+      if (interval) return;
+      interval = window.setInterval(emit, 800);
+      if (statusDot) {
+        statusDot.style.background = 'var(--cv-reconstructed)';
+        statusDot.title = 'Connected';
+      }
+      startButton.disabled = true;
+      if (stopButton) stopButton.disabled = false;
+      emit();
+    });
+    stopButton?.addEventListener('click', () => {
+      window.clearInterval(interval);
+      interval = null;
+      if (statusDot) {
+        statusDot.style.background = 'var(--cv-quarantined)';
+        statusDot.title = 'Disconnected';
+      }
+      if (startButton) startButton.disabled = false;
+      stopButton.disabled = true;
+    });
   };
 
-  /* Notifications Demo — lifecycle states */
-  CV.demos.notifications = function() {
-    const el = document.querySelector('.cv-demo-notifications');
-    if (!el) return;
-
-    const container = el.querySelector('[data-notif-container]');
-    const btn = el.querySelector('[data-notif-fire]');
-    const clearBtn = el.querySelector('[data-notif-clear]');
-
+  CV.demos.notifications = function notificationsDemo() {
+    const element = document.querySelector('.cv-demo-notifications');
+    if (!element) return;
+    const container = element.querySelector('[data-notif-container]');
+    const fireButton = element.querySelector('[data-notif-fire]');
+    const clearButton = element.querySelector('[data-notif-clear]');
     const templates = [
-      { icon: '📦', title: 'Item restocked', message: 'Jellycat Bashful Bunny Med is back in stock.', color: '#4fffb0' },
-      { icon: '🔔', title: 'Price dropped', message: 'CORDY ROY ELEPHANT TINY dropped 12%.', color: '#60c8ff' },
-      { icon: '⚡', title: 'Session event', message: 'New device session detected. 2 active.', color: '#f0c040' },
-      { icon: '✓',  title: 'Wishlist update', message: 'Your tracked item list was synced.', color: '#c792ea' },
+      { icon: '📦', title: 'Item restocked', message: 'Jellycat Bashful Bunny Med is back in stock.', color: '#147d5a' },
+      { icon: '🔔', title: 'Price dropped', message: 'CORDY ROY ELEPHANT TINY dropped 12%.', color: '#3158ff' },
+      { icon: '⚡', title: 'Session event', message: 'New device session detected. 2 active.', color: '#b85c00' },
+      { icon: '✓', title: 'Wishlist update', message: 'Your tracked item list was synced.', color: '#6c4db8' },
     ];
-
     let count = 0;
 
-    if (btn) {
-      btn.addEventListener('click', () => {
-        if (!container) return;
-        const t = templates[count % templates.length];
-        count++;
-        const notif = document.createElement('div');
-        notif.className = 'cv-notif';
-        notif.style.animationDelay = '0ms';
-        notif.innerHTML = `
-          <div class="cv-notif-icon" style="background:${t.color}20">${t.icon}</div>
-          <div class="cv-notif-body">
-            <div class="cv-notif-title">${t.title}</div>
-            <div class="cv-notif-message">${t.message}</div>
-            <div class="cv-notif-time">just now · pending</div>
-          </div>`;
-        container.prepend(notif);
+    fireButton?.addEventListener('click', () => {
+      if (!container) return;
+      const template = templates[count % templates.length];
+      count += 1;
+      const notification = document.createElement('div');
+      notification.className = 'cv-notif';
+      const icon = document.createElement('div');
+      icon.className = 'cv-notif-icon';
+      icon.style.background = `${template.color}20`;
+      icon.textContent = template.icon;
+      const content = document.createElement('div');
+      content.className = 'cv-notif-body';
+      const title = document.createElement('div');
+      title.className = 'cv-notif-title';
+      title.textContent = template.title;
+      const message = document.createElement('div');
+      message.className = 'cv-notif-message';
+      message.textContent = template.message;
+      const time = document.createElement('div');
+      time.className = 'cv-notif-time';
+      time.textContent = 'just now · pending';
+      content.append(title, message, time);
+      notification.append(icon, content);
+      container.prepend(notification);
 
-        // lifecycle: pending → delivered → read
-        setTimeout(() => {
-          const ts = notif.querySelector('.cv-notif-time');
-          if (ts) ts.textContent = '1s · delivered';
-        }, 1000);
-        setTimeout(() => {
-          const ts = notif.querySelector('.cv-notif-time');
-          if (ts) ts.textContent = '3s · read';
-          notif.style.opacity = '0.6';
-        }, 3000);
+      window.setTimeout(() => { time.textContent = '1s · delivered'; }, 1000);
+      window.setTimeout(() => {
+        time.textContent = '3s · read';
+        notification.style.opacity = '0.6';
+      }, 3000);
+      while (container.children.length > 4) container.lastElementChild.remove();
+    });
 
-        // trim to 4
-        while (container.children.length > 4) container.removeChild(container.lastChild);
-      });
-    }
-
-    if (clearBtn) {
-      clearBtn.addEventListener('click', () => {
-        if (container) container.innerHTML = '';
-      });
-    }
+    clearButton?.addEventListener('click', () => {
+      if (container) container.textContent = '';
+    });
   };
-
 })();
