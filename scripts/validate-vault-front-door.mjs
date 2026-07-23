@@ -30,22 +30,23 @@ assert.match(vault, /id="vault-search"[^>]*type="search"/);
 assert.match(vault, /id="patterns"/);
 assert.match(vault, /id="parts"/);
 assert.match(vault, /id="records"/);
-assert.match(vault, /35<\/strong><span>documented patterns/);
+assert.match(vault, /49<\/strong><span>documented patterns/);
 assert.match(vault, /23<\/strong><span>technical parts/);
-assert.match(vault, /14<\/strong><span>donor systems/);
+assert.match(vault, /16<\/strong><span>donor systems/);
 assert.match(vault, /0<\/strong><span>emotional diagnoses/);
+assert.match(vault, /Affective Artifact Infrastructure/);
 assert.match(vault, /Provenance stays attached/);
 assert.match(vault, /The apps died\. The invention did not\./);
 assert.doesNotMatch(vault, /data-buy|UndoneCommerce|etsy/i, 'Vault must remain isolated from commerce');
 assert.doesNotMatch(vault, /fonts\.googleapis|unpkg|jsdelivr|cdnjs/i, 'Vault front door must not require external assets');
 
 const searchableCount = (vault.match(/data-searchable=/g) || []).length;
-assert.equal(searchableCount, 14, 'Vault search should cover six pattern families and eight technical departments');
+assert.equal(searchableCount, 15, 'Vault search should cover seven pattern families and eight technical departments');
 
 const entryCardCount = (vault.match(/class="vault-entry-card(?: vault-entry-card-main)?"/g) || []).length;
 assert.equal(entryCardCount, 3, 'Front door must keep exactly three primary routes');
 
-const localHrefs = Array.from(vault.matchAll(/href="(\/chaos-vault\/[^"]+)"/g), (match) => match[1]);
+const localHrefs = Array.from(vault.matchAll(/href="(\/chaos-vault\/[^\"]+)"/g), (match) => match[1]);
 for (const href of localHrefs) {
   const withoutFragment = href.split('#')[0];
   const relativePath = withoutFragment.replace(/^\//, '');
