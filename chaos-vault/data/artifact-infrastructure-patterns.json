@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-07-23",
+  "collection": "Affective Artifact Infrastructure",
+  "purpose": "Clean-room pattern records harvested from Catmode, Get Fridge, and StickerOS. These records preserve portable interaction contracts without importing donor-specific code, personal data, demo claims, or unsafe incentives.",
+  "evidenceRelationship": "implemented prototypes illustrate these patterns; they do not validate general effectiveness",
+  "sources": [
+    {
+      "repository": "amydojo/Catmode",
+      "verifiedCommit": "1bb108fb29d2885004a5df188526aa3cdb956e93",
+      "scope": "room prescription, digital delivery, printable prescription, and seven-day observation protocol"
+    },
+    {
+      "repository": "amydojo/get-fridge",
+      "verifiedCommit": "919becd1d472d9d648fb68dcfb21f1e518322bc1",
+      "scope": "ingredient intake, bounded meal selection, Cook Mode, recovery reveal, completion, and saved recipes"
+    },
+    {
+      "repository": "amydojo/STICKER-OS",
+      "verifiedCommit": "4c23eafb1922b6134316d1c2bddbb4a8817884ae",
+      "scope": "reactive sticker data model, local context ranking, shared storage, and cross-surface extensions"
+    }
+  ],
+  "patterns": [
+    {
+      "id": "CV-AFI-001",
+      "name": "Behavioral Loop Prescription",
+      "donor": "Catmode",
+      "category": "environmental-intervention",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original product pattern",
+      "thesis": "Represent a recurring behavior as a sequence of needs and design a route that lets the full sequence complete without repeatedly falling into the harmful default path.",
+      "observedImplementation": ["watch to hide to scratch to pounce to recover sequence", "room diagnosis framed as a missing loop", "prescribed route through existing furniture"],
+      "requiredControls": ["plain-language sequence", "editable assumptions", "low-cost trial", "observation period", "reversal path"],
+      "risks": ["inventing causal certainty", "treating one observed sequence as universal", "designing for the observer instead of the affected subject"]
+    },
+    {
+      "id": "CV-AFI-002",
+      "name": "Route Before Object",
+      "donor": "Catmode",
+      "category": "environmental-intervention",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original design principle",
+      "thesis": "Diagnose the missing connection between useful elements before recommending another object, feature, purchase, or screen.",
+      "observedImplementation": ["existing perch, hide, scratcher, couch, and toy treated as disconnected nodes", "the intervention connects nodes before adding inventory"],
+      "requiredControls": ["existing-condition map", "connection hypothesis", "no-purchase option", "testable route"],
+      "risks": ["oversimplifying structural constraints", "assuming rearrangement is always feasible", "using minimalism to deny necessary resources"]
+    },
+    {
+      "id": "CV-AFI-003",
+      "name": "Subject-Decides-Outcome",
+      "donor": "Catmode",
+      "category": "evaluation-contracts",
+      "status": "experimental",
+      "evidence": "prototype evaluation protocol",
+      "kind": "original evaluation principle",
+      "thesis": "The being most affected by an intervention determines whether it works through observable use, refusal, friction, or recovery rather than designer confidence alone.",
+      "observedImplementation": ["seven-day observation protocol", "behavior frequency recorded after installation", "explicit statement that the cat decides whether the room works"],
+      "requiredControls": ["observable outcome definition", "baseline or comparison period", "room for refusal", "no forced exposure", "human review of competing explanations"],
+      "risks": ["anthropomorphic interpretation", "surveillance replacing care", "declaring success from selective observations"]
+    },
+    {
+      "id": "CV-AFI-004",
+      "name": "Medium-Translated Intervention",
+      "donor": "Catmode",
+      "category": "artifact-compilers",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original artifact system",
+      "thesis": "Express one intervention through distinct media designed for distinct jobs: a navigable screen for understanding, a formal document for preservation, and a field sheet for observation.",
+      "observedImplementation": ["responsive digital prescription", "five-page printable prescription", "standalone seven-day field log"],
+      "requiredControls": ["shared source of truth", "format-specific hierarchy", "stable document identity", "accessible digital equivalent", "no information loss across formats"],
+      "risks": ["visual parity mistaken for functional equivalence", "paper artifacts becoming stale", "duplicate records diverging"]
+    },
+    {
+      "id": "CV-AFI-005",
+      "name": "Use-What-You-Have Trial",
+      "donor": "Catmode",
+      "category": "evaluation-contracts",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original intervention contract",
+      "thesis": "Test the logic of an intervention with reversible existing materials before turning uncertainty into a purchase recommendation.",
+      "observedImplementation": ["budget mode labeled use what you have", "twenty-minute installation sequence", "buy nothing until the route works"],
+      "requiredControls": ["time-bounded test", "reversible setup", "clear success and stop conditions", "permission to conclude that the idea failed"],
+      "risks": ["romanticizing resource scarcity", "delaying necessary safety equipment", "treating a temporary workaround as a permanent solution"]
+    },
+    {
+      "id": "CV-AFI-006",
+      "name": "Appliance Mode",
+      "donor": "Get Fridge",
+      "category": "interaction-budgets",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original operating mode",
+      "thesis": "Temporarily turn a general-purpose screen into one task appliance with one visible step, stable controls, nearby recovery, and no unrelated feed pressure.",
+      "observedImplementation": ["dedicated full-height Cook Mode", "one large instruction at a time", "persistent back and next controls", "ingredients available through a compact drawer"],
+      "requiredControls": ["exit", "previous step", "next step", "complete plan access", "screen-awake and accessibility considerations", "stable layout"],
+      "risks": ["hiding consequential context", "mode trapping", "metaphor overpowering task clarity"]
+    },
+    {
+      "id": "CV-AFI-007",
+      "name": "Available-Materials Compiler",
+      "donor": "Get Fridge",
+      "category": "artifact-compilers",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original compiler pattern",
+      "thesis": "Compile a useful next action from the materials already present rather than beginning with an idealized plan that requires new acquisition.",
+      "observedImplementation": ["free-form ingredient declaration", "bounded meal possibilities", "ingredient normalization and validation", "regeneration excluding prior suggestions"],
+      "requiredControls": ["editable inventory", "missing-item disclosure", "safe substitution boundaries", "regenerate", "manual choice"],
+      "risks": ["unsafe substitutions", "hallucinated availability", "optimizing novelty over feasibility", "medical or allergy assumptions"]
+    },
+    {
+      "id": "CV-AFI-008",
+      "name": "Choice Surrender Control",
+      "donor": "Get Fridge",
+      "category": "agency-controls",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original control pattern",
+      "thesis": "Let the person explicitly delegate one bounded decision when choosing is the burden, while keeping the chosen option inspectable and reversible.",
+      "observedImplementation": ["Surprise me selects from the already visible bounded meal set", "the user can return and choose another option"],
+      "requiredControls": ["bounded candidate set", "visible result", "try another", "manual selection", "no consequential auto-commit"],
+      "risks": ["delegation becoming default", "opaque ranking", "randomness used for consequential decisions"]
+    },
+    {
+      "id": "CV-AFI-009",
+      "name": "Quiet Satisficing Completion",
+      "donor": "Get Fridge",
+      "category": "completion-contracts",
+      "status": "reconstructed",
+      "evidence": "implemented prototype",
+      "kind": "original affective ending",
+      "thesis": "Acknowledge that the necessary thing happened without demanding celebration, optimization, productivity momentum, or a positive emotional performance.",
+      "observedImplementation": ["That is dinner", "Dinner happened", "You cooked", "Good enough is enough", "simple yes, maybe, or no reflection"],
+      "requiredControls": ["neutral completion language", "no forced sharing", "no automatic next task", "skip feedback", "clear exit"],
+      "risks": ["patronizing tone", "false reassurance", "using low-pressure language to conceal poor outcomes"]
+    },
+    {
+      "id": "CV-AFI-010",
+      "name": "Evidence-by-Use Archive",
+      "donor": "Get Fridge",
+      "category": "continuity-systems",
+      "status": "experimental",
+      "evidence": "implemented prototype",
+      "kind": "original continuity pattern",
+      "thesis": "Let completed use, not generated possibility, determine what earns a durable place in the personal archive.",
+      "observedImplementation": ["recipes can be saved after selection and use", "saved copy says when something works, keep it here", "make-again feedback separates possibility from lived utility"],
+      "requiredControls": ["explicit save", "delete", "editable notes", "source and modification history", "no automatic preference profile"],
+      "risks": ["mistaking one use for stable preference", "silent behavioral profiling", "archive clutter"]
+    },
+    {
+      "id": "CV-AFI-011",
+      "name": "Ambient State Object",
+      "donor": "StickerOS",
+      "category": "expressive-objects",
+      "status": "reconstructed",
+      "evidence": "implemented MVP architecture",
+      "kind": "original communication primitive",
+      "thesis": "Represent a small changing state as a sendable object that can sit inside ordinary conversation instead of requiring a dashboard or explanatory paragraph.",
+      "observedImplementation": ["energy bar", "ETA", "focus badge", "availability", "time", "battery"],
+      "requiredControls": ["user chooses what is shared", "preview", "timestamp or freshness", "manual refresh", "plain-text equivalent", "expiration"],
+      "risks": ["stale state presented as live", "coercive availability signaling", "oversharing device telemetry"]
+    },
+    {
+      "id": "CV-AFI-012",
+      "name": "Context Without Confession",
+      "donor": "StickerOS",
+      "category": "affective-contracts",
+      "status": "experimental",
+      "evidence": "product hypothesis implemented as sample objects",
+      "kind": "original expression pattern",
+      "thesis": "Allow a person to communicate operational context through a chosen artifact without requiring emotional explanation, diagnosis, or intimate disclosure.",
+      "observedImplementation": ["energy, focus, ETA, and availability communicated as stickers", "user-selected object rather than inferred message"],
+      "requiredControls": ["neutral options", "custom wording", "private by default", "no recipient entitlement", "no emotion inference from selection"],
+      "risks": ["artifact becoming a social obligation", "recipient treating status as surveillance data", "system inferring personality or mood"]
+    },
+    {
+      "id": "CV-AFI-013",
+      "name": "Cross-Surface Expressive Continuity",
+      "donor": "StickerOS",
+      "category": "continuity-systems",
+      "status": "reconstructed",
+      "evidence": "implemented MVP architecture",
+      "kind": "original platform pattern",
+      "thesis": "Keep one user-owned expressive object coherent across its library, editor, keyboard, message surface, and share extension without rebuilding identity in every context.",
+      "observedImplementation": ["shared core model", "App Group storage", "main app", "keyboard extension", "Messages extension", "share extension"],
+      "requiredControls": ["least-privilege permissions", "consistent deletion", "shared versioned model", "offline behavior", "surface-specific fallback"],
+      "risks": ["full-access keyboard privacy exposure", "partial deletion", "surface divergence", "platform permission confusion"]
+    },
+    {
+      "id": "CV-AFI-014",
+      "name": "Local Context Suggestion",
+      "donor": "StickerOS",
+      "category": "recommendation-contracts",
+      "status": "reconstructed",
+      "evidence": "implemented deterministic engine",
+      "kind": "original technical pattern",
+      "thesis": "Rank user-authored expressive objects against small local context signals without uploading the conversation, generating content, or claiming to know the person.",
+      "observedImplementation": ["deterministic scoring for time, battery, activity status, favorites, and usage", "on-device shared storage", "no required network request"],
+      "requiredControls": ["inspectable factors", "disable suggestions", "manual search", "no auto-send", "local processing", "context minimization"],
+      "risks": ["context creep", "behavioral lock-in from usage weighting", "device telemetry treated as affect", "suggestion presented as prediction"]
+    }
+  ],
+  "strengthenedExistingPatterns": [
+    {
+      "name": "Something Feels Off? Recovery Reveal",
+      "donorEvidence": "Get Fridge Cook Mode",
+      "reason": "The source contains an implemented optional mid-task repair hatch with problem-to-fix guidance. No duplicate record is created."
+    },
+    {
+      "name": "Bounded Machine Metaphor",
+      "donorEvidence": "Get Fridge Cook Mode and Catmode Room Prescription",
+      "reason": "Both donors demonstrate a phone temporarily behaving like a bounded appliance or field instrument."
+    },
+    {
+      "name": "Format Carries Meaning",
+      "donorEvidence": "Catmode digital prescription, formal PDF, and field log",
+      "reason": "The source shows that format changes the operational contract rather than merely restyling identical content."
+    }
+  ],
+  "quarantine": [
+    "copying donor-specific personal details as reusable sample data",
+    "presenting animal behavior interpretation as veterinary diagnosis or proven causality",
+    "delaying necessary purchases or safety equipment in the name of using what is available",
+    "unsafe generated cooking substitutions, allergy assumptions, or unverified food-safety guidance",
+    "daily-use paywalls that exploit basic care needs",
+    "automatic sending of status, availability, energy, battery, location, or activity data",
+    "requiring full-access keyboard permissions for basic operation",
+    "inferring mood, personality, diagnosis, or relationship intent from a selected sticker",
+    "presenting a prototype as evidence that a pattern is generally effective"
+  ]
+}
