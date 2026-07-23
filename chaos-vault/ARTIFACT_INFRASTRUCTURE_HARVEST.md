@@ -13,6 +13,8 @@ This harvest audits three authored prototype repositories:
 | `amydojo/get-fridge` | `919becd1d472d9d648fb68dcfb21f1e518322bc1` | ingredient intake, bounded selection, Cook Mode, repair reveal, completion, and saved recipes |
 | `amydojo/STICKER-OS` | `4c23eafb1922b6134316d1c2bddbb4a8817884ae` | reactive object model, local suggestions, shared storage, and cross-surface extensions |
 
+`amydojo/get-fridge` is the source already represented in the Vault as **Fridge Web**. This harvest deepens that donor instead of counting it twice.
+
 No donor code is imported. The Vault retains clean-room behavioral contracts, implementation evidence, required controls, failure modes, and explicit quarantine rules.
 
 ## Product thesis recovered
@@ -104,7 +106,7 @@ The implementation relationship is always:
 
 ## Inventory effect
 
-This harvest adds 14 documented patterns and three donor systems.
+This harvest adds 14 documented patterns and two new donor systems. Get Fridge deepens the existing Fridge Web donor.
 
 Mainline totals represented by this branch:
 
@@ -113,4 +115,4 @@ Mainline totals represented by this branch:
 - 3 Capytopia patterns
 - 5 Design Intent Infrastructure patterns
 - 14 Affective Artifact Infrastructure patterns
-- **49 documented patterns across 17 donor systems**
+- **49 documented patterns across 16 donor systems**
