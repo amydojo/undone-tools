@@ -4,14 +4,15 @@
 
   const config = factory();
 
-  // Keep issued-artifact metadata in separate physical zones at every viewport.
+  // Keep issued-artifact meaning, timing, and status in separate physical zones.
   // This runs only in browsers; the API can require this file without DOM side effects.
   if (root && root.document) {
     const geometry = root.document.createElement('style');
     geometry.dataset.reentryArtifactGeometry = 'true';
     geometry.textContent = [
-      '.std-reentry-pass > strong{position:absolute;left:34px;bottom:78px;margin:0}',
-      '@media(max-width:700px){.std-reentry-pass > strong{left:28px}}',
+      '.std-reentry-pass{min-height:390px}',
+      '.std-reentry-pass > strong{position:static;display:block;margin-top:26px}',
+      '@media(max-width:700px){.std-reentry-pass{min-height:360px}}',
     ].join('');
     root.document.head.append(geometry);
   }
