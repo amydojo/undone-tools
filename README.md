@@ -16,6 +16,7 @@ Primary routes:
 - `/chaos-vault/` — legacy route that redirects to `/vault/`
 - `/chaos-vault/patterns/` — detailed affective and systems pattern library
 - `/chaos-vault/patterns/design-intent-infrastructure.html` — Left Brain MCP clean-room harvest
+- `/chaos-vault/patterns/artifact-infrastructure.html` — Catmode, Get Fridge, and StickerOS clean-room harvest
 
 The short `/vault/` route is the intended public entry. It uses progressive disclosure, local search, three primary routes, and an editorial archive visual system. Detailed records and working demonstrations remain under `/chaos-vault/` so existing deep links do not break.
 
@@ -32,7 +33,7 @@ Do not mix these namespaces.
 
 ## Chaos Vault
 
-Chaos Vault has technical departments and six pattern families.
+Chaos Vault has technical departments and seven pattern families.
 
 ### Technical departments
 
@@ -53,8 +54,9 @@ Chaos Vault has technical departments and six pattern families.
 - **Continuity and Control** — emotional and object continuity, pattern memory, procedural accompaniment, delta over score, controls as contracts
 - **Capytopia Play Systems** — sensory assembly, avatar-mediated expression, and soft-world task scaffolding
 - **Design Intent Infrastructure** — structured design memory, inspectable generation contracts, compatibility shells, mechanical burden transfer, and compatibility as care
+- **Affective Artifact Infrastructure** — behavioral prescriptions, route-before-object intervention, appliance modes, quiet completion, sendable ambient state, and local context suggestions
 
-The current mainline harvest contains 27 core affective patterns, three Capytopia patterns, and five design-infrastructure patterns.
+The current branch represents 27 core affective patterns, three Capytopia patterns, five design-infrastructure patterns, and fourteen artifact-infrastructure patterns: **49 documented patterns across 16 donor systems**.
 
 Canonical supporting files:
 
@@ -65,14 +67,16 @@ vault/vault.js
 chaos-vault/data/affective-patterns.json
 chaos-vault/data/capytopia-patterns.json
 chaos-vault/data/design-intent-patterns.json
+chaos-vault/data/artifact-infrastructure-patterns.json
 chaos-vault/library/affective-contracts.js
 chaos-vault/library/design-intent-contract.js
 chaos-vault/contracts/design-intent.schema.json
 chaos-vault/LEFT_BRAIN_MCP_HARVEST.md
+chaos-vault/ARTIFACT_INFRASTRUCTURE_HARVEST.md
 chaos-vault/HARVEST_LOG.md
 ```
 
-The registries distinguish original product inventions, research-linked hypotheses, clean-room reconstructions, and quarantined specimens. A pattern record is not automatically an effectiveness claim.
+The registries distinguish original product inventions, research-linked hypotheses, clean-room reconstructions, and quarantined specimens. A pattern record is not automatically an effectiveness claim. An implemented prototype illustrates a pattern; it does not validate general effectiveness.
 
 ## Design intent API boundary
 
@@ -100,7 +104,7 @@ A missing secret fails closed with `503 service_not_configured`.
 Do not import or rehabilitate:
 
 - fake skin, mood, relationship, creativity, talent, or emotional-severity scores
-- diagnosis from face, voice, cursor, biometrics, avatar choices, or interaction telemetry
+- diagnosis from face, voice, cursor, biometrics, avatar choices, stickers, or interaction telemetry
 - generated quotes presented as authentic quotations
 - permanent psychological profiles
 - vulnerability scoring or streak punishment
@@ -108,11 +112,13 @@ Do not import or rehabilitate:
 - fake payment gates
 - scraping bypasses
 - automatic consequential adaptation or external actions
+- automatic sharing of status, availability, energy, battery, location, or activity data
 - arbitrary model-generated markup, routing, persistence, or filenames
 - arbitrary server-side URL fetching or open proxy behavior
 - hidden network calls or full sensitive payload logging
 - shallow merging of design memory and generation instructions
 - branded source templates presented as generic reusable assets
+- prototype implementation presented as proof of general effectiveness
 
 ## Etsy product configuration
 
@@ -170,4 +176,4 @@ Run:
 npm test
 ```
 
-The validation suite checks customer routes, purchase fallbacks, script order, query-parameter preservation, Commerce versus Chaos Vault isolation, pattern integrity, source-correction records, the dependency-free design-intent compiler, the authenticated Vercel function boundary, and the `/vault/` front-door contract.
+The validation suite checks customer routes, purchase fallbacks, script order, query-parameter preservation, Commerce versus Chaos Vault isolation, pattern integrity, source-correction records, the dependency-free design-intent compiler, the authenticated Vercel function boundary, the `/vault/` front-door contract, and the Affective Artifact Infrastructure registry and page.
