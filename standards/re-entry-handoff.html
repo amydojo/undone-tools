@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#f2efe7" />
+  <title>Aftercare Handoff Simulator — Undone Standards</title>
+  <meta name="description" content="Map what happens after your aftercare handout leaves your hands. No answers are stored or sent." />
+  <link rel="canonical" href="https://undone.tools/standards/re-entry-handoff.html" />
+  <meta property="og:title" content="Aftercare Handoff Simulator — Undone Standards" /><meta property="og:description" content="A free operational diagnostic for understanding aftercare continuity gaps." /><meta property="og:type" content="website" /><meta property="og:url" content="https://undone.tools/standards/re-entry-handoff.html" /><meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="/assets/styles.css" /><link rel="stylesheet" href="/assets/commerce.css" /><link rel="stylesheet" href="/assets/reentry.css" />
+</head>
+<body class="std-body std-reentry-body" data-reentry-simulator>
+  <a class="std-skip-link" href="#main">Skip to simulator</a><div class="std-shell"><div class="std-container">
+    <header class="std-header"><a href="/" class="std-brand" aria-label="Undone Studio home"><span class="std-orb" aria-hidden="true"></span><span class="std-brand-name">Undone</span></a><nav class="std-nav" aria-label="Primary"><a href="/">Studio</a><a href="/standards/" class="active">Standards</a></nav></header>
+    <main id="main">
+      <section class="std-section std-reveal std-reentry-simulator-hero"><span class="std-reentry-eyebrow">AFTERCARE HANDOFF SIMULATOR</span><h1 class="std-reentry-display">What happens after the handout leaves your hands?</h1><p class="std-reentry-lead">Answer five operational questions. Your selections stay in this browser tab and are not stored, transmitted, or added to analytics.</p></section>
+      <section class="std-section std-reveal">
+        <form id="reentryHandoffForm" class="std-reentry-simulator-form">
+          <fieldset><legend>1. How does the client receive aftercare?</legend><label><input type="radio" name="delivery" value="printed-handout" required /> Printed handout</label><label><input type="radio" name="delivery" value="pdf" /> PDF</label><label><input type="radio" name="delivery" value="text-message" /> Text message</label><label><input type="radio" name="delivery" value="verbal" /> Verbal instructions</label><label><input type="radio" name="delivery" value="patient-portal" /> Patient portal</label></fieldset>
+          <fieldset><legend>2. Can the instructions change after delivery?</legend><label><input type="radio" name="change" value="yes" required /> Yes</label><label><input type="radio" name="change" value="no" /> No</label><label><input type="radio" name="change" value="replacement" /> Only by sending a replacement</label></fieldset>
+          <fieldset><legend>3. Can the client immediately tell what applies today?</legend><label><input type="radio" name="today" value="yes" required /> Yes</label><label><input type="radio" name="today" value="no" /> No</label><label><input type="radio" name="today" value="sometimes" /> Sometimes</label></fieldset>
+          <fieldset><legend>4. What happens when an item was never defined?</legend><label><input type="radio" name="unknown" value="asks-us" required /> The client asks us</label><label><input type="radio" name="unknown" value="general-guidance" /> Staff gives general guidance</label><label><input type="radio" name="unknown" value="not-addressed" /> The handout does not address it</label><label><input type="radio" name="unknown" value="other" /> Other</label></fieldset>
+          <fieldset><legend>5. Can access to outdated guidance be ended?</legend><label><input type="radio" name="access" value="yes" required /> Yes</label><label><input type="radio" name="access" value="no" /> No</label><label><input type="radio" name="access" value="unsure" /> Unsure</label></fieldset>
+          <div class="std-reentry-simulator-actions"><button class="std-btn std-btn-primary" type="submit">Map the handoff</button><button class="std-btn std-btn-secondary" type="reset">Reset</button></div>
+        </form>
+        <section id="reentryHandoffResults" class="std-reentry-gap-map" hidden tabindex="-1" aria-labelledby="gap-map-heading"><span class="std-label">YOUR HANDOFF MAP</span><h2 id="gap-map-heading" class="std-h2">Your current process contains information.<br />The missing layer is continuity.</h2><div id="reentryGapRows" class="std-reentry-gap-rows"></div><p class="std-p">RE:ENTRY maintains the provider-authored state after the appointment.</p><div class="std-reentry-actions"><a class="std-btn std-btn-primary" data-reentry-demo data-placement="simulator-results" href="https://re-entry-eight.vercel.app/client/SP-0042/demo-secure-token" target="_blank" rel="noopener noreferrer external">See the live Skin Pass ↗</a><a class="std-btn std-btn-secondary" data-reentry-pilot-cta data-placement="simulator-results" href="/standards/re-entry.html#founding-pilot">View the founding pilot</a></div></section>
+      </section>
+    </main>
+    <footer class="std-footer std-footer-commerce"><span>Undone Standard · Handoff Simulator</span><a href="/standards/re-entry.html">Return to RE:ENTRY</a></footer>
+  </div></div>
+  <script src="/assets/products.js"></script><script src="/assets/analytics.js"></script><script src="/assets/reentry-config.js"></script><script src="/assets/reentry-handoff.js"></script><script src="/assets/reentry.js"></script><script defer src="/assets/app.js"></script>
+</body>
+</html>
