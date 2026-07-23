@@ -139,10 +139,10 @@ else process.env.DESIGN_INTENT_API_SECRET = previousSecret;
 const patternIndex = read('chaos-vault/patterns/index.html');
 assert.match(patternIndex, /Design Intent Infrastructure/);
 assert.match(patternIndex, /5 Design Infrastructure Patterns/);
-assert.match(patternIndex, /14 Donor Systems/);
+assert.match(patternIndex, /16 Donor Systems/);
 
 const vaultIndex = read('chaos-vault/index.html');
-assert.match(vaultIndex, /35 Documented Patterns/);
+assert.match(vaultIndex, /49 Documented Patterns/);
 assert.match(vaultIndex, /Design Intent Infrastructure/);
 assert.match(vaultIndex, /Left Brain MCP/);
 
