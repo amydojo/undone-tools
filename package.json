@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "http-server . -p 5000 -c-1",
     "check": "node --check assets/products.js && node --check assets/analytics.js && node --check assets/app.js && node --check chaos-vault/assets/cv.js && node --check chaos-vault/library/affective-contracts.js && node --check chaos-vault/library/design-intent-contract.js && node --check api/compile-design-intent.js && node --check vault/vault.js",
-    "validate": "node scripts/validate.mjs && node scripts/validate-left-brain.mjs && node scripts/validate-vault-front-door.mjs",
+    "validate": "node scripts/validate.mjs && node scripts/validate-left-brain.mjs && node scripts/validate-vault-front-door.mjs && node scripts/validate-artifact-infrastructure.mjs",
     "test": "npm run check && npm run validate"
   },
   "keywords": [
