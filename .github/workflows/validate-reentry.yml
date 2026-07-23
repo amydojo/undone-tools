@@ -1,0 +1,42 @@
+name: Validate RE:ENTRY funnel
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - feat/reentry-sales-funnel
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-reentry-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-reentry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check RE:ENTRY JavaScript
+        run: |
+          node --check assets/reentry-config.js
+          node --check assets/reentry.js
+          node --check assets/reentry-handoff.js
+          node --check api/reentry-pilot.js
+
+      - name: Validate RE:ENTRY funnel contracts
+        run: node scripts/validate-reentry.mjs

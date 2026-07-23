@@ -12,6 +12,18 @@
   ]);
 
   const PRODUCTS = Object.freeze({
+    're-entry': Object.freeze({
+      id: 're-entry',
+      name: 'RE:ENTRY',
+      path: '/standards/re-entry.html',
+      demoUrl: 'https://re-entry-eight.vercel.app/client/SP-0042/demo-secure-token',
+      pilotUrl: '/standards/re-entry.html#founding-pilot',
+      pricingLabel: '$59 / 90-day founding pilot',
+      productType: 'live-system',
+      checkoutUrl: null,
+      exactListingConfigured: false,
+      status: 'founding-pilot',
+    }),
     'microneedling-pre-care': Object.freeze({
       id: 'microneedling-pre-care',
       name: 'Microneedling Pre-Care Checklist',
