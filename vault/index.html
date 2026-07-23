@@ -7,6 +7,7 @@
   <meta name="description" content="Chaos Vault is the Lab Dojo archive of reusable affective interface patterns, technical parts, and recovered product inventions." />
   <link rel="canonical" href="/vault/" />
   <link rel="stylesheet" href="/vault/vault.css" />
+  <link rel="stylesheet" href="/vault/mobile.css" />
   <title>Chaos Vault · Lab Dojo</title>
 </head>
 <body class="vault-body">
@@ -17,7 +18,9 @@
       <span class="vault-brand-mark" aria-hidden="true"></span>
       <span>Lab Dojo / Chaos Vault</span>
     </a>
-    <nav class="vault-nav" aria-label="Vault navigation">
+    <button class="vault-menu-toggle" type="button" aria-expanded="false" aria-controls="vault-nav">Menu</button>
+    <nav id="vault-nav" class="vault-nav" aria-label="Vault navigation">
+      <a href="#start">Start by problem</a>
       <a href="#patterns">Patterns</a>
       <a href="#parts">Parts</a>
       <a href="#records">Records</a>
@@ -39,6 +42,17 @@
       </div>
     </section>
 
+    <section id="start" class="vault-problem-nav" aria-labelledby="problem-title">
+      <p>Start by problem</p>
+      <h2 id="problem-title">What are you trying to make easier?</h2>
+      <div class="vault-problem-grid">
+        <a href="/chaos-vault/patterns/interaction-budgets.html"><strong>Simplify a task</strong><span>Fewer decisions</span></a>
+        <a href="/chaos-vault/departments/recovery-patterns.html"><strong>Recover mid-task</strong><span>Repair without restart</span></a>
+        <a href="/chaos-vault/patterns/artifact-compilers.html"><strong>Make an artifact</strong><span>Meaning into form</span></a>
+        <a href="/chaos-vault/patterns/continuity-systems.html"><strong>Carry context forward</strong><span>Return without shame</span></a>
+      </div>
+    </section>
+
     <section class="vault-search-panel" aria-labelledby="search-title">
       <div>
         <p class="vault-section-number">00</p>
@@ -46,7 +60,7 @@
       </div>
       <div class="vault-search-control">
         <label class="vault-visually-hidden" for="vault-search">Search patterns and technical parts</label>
-        <input id="vault-search" type="search" placeholder="Try “recovery”, “camera”, or “continuity”" autocomplete="off" />
+        <input id="vault-search" type="search" placeholder="Try “recovery”, “appliance”, or “continuity”" autocomplete="off" />
         <button id="vault-search-clear" type="button">Clear</button>
       </div>
       <p id="vault-search-status" class="vault-search-status" aria-live="polite">Showing the whole archive.</p>
@@ -85,9 +99,9 @@
     </section>
 
     <section class="vault-metrics" aria-label="Archive totals">
-      <div><strong>35</strong><span>documented patterns</span></div>
+      <div><strong>49</strong><span>documented patterns</span></div>
       <div><strong>23</strong><span>technical parts</span></div>
-      <div><strong>14</strong><span>donor systems</span></div>
+      <div><strong>16</strong><span>donor systems</span></div>
       <div><strong>0</strong><span>emotional diagnoses</span></div>
     </section>
 
@@ -132,6 +146,11 @@
           <div><h3>Design Intent Infrastructure</h3><p>Structured design memory, inspectable generation, and authorship preserving automation.</p></div>
           <span class="vault-list-count">5</span>
         </a>
+        <a class="vault-list-item" data-searchable="affective artifact infrastructure catmode fridge stickeros behavioral loop route appliance ambient state sendable status quiet completion" href="/chaos-vault/patterns/artifact-infrastructure.html">
+          <span class="vault-list-code">CV·AFI</span>
+          <div><h3>Affective Artifact Infrastructure</h3><p>Behavioral prescriptions, appliance modes, quiet completion, and sendable ambient state.</p></div>
+          <span class="vault-list-count">14</span>
+        </a>
       </div>
     </section>
 
@@ -163,13 +182,16 @@
           <h2 id="records-title">Source records</h2>
           <p>The archive is useful because it remembers where an idea came from and what must not be carried forward.</p>
         </div>
+        <button id="vault-records-toggle" class="vault-records-toggle" type="button" aria-expanded="false" aria-controls="vault-record-grid">Show source records</button>
       </div>
 
-      <div class="vault-record-grid">
+      <div id="vault-record-grid" class="vault-record-grid">
         <a href="/chaos-vault/HARVEST_LOG.md"><span>LOG</span><strong>Harvest record</strong><p>Donor by donor extraction notes and corrections.</p></a>
         <a href="/chaos-vault/data/affective-patterns.json"><span>JSON</span><strong>Core registry</strong><p>Machine readable affective pattern records.</p></a>
         <a href="/chaos-vault/data/design-intent-patterns.json"><span>JSON</span><strong>Design intent registry</strong><p>Structured patterns from Left Brain MCP.</p></a>
         <a href="/chaos-vault/data/capytopia-patterns.json"><span>JSON</span><strong>Capytopia registry</strong><p>Play system patterns with prototype boundaries.</p></a>
+        <a href="/chaos-vault/data/artifact-infrastructure-patterns.json"><span>JSON</span><strong>Artifact infrastructure registry</strong><p>Fourteen clean-room records from Catmode, Get Fridge, and StickerOS.</p></a>
+        <a href="/chaos-vault/ARTIFACT_INFRASTRUCTURE_HARVEST.md"><span>NOTE</span><strong>Artifact harvest audit</strong><p>Verified commits, retained contracts, strengthened records, and quarantine decisions.</p></a>
       </div>
     </section>
 
@@ -187,6 +209,12 @@
     <span>Lab Dojo · Chaos Vault</span>
     <span>The apps died. The invention did not.</span>
   </footer>
+
+  <nav class="vault-mobile-bar" aria-label="Mobile Vault shortcuts">
+    <button type="button" data-vault-focus-search>Search</button>
+    <a href="#patterns">Browse</a>
+    <a href="#main">Top</a>
+  </nav>
 
   <script src="/vault/vault.js"></script>
 </body>

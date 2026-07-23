@@ -51,11 +51,11 @@ Retained structured camera-to-analysis behavior, bounded template selection, int
 
 Retained tone selection before vulnerability, bounded daily ritual, multimodal responses, and AI-to-local fallback. Relationship scores, creativity bonuses, vulnerability grading, and streak punishment remain quarantined.
 
-#### Fridge Web
+#### Fridge Web / Get Fridge
 
 Retained “Something feels off?” mid-task recovery, step-level repair, validate → repair → regenerate → fallback, lazy enrichment, and ingredient normalization.
 
-Correction: Fridge Web was a mobile-first cooking companion, not a smart-fridge image inventory product.
+Correction: Fridge Web was a mobile-first cooking companion, not a smart-fridge image inventory product. The source repository is `amydojo/get-fridge`; later harvests must deepen this donor rather than count it again.
 
 #### Living Tapestry
 
@@ -176,6 +176,80 @@ The Vercel reference function:
 
 The connected Vercel account contained no projects during this harvest. No deployment was created. The branch is ready to import after review and requires `DESIGN_INTENT_API_SECRET` before the API route can be exercised.
 
+## Harvest 03 · Affective Artifact Infrastructure
+
+**Date:** 2026-07-23  
+**Branch:** `agent/harvest-artifact-infrastructure`
+
+### Verified sources
+
+| Source | Verified commit | Vault relationship |
+| --- | --- | --- |
+| `amydojo/Catmode` | `1bb108fb29d2885004a5df188526aa3cdb956e93` | new donor |
+| `amydojo/get-fridge` | `919becd1d472d9d648fb68dcfb21f1e518322bc1` | deepens existing Fridge Web donor |
+| `amydojo/STICKER-OS` | `4c23eafb1922b6134316d1c2bddbb4a8817884ae` | new donor |
+
+### Recovered architecture
+
+The three sources independently implement a higher-order product grammar:
+
+> situation → bounded artifact → operational mode → repair → record → re-entry
+
+This harvest names that grammar **Affective Artifact Infrastructure**.
+
+### Retained patterns
+
+#### Catmode
+
+- `CV-AFI-001` Behavioral Loop Prescription
+- `CV-AFI-002` Route Before Object
+- `CV-AFI-003` Subject-Decides-Outcome
+- `CV-AFI-004` Medium-Translated Intervention
+- `CV-AFI-005` Use-What-You-Have Trial
+
+#### Get Fridge
+
+- `CV-AFI-006` Appliance Mode
+- `CV-AFI-007` Available-Materials Compiler
+- `CV-AFI-008` Choice Surrender Control
+- `CV-AFI-009` Quiet Satisficing Completion
+- `CV-AFI-010` Evidence-by-Use Archive
+
+#### StickerOS
+
+- `CV-AFI-011` Ambient State Object
+- `CV-AFI-012` Context Without Confession
+- `CV-AFI-013` Cross-Surface Expressive Continuity
+- `CV-AFI-014` Local Context Suggestion
+
+### Existing records strengthened rather than duplicated
+
+- `CV-AFX-006` Something Feels Off? Recovery Reveal
+- `CV-ART-003` Bounded Machine Metaphor
+- `CV-ART-005` Format Carries Meaning
+
+### Added assets
+
+- `ARTIFACT_INFRASTRUCTURE_HARVEST.md`
+- `data/artifact-infrastructure-patterns.json`
+- `patterns/artifact-infrastructure.html`
+- `scripts/validate-artifact-infrastructure.mjs`
+
+### Not retained
+
+- personal room or animal details as reusable generic sample data
+- veterinary, behavioral, causal, clinical, or therapeutic certainty
+- unsafe cooking substitutions, allergy assumptions, or unverified food-safety guidance
+- daily-use paywalls that exploit basic care needs
+- automatic status, availability, energy, battery, location, or activity sharing
+- full-access keyboard permissions as a hidden prerequisite
+- emotion, personality, diagnosis, or relationship inference from selected expressive objects
+- prototype implementation represented as proof of general effectiveness
+
+### Vercel status
+
+The connected Vercel team reported no projects during this harvest. No preview or production deployment was created, and the repository must not claim otherwise.
+
 ## Replit-origin repository audit rule
 
 For repositories created from Replit:
@@ -192,17 +266,19 @@ For repositories created from Replit:
 Do not import or rehabilitate:
 
 - fake skin, mood, relationship, creativity, talent, or emotional-severity scores
-- diagnosis from face, voice, cursor, biometrics, avatar choices, or interaction telemetry
+- diagnosis from face, voice, cursor, biometrics, avatar choices, stickers, or interaction telemetry
 - generated quotes presented as authentic quotations
 - permanent psychological profiles
 - vulnerability scoring or streak punishment
 - fictional hardware, integrations, payments, or production claims
 - scraping bypasses
 - automatic consequential adaptation or external actions
+- automatic status, availability, energy, battery, location, or activity sharing
 - arbitrary model-generated markup, routing, persistence, or filenames
 - arbitrary server-side URL fetching or open proxy behavior
 - hidden network calls or full sensitive payload logging
 - branded source templates without provenance and permission
+- prototype implementation presented as proof of general effectiveness
 
 ## Current mainline inventory represented by this branch
 
@@ -210,4 +286,5 @@ Do not import or rehabilitate:
 - 27 core affective patterns
 - 3 Capytopia patterns
 - 5 Design Intent Infrastructure patterns
-- 35 documented patterns across 14 donor systems
+- 14 Affective Artifact Infrastructure patterns
+- 49 documented patterns across 16 donor systems
